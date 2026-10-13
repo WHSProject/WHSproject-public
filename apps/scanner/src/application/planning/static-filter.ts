@@ -496,7 +496,7 @@ function directReverseShell(code: string, allowBareCommand = false): string[] | 
 }
 
 function directDestructiveExecution(code: string, allowBareCommand = false): string[] | undefined {
-  const destructive = /(?:\brm\s+(?:-[A-Za-z]*[rf][A-Za-z]*\s+)+(?:\/(?:etc|usr|var|home|root|boot|opt|srv)(?:\/|\b)|\$HOME\b|~\/)|\b(?:del|erase)\s+\/s\s+(?:[A-Za-z]:\\|\\\\)|\bformat\s+[A-Za-z]:|>{1,2}\s*\/(?:etc|usr|boot)\/)/iu;
+  const destructive = /(?:\brm\s+(?:-[A-EG-QS-Z]*[FR][A-Z]*\s+)+(?:\/(?:etc|usr|var|home|root|boot|opt|srv)(?:\/|\b)|\$HOME\b|~\/)|\b(?:del|erase)\s+\/s\s+(?:[A-Za-z]:\\|\\\\)|\bformat\s+[A-Za-z]:|>{1,2}\s*\/(?:etc|usr|boot)\/)/iu;
   const excluded = /(?:\/tmp\b|\bcache\b|\bnode_modules\b|\bbuild\b|\bdist\b)/iu;
   if (allowBareCommand && destructive.test(code) && !excluded.test(code)) {
     return ['DIRECT_LIFECYCLE_COMMAND', 'IMPORTANT_PATH_DESTRUCTION'];
