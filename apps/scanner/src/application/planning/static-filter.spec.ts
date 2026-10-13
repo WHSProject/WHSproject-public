@@ -224,6 +224,28 @@ describe('evaluateStaticFilter', () => {
     }));
   });
 
+  it.each([
+    ['repeated recursive flag letters', `exec('rm -${'f'.repeat(10_000)} /etc/ssh')`],
+    ['uppercase recursive flags', `exec('rm -RF /etc/ssh')`],
+  ])('confirms M02 without ambiguous backtracking for %s', (_name, code) => {
+    const result = evaluateStaticFilter(input({ tier1: [analyzer('guarddog', [
+      finding('threat-filesystem-destruction', 'cleanup.js', { data: { code, match: 'rm' } }),
+      finding('capability-process-spawn', 'cleanup.js', { data: { code, match: 'exec(' } }),
+    ])] }));
+
+    expect(diagnostic(result, 'M02').outcome).toBe('SATISFIED');
+  });
+
+  it('does not treat rm flags without recursive or force as important-path destruction', () => {
+    const code = `exec('rm -abc /etc/ssh')`;
+    const result = evaluateStaticFilter(input({ tier1: [analyzer('guarddog', [
+      finding('threat-filesystem-destruction', 'cleanup.js', { data: { code, match: 'rm' } }),
+      finding('capability-process-spawn', 'cleanup.js', { data: { code, match: 'exec(' } }),
+    ])] }));
+
+    expect(diagnostic(result, 'M02').outcome).toBe('UNVERIFIED');
+  });
+
   it('exposes the M02 heuristic limitation for unrelated same-file destruction and spawn', () => {
     const destructive = `const cleanupCommand = 'rm -rf /etc/ssh'`;
     const result = evaluateStaticFilter(input({ tier1: [analyzer('guarddog', [
