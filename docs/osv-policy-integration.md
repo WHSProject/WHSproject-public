@@ -70,7 +70,6 @@ Advisory 내용 변경 시에만 동일 Artifact의 유효 Scanner Evidence로 �
 
 - 검증일: 2026-09-09
 - 작업 브랜치: `test/osv-policy-integration`
-- 관련 Issue: [#209 — OSV feed and policy integration](https://github.com/WHSProject/WHSproject/issues/209)
 - 범위: Policy 테스트와 결과 문서. Scanner 코드, Evidence 흐름, API/Schema/환경변수 및 런타임 설정 변경 없음.
 
 ## 연동 흐름
