@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "STRUCTURED_LIMITATIONS_V0_3_FOUR_CONDITION_LIVE_COMPARISON",
+  "conditionCount": 4,
+  "execution": {
+    "completed": 4, "failed": 0, "unknown": 0, "notRun": 0,
+    "providerRequestCount": 4, "runnerCallCount": 4,
+    "httpStatusCounts": { "200": 4 }, "runnerStatusCounts": { "PARTIAL": 4 }
+  },
+  "configuration": {
+    "model": "gpt-5.6-luna", "reasoningEffort": "medium",
+    "outputSchemaVersion": "0.3.0", "promptVersion": "scanner-single-agent-0.3.0",
+    "maxOutputTokens": 32768, "timeoutMs": 180000, "retry": 0,
+    "store": false, "jev": "DISABLED", "additionalCodeRequests": "DISABLED"
+  },
+  "inputIntegrity": {
+    "byteIdenticalToFrozenV2": true,
+    "allInputHashesMatchPreparedDryRun": true,
+    "allCodeHashesMatchPreparedDryRun": true,
+    "findingEvidenceAndPackageContextUnchanged": true
+  },
+  "totals": {
+    "assessments": 14, "verified": 0, "partiallyVerified": 13, "rejected": 1,
+    "generatedEvidence": 0, "evidenceConversionFailures": 0,
+    "usage": { "inputTokens": 237518, "cachedInputTokens": 0, "outputTokens": 14092, "reasoningTokens": 3746, "totalTokens": 251610 },
+    "durationMs": 134072
+  },
+  "claimScopeCounts": { "CODE_BEHAVIOR": 13, "STATIC_REACHABILITY": 1 },
+  "assessmentLimitationKindOccurrences": {
+    "BINDING_UNKNOWN": 2, "CALLER_UNKNOWN": 7, "DATA_FLOW_UNKNOWN": 1,
+    "INTENT_UNKNOWN": 2, "PAYLOAD_UNKNOWN": 6, "RUNTIME_UNCONFIRMED": 13
+  },
+  "globalMissingContext": {
+    "itemCount": 11, "unscopedItemCount": 0,
+    "kindOccurrences": { "BINDING_UNKNOWN": 1, "CALLER_UNKNOWN": 4, "CODE_MISSING": 1, "PAYLOAD_UNKNOWN": 3, "RUNTIME_UNCONFIRMED": 2 }
+  },
+  "conditions": [
+    {
+      "sourceSampleId": "DD-NPM-010", "level": "L2", "httpStatus": 200, "runnerStatus": "PARTIAL",
+      "assessmentCount": 3, "verified": 0, "partiallyVerified": 2, "rejected": 1,
+      "generatedEvidence": 0, "conversionFailures": 0,
+      "usage": { "inputTokens": 18299, "cachedInputTokens": 0, "outputTokens": 4033, "reasoningTokens": 1552, "totalTokens": 22332 },
+      "durationMs": 40333,
+      "legacyHoldCounterfactual": { "verified": 0, "partiallyVerified": 2, "rejected": 1 },
+      "reviewFlags": ["UNKNOWN_FLOW_REFERENCE", "STATIC_BODY_FLOW_HELD_BY_INTENT_AND_GLOBAL_CONTEXT"]
+    },
+    {
+      "sourceSampleId": "DD-NPM-013", "level": "L1", "httpStatus": 200, "runnerStatus": "PARTIAL",
+      "assessmentCount": 4, "verified": 0, "partiallyVerified": 4, "rejected": 0,
+      "generatedEvidence": 0, "conversionFailures": 0,
+      "usage": { "inputTokens": 21104, "cachedInputTokens": 0, "outputTokens": 3265, "reasoningTokens": 407, "totalTokens": 24369 },
+      "durationMs": 33985,
+      "legacyHoldCounterfactual": { "verified": 0, "partiallyVerified": 4, "rejected": 0 },
+      "reviewFlags": ["REQUIRED_CALLER_HOLD_MAINTAINED"]
+    },
+    {
+      "sourceSampleId": "DD-NPM-013", "level": "L3", "httpStatus": 200, "runnerStatus": "PARTIAL",
+      "assessmentCount": 4, "verified": 0, "partiallyVerified": 4, "rejected": 0,
+      "generatedEvidence": 0, "conversionFailures": 0,
+      "usage": { "inputTokens": 25481, "cachedInputTokens": 0, "outputTokens": 3941, "reasoningTokens": 948, "totalTokens": 29422 },
+      "durationMs": 32992,
+      "legacyHoldCounterfactual": { "verified": 0, "partiallyVerified": 4, "rejected": 0 },
+      "reviewFlags": ["PROVIDED_CALLER_NOT_USED_IN_DLL_ASSESSMENT", "SPAWN_LINE_NOT_CITED"]
+    },
+    {
+      "sourceSampleId": "DD-NPM-003", "level": "L4", "httpStatus": 200, "runnerStatus": "PARTIAL",
+      "assessmentCount": 3, "verified": 0, "partiallyVerified": 3, "rejected": 0,
+      "generatedEvidence": 0, "conversionFailures": 0,
+      "usage": { "inputTokens": 172634, "cachedInputTokens": 0, "outputTokens": 2853, "reasoningTokens": 839, "totalTokens": 175487 },
+      "durationMs": 26762,
+      "legacyHoldCounterfactual": { "verified": 0, "partiallyVerified": 3, "rejected": 0 },
+      "reviewFlags": ["TELEGRAM_LOCAL_BINDING_GAP_NOT_CLASSIFIED", "GLOBAL_CALLER_SCOPE_OVERBROAD_FOR_FIXTURE"]
+    }
+  ],
+  "comparison": {
+    "previousTotals": { "assessments": 11, "verified": 0, "partiallyVerified": 11, "rejected": 0, "generatedEvidence": 0 },
+    "newTotals": { "assessments": 14, "verified": 0, "partiallyVerified": 13, "rejected": 1, "generatedEvidence": 0 },
+    "validatorRelaxationObservedStateChanges": 0,
+    "note": "The legacy-hold counterfactual applies only the old blanket hold decision to parsed and structurally validated 0.3 outputs; it is not a legacy parser result."
+  }
+}

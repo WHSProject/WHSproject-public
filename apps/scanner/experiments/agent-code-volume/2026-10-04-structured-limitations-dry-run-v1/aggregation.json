@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "STRUCTURED_LIMITATIONS_V0_3_FOUR_CONDITION_DRY_RUN",
+  "liveExecutionStatus": "NOT_RUN_OPENAI_API_KEY_ABSENT",
+  "providerRequestCount": 0,
+  "runnerCallCount": 0,
+  "conditionCount": 4,
+  "dryRunValidatedCount": 4,
+  "nodeVersion": "v26.4.0",
+  "requiredNodeRange": ">=24.0.0 <25",
+  "configuration": {
+    "model": "gpt-5.6-luna",
+    "reasoningEffort": "medium",
+    "maxOutputTokens": 32768,
+    "timeoutMs": 180000,
+    "retry": 0,
+    "store": false,
+    "jev": "DISABLED",
+    "additionalCodeRequests": "DISABLED",
+    "maxProviderRequests": 4,
+    "promptVersion": "scanner-single-agent-0.3.0",
+    "outputSchemaVersion": "0.3.0"
+  },
+  "checks": {
+    "sourceInputsByteIdentical": true,
+    "apiRootObjectEnvelopeValid": true,
+    "privateRequestLeakCheckPassed": true,
+    "allContextLimitsFit": true
+  },
+  "conditions": [
+    {
+      "sourceSampleId": "DD-NPM-010",
+      "level": "L2",
+      "status": "DRY_RUN_VALIDATED",
+      "inputHash": "b9223296afc2e3028c68e0f89ce32369566819ea65b3e8354737bf896b254afa",
+      "codeHash": "99a1835879a8bab5d642a70b907e89087d02cc96547de486fb4856a549ab0971",
+      "estimatedInputTokens": 15337,
+      "estimatedTotalTokens": 48105
+    },
+    {
+      "sourceSampleId": "DD-NPM-013",
+      "level": "L1",
+      "status": "DRY_RUN_VALIDATED",
+      "inputHash": "b887e6f0025ba6fc4a8edb8969d882c0a774f8d3c1f2ccbbf48baa3c53aca046",
+      "codeHash": "77ae2753bf33d89ce1c547f5b5f38a296d122a0c12bc654721712c40e845fb33",
+      "estimatedInputTokens": 17698,
+      "estimatedTotalTokens": 50466
+    },
+    {
+      "sourceSampleId": "DD-NPM-013",
+      "level": "L3",
+      "status": "DRY_RUN_VALIDATED",
+      "inputHash": "587c8e1c1346d9636ca85af85e7b977e54098774a2fd99cd61b54504eb20998c",
+      "codeHash": "51d9df88529f8bd406eea7c1ac00b2a35d65d289f9b26754b2cca2694800db8c",
+      "estimatedInputTokens": 21531,
+      "estimatedTotalTokens": 54299
+    },
+    {
+      "sourceSampleId": "DD-NPM-003",
+      "level": "L4",
+      "status": "DRY_RUN_VALIDATED",
+      "inputHash": "32030970d5ffdfe7850e172a4f341e8fe663f39fcbc2f0a36adf33e6fc5ec5eb",
+      "codeHash": "2e04adf49c5270cd8d7c8e7c7f425c40ab454e2a78733ae5038b3ebfd587873d",
+      "estimatedInputTokens": 148466,
+      "estimatedTotalTokens": 181234
+    }
+  ],
+  "newStatusCounts": null,
+  "newEvidenceCount": null,
+  "note": "No live response exists. Existing 0.2 responses were not transformed or revalidated as 0.3."
+}

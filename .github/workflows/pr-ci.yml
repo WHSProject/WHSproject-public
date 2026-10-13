@@ -1,0 +1,257 @@
+name: PR CI
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dashboard:
+    name: Dashboard CI
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: apps/dashboard
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/dashboard/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify standalone runtime
+        run: |
+          npm run prestart
+          PORT=5173 HOSTNAME=127.0.0.1 node .next/standalone/server.js &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          curl --fail --silent --show-error --max-time 10 --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:5173/ -o /dev/null
+          test "$(curl --fail --silent --show-error --max-time 10 http://127.0.0.1:5173/api/health)" = '{"status":"ok","service":"dashboard"}'
+          for route in requests packages logs rules versions; do
+            curl --fail --silent --show-error --max-time 10 "http://127.0.0.1:5173/$route" -o /dev/null
+          done
+          test "$(curl --silent --show-error --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1:5173/unknown/nested)" = 404
+          curl --fail --silent --show-error --max-time 10 http://127.0.0.1:5173/fonts/wanted-sans-10.woff2 -o /dev/null
+
+  gateway:
+    name: Gateway CI
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: apps/gateway
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/gateway/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test
+        run: npm test -- --runInBand
+
+      - name: Build
+        run: npm run build
+
+  scanner:
+    name: Scanner CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Enable pnpm 10.34.5
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.34.5 --activate
+
+      - name: Install dependencies
+        run: pnpm install --filter scanner --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm --filter scanner typecheck
+
+      - name: Test
+        run: pnpm --filter scanner test
+
+      - name: Build
+        run: pnpm --filter scanner build
+
+      - name: Test Agent experiment CLI
+        run: pnpm --filter scanner test:agent-experiment:cli
+        env:
+          OPENAI_API_KEY: ""
+          LLM_API_KEY: ""
+
+  policy:
+    name: Policy CI
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: apps/policy
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: apps/policy/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test
+        run: python -m pytest -q
+
+  compose-config:
+    name: Compose Config
+    runs-on: ubuntu-latest
+
+    env:
+      POSTGRES_USER: ci_user
+      POSTGRES_PASSWORD: ci_password
+      VERDACCIO_PUBLIC_URL: http://localhost:3000
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Test Verdaccio approval plugin
+        working-directory: infra/verdaccio/plugins/verdaccio-whs-approval
+        run: npm test
+
+      - name: Validate Docker Compose config
+        run: docker compose config --quiet
+
+  integration-smoke:
+    name: Policy / Decision DB Integration Smoke
+    runs-on: ubuntu-latest
+    needs: compose-config
+
+    env:
+      POSTGRES_USER: ci_user
+      POSTGRES_PASSWORD: ci_password
+      VERDACCIO_PUBLIC_URL: http://localhost:3000
+      POLICY_LLM_MODE: fixture
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Start Policy / Decision DB runtime
+        run: docker compose up -d --build --wait postgres policy-db-api decision-db-api policy
+
+      - name: Run Policy / Decision DB integration smoke
+        run: python tests/integration/policy_decision_db_smoke.py
+
+      - name: Show runtime diagnostics on failure
+        if: failure()
+        run: |
+          echo "=== docker compose ps ==="
+          docker compose ps
+          echo "=== integration runtime logs ==="
+          docker compose logs --no-color postgres policy-db-api decision-db-api policy
+
+      - name: Cleanup integration runtime
+        if: always()
+        run: docker compose down -v --remove-orphans
+
+  scanner-docker-build:
+    name: Docker Build - Scanner
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Scanner image
+        run: docker build --target runtime -t whs-ci-scanner -f apps/scanner/Dockerfile .
+      - name: Verify Scanner runtime image command
+        run: |
+          test "$(docker image inspect whs-ci-scanner --format '{{json .Config.Entrypoint}}')" = '["docker-entrypoint.sh"]'
+          test "$(docker image inspect whs-ci-scanner --format '{{json .Config.Cmd}}')" = '["pnpm","--filter","scanner","start"]'
+
+  docker-build:
+    name: Docker Build - ${{ matrix.component }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - component: Gateway
+            image: gateway
+            context: apps/gateway
+            dockerfile: apps/gateway/Dockerfile
+          - component: Dashboard
+            image: dashboard
+            context: apps/dashboard
+            dockerfile: apps/dashboard/Dockerfile
+          - component: Policy
+            image: policy
+            context: .
+            dockerfile: apps/policy/Dockerfile
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build ${{ matrix.component }} image
+        run: docker build -t "whs-ci-${{ matrix.image }}" -f "${{ matrix.dockerfile }}" "${{ matrix.context }}"

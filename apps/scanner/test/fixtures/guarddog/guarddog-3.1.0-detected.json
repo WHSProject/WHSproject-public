@@ -1,0 +1,65 @@
+{
+  "package": "/scanner/scan-id/extracted",
+  "results": {
+    "capability-network-outbound": [
+      {
+        "location": "index.js:1",
+        "code": "const http = require('http');",
+        "match": "require('http')",
+        "message": "Detects network request capabilities (HTTP, sockets, etc.)"
+      }
+    ],
+    "capability-process-spawn": [
+      {
+        "location": "index.js:2",
+        "code": "const childProcess = require('child_process');",
+        "match": "require('child_process')",
+        "message": "Detects process execution and spawning"
+      }
+    ],
+    "threat-runtime-environment-read": [
+      {
+        "location": "index.js:5",
+        "code": "const token = process.env.API_TOKEN;",
+        "match": "process.env.API_TOKEN",
+        "message": "Detects reading of environment variables (credential access, often contains secrets)"
+      }
+    ],
+    "threat-process-sysinfo": {}
+  },
+  "errors": {},
+  "issues": 6,
+  "risk_score": {
+    "score": 3.3,
+    "label": "low",
+    "findings_count": 4,
+    "score_breakdown": {
+      "severity_component": 0.1,
+      "chain_component": 0.08,
+      "specificity_component": 0.09,
+      "sophistication_component": 0.06,
+      "num_stages": 1,
+      "has_source_code_risks": true,
+      "max_severity": 1,
+      "dominant_specificity": "low",
+      "dominant_sophistication": "low"
+    }
+  },
+  "risks": [
+    {
+      "name": "risk.runtime.environment",
+      "category": "runtime",
+      "severity": "low",
+      "mitre_tactics": ["credential-access"],
+      "threat_identifies": "threat.runtime.environment.read",
+      "threat_rule": "threat-runtime-environment-read",
+      "threat_description": "Detects reading of environment variables (credential access, often contains secrets)",
+      "threat_location": "index.js:5",
+      "threat_code": "const token = process.env.API_TOKEN;",
+      "threat_match": "process.env.API_TOKEN",
+      "capability_identifies": null,
+      "capability_rule": null,
+      "file_path": "index.js"
+    }
+  ]
+}

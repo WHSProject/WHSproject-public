@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/contracts/policy-evaluation-v0.1.schema.json",
+  "title": "PolicyEvaluationV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["requestId", "scanStatus", "scanId", "subject", "evidences", "osvFeed"],
+  "properties": {
+    "requestId": {"type": "string", "minLength": 1},
+    "scanStatus": {"enum": ["COMPLETED", "PARTIAL", "FAILED", "TIMEOUT"]},
+    "scanId": {"type": "string", "minLength": 1},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ecosystem", "packageName", "packageVersion", "artifactHash", "integrity"],
+      "properties": {
+        "ecosystem": {"const": "npm"},
+        "packageName": {"type": "string"},
+        "packageVersion": {"type": "string"},
+        "artifactHash": {"type": "string"},
+        "integrity": {"type": "string"}
+      }
+    },
+    "score": {"type": ["number", "null"]},
+    "expectedArtifactHash": {"type": ["string", "null"]},
+    "evidences": {
+      "type": "array",
+      "items": {"$ref": "./evidence-v0.1.schema.json"}
+    },
+    "osvFeed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "feedStatus",
+        "query",
+        "advisories",
+        "complete",
+        "pagesFetched",
+        "collectedAt",
+        "completedAt",
+        "errorCode",
+        "skippedReason"
+      ],
+      "properties": {
+        "source": {"const": "OSV"},
+        "feedStatus": {"enum": ["SUCCESS", "FAILED", "TIMEOUT", "SKIPPED"]},
+        "query": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ecosystem", "packageName", "packageVersion"],
+          "properties": {
+            "ecosystem": {"type": "string"},
+            "packageName": {"type": "string"},
+            "packageVersion": {"type": "string"}
+          }
+        },
+        "advisories": {
+          "type": "array",
+          "items": {"type": "object", "additionalProperties": true}
+        },
+        "complete": {"type": "boolean"},
+        "pagesFetched": {"type": "number"},
+        "collectedAt": {
+          "anyOf": [
+            {"type": "string", "format": "date-time"},
+            {"type": "null"}
+          ]
+        },
+        "completedAt": {
+          "anyOf": [
+            {"type": "string", "format": "date-time"},
+            {"type": "null"}
+          ]
+        },
+        "errorCode": {
+          "type": ["string", "null"],
+          "enum": [
+            "HTTP_ERROR",
+            "NETWORK_ERROR",
+            "INVALID_JSON",
+            "INVALID_RESPONSE",
+            "RESPONSE_TOO_LARGE",
+            "TOTAL_RESPONSE_TOO_LARGE",
+            "JSON_TOO_DEEP",
+            "JSON_STRING_TOO_LONG",
+            "PAGE_LIMIT_EXCEEDED",
+            "REPEATED_PAGE_TOKEN",
+            "DEADLINE_EXCEEDED",
+            "SCAN_BUDGET_EXHAUSTED",
+            "PARENT_ABORTED",
+            null
+          ]
+        },
+        "skippedReason": {
+          "type": ["string", "null"],
+          "enum": [
+            "DISABLED",
+            "UNSUPPORTED_TARGET",
+            "PRIVATE_PACKAGE",
+            "PROVENANCE_UNCONFIRMED",
+            "INVALID_PACKAGE_IDENTITY",
+            "INVALID_SCAN_BUDGET",
+            null
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "feedStatus": {
+                "const": "SUCCESS"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "complete": {
+                "const": true
+              },
+              "collectedAt": {
+                "type": "string"
+              },
+              "completedAt": {
+                "type": "string"
+              },
+              "errorCode": {
+                "type": "null"
+              },
+              "skippedReason": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "feedStatus": {
+                "const": "FAILED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "complete": {
+                "const": false
+              },
+              "advisories": {
+                "maxItems": 0,
+                "type": "array"
+              },
+              "completedAt": {
+                "type": "null"
+              },
+              "errorCode": {
+                "enum": [
+                  "HTTP_ERROR",
+                  "NETWORK_ERROR",
+                  "INVALID_JSON",
+                  "INVALID_RESPONSE",
+                  "RESPONSE_TOO_LARGE",
+                  "TOTAL_RESPONSE_TOO_LARGE",
+                  "JSON_TOO_DEEP",
+                  "JSON_STRING_TOO_LONG",
+                  "PAGE_LIMIT_EXCEEDED",
+                  "REPEATED_PAGE_TOKEN"
+                ]
+              },
+              "skippedReason": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "feedStatus": {
+                "const": "TIMEOUT"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "complete": {
+                "const": false
+              },
+              "advisories": {
+                "maxItems": 0,
+                "type": "array"
+              },
+              "completedAt": {
+                "type": "null"
+              },
+              "errorCode": {
+                "enum": [
+                  "DEADLINE_EXCEEDED",
+                  "SCAN_BUDGET_EXHAUSTED",
+                  "PARENT_ABORTED"
+                ]
+              },
+              "skippedReason": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "feedStatus": {
+                "const": "SKIPPED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "complete": {
+                "const": false
+              },
+              "advisories": {
+                "maxItems": 0,
+                "type": "array"
+              },
+              "pagesFetched": {
+                "const": 0
+              },
+              "collectedAt": {
+                "type": "null"
+              },
+              "completedAt": {
+                "type": "null"
+              },
+              "errorCode": {
+                "type": "null"
+              },
+              "skippedReason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

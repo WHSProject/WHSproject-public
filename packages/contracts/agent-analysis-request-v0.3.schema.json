@@ -1,0 +1,457 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/contracts/agent-analysis-request-v0.3.schema.json",
+  "title": "AgentAnalysisInputV0_3",
+  "description": "Tier 3 Agent input 0.3.0. Source of Truth for the Scanner runtime and the Scanner agent-analysis dataset. Scanner-internal locations (artifact roots, providerRef, absolute paths) are never part of this input.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request",
+    "subject",
+    "packageContext",
+    "artifactContext",
+    "findings",
+    "atomicEvidences",
+    "analysisPlan",
+    "analysisPolicy",
+    "initialCodeSlices",
+    "toolResponseCatalog",
+    "missingData"
+  ],
+  "properties": {
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analysisRequestId", "requestType", "schemaVersion", "scanId", "createdAt"],
+      "properties": {
+        "analysisRequestId": { "$ref": "#/$defs/nonEmptyString" },
+        "requestType": { "const": "MALICIOUS_CODE_ANALYSIS" },
+        "schemaVersion": { "const": "0.3.0" },
+        "scanId": { "$ref": "#/$defs/nonEmptyString" },
+        "createdAt": { "oneOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }] }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ecosystem", "packageName", "packageVersion", "archiveSha256"],
+      "properties": {
+        "ecosystem": { "const": "npm" },
+        "packageName": { "$ref": "#/$defs/nonEmptyString" },
+        "packageVersion": { "$ref": "#/$defs/nonEmptyString" },
+        "archiveSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "packageContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "description", "main", "exports", "scripts", "dependencies", "entryPoints", "lifecycleScripts"],
+      "properties": {
+        "source": { "const": "TARBALL_PACKAGE_MANIFEST_PROJECTION" },
+        "description": { "type": ["string", "null"] },
+        "main": { "type": ["string", "null"] },
+        "exports": {},
+        "scripts": { "$ref": "#/$defs/stringMap" },
+        "dependencies": { "$ref": "#/$defs/stringMap" },
+        "entryPoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "value", "location"],
+            "properties": {
+              "type": { "enum": ["MAIN", "BIN", "EXPORTS"] },
+              "value": { "type": "string" },
+              "location": { "oneOf": [{ "$ref": "#/$defs/fileLocation" }, { "type": "null" }] }
+            }
+          }
+        },
+        "lifecycleScripts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "command", "location"],
+            "properties": {
+              "name": { "enum": ["preinstall", "install", "postinstall"] },
+              "command": { "type": "string" },
+              "location": { "oneOf": [{ "$ref": "#/$defs/fileLocation" }, { "type": "null" }] }
+            }
+          }
+        }
+      }
+    },
+    "artifactContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifacts", "findingLocations", "evidenceLocations"],
+      "properties": {
+        "artifacts": { "type": "array", "items": { "$ref": "#/$defs/artifactDescriptor" } },
+        "findingLocations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["findingId", "artifactId", "filePath"],
+            "properties": {
+              "findingId": { "$ref": "#/$defs/nonEmptyString" },
+              "artifactId": { "$ref": "#/$defs/nonEmptyString" },
+              "filePath": { "$ref": "#/$defs/packagePath" },
+              "startLine": { "$ref": "#/$defs/lineNumber" },
+              "endLine": { "$ref": "#/$defs/lineNumber" },
+              "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+              "derivedFrom": { "$ref": "#/$defs/derivedFileLocation" }
+            }
+          }
+        },
+        "evidenceLocations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["evidenceId", "artifactId", "filePath"],
+            "properties": {
+              "evidenceId": { "$ref": "#/$defs/nonEmptyString" },
+              "artifactId": { "$ref": "#/$defs/nonEmptyString" },
+              "filePath": { "$ref": "#/$defs/packagePath" },
+              "startLine": { "$ref": "#/$defs/lineNumber" },
+              "endLine": { "$ref": "#/$defs/lineNumber" },
+              "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+              "derivedFrom": { "$ref": "#/$defs/derivedFileLocation" }
+            }
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["findingId", "analyzer", "analyzerVersion", "ruleId", "kind", "description", "location", "rawMatch"],
+        "properties": {
+          "findingId": { "$ref": "#/$defs/nonEmptyString" },
+          "analyzer": { "$ref": "#/$defs/nonEmptyString" },
+          "analyzerVersion": { "type": ["string", "null"] },
+          "ruleId": { "$ref": "#/$defs/nonEmptyString" },
+          "kind": { "enum": ["CAPABILITY", "THREAT", "OTHER"] },
+          "description": { "type": "string" },
+          "location": { "oneOf": [{ "$ref": "#/$defs/fileLocation" }, { "type": "null" }] },
+          "rawMatch": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "atomicEvidences": {
+      "type": "array",
+      "items": { "$ref": "https://whsproject.local/contracts/evidence-v0.1.schema.json" }
+    },
+    "analysisPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shouldExecute", "analysisMode", "targets", "focusBehaviors", "analysisTargets", "limitations"],
+      "properties": {
+        "shouldExecute": { "type": "boolean" },
+        "analysisMode": { "enum": ["ORIGINAL_ONLY", "DEOBFUSCATED_ONLY", "ORIGINAL_AND_DEOBFUSCATED"] },
+        "targets": { "type": "array", "items": { "$ref": "#/$defs/planningTarget" } },
+        "focusBehaviors": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "PROCESS_EXECUTION",
+              "NETWORK_EGRESS",
+              "FILE_READ",
+              "FILE_WRITE",
+              "ENVIRONMENT_ACCESS",
+              "CREDENTIAL_ACCESS",
+              "SYSTEM_INFO",
+              "DYNAMIC_EXECUTION",
+              "REMOTE_DOWNLOAD"
+            ]
+          }
+        },
+        "analysisTargets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "ENV_OR_SENSITIVE_FILE_TO_NETWORK",
+              "NETWORK_DOWNLOAD_TO_FILE_WRITE_TO_PROCESS_EXECUTION",
+              "LIFECYCLE_TO_PROCESS_EXECUTION"
+            ]
+          }
+        },
+        "limitations": { "type": "array", "items": { "type": "string" } }
+      },
+      "if": { "properties": { "shouldExecute": { "const": false } } },
+      "then": {
+        "properties": {
+          "targets": { "maxItems": 0 },
+          "focusBehaviors": { "maxItems": 0 },
+          "analysisTargets": { "maxItems": 0 }
+        }
+      }
+    },
+    "analysisPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxToolCalls", "maxAdditionalCodeRequests", "maxTotalCodeLines"],
+      "properties": {
+        "maxToolCalls": { "type": "integer", "minimum": 0 },
+        "maxAdditionalCodeRequests": { "type": "integer", "minimum": 0 },
+        "maxTotalCodeLines": {
+          "description": "Initial and runtime code slice lines combined.",
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "initialCodeSlices": { "type": "array", "items": { "$ref": "#/$defs/initialCodeSlice" } },
+    "toolResponseCatalog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tool", "status"],
+        "properties": {
+          "tool": {
+            "enum": ["GET_FILE_RANGE", "GET_SYMBOL_DEFINITION", "GET_SYMBOL_REFERENCES", "GET_CALLERS", "GET_IMPORT_RELATIONS"]
+          },
+          "status": { "enum": ["AVAILABLE", "UNAVAILABLE"] },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "missingData": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "reason"],
+        "properties": {
+          "field": { "$ref": "#/$defs/nonEmptyString" },
+          "reason": { "$ref": "#/$defs/nonEmptyString" }
+        }
+      }
+    },
+    "capabilityPreservation": {
+      "$ref": "#/$defs/capabilityPreservationReport"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "lineNumber": { "type": "integer", "minimum": 1 },
+    "stringMap": { "type": "object", "additionalProperties": { "type": "string" } },
+    "packagePath": {
+      "description": "Package-root-relative path with forward slashes; never absolute, never traversing.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\\\)(?!(?:.*/)?\\.\\.(?:/|$)).+$"
+    },
+    "fileLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "startLine", "endLine"],
+      "properties": {
+        "file": { "$ref": "#/$defs/packagePath" },
+        "startLine": { "oneOf": [{ "$ref": "#/$defs/lineNumber" }, { "type": "null" }] },
+        "endLine": { "oneOf": [{ "$ref": "#/$defs/lineNumber" }, { "type": "null" }] },
+        "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+        "derivedFrom": { "$ref": "#/$defs/derivedFileLocation" }
+      }
+    },
+    "artifactDescriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifactId", "representation", "analysisPass", "contentSha256", "lineageStatus", "producer"],
+      "properties": {
+        "artifactId": { "$ref": "#/$defs/nonEmptyString" },
+        "representation": { "enum": ["ORIGINAL", "DEOBFUSCATED"] },
+        "analysisPass": { "enum": ["TIER1", "TIER2"] },
+        "contentSha256": { "$ref": "#/$defs/sha256" },
+        "derivedFromArtifactId": { "$ref": "#/$defs/nonEmptyString" },
+        "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+        "lineMappings": { "type": "array", "items": { "$ref": "#/$defs/sourceLineMapping" } },
+        "producer": { "$ref": "#/$defs/nonEmptyString" },
+        "producerVersion": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "if": { "properties": { "representation": { "const": "DEOBFUSCATED" } } },
+      "then": { "required": ["derivedFromArtifactId"] }
+    },
+    "planningTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetId", "artifactId", "filePath", "priority", "findingRefs", "evidenceRefs", "reasonCodes"],
+      "properties": {
+        "targetId": { "$ref": "#/$defs/nonEmptyString" },
+        "artifactId": { "$ref": "#/$defs/nonEmptyString" },
+        "filePath": { "$ref": "#/$defs/packagePath" },
+        "preferredRange": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["startLine", "endLine"],
+          "properties": {
+            "startLine": { "$ref": "#/$defs/lineNumber" },
+            "endLine": { "$ref": "#/$defs/lineNumber" }
+          }
+        },
+        "priority": { "enum": ["HIGH", "MEDIUM", "LOW"] },
+        "findingRefs": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "evidenceRefs": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "reasonCodes": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } }
+      }
+    },
+    "initialCodeSlice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sliceId",
+        "artifactId",
+        "filePath",
+        "startLine",
+        "endLine",
+        "content",
+        "contentSha256",
+        "sourceSha256",
+        "origin",
+        "boundaryConfidence",
+        "planningTargetId",
+        "additionalCodeRequestId",
+        "agentRequestId",
+        "contentRedacted",
+        "redactionTypes",
+        "selectionReason",
+        "relatedFindingIds",
+        "relatedEvidenceIds"
+      ],
+      "properties": {
+        "sliceId": { "$ref": "#/$defs/nonEmptyString" },
+        "artifactId": { "$ref": "#/$defs/nonEmptyString" },
+        "filePath": { "$ref": "#/$defs/packagePath" },
+        "startLine": { "$ref": "#/$defs/lineNumber" },
+        "endLine": { "$ref": "#/$defs/lineNumber" },
+        "content": { "type": "string" },
+        "contentSha256": { "$ref": "#/$defs/sha256" },
+        "sourceSha256": { "$ref": "#/$defs/sha256" },
+        "origin": {
+          "description": "Only INITIAL slices appear in the input; RUNTIME slices are created during the run.",
+          "const": "INITIAL"
+        },
+        "boundaryConfidence": { "enum": ["HIGH", "MEDIUM", "LOW"] },
+        "planningTargetId": { "$ref": "#/$defs/nonEmptyString" },
+        "additionalCodeRequestId": { "type": "null" },
+        "agentRequestId": { "type": "null" },
+        "contentRedacted": { "type": "boolean" },
+        "redactionTypes": { "type": "array", "items": { "type": "string" } },
+        "selectionReason": { "$ref": "#/$defs/nonEmptyString" },
+        "relatedFindingIds": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "relatedEvidenceIds": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+        "derivedFrom": { "$ref": "#/$defs/derivedFileLocation" }
+      }
+    },
+    "derivedFileLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file"],
+      "properties": {
+        "file": { "$ref": "#/$defs/packagePath" },
+        "startLine": { "$ref": "#/$defs/lineNumber" },
+        "endLine": { "$ref": "#/$defs/lineNumber" }
+      }
+    },
+    "sourceLineMappingEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["derivedLine", "sourceLine", "confidence"],
+      "properties": {
+        "derivedLine": { "$ref": "#/$defs/lineNumber" },
+        "sourceLine": { "$ref": "#/$defs/lineNumber" },
+        "confidence": { "enum": ["EXACT", "APPROXIMATE"] }
+      }
+    },
+    "sourceLineMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "sourcePath", "derivedPath", "status", "entries", "derivedLineCount", "mappedLineCount", "limitations"],
+      "properties": {
+        "version": { "const": "0.1.0" },
+        "sourcePath": { "$ref": "#/$defs/packagePath" },
+        "derivedPath": { "$ref": "#/$defs/packagePath" },
+        "status": { "enum": ["MAPPED", "UNMAPPED"] },
+        "entries": { "type": "array", "items": { "$ref": "#/$defs/sourceLineMappingEntry" } },
+        "derivedLineCount": { "type": "integer", "minimum": 0 },
+        "mappedLineCount": { "type": "integer", "minimum": 0 },
+        "limitations": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "capabilityObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analyzer", "analyzerVersion", "ruleId", "findingId", "path", "representation", "lineageStatus"],
+      "properties": {
+        "analyzer": { "type": "string" },
+        "analyzerVersion": { "type": "string" },
+        "ruleId": { "type": "string" },
+        "findingId": { "type": "string" },
+        "path": { "$ref": "#/$defs/packagePath" },
+        "startLine": { "$ref": "#/$defs/lineNumber" },
+        "endLine": { "$ref": "#/$defs/lineNumber" },
+        "representation": { "enum": ["ORIGINAL", "DEOBFUSCATED"] },
+        "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+        "derivedFrom": { "$ref": "#/$defs/derivedFileLocation" }
+      }
+    },
+    "capabilityComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capability", "status", "original", "deobfuscated"],
+      "properties": {
+        "capability": { "type": "string" },
+        "status": { "enum": ["PRESERVED", "LOST", "DISCOVERED", "NOT_VERIFIED", "NOT_APPLICABLE"] },
+        "original": { "type": "array", "items": { "$ref": "#/$defs/capabilityObservation" } },
+        "deobfuscated": { "type": "array", "items": { "$ref": "#/$defs/capabilityObservation" } }
+      }
+    },
+    "capabilityValidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before", "after", "status", "preserved", "lost", "discovered", "comparisons", "limitations"],
+      "properties": {
+        "before": { "type": "array", "items": { "type": "string" } },
+        "after": { "type": ["array", "null"], "items": { "type": "string" } },
+        "status": { "enum": ["PRESERVED", "LOST", "DISCOVERED", "NOT_VERIFIED", "NOT_APPLICABLE"] },
+        "preserved": { "type": "array", "items": { "type": "string" } },
+        "lost": { "type": "array", "items": { "type": "string" } },
+        "discovered": { "type": "array", "items": { "type": "string" } },
+        "comparisons": { "type": "array", "items": { "$ref": "#/$defs/capabilityComparison" } },
+        "limitations": { "type": "array", "items": { "type": "string" } },
+        "originalPath": { "$ref": "#/$defs/packagePath" },
+        "deobfuscatedPaths": { "type": "array", "items": { "$ref": "#/$defs/packagePath" } },
+        "restoreStatus": { "enum": ["RESTORED", "PARTIAL_RESTORED", "UNRESOLVED", "SKIPPED", "FAILED"] }
+      }
+    },
+    "capabilityPreservationFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["originalPath", "deobfuscatedPaths", "restoreStatus", "validation"],
+      "properties": {
+        "originalPath": { "$ref": "#/$defs/packagePath" },
+        "deobfuscatedPaths": { "type": "array", "items": { "$ref": "#/$defs/packagePath" } },
+        "restoreStatus": { "enum": ["RESTORED", "PARTIAL_RESTORED", "UNRESOLVED", "SKIPPED", "FAILED"] },
+        "validation": { "$ref": "#/$defs/capabilityValidation" }
+      }
+    },
+    "capabilityPreservationReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "files", "limitations"],
+      "properties": {
+        "status": { "enum": ["PRESERVED", "LOST", "DISCOVERED", "NOT_VERIFIED", "NOT_APPLICABLE"] },
+        "files": { "type": "array", "items": { "$ref": "#/$defs/capabilityPreservationFile" } },
+        "limitations": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

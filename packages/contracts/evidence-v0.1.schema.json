@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/contracts/evidence-v0.1.schema.json",
+  "title": "EvidenceV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "evidenceId", "kind", "signal", "subject", "assertion", "sources", "provenance"],
+  "properties": {
+    "schemaVersion": {"const": "0.1"},
+    "evidenceId": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["ATOMIC", "CORRELATED", "LLM_ASSESSMENT"]},
+    "analysisPass": {"enum": ["TIER1", "TIER2"]},
+    "taxonomy": {
+      "type": "string",
+      "enum": [
+        "INSTALLATION_AND_EXECUTION",
+        "DISCOVERY_AND_COLLECTION",
+        "CREDENTIAL_AND_SENSITIVE_DATA_ACCESS",
+        "NETWORK_C2_AND_EXFILTRATION",
+        "PAYLOAD_AND_DYNAMIC_CODE",
+        "FILESYSTEM_AND_SYSTEM_MODIFICATION",
+        "PERSISTENCE_AND_PROPAGATION",
+        "EVASION_AND_OBFUSCATION",
+        "PACKAGE_AND_PUBLISHING_RISK"
+      ]
+    },
+    "action": {"type": "string", "minLength": 1},
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "category"],
+      "properties": {
+        "id": {"type": "string"},
+        "type": {"type": "string"},
+        "category": {"type": "string"}
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ecosystem", "packageName", "packageVersion", "artifactHash"],
+      "properties": {
+        "ecosystem": {"const": "npm"},
+        "packageName": {"type": "string"},
+        "packageVersion": {"type": "string"},
+        "artifactHash": {"type": "string"}
+      }
+    },
+    "assertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "basis"],
+      "properties": {
+        "summary": {"type": "string"},
+        "basis": {"enum": ["PATTERN_MATCH", "METADATA_VALUE", "CO_OCCURRENCE", "EXECUTION_LINK", "DATA_FLOW", "TOOL_CORRELATION"]}
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["analyzer", "analyzerVersion"],
+        "properties": {
+          "analyzer": {"type": "string"},
+          "analyzerVersion": {"type": "string"},
+          "ruleId": {"type": ["string", "null"]},
+          "ruleVersion": {"type": ["string", "null"]},
+          "rawFindingId": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type"],
+        "properties": {
+          "type": {"enum": ["SOURCE_FILE", "METADATA"]},
+          "path": {"type": ["string", "null"]},
+          "startLine": {"type": ["integer", "null"]},
+          "startColumn": {"type": ["integer", "null"]},
+          "endLine": {"type": ["integer", "null"]},
+          "endColumn": {"type": ["integer", "null"]},
+          "jsonPointer": {"type": ["string", "null"]},
+          "role": {"enum": ["OBSERVATION", "SOURCE", "SINK", "ENTRYPOINT", "TRIGGER", "TRANSFORM", "CONDITION", "CONTEXT", null]},
+          "representation": {"enum": ["ORIGINAL", "DEOBFUSCATED"]},
+          "lineageStatus": {"enum": ["DIRECT", "MAPPED", "UNMAPPED"]},
+          "derivedFrom": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "startLine": {"type": "integer", "minimum": 1},
+              "endLine": {"type": "integer", "minimum": 1}
+            }
+          }
+        }
+      }
+    },
+    "derivedFrom": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "findingIds": {"type": "array", "items": {"type": "string"}},
+        "evidenceIds": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scanId"],
+      "properties": {
+        "scanId": {"type": "string"},
+        "generatedBy": {"enum": ["EVIDENCE_NORMALIZER", "EVIDENCE_CORRELATOR"]},
+        "observedAt": {"type": "string", "format": "date-time"},
+        "producerType": {"const": "LLM_AGENT"},
+        "analysisId": {"type": "string", "minLength": 1},
+        "assessmentId": {"type": "string", "minLength": 1},
+        "agentType": {"type": "string", "minLength": 1},
+        "agentVersion": {"type": "string", "minLength": 1},
+        "model": {"type": "string"},
+        "promptVersion": {"type": "string", "minLength": 1},
+        "inputSchemaVersion": {"type": "string", "minLength": 1},
+        "outputSchemaVersion": {"type": "string", "minLength": 1}
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "capabilityPreservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before", "after", "status", "preserved", "lost", "discovered", "comparisons", "limitations"],
+      "properties": {
+        "before": {"type": "array", "items": {"type": "string"}},
+        "after": {"type": ["array", "null"], "items": {"type": "string"}},
+        "status": {"enum": ["PRESERVED", "LOST", "DISCOVERED", "NOT_VERIFIED", "NOT_APPLICABLE"]},
+        "preserved": {"type": "array", "items": {"type": "string"}},
+        "lost": {"type": "array", "items": {"type": "string"}},
+        "discovered": {"type": "array", "items": {"type": "string"}},
+        "comparisons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["capability", "status", "original", "deobfuscated"],
+            "properties": {
+              "capability": {"type": "string"},
+              "status": {"enum": ["PRESERVED", "LOST", "DISCOVERED", "NOT_VERIFIED", "NOT_APPLICABLE"]},
+              "original": {"type": "array", "items": {"$ref": "#/$defs/capabilityObservation"}},
+              "deobfuscated": {"type": "array", "items": {"$ref": "#/$defs/capabilityObservation"}}
+            }
+          }
+        },
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "originalPath": {"type": "string"},
+        "deobfuscatedPaths": {"type": "array", "items": {"type": "string"}},
+        "restoreStatus": {"enum": ["RESTORED", "PARTIAL_RESTORED", "UNRESOLVED", "SKIPPED", "FAILED"]}
+      }
+    },
+    "executionContext": {"type": "object"},
+    "reachability": {"type": "object"},
+    "intentAssessment": {"enum": ["BENIGN_LIKELY", "DUAL_USE", "SUSPICIOUS", "LIKELY_MALICIOUS", "UNKNOWN"]},
+    "verificationStatus": {"enum": ["VERIFIED", "PARTIALLY_VERIFIED", "UNVERIFIED", "REJECTED"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "reasonCodes": {"type": "array", "items": {"type": "string"}},
+    "alternatives": {"type": "array"},
+    "relatedFindingIds": {"type": "array", "items": {"type": "string"}},
+    "relatedAtomicEvidenceIds": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "capabilityObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analyzer", "analyzerVersion", "ruleId", "findingId", "path", "representation", "lineageStatus"],
+      "properties": {
+        "analyzer": {"type": "string"},
+        "analyzerVersion": {"type": "string"},
+        "ruleId": {"type": "string"},
+        "findingId": {"type": "string"},
+        "path": {"type": "string"},
+        "startLine": {"type": "integer", "minimum": 1},
+        "endLine": {"type": "integer", "minimum": 1},
+        "representation": {"enum": ["ORIGINAL", "DEOBFUSCATED"]},
+        "lineageStatus": {"enum": ["DIRECT", "MAPPED", "UNMAPPED"]},
+        "derivedFrom": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path"],
+          "properties": {
+            "path": {"type": "string"},
+            "startLine": {"type": "integer", "minimum": 1},
+            "endLine": {"type": "integer", "minimum": 1}
+          }
+        }
+      }
+    }
+  }
+}

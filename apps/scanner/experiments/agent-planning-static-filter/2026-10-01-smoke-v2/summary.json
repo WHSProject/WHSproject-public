@@ -1,0 +1,13 @@
+{
+  "outputRoot": "/Users/chase/whitehat/project/WHSproject/apps/scanner/experiments/agent-planning-static-filter/2026-10-01-smoke-v2",
+  "mode": "smoke",
+  "selected": 2,
+  "completed": 2,
+  "resultNotCreated": 0,
+  "llmCalls": 0,
+  "packageExecutions": 0,
+  "lifecycleExecutions": 0,
+  "finalStatusDistribution": {
+    "STATIC_INCOMPLETE": 2
+  }
+}

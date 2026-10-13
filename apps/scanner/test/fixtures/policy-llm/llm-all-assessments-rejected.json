@@ -1,0 +1,126 @@
+{
+  "requestId": "request-1",
+  "scanStatus": "COMPLETED",
+  "scanId": "scan-1",
+  "subject": {
+    "ecosystem": "npm",
+    "packageName": "example",
+    "packageVersion": "1.0.0",
+    "artifactHash": "sha256-value",
+    "integrity": "sha512-value"
+  },
+  "evidences": [
+    {
+      "schemaVersion": "0.1",
+      "evidenceId": "atomic-1",
+      "kind": "ATOMIC",
+      "signal": {
+        "id": "child-process",
+        "type": "CHILD_PROCESS",
+        "category": "EXECUTION"
+      },
+      "subject": {
+        "ecosystem": "npm",
+        "packageName": "example",
+        "packageVersion": "1.0.0",
+        "artifactHash": "sha256-value"
+      },
+      "assertion": {
+        "summary": "Process execution",
+        "basis": "PATTERN_MATCH"
+      },
+      "sources": [
+        {
+          "analyzer": "custom-rule",
+          "analyzerVersion": "1",
+          "ruleId": "custom.process-execution",
+          "rawFindingId": "finding-1"
+        }
+      ],
+      "locations": [],
+      "provenance": {
+        "scanId": "scan-1",
+        "generatedBy": "EVIDENCE_NORMALIZER",
+        "observedAt": "2026-09-20T00:00:00.000Z"
+      },
+      "limitations": []
+    },
+    {
+      "schemaVersion": "0.1",
+      "evidenceId": "correlated-1",
+      "kind": "CORRELATED",
+      "signal": {
+        "id": "child-process",
+        "type": "CHILD_PROCESS",
+        "category": "EXECUTION"
+      },
+      "subject": {
+        "ecosystem": "npm",
+        "packageName": "example",
+        "packageVersion": "1.0.0",
+        "artifactHash": "sha256-value"
+      },
+      "assertion": {
+        "summary": "Process execution",
+        "basis": "PATTERN_MATCH"
+      },
+      "sources": [
+        {
+          "analyzer": "custom-rule",
+          "analyzerVersion": "1",
+          "ruleId": "custom.process-execution",
+          "rawFindingId": "finding-1"
+        }
+      ],
+      "locations": [],
+      "provenance": {
+        "scanId": "scan-1",
+        "generatedBy": "EVIDENCE_NORMALIZER",
+        "observedAt": "2026-09-20T00:00:00.000Z"
+      },
+      "limitations": [],
+      "derivedFrom": {
+        "evidenceIds": [
+          "atomic-1"
+        ]
+      }
+    }
+  ],
+  "osvFeed": {
+    "source": "OSV",
+    "feedStatus": "SUCCESS",
+    "query": {
+      "ecosystem": "npm",
+      "packageName": "example",
+      "packageVersion": "1.0.0"
+    },
+    "advisories": [],
+    "complete": true,
+    "pagesFetched": 1,
+    "collectedAt": "2026-09-20T00:00:00.000Z",
+    "completedAt": "2026-09-20T00:00:01.000Z",
+    "errorCode": null,
+    "skippedReason": null
+  },
+  "agentAnalysisSummary": {
+    "status": "PARTIAL",
+    "analysisId": "analysis-1",
+    "assessmentCount": 2,
+    "verifiedAssessmentCount": 0,
+    "generatedEvidenceCount": 0,
+    "rejectedAssessmentCount": 2,
+    "limitations": [],
+    "model": "mock-model",
+    "promptVersion": "scanner-single-agent-0.1.0",
+    "toolCalls": 0,
+    "additionalCodeRequests": 0,
+    "modelCalls": 1,
+    "usage": {
+      "inputTokens": 10,
+      "outputTokens": 5,
+      "totalTokens": 15
+    },
+    "durationMs": 5,
+    "triggerReason": "ALWAYS_MODE"
+  }
+}

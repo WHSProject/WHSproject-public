@@ -1,0 +1,1002 @@
+{
+  "measuredAt": "2026-10-05T10:47:12.743Z",
+  "node": "v24.18.0",
+  "baselineDetectorSha256": "44ca25b083ce34c11730466cb8cf4600d68bcae6974b409bca4ae3a66a1988db",
+  "auditSha256": "f531db9d5270fad2fdf7ede895076c902c765cc86135fdcead84c541a0dadc49",
+  "packageEntrypointExecuted": false,
+  "llmCalls": 0,
+  "controlSummary": {
+    "files": 136,
+    "before": 0,
+    "after": 0,
+    "added": 0
+  },
+  "singlePassTimingMs": {
+    "before": 8.743214999999807,
+    "after": 276.869082
+  },
+  "controls": [
+    {
+      "path": "node_modules/@babel/parser/lib/index.js",
+      "sha256": "6969920ae0610df927b6b3e675d1309372c268e36d391652af8e3e0183cbe8f8",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/asserts/assertNode.js",
+      "sha256": "f5daa3d19be4871e94dc56fc97b412c9a2db30e60d3431d5e21b4a8f15fc254a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/asserts/generated/index.js",
+      "sha256": "0be5395e6c70928b772a0dce8e7783e9ddc9322e3a1a5f0c9643cb2ddfd9a4ed",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/ast-types/generated/index.js",
+      "sha256": "16acd61ca84ff5bf3ea9738e5d83b3e9fe3d8dc9220d8c62a0c67d9780683633",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/flow/createFlowUnionType.js",
+      "sha256": "d956848a9ebd7c485908f46c0ce527c83509e952872b4aec8de995434f2369a1",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/flow/createTypeAnnotationBasedOnTypeof.js",
+      "sha256": "5a48d7d1ffabb37f39398d080ced7dab04f45a45b0e373b1c90b2bd8f36ed727",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/generated/index.js",
+      "sha256": "a7c533725a73a24bff6d299f056c977204ee53ee4180d007b6c2f74b6c8ef142",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/generated/lowercase.js",
+      "sha256": "665aaab2c379fc7f2975fb3d690af397ad95e7b2a8c6761a9208229b63946f41",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/generated/uppercase.js",
+      "sha256": "f4ec3b4f98b9d6f4af4eebd4e81f4529097b8eb8d908a8a49f3ba137237a9108",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/productions.js",
+      "sha256": "ade4f557ede9b5efc677944db55387d17d34787f259b6cb4a69334b52f84a224",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/react/buildChildren.js",
+      "sha256": "80cee92f7e6c583065b8b10e83b1d0f90ae5b54e41052e452fb08463945c272a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/typescript/createTSUnionType.js",
+      "sha256": "0b8303cee403bcd242adac77b969b3470935469a530f4241675015235e827e10",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/builders/validateNode.js",
+      "sha256": "3172d2191555f5ee702394f15c00dfff27145cf67e88b78237fd9ca92e93235f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/clone/clone.js",
+      "sha256": "e111ca75eaceb1f7df18f83ddea547562e9f7fb344e6a9b14b613a587b34bbaf",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/clone/cloneDeep.js",
+      "sha256": "952c6eec4f23534d5a3f8ce0902fde9473ddd8f19a51a8ec841f414acc3bea1c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/clone/cloneDeepWithoutLoc.js",
+      "sha256": "1262732b2d97398c6fc1347cf749a4a7e35b8fc13e24cf0563544e26f52f395a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/clone/cloneNode.js",
+      "sha256": "7db899dfa4caeade05d282c25f3dafe4ce296cfc6c011658b455f46e12a5273d",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/clone/cloneWithoutLoc.js",
+      "sha256": "11400139de42cb806781efe3f1ef1c37868be98574faba096e46abab67ccb404",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/addComment.js",
+      "sha256": "f1e5431cba374c103a614e1db06e197fb9c99feb0c09fb81617eb5941717a3ab",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/addComments.js",
+      "sha256": "7a421e7c608ac0ca7790fd17a1abc2e48367f56eb1f99d4de6eeaaef99d7590d",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/inheritInnerComments.js",
+      "sha256": "e4f19c43943fb5b6877396941ad43d5b8870fcdcf20ab741456d29f38b857b46",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/inheritLeadingComments.js",
+      "sha256": "31839b52f4d08f4a1e1dd91ce812c51e329b2f942840e683bfa5395a97b8fdd8",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/inheritsComments.js",
+      "sha256": "bdb71fca3509759b0d865d69f3245df126aa3d822748f0ecc8e716f28876a31f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/inheritTrailingComments.js",
+      "sha256": "33c5268d1904b88b29766c60324a2e5711628b0be643e25b3fd2b9b48fa430d3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/comments/removeComments.js",
+      "sha256": "0eef78919eccd6ae358620c4c11ed72f31ba302b3cf194143b45556e73c354f3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/constants/generated/index.js",
+      "sha256": "539fecb078ee358d5fe9c5a011237481589c829c28d7775d00675fd1e4d63ddb",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/constants/index.js",
+      "sha256": "299fe69d83a7611c257e86d8fa2ebaea69aa7291a3ab265cd20d3e36958050a4",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/ensureBlock.js",
+      "sha256": "d18069705c1be7f10c5e2c2123abdfdfd5182bea1b5c16903c5e5150bbac2262",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/gatherSequenceExpressions.js",
+      "sha256": "a5d59cdaa56e7c7a40e7bbb131417c19ac2dbd56948f41c410d90937a2948b2a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toBindingIdentifierName.js",
+      "sha256": "1b838848c87490d0b24ce4cd1d0f40619810e90cf69d8e6dae6b87642427e465",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toBlock.js",
+      "sha256": "6cee442fe41f7775d2086eff3fc3d1617c45c3958408c314824020ee262529ca",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toComputedKey.js",
+      "sha256": "c54a9b025a4c5e7ec4c9b93e9f2b795aa8a6f928e0de1793590f012c78e01b46",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toExpression.js",
+      "sha256": "6c836808e3deaf27abb812cdb8fa481c9e075ae1608c5fc4fef441b2742b1281",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toIdentifier.js",
+      "sha256": "d7cdc2be7b2f4fb21ee65727893880a33d18582bf6d01f7f24b9b6c4ecbf441c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toKeyAlias.js",
+      "sha256": "35ab0be1595ec7ba03a2c25e5ee865fa73656e50b7ea8a44867268a2b930f62f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toSequenceExpression.js",
+      "sha256": "be7b9a125dc7e2ac25181d766b1cf5c7cf176e09e682aa7f7b57b696c7fde825",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/toStatement.js",
+      "sha256": "af4719777970692f5a17a549a585eeb93c604cdd7697da3816deb52add4cee11",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/converters/valueToNode.js",
+      "sha256": "553b89b77a6d123fcfb1318f7d00261d2bcb1f1f9ace4007e54cbbeba70dd403",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/core.js",
+      "sha256": "9e93a0b84114f2e5f72e15bf18562dfd8ec84848d981e9677e20da682787cb1d",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/deprecated-aliases.js",
+      "sha256": "a5e38c38380667ea4573622ff0661e6bc9b98c967c68789463773d60f72e9852",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/experimental.js",
+      "sha256": "1ea71bade729a27a22217f93d9b465b5cbfef33b833840489daf5158c130e82c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/flow.js",
+      "sha256": "38b7051e26c448f4696a4c9a0e3c1ee539d23c34dd2fa3c5d1817bf922a415d3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/index.js",
+      "sha256": "7e8c2e0f299ba5e7871ed4667fc7a33256056917c7960d930c96f1f90bb95e0f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/jsx.js",
+      "sha256": "2454af3ab8ae6d43fd8d53fcb5043feaa1a4cbb34d341c34a7629cabf4d5aea8",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/misc.js",
+      "sha256": "606ea8b29f67f66939f04d6d362e7f7a154bad7ddaf749fcd37b7609e942daee",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/placeholders.js",
+      "sha256": "01152a0cefd7494a25b1a76a89294d89cfa8b59f3443baa5278d2a9d1932d3a4",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/typescript.js",
+      "sha256": "fbb7f546b449698e6615ffbde4e7649b9bda0c4621ad360fc2da7ecd8ed340d3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/definitions/utils.js",
+      "sha256": "75abf6f8c7a04776867a1c0891684c4a0e090743cd8a6dc9d127bc957888908f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/index.js",
+      "sha256": "21af18add84dbb64a624552e04abad89a40affacf701776d4a662aedef6accfd",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/appendToMemberExpression.js",
+      "sha256": "51af6c925e4f4e14331a4c54367ee5d394ba078383ca859e0bc581c43dc022bf",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/flow/removeTypeDuplicates.js",
+      "sha256": "a12aeb6657af4ad7f5eea9ac5f8cc684a687ca586616bd745254b10faeb86e98",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/inherits.js",
+      "sha256": "8fa7c6417ccadb35ec3900deb4daa612c186ba957b539ad0656c4cb7698b09c5",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/prependToMemberExpression.js",
+      "sha256": "1789396d148146e2685138e11edad51986c30d0f2c051071ac4c1da4408e01bc",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/removeProperties.js",
+      "sha256": "714f0cbd42d973ade613b6814c9a07bf8238535ce8c9b597b434a8b23e4d4b94",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/removePropertiesDeep.js",
+      "sha256": "ddcfeee97410e2b2aa35222224f0ff8edd89560f01188853dcc9cde1b2abdfb6",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/modifications/typescript/removeTypeDuplicates.js",
+      "sha256": "42bfd0042bb92172fac115f2e3ded4fa313a02557a4b70b6f11485fa527b56f9",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/retrievers/getAssignmentIdentifiers.js",
+      "sha256": "6790244265636511a227992e7dab908dad0a1029ff9a1503cd009e7fced08178",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/retrievers/getBindingIdentifiers.js",
+      "sha256": "2318058e37fb5116fec4a8e76a7a8ee0996d5ef75642b4a8d1f10b761eaa73da",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/retrievers/getFunctionName.js",
+      "sha256": "36ee7283e1ed17e87af9fd5fc64b5b6d7ab63ecb3a9d48814dbdc23060fd441c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/retrievers/getOuterBindingIdentifiers.js",
+      "sha256": "9d7e2c5923df3c7e51b4f75e29772a7f824a98395fe70a7ad0134b6ec812a954",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/traverse/traverse.js",
+      "sha256": "7d4292d3b498d77982806c864dda6f39f6b6f1cc758ba117b66cc0430d45986e",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/traverse/traverseFast.js",
+      "sha256": "ef4a51459c82a1b9471a55fb09bf763f8c6fa4000418256c78511e479161ac4e",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/utils/deprecationWarning.js",
+      "sha256": "862ddff494adab4e5e9000da2c44c373a76f54670489a79b590ac91264f72a7a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/utils/inherit.js",
+      "sha256": "2c9e7f2b7ce5a57441c4ced2077059d32fc41e38975c8f4a52b6723767d85e33",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/utils/react/cleanJSXElementLiteralChild.js",
+      "sha256": "595c06790b4cefa2e47ca3758eb51b9d2db1d5b230260d05a5f80fe777839d3d",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/utils/shallowEqual.js",
+      "sha256": "6ab4703ffc14fb106909ec9be593b6aa0d39e157995dc5b9ea7f8b0f1d85c15c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/buildMatchMemberExpression.js",
+      "sha256": "7ff24ec89331024cb6422d4d6ade44f4ade60116df4f6e3b6fd9485ece7f2c59",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/generated/index.js",
+      "sha256": "f2b78a20cc9fa7d3b83a60cb12253523262ad2f689f36456caf7ce72a2e307f9",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/is.js",
+      "sha256": "89ddaccb18dc3625cf702e8f66a33d909831b4dd93ac3590cd0ad399b24fb800",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isBinding.js",
+      "sha256": "2b64706bb281368be68016f12d62b4fe45de096c71645ba284604211aa8459e7",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isBlockScoped.js",
+      "sha256": "c35fefb463b241d03e0b83d42aec85159d1895d89aff9937b604d20f5cb55d02",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isImmutable.js",
+      "sha256": "b4663c9b9c8f11807f0eff92b31e03015201ebb42aedde754f9f94a154c97ea3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isLet.js",
+      "sha256": "3c75b0ff25ffbb6793ed34139b4679b0a7faa0c18c9137e01784703dd0466b6a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isNode.js",
+      "sha256": "d242dc73415c4647b3e88f559a5763572363ae01e478d7a1aa2e7d480bf096b1",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isNodesEquivalent.js",
+      "sha256": "c4908e3249f4e93cdaad3e7efa92277d0fd62cdefc1bc2c3cc18ad8c0ba5d569",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isPlaceholderType.js",
+      "sha256": "59c03db071add873f0ca6ff79745a665601a0ee8e28e6a620dee536461b1b7d2",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isReferenced.js",
+      "sha256": "992376883825ab5701ef51fb2960da07e96e67e76d45a557c5ab8ca00eb8ff0b",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isScope.js",
+      "sha256": "f97deafe49aaca76c24143e861038f1e69642462a37d8cfdb5c6d98c41fc9ad4",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isSpecifierDefault.js",
+      "sha256": "db7aa4126961faae630f403eeef141303433b2876f211e03c225eb42bfbbfeb2",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isType.js",
+      "sha256": "989abd2b9fd3d8eccd07747ce1b02b00394072772c5b9d9e6e0c7a06350ae181",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isValidES3Identifier.js",
+      "sha256": "3b140e2e1f8196b5512e39482ca86816e935f5da044a2bf98592f54c6aeb3243",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isValidIdentifier.js",
+      "sha256": "bd3786c08dfc34a4c3d7a91dead2eb4b5019feff9b9b5142be239dc131540b18",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/isVar.js",
+      "sha256": "90543c9b06bff6cb76a51bc683ae4a157be17894c207e9990c2392c14414810c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/matchesPattern.js",
+      "sha256": "faa0f46205a18caed21f64bfd188ddec38385ec4e0434d4a6b60416cd3121347",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/react/isCompatTag.js",
+      "sha256": "7e84ca002aa1b6a2f32c789fdffd270fe09cfcf77d6cb0e3a6293abc9b49f764",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/react/isReactComponent.js",
+      "sha256": "281f08ec2c69731afd438f59f338230ee86e1cc763227ddc4a9685cbc0ad8e7e",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/@babel/types/lib/validators/validate.js",
+      "sha256": "33812a6c26391ae424b121032b6c8817b2165bb03c368f0751d9e54c62031092",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/bin/semver.js",
+      "sha256": "bd6c871026985937dc945011fc54b74b47f5998154216d7b8d40d5ed782e4402",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/classes/comparator.js",
+      "sha256": "054202956430d63d5ff4599fae09760ce465b489e4f0b5ef5ce7cc7ac21157ac",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/classes/index.js",
+      "sha256": "3bb69280c2a788d0eb16f915bb9df4dbe812075182024c753dca2283bcea1b17",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/classes/range.js",
+      "sha256": "a6544485aa8575aa9854c67e2caa67726815de18a482d0ceb8a1003244de3bc1",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/classes/semver.js",
+      "sha256": "813b2c185512d30c9b931c2fed8140889d9d7490ceeeedc370da30337dc8ca57",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/clean.js",
+      "sha256": "4eadb0892844cf3ae295121a86163a66c73f89acd1b7f0b114ec115b4539512f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/cmp.js",
+      "sha256": "a63d74e87b73788e78e9ce0a4892b5333d6b809c0de88b31e4ed76cbf17f94b3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/coerce.js",
+      "sha256": "28a251c5ab210ddf9e97551b9f37a53329fcce91f0c3943dcbc02de1a1de915a",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/compare-build.js",
+      "sha256": "5ab651d5b40af289bd85c645a92b6d8cfe1a986dc413c797cfcc8d623d7c844c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/compare-loose.js",
+      "sha256": "07b6a3a1db0a5210ceb784c1708bd4679f3a94fc73a9c9eb349349e7070a6f78",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/compare.js",
+      "sha256": "d404b5aa48aaddc8a654c5da8fb7d4443404b7948589b21ac4b045d1cee4e34c",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/diff.js",
+      "sha256": "7a11fd39b987cdf06c65e928cb1aca49bec583feb86fb5c8fe47a6fd61d7de31",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/eq.js",
+      "sha256": "b6e30a7168e52723216fc163d300e2bbabf92ec0251f9ac5438bb6ccf57c8936",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/gt.js",
+      "sha256": "135523704aa48cd98834dd170ee9f74f0e68043b379f32d021db11e6304c5c93",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/gte.js",
+      "sha256": "991c5bbe48ecb210a562646872f05862ad9fc0d42186d85aa60bdc6fa323eb9d",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/inc.js",
+      "sha256": "952069fc8690b7d3af0fe9d55f7c54fe2ac067b48c5e74f6a54f9ce19a334493",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/lt.js",
+      "sha256": "1c897a9bc849320e2e9dc0f6c09555c01ee3ddf30734515d717b88ad7740ea25",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/lte.js",
+      "sha256": "3a8d0b1d00423f60cc7cb810b36ab77b61330831ad237dbe73eb5cecfa412800",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/major.js",
+      "sha256": "5c678480d882f511200fed2c16ec3847dfedb08a1d70328dc2f031d35d825276",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/minor.js",
+      "sha256": "1b051794f1713adec2a236517196691687c35f82e0b596ff3316a78b3cc10ae6",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/neq.js",
+      "sha256": "a662883751918822c162183b46b9e20d09489132f82686c92ab78bee67f3a127",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/parse.js",
+      "sha256": "29a69e15b6d02fe381d573f861881a89590e9d0f0f0ca740c5f85eaf0234c4ad",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/patch.js",
+      "sha256": "f02d3c1b059fe3d96ce124886f7eef321d381a95638fd3c4a8d5ccd8e76ffadd",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/prerelease.js",
+      "sha256": "baedbf503d5610ad041bfb56071efa48feb331ca278295c399537d35d3ffb593",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/rcompare.js",
+      "sha256": "84fa5e88adf08d15c993cac8cdec6d1a65045b7e95a9c55184230a7f807f4dc0",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/rsort.js",
+      "sha256": "6ec659ce3b6c2b173c719286caab04409adba046c0917874ec3b5e36ddfbc7e3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/satisfies.js",
+      "sha256": "8cf5e122b757251671ed6c9d9680904b71cd375845853f05312e608cf2cc2946",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/sort.js",
+      "sha256": "c2fe2d3ed0be8a4e9de8f02abdfd5d9c0d3bcc510d88e87af84185592882c4b8",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/truncate.js",
+      "sha256": "e145833a250311927c92f424f56498c52f1b7bb1271ce6afbf006db87773ff43",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/functions/valid.js",
+      "sha256": "0de7ea736cb7807179d46dfac09c830a9338e02b6a07db12d7040cde2def6025",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/index.js",
+      "sha256": "4b3e57d3d40e29e0706002eba113d09f35aea593578376bbeec83b777b9912ab",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/internal/constants.js",
+      "sha256": "38a112baf27ceca0260082ff26ac2fd7a9861cab1af12dd65e720277f68e6ce9",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/internal/debug.js",
+      "sha256": "8a9f420572260f3cf944463b5090d62a60f0730589dc23a7ec4ca25e2ee41bb3",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/internal/identifiers.js",
+      "sha256": "b4916b09dc7869ae0eb05e71c855c942a3a7365f7e6e89185d59a9e45a2451d7",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/internal/lrucache.js",
+      "sha256": "14d087c87da87b6f5c36fc4cdd7d2d14077874b14a68e20fce5b6138fa2ca34f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/internal/parse-options.js",
+      "sha256": "fdf51d0de8d5442c35a997ef58cd530d239ce206f961d14c5121354451b01d01",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/internal/re.js",
+      "sha256": "5833262888e2b5d843a69193f83c05e374818dbe55379b497819b5bf58e48cd8",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/preload.js",
+      "sha256": "edb6808911bebcb324b2df57e5c9935149e56984ff083b74c6cfe215f5b710ba",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/gtr.js",
+      "sha256": "8fadad28e36d28e93d498ac7ac20badba2a407312845eabc18e82e90a0732b19",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/intersects.js",
+      "sha256": "fe87ac5d3020010ad3ec00636dadbf0c669ff07d0f57e0a8165a8264f79a676f",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/ltr.js",
+      "sha256": "e5186fcc03018acf9be6d968755d4c49727aeb0d981d179eb568ae5fbe983038",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/max-satisfying.js",
+      "sha256": "e1a2c0d6144cc772cd20bbc8ecb9e8a3a4074e9172a3d8e794838b591cdeb416",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/min-satisfying.js",
+      "sha256": "2681abf54098aa670f12826b76a6ec77a2441186ae4243afde3be8ae4908f7ca",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/min-version.js",
+      "sha256": "fefba0a88c2bf74d5cede504b5ae50a8dc3edfd69cf0174a491e2cf3e442614b",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/outside.js",
+      "sha256": "3a2b0b23593d2f49419c06af2af75450cab103b0c25d665d48fe5bca495a21ca",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/simplify.js",
+      "sha256": "7b78581c13322bc68ece2088685386b2a9b51c15b94d0a2063bdf2546bd41934",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/subset.js",
+      "sha256": "ceb9eb6ed5bfc6c7ac7af7f47e5c3535444a4e66a0e2b58cdad4bd02a35d454d",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/to-comparators.js",
+      "sha256": "6c5e966210cff270fa2850668aaf8460fac7759f8d99f282521ef7a78f4564e9",
+      "before": false,
+      "after": false
+    },
+    {
+      "path": "node_modules/semver/ranges/valid.js",
+      "sha256": "5ef6f995af801868925940cf8df5735d565ebabb090b068695cae65218bcd3ac",
+      "before": false,
+      "after": false
+    }
+  ],
+  "restoration": {
+    "selectedPaths": [
+      "control-flow-flattening/codenet_p00025_1.obf.js",
+      "control-flow-flattening/codenet_p00032_1.obf.js"
+    ],
+    "rows": [
+      {
+        "path": "control-flow-flattening/codenet_p00025_1.obf.js",
+        "status": "RESTORED",
+        "appliedStages": [
+          "STRUCTURE"
+        ],
+        "limitations": [],
+        "validation": {
+          "original": {
+            "parse": {
+              "valid": true
+            },
+            "bytes": 1357,
+            "identifierCount": 43,
+            "hexIdentifierCount": 0,
+            "hexIdRatio": 0,
+            "score": 0.39999999999999997,
+            "signals": [
+              "CONTROL_FLOW_FLATTENING",
+              "ESCAPED_LITERAL"
+            ]
+          },
+          "restored": {
+            "parse": {
+              "valid": true
+            },
+            "bytes": 887,
+            "identifierCount": 72,
+            "hexIdentifierCount": 0,
+            "hexIdRatio": 0,
+            "score": 0,
+            "signals": []
+          },
+          "byteDelta": -470,
+          "byteRatio": 0.653647752394989,
+          "identifierDelta": 29,
+          "hexIdentifierDelta": 0,
+          "scoreDelta": -0.39999999999999997,
+          "addedSignals": [],
+          "removedSignals": [
+            "CONTROL_FLOW_FLATTENING",
+            "ESCAPED_LITERAL"
+          ],
+          "capability": {
+            "before": [],
+            "after": null,
+            "status": "NOT_APPLICABLE",
+            "preserved": [],
+            "lost": [],
+            "discovered": [],
+            "comparisons": [],
+            "limitations": []
+          }
+        },
+        "stageResults": [
+          {
+            "stage": "STRUCTURE",
+            "status": "COMPLETED",
+            "changed": true
+          },
+          {
+            "stage": "STRING",
+            "status": "NO_CHANGE",
+            "changed": false
+          },
+          {
+            "stage": "NORMALIZE",
+            "status": "NO_CHANGE",
+            "changed": false
+          }
+        ]
+      },
+      {
+        "path": "control-flow-flattening/codenet_p00032_1.obf.js",
+        "status": "RESTORED",
+        "appliedStages": [
+          "STRUCTURE"
+        ],
+        "limitations": [],
+        "validation": {
+          "original": {
+            "parse": {
+              "valid": true
+            },
+            "bytes": 919,
+            "identifierCount": 37,
+            "hexIdentifierCount": 0,
+            "hexIdRatio": 0,
+            "score": 0.39999999999999997,
+            "signals": [
+              "CONTROL_FLOW_FLATTENING",
+              "ESCAPED_LITERAL"
+            ]
+          },
+          "restored": {
+            "parse": {
+              "valid": true
+            },
+            "bytes": 654,
+            "identifierCount": 56,
+            "hexIdentifierCount": 0,
+            "hexIdRatio": 0,
+            "score": 0,
+            "signals": []
+          },
+          "byteDelta": -265,
+          "byteRatio": 0.7116430903155604,
+          "identifierDelta": 19,
+          "hexIdentifierDelta": 0,
+          "scoreDelta": -0.39999999999999997,
+          "addedSignals": [],
+          "removedSignals": [
+            "CONTROL_FLOW_FLATTENING",
+            "ESCAPED_LITERAL"
+          ],
+          "capability": {
+            "before": [],
+            "after": null,
+            "status": "NOT_APPLICABLE",
+            "preserved": [],
+            "lost": [],
+            "discovered": [],
+            "comparisons": [],
+            "limitations": []
+          }
+        },
+        "stageResults": [
+          {
+            "stage": "STRUCTURE",
+            "status": "COMPLETED",
+            "changed": true
+          },
+          {
+            "stage": "STRING",
+            "status": "NO_CHANGE",
+            "changed": false
+          },
+          {
+            "stage": "NORMALIZE",
+            "status": "NO_CHANGE",
+            "changed": false
+          }
+        ]
+      }
+    ],
+    "unresolved": [],
+    "originalUnchanged": [
+      true,
+      true
+    ],
+    "durationMs": 45,
+    "budgetExceeded": false,
+    "outputRoot": "/private/tmp/whs-cff-restore-1XMv7v"
+  },
+  "limitations": [
+    "Installed dependency controls are not a representative benign holdout.",
+    "Single cold sequential timing run; no production latency claim.",
+    "Existing restoration can evaluate decoder fragments in isolated-vm. No dataset entrypoint executed.",
+    "RESTORED is a pipeline status, not proof of semantic equivalence or threat detection."
+  ]
+}

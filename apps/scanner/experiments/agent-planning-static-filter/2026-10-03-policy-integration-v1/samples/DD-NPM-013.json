@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-013",
+  "subject": {
+    "sampleId": "DD-NPM-013",
+    "ecosystem": "npm",
+    "packageName": "napi-postinstall",
+    "packageVersion": "0.3.1"
+  },
+  "artifactSha256": "850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+  "status": "COMPLETED",
+  "filterStatus": "NO_ESCALATION_SIGNAL",
+  "triggerReason": "NO_THREAT_FINDING",
+  "tier3Status": "SKIPPED",
+  "runnerCalls": 0,
+  "providerRequests": 0,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 16,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 1767
+}

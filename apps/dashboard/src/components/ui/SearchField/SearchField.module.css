@@ -1,0 +1,35 @@
+.field {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-cell);
+  background: var(--color-fill);
+  color: var(--color-text-dim);
+}
+
+.field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-strong);
+  font: inherit;
+  font-size: 13px;
+}
+
+.field input::placeholder {
+  color: var(--color-text-dim);
+}
+
+.field input:focus {
+  outline: none;
+}
+
+.field:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}

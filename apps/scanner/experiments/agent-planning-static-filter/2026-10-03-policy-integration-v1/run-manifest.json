@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "OPERATING_INTEGRATION_NOT_ACCURACY",
+  "createdAt": "2026-10-03T02:51:45.735Z",
+  "sampleCount": 15,
+  "sourceManifest": "guarddog-pilot-selection/guarddog-pilot-samples.json",
+  "sourceManifestSha256": "1d6302137bc0de1189b07908918e7b9bc6af630cc4b2f7ee051f252e7db37d0d",
+  "samples": [
+    {
+      "sampleId": "DD-NPM-001",
+      "ecosystem": "npm",
+      "packageName": "aesdecryptor",
+      "packageVersion": "1.0.0"
+    },
+    {
+      "sampleId": "DD-NPM-002",
+      "ecosystem": "npm",
+      "packageName": "@add-wallet-exchange/import-type",
+      "packageVersion": "1.0.0"
+    },
+    {
+      "sampleId": "DD-NPM-003",
+      "ecosystem": "npm",
+      "packageName": "@ton-wallet/create",
+      "packageVersion": "14.0.3"
+    },
+    {
+      "sampleId": "DD-NPM-004",
+      "ecosystem": "npm",
+      "packageName": "@solana-launchpads/sdk",
+      "packageVersion": "1.0.12"
+    },
+    {
+      "sampleId": "DD-NPM-005",
+      "ecosystem": "npm",
+      "packageName": "@typescript_eslinter/eslint",
+      "packageVersion": "1.5.0"
+    },
+    {
+      "sampleId": "DD-NPM-006",
+      "ecosystem": "npm",
+      "packageName": "@walletwave/backend",
+      "packageVersion": "1.1.0"
+    },
+    {
+      "sampleId": "DD-NPM-007",
+      "ecosystem": "npm",
+      "packageName": "bootstrap-setcolors",
+      "packageVersion": "1.9.16"
+    },
+    {
+      "sampleId": "DD-NPM-008",
+      "ecosystem": "npm",
+      "packageName": "@discord-external/activity-iframe-sdk",
+      "packageVersion": "2.3.2"
+    },
+    {
+      "sampleId": "DD-NPM-009",
+      "ecosystem": "npm",
+      "packageName": "airbnb-babel",
+      "packageVersion": "1.0.0"
+    },
+    {
+      "sampleId": "DD-NPM-010",
+      "ecosystem": "npm",
+      "packageName": "@cloudplatform-single-spa/installations",
+      "packageVersion": "99.99.99"
+    },
+    {
+      "sampleId": "DD-NPM-011",
+      "ecosystem": "npm",
+      "packageName": "@solana/web3.js",
+      "packageVersion": "1.95.7"
+    },
+    {
+      "sampleId": "DD-NPM-012",
+      "ecosystem": "npm",
+      "packageName": "node-ipc",
+      "packageVersion": "12.0.1"
+    },
+    {
+      "sampleId": "DD-NPM-013",
+      "ecosystem": "npm",
+      "packageName": "napi-postinstall",
+      "packageVersion": "0.3.1"
+    },
+    {
+      "sampleId": "DD-NPM-014",
+      "ecosystem": "npm",
+      "packageName": "discord-bot-server",
+      "packageVersion": "0.1.2"
+    },
+    {
+      "sampleId": "DD-NPM-015",
+      "ecosystem": "npm",
+      "packageName": "@teale.io/eslint-config",
+      "packageVersion": "1.8.15"
+    }
+  ],
+  "runtime": {
+    "node": "v26.4.0",
+    "requiredNode": ">=24.0.0 <25",
+    "platform": "darwin/arm64",
+    "filterRuleVersion": "0.4.0",
+    "planningSchemaVersion": "0.1.0",
+    "guarddogTool": "3.1.0",
+    "semgrepTool": "1.172.0",
+    "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1"
+  },
+  "mocks": {
+    "registryInput": true,
+    "download": true,
+    "extraction": true,
+    "llmProvider": true,
+    "policyTransport": true,
+    "historyStorage": true,
+    "evidenceStorage": true,
+    "artifactCleanup": true
+  },
+  "safety": {
+    "externalLlmCalls": 0,
+    "externalPolicyCalls": 0,
+    "tier2GptMode": "off",
+    "packageInstall": false,
+    "lifecycleExecution": false,
+    "packageImportOrEntryPointExecution": false,
+    "analyzerNetwork": "DOCKER_NETWORK_NONE"
+  },
+  "preflight": {
+    "guardDog": {
+      "verified": true,
+      "mode": "VERIFIED_NETWORK_NONE",
+      "mechanism": "DOCKER_NETWORK_NONE",
+      "imageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+      "runtimeVersion": "29.2.1",
+      "policyVersion": "1.0.0",
+      "mountPolicy": "SINGLE_READ_ONLY_PACKAGE_ROOT",
+      "rootFilesystem": "READ_ONLY",
+      "resourceLimits": {
+        "pids": 64,
+        "memory": "512m",
+        "cpus": "1",
+        "tmpfsSize": "64m",
+        "timeoutMs": 120000
+      }
+    },
+    "customRule": {
+      "verified": true,
+      "mode": "VERIFIED_NETWORK_NONE",
+      "imageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+      "semgrepVersion": "1.172.0",
+      "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+      "runtimeVersion": "29.2.1",
+      "policyVersion": "1.0.0",
+      "environmentVersion": "1.0.0",
+      "mountPolicy": "SINGLE_READ_ONLY_PACKAGE_ROOT_IMAGE_RULESET",
+      "rootFilesystem": "READ_ONLY",
+      "resourceLimits": {
+        "pids": 64,
+        "memory": "512m",
+        "cpus": "1",
+        "tmpfsSize": "64m",
+        "timeoutMs": 120000
+      }
+    }
+  }
+}

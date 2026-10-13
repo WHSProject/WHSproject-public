@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/agent-analysis-request.v0.3.schema.json",
+  "title": "AgentAnalysisRequestV0_3ScannerFindingProjection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request", "subject", "packageContext", "findings", "atomicEvidences", "analysisPolicy", "initialCodeSlices", "analysisTargets", "toolResponseCatalog", "missingData"],
+  "properties": {
+    "request": { "$ref": "#/$defs/request" },
+    "subject": { "$ref": "agent-analysis-request.schema.json#/$defs/subject" },
+    "packageContext": { "$ref": "agent-analysis-request.schema.json#/$defs/packageContext" },
+    "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } },
+    "atomicEvidences": { "type": "array", "items": { "$ref": "agent-analysis-request.schema.json#/$defs/atomicEvidenceWrapper" } },
+    "analysisPolicy": { "$ref": "agent-analysis-request.schema.json#/$defs/analysisPolicy" },
+    "initialCodeSlices": { "type": "array", "items": { "$ref": "agent-analysis-request.schema.json#/$defs/codeSlice" } },
+    "analysisTargets": {
+      "type": "array", "uniqueItems": true,
+      "items": { "enum": ["ENV_OR_SENSITIVE_FILE_TO_NETWORK", "NETWORK_DOWNLOAD_TO_FILE_WRITE_TO_PROCESS_EXECUTION", "LIFECYCLE_TO_PROCESS_EXECUTION"] }
+    },
+    "toolResponseCatalog": { "type": "array", "items": { "$ref": "agent-analysis-request.schema.json#/$defs/toolCapability" } },
+    "missingData": { "type": "array", "items": { "$ref": "agent-analysis-request.schema.json#/$defs/missingData" } }
+  },
+  "$defs": {
+    "request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["analysisRequestId", "requestType", "inputProfile", "schemaVersion", "sampleId", "createdAt"],
+      "properties": {
+        "analysisRequestId": { "type": "string", "minLength": 1 },
+        "requestType": { "const": "MALICIOUS_CODE_ANALYSIS" },
+        "inputProfile": { "enum": ["CODE_ONLY", "CODE_FINDING", "CODE_FINDING_EVIDENCE"] },
+        "schemaVersion": { "const": "0.3.0" },
+        "sampleId": { "type": "string", "pattern": "^SAMPLE-[0-9]{3}$" },
+        "createdAt": { "oneOf": [{ "type": "string", "format": "date-time" }, { "type": "null" }] }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["findingId", "analyzer", "analyzerVersion", "ruleId", "type", "message", "data"],
+      "properties": {
+        "findingId": { "type": "string", "minLength": 1 },
+        "analyzer": { "enum": ["guarddog", "metadata", "custom-rule"] },
+        "analyzerVersion": { "type": "string", "minLength": 1 },
+        "ruleId": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "message": { "type": "string" },
+        "location": { "$ref": "#/$defs/findingLocation" },
+        "data": { "type": "object" }
+      }
+    },
+    "findingLocation": {
+      "type": "object", "additionalProperties": false, "required": ["type"],
+      "properties": {
+        "type": { "enum": ["SOURCE_FILE", "METADATA"] },
+        "path": { "type": "string", "minLength": 1 },
+        "startLine": { "type": "integer", "minimum": 1 },
+        "startColumn": { "type": "integer", "minimum": 1 },
+        "endLine": { "type": "integer", "minimum": 1 },
+        "endColumn": { "type": "integer", "minimum": 1 },
+        "jsonPointer": { "type": "string" },
+        "representation": { "enum": ["ORIGINAL", "DEOBFUSCATED"] },
+        "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+        "derivedFrom": {
+          "type": "object", "additionalProperties": false, "required": ["path"],
+          "properties": { "path": { "type": "string", "minLength": 1 } }
+        }
+      }
+    }
+  }
+}

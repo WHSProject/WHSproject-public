@@ -1,0 +1,276 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--shell-gap);
+}
+
+.panel {
+  min-width: 0;
+  padding: var(--panel-pad);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--color-surface);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ── 탭 ── */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+}
+
+.tab {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-text-strong);
+}
+
+.tabActive {
+  background: var(--color-fill);
+  color: var(--color-text-strong);
+}
+
+/* ── 필터 ── */
+
+.filters {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--shell-gap);
+  margin-bottom: 8px;
+}
+
+.field {
+  display: grid;
+  gap: 5px;
+  color: var(--color-text-faint);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.control {
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-cell);
+  background: var(--color-surface);
+  color: var(--color-text-strong);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ── 표 ── */
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table th {
+  padding: 10px 12px;
+  background: var(--color-fill);
+  color: var(--color-text-faint);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 13.5px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table td:first-child {
+  border-radius: var(--radius-cell) 0 0 var(--radius-cell);
+}
+
+.table td:last-child {
+  border-radius: 0 var(--radius-cell) var(--radius-cell) 0;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.muted {
+  color: var(--color-text-dim);
+}
+
+.packageName {
+  color: var(--color-text-strong);
+  font-weight: 600;
+}
+
+.version {
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.empty {
+  margin: 0;
+  padding: 22px 0;
+  color: var(--color-text-dim);
+  font-size: 12.5px;
+}
+
+/* ── 페이지 이동 ── */
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-divider);
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pager a,
+.pager [aria-disabled] {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.pager a {
+  background: var(--color-fill);
+  color: var(--color-text-strong);
+  text-decoration: none;
+}
+
+.pager a:hover {
+  background: var(--color-fill-soft);
+}
+
+.pager [aria-disabled] {
+  color: var(--color-text-faint);
+}
+
+/* ── 결과 색상 ── */
+
+.table .delivered { color: var(--decision-accept); font-weight: 600; }
+.table .blocked { color: var(--decision-reject); font-weight: 600; }
+.table .neutral { color: var(--color-text-muted); font-weight: 600; }
+
+/* ── 의존성 역추적 ── */
+
+.heading,
+.subHeading {
+  margin: 0 0 4px;
+  color: var(--color-text-strong);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subHeading {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: var(--color-text-dim);
+  font-size: 12px;
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.rootLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rootLink:hover {
+  text-decoration: underline;
+}
+
+.clickableRow {
+  cursor: pointer;
+}
+
+.table .clickableRow:hover td,
+.table .selected td {
+  background: var(--color-fill-soft);
+}
+
+.depTable {
+  min-width: 520px;
+}
+
+/* integrity는 길어서 줄여 보여 주고, 전체 값은 title로 봅니다. */
+.integrity {
+  display: inline-block;
+  max-width: 28ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+/* ── 반응형 ── */
+
+@media (max-width: 760px) {
+  .panel {
+    padding: 20px 16px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  .filters > :first-child {
+    flex-basis: 100%;
+  }
+}
+
+.pageHeading h1 { margin: 0; color: var(--color-text-strong); font-size: 30px; line-height: 40px; }
+.pageHeading p { margin: 4px 0 0; color: var(--color-text-muted); font-size: 13px; line-height: 24px; }
+
+.tabs { gap: 24px; padding: 0; border: 0; border-bottom: 1px solid var(--color-border); border-radius: 0; background: transparent; }
+.tab { padding: 10px 0 12px; border-radius: 0; border-bottom: 2px solid transparent; }
+.tabActive { border-bottom-color: var(--color-accent); background: transparent; color: var(--color-accent); }

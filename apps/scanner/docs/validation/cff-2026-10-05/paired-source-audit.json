@@ -1,0 +1,3370 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-05T12:28:27.222Z",
+  "node": "v24.18.0",
+  "method": "paired-source AST comparison, independent of production detector; observational subclassification",
+  "runnerSha256": "bbd4bbb1fc3059b5fdd6c91d345f3564ac4275a3bd145a3ed69861db81480edf",
+  "predictionsSha256": "f531db9d5270fad2fdf7ede895076c902c765cc86135fdcead84c541a0dadc49",
+  "predictionImplementation": {
+    "src/analyzers/obfuscation/detector.ts": "f4332864d200675fc577bbc05831b26dfcab29e1914419f065c8b964c4ec3ac0",
+    "src/analyzers/obfuscation/static-order-dispatch.ts": "d5b0aeb033917a6d861ce55eb1f3416c236e7fa2d1e992ae98284a3fe5fc1340",
+    "src/analyzers/obfuscation/helper-analysis.ts": "968636270dd857c1563ea16a37b4352e78a03f60f1c470018c963763018a477a",
+    "src/analyzers/obfuscation/structure-quality.ts": "acc46de569272db61a63bc8e33c5284167464442ccfda819bc2a9a25d6b05711",
+    "src/analyzers/obfuscation/structure-restorer.ts": "ab79ccd2ab16b4ace1f441b78bd8465351e7f5d15c0b9e7faa7ad4d41531200b",
+    "src/analyzers/obfuscation/restore.pipeline.ts": "f1676e8b6728224e14dafcb08f9c6c8ba66a8282bb2a4ca1b36dc947f5150b73",
+    "src/analyzers/obfuscation/features.ts": "46b412c946fa1f083f596cd45faef541925b68e4262cbe3224aee6d2ae0655ae",
+    "dist/analyzers/obfuscation/detector.js": "b7958d8cc8ba9495bcb54331782aa06d2a8ca70800d3449931633a6075110fc1",
+    "dist/analyzers/obfuscation/static-order-dispatch.js": "ae8cc3d9123378568727e4a4bebd0f685a1b0d59bb508b17348fc3679889678c"
+  },
+  "samplesExecuted": false,
+  "productionDetectorExecuted": false,
+  "limitations": [
+    "Retrospective audit of a previously inspected local subset, not blinded external validation.",
+    "HELPER_ONLY means introduced used forwarding helpers without a matched dispatcher; not block-level flattening.",
+    "DISPATCHER is structural evidence, not semantic equivalence or successful restoration.",
+    "SURFACE_ONLY is exact paired AST equality under documented narrow normalization, not a global no-obfuscation claim.",
+    "Original hashes are recorded now; no upstream archive hash verification is performed here.",
+    "Candidate predictions are rejoined from the saved complete run, not a new scan."
+  ],
+  "summary": {
+    "HELPER_ONLY": {
+      "files": 23,
+      "baselineCandidates": 16,
+      "currentCandidates": 16
+    },
+    "DISPATCHER": {
+      "files": 11,
+      "baselineCandidates": 9,
+      "currentCandidates": 11
+    },
+    "SURFACE_ONLY": {
+      "files": 6,
+      "baselineCandidates": 0,
+      "currentCandidates": 0
+    }
+  },
+  "rows": [
+    {
+      "path": "control-flow-flattening/codenet_p00002_1.obf.js",
+      "originalSha256": "2778a8d5756d5817302b725a459af70b5aff152c7ec4f2d57a8c553a3ef4cee5",
+      "obfuscatedSha256": "86479eaacce1ef22fdde43deae0b750c4da8e5f4fa493da623e3affc9afd9a72",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "SRyjwG",
+            "key": "soGcr",
+            "line": 5,
+            "kind": "+",
+            "callLines": [
+              15
+            ],
+            "definition": "'soGcr': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "SRyjwG",
+            "key": "GjCnd",
+            "line": 8,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              15,
+              15
+            ],
+            "definition": "'GjCnd': function (callee, param1) {\n            return callee(param1);\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00003_1.obf.js",
+      "originalSha256": "f74da57e41c7d0fbed057ddd076842ede7e0e73e671ac531195b77087cf786ab",
+      "obfuscatedSha256": "37c785391db944ed59d29b45821beb4b7978155b86996dcf3a84d5878a028b96",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "amIKFv",
+            "key": "DEsOU",
+            "line": 5,
+            "kind": ">",
+            "callLines": [
+              26
+            ],
+            "definition": "'DEsOU': function (x, y) {\n            return x > y;\n        }"
+          },
+          {
+            "object": "amIKFv",
+            "key": "IyKbx",
+            "line": 8,
+            "kind": "<",
+            "callLines": [
+              29
+            ],
+            "definition": "'IyKbx': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "amIKFv",
+            "key": "LpVjo",
+            "line": 12,
+            "kind": "*",
+            "callLines": [
+              58
+            ],
+            "definition": "'LpVjo': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "amIKFv",
+            "key": "uSpeG",
+            "line": 15,
+            "kind": "===",
+            "callLines": [
+              64
+            ],
+            "definition": "'uSpeG': function (x, y) {\n            return x === y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 22,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "JPrFHF[xpEnkO++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "order": [
+              "0",
+              "1",
+              "4",
+              "2",
+              "3"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          },
+          {
+            "line": 44,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "nuFwVu[JpFozu++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "order": [
+              "7",
+              "6",
+              "0",
+              "2",
+              "5",
+              "3",
+              "1",
+              "4"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00005_1.obf.js",
+      "originalSha256": "90a767c29bbe5d3506799734cdfc057ebb62c99a2e5ebedfa91f3696a4f9bfb4",
+      "obfuscatedSha256": "e5d50c07a5d12fc7b47d7780432b6825777df16774bf9465b7048aa16f64c5ea",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "niTEcc",
+            "key": "etXvU",
+            "line": 8,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              14,
+              14
+            ],
+            "definition": "'etXvU': function (callee, param1, param2) {\n            return callee(param1, param2);\n        }"
+          },
+          {
+            "object": "nrGgiv",
+            "key": "hXsoQ",
+            "line": 18,
+            "kind": "!==",
+            "callLines": [
+              28
+            ],
+            "definition": "'hXsoQ': function (x, y) {\n            return x !== y;\n        }"
+          },
+          {
+            "object": "nrGgiv",
+            "key": "FqCas",
+            "line": 21,
+            "kind": "<",
+            "callLines": [
+              29
+            ],
+            "definition": "'FqCas': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "nrGgiv",
+            "key": "AkBDU",
+            "line": 24,
+            "kind": "===",
+            "callLines": [
+              34
+            ],
+            "definition": "'AkBDU': function (x, y) {\n            return x === y;\n        }"
+          },
+          {
+            "object": "MBlCpG",
+            "key": "owlPL",
+            "line": 42,
+            "kind": "*",
+            "callLines": [
+              50,
+              50
+            ],
+            "definition": "'owlPL': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "MBlCpG",
+            "key": "paDfs",
+            "line": 45,
+            "kind": "/",
+            "callLines": [
+              50
+            ],
+            "definition": "'paDfs': function (x, y) {\n            return x / y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00006_1.obf.js",
+      "originalSha256": "e16e8e9ba16cb6fb7afad6d9a1614d336a978e40dca84b3115367379689da42b",
+      "obfuscatedSha256": "fc0a7aa33124af9e69d09ece061c6a12142e0fa85e2b989936fd448e87cc1390",
+      "classification": "SURFACE_ONLY",
+      "equalAfterNormalization": true,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00007_1.obf.js",
+      "originalSha256": "a5ded6e13f9e4a70f81d86428aae1ecdb9722a145bfee7eb5cb2b66eb7a085b1",
+      "obfuscatedSha256": "52cff1217b456f8676695f7598d0e81b63eb35b1ac81445ca5223e15d72c5da4",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "hZMqpn",
+            "key": "ewdsS",
+            "line": 3,
+            "kind": "<",
+            "callLines": [
+              17
+            ],
+            "definition": "'ewdsS': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "hZMqpn",
+            "key": "MbgdR",
+            "line": 6,
+            "kind": "-",
+            "callLines": [
+              17
+            ],
+            "definition": "'MbgdR': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "hZMqpn",
+            "key": "DtKVY",
+            "line": 9,
+            "kind": "*",
+            "callLines": [
+              18,
+              18
+            ],
+            "definition": "'DtKVY': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "hZMqpn",
+            "key": "MoRxf",
+            "line": 12,
+            "kind": "/",
+            "callLines": [
+              18
+            ],
+            "definition": "'MoRxf': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "yCKSeV",
+            "key": "mClDh",
+            "line": 30,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              34
+            ],
+            "definition": "'mClDh': function (callee) {\n            return callee();\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00008_1.obf.js",
+      "originalSha256": "d1eaceb32c7dc0c01024f8cb6e9ce0acc1c6a89576f0abacfe43bd6468b26f9a",
+      "obfuscatedSha256": "59820cef84b8c6054de0efe0b0a3db6e0c75dc57152584c711da8a13391444a5",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "yGAZkr",
+            "key": "bLpUh",
+            "line": 16,
+            "kind": "<",
+            "callLines": [
+              26
+            ],
+            "definition": "'bLpUh': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "yGAZkr",
+            "key": "HIeir",
+            "line": 19,
+            "kind": "-",
+            "callLines": [
+              27
+            ],
+            "definition": "'HIeir': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "yGAZkr",
+            "key": "iypKR",
+            "line": 22,
+            "kind": "<=",
+            "callLines": [
+              27
+            ],
+            "definition": "'iypKR': function (x, y) {\n            return x <= y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00009_1.obf.js",
+      "originalSha256": "2d38a5129a5f56c7d0bacc23eb366c066c7329f701ff254c69ef47cfe9b9d5f4",
+      "obfuscatedSha256": "bf75800fb329381d329251ab35976a306a7cf5b2243b37853375c7f914228b7f",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "HiJeDU",
+            "key": "nhOyI",
+            "line": 4,
+            "kind": "<",
+            "callLines": [
+              17
+            ],
+            "definition": "'nhOyI': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "HiJeDU",
+            "key": "jigRh",
+            "line": 7,
+            "kind": "<",
+            "callLines": [
+              19
+            ],
+            "definition": "'jigRh': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "HiJeDU",
+            "key": "ZrrMB",
+            "line": 10,
+            "kind": "==",
+            "callLines": [
+              20
+            ],
+            "definition": "'ZrrMB': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "HiJeDU",
+            "key": "rYfMK",
+            "line": 13,
+            "kind": "%",
+            "callLines": [
+              20
+            ],
+            "definition": "'rYfMK': function (x, y) {\n            return x % y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00010_1.obf.js",
+      "originalSha256": "4f350edbd05e9c84d8d281fa3bcd0f767c5ec5de51d2e22f57296bb0e91df50f",
+      "obfuscatedSha256": "de8aae315f67906f29f2968755c9419f4bb54c441f4114507395041d9b51506a",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "jFrHTQ",
+            "key": "BAWiN",
+            "line": 3,
+            "kind": "==",
+            "callLines": [
+              74
+            ],
+            "definition": "'BAWiN': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "Lhiic",
+            "line": 6,
+            "kind": "*",
+            "callLines": [
+              75,
+              75,
+              75
+            ],
+            "definition": "'Lhiic': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "EVUKv",
+            "line": 9,
+            "kind": "*",
+            "callLines": [
+              75,
+              75,
+              75,
+              75
+            ],
+            "definition": "'EVUKv': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "LCpZp",
+            "line": 12,
+            "kind": "/",
+            "callLines": [
+              75
+            ],
+            "definition": "'LCpZp': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "woHVb",
+            "line": 15,
+            "kind": "-",
+            "callLines": [
+              75,
+              75,
+              75,
+              75
+            ],
+            "definition": "'woHVb': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "HsHsI",
+            "line": 18,
+            "kind": "+",
+            "callLines": [
+              75
+            ],
+            "definition": "'HsHsI': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "SBfuT",
+            "line": 21,
+            "kind": "-",
+            "callLines": [
+              75,
+              75,
+              75
+            ],
+            "definition": "'SBfuT': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "EDdaD",
+            "line": 24,
+            "kind": "+",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'EDdaD': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "iScZu",
+            "line": 27,
+            "kind": "-",
+            "callLines": [
+              75,
+              75,
+              75
+            ],
+            "definition": "'iScZu': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "vgrrF",
+            "line": 30,
+            "kind": "*",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'vgrrF': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "QnrnD",
+            "line": 33,
+            "kind": "-",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'QnrnD': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "BMOTR",
+            "line": 36,
+            "kind": "*",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'BMOTR': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "oflsD",
+            "line": 39,
+            "kind": "*",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'oflsD': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "oVTZP",
+            "line": 42,
+            "kind": "-",
+            "callLines": [
+              75,
+              75,
+              75,
+              75
+            ],
+            "definition": "'oVTZP': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "aiIYe",
+            "line": 45,
+            "kind": "-",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'aiIYe': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "mnsYl",
+            "line": 48,
+            "kind": "+",
+            "callLines": [
+              75,
+              75
+            ],
+            "definition": "'mnsYl': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "jybbf",
+            "line": 51,
+            "kind": "-",
+            "callLines": [
+              75
+            ],
+            "definition": "'jybbf': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "SyHXJ",
+            "line": 54,
+            "kind": "-",
+            "callLines": [
+              75
+            ],
+            "definition": "'SyHXJ': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "JsCxQ",
+            "line": 57,
+            "kind": "-",
+            "callLines": [
+              75
+            ],
+            "definition": "'JsCxQ': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "tyRpZ",
+            "line": 60,
+            "kind": "*",
+            "callLines": [
+              75
+            ],
+            "definition": "'tyRpZ': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "sxiDk",
+            "line": 63,
+            "kind": "-",
+            "callLines": [
+              75
+            ],
+            "definition": "'sxiDk': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "GrWjg",
+            "line": 66,
+            "kind": "-",
+            "callLines": [
+              75
+            ],
+            "definition": "'GrWjg': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jFrHTQ",
+            "key": "lkJEN",
+            "line": 69,
+            "kind": "*",
+            "callLines": [
+              75
+            ],
+            "definition": "'lkJEN': function (x, y) {\n            return x * y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00011_1.obf.js",
+      "originalSha256": "6de14393a5bdc0c3d5533721e72284bbae3d9b98ddc006088e387067796fe35b",
+      "obfuscatedSha256": "71b959446c33f8be2be5eac8c2b685bc110a0406e1d80930a39e3db3c072a6ca",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "ShEMsv",
+            "key": "EBHXp",
+            "line": 16,
+            "kind": "==",
+            "callLines": [
+              20,
+              22
+            ],
+            "definition": "'EBHXp': function (x, y) {\n                return x == y;\n            }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00012_1.obf.js",
+      "originalSha256": "28b04e04ef70e2140584cfaf8c6a58afa52b37c8f01f0d9c3ba3e07c041a9bd5",
+      "obfuscatedSha256": "57d5088b1991dcdd5af5cf0c804fbe6480a26c4cf613fe7803123f176aabad3f",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "YxPEnm",
+            "key": "utUIK",
+            "line": 3,
+            "kind": "-",
+            "callLines": [
+              40,
+              40,
+              40
+            ],
+            "definition": "'utUIK': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "jAVIq",
+            "line": 6,
+            "kind": "-",
+            "callLines": [
+              40,
+              40,
+              40
+            ],
+            "definition": "'jAVIq': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "YBiGb",
+            "line": 9,
+            "kind": "*",
+            "callLines": [
+              40,
+              40,
+              40
+            ],
+            "definition": "'YBiGb': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "BJWwH",
+            "line": 12,
+            "kind": "-",
+            "callLines": [
+              40,
+              40
+            ],
+            "definition": "'BJWwH': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "fEwnF",
+            "line": 15,
+            "kind": "-",
+            "callLines": [
+              40,
+              40
+            ],
+            "definition": "'fEwnF': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "RJoMi",
+            "line": 18,
+            "kind": "*",
+            "callLines": [
+              40,
+              40
+            ],
+            "definition": "'RJoMi': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "TMKQT",
+            "line": 21,
+            "kind": "-",
+            "callLines": [
+              40
+            ],
+            "definition": "'TMKQT': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "AitSZ",
+            "line": 24,
+            "kind": "*",
+            "callLines": [
+              40
+            ],
+            "definition": "'AitSZ': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "CpHek",
+            "line": 27,
+            "kind": "+",
+            "callLines": [
+              40
+            ],
+            "definition": "'CpHek': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "mhLTI",
+            "line": 30,
+            "kind": "+",
+            "callLines": [
+              40
+            ],
+            "definition": "'mhLTI': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "trjhJ",
+            "line": 33,
+            "kind": "*",
+            "callLines": [
+              40
+            ],
+            "definition": "'trjhJ': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "YxPEnm",
+            "key": "QxweP",
+            "line": 36,
+            "kind": "*",
+            "callLines": [
+              40
+            ],
+            "definition": "'QxweP': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "pjbcrB",
+            "key": "Malaj",
+            "line": 45,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              58
+            ],
+            "definition": "'Malaj': function (callee, param1, param2, param3, param4, param5, param6) {\n            return callee(param1, param2, param3, param4, param5, param6);\n        }"
+          },
+          {
+            "object": "pjbcrB",
+            "key": "vOYdZ",
+            "line": 48,
+            "kind": "-",
+            "callLines": [
+              58
+            ],
+            "definition": "'vOYdZ': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "pjbcrB",
+            "key": "oDpYH",
+            "line": 51,
+            "kind": "+",
+            "callLines": [
+              58,
+              58
+            ],
+            "definition": "'oDpYH': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "pjbcrB",
+            "key": "gSwhV",
+            "line": 54,
+            "kind": "<=",
+            "callLines": [
+              59
+            ],
+            "definition": "'gSwhV': function (x, y) {\n            return x <= y;\n        }"
+          },
+          {
+            "object": "CpoQXJ",
+            "key": "veZVU",
+            "line": 63,
+            "kind": "===",
+            "callLines": [
+              69
+            ],
+            "definition": "'veZVU': function (x, y) {\n            return x === y;\n        }"
+          },
+          {
+            "object": "wxXlJa",
+            "key": "InlHU",
+            "line": 82,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              87
+            ],
+            "definition": "'InlHU': function (callee) {\n            return callee();\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00013_1.obf.js",
+      "originalSha256": "ae26112a02ab2b11f0299b6b3695a6fa473c52adcd969ee7a841d2997676b3cf",
+      "obfuscatedSha256": "4a9c636cd8454a4785b6a55796cb946d37152031f9ed85c8eae370d17a91e508",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "MziHON",
+            "key": "mIBpc",
+            "line": 4,
+            "kind": "!=",
+            "callLines": [
+              8
+            ],
+            "definition": "'mIBpc': function (x, y) {\n            return x != y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00014_1.obf.js",
+      "originalSha256": "5a0577aaa55a466ffc24d5066dafbbcbf72412233948ea7b68a9b2fdf74a9b71",
+      "obfuscatedSha256": "f22208b7d78d42cc60a1e548393980b257b878ce46fe626eb51858b93a03d11b",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "juJGnC",
+            "key": "xsjdV",
+            "line": 3,
+            "kind": "*",
+            "callLines": [
+              11
+            ],
+            "definition": "'xsjdV': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "juJGnC",
+            "key": "TDofq",
+            "line": 6,
+            "kind": "*",
+            "callLines": [
+              11,
+              11
+            ],
+            "definition": "'TDofq': function (x, y) {\n            return x * y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00015_1.obf.js",
+      "originalSha256": "2b0b3f3cd9f70f76a28e47deec4cfa19759e37b8bb80d4bef4bac25a7f7680bf",
+      "obfuscatedSha256": "6020eb764211aa98d8e7570b337d1f2e989dfb02adc48fc51e451b46d65d70e9",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "BggiNZ",
+            "key": "whYQe",
+            "line": 3,
+            "kind": "<",
+            "callLines": [
+              7
+            ],
+            "definition": "'whYQe': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "sJaFiX",
+            "key": "hBfDn",
+            "line": 14,
+            "kind": ">",
+            "callLines": [
+              25
+            ],
+            "definition": "'hBfDn': function (x, y) {\n            return x > y;\n        }"
+          },
+          {
+            "object": "sJaFiX",
+            "key": "DIifT",
+            "line": 17,
+            "kind": "*",
+            "callLines": [
+              25,
+              25
+            ],
+            "definition": "'DIifT': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "sJaFiX",
+            "key": "jlBuA",
+            "line": 20,
+            "kind": "+",
+            "callLines": [
+              25,
+              25
+            ],
+            "definition": "'jlBuA': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "lciWnK",
+            "key": "Jeyhz",
+            "line": 33,
+            "kind": "<",
+            "callLines": [
+              49
+            ],
+            "definition": "'Jeyhz': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "lciWnK",
+            "key": "mkrmP",
+            "line": 36,
+            "kind": "!=",
+            "callLines": [
+              49
+            ],
+            "definition": "'mkrmP': function (x, y) {\n            return x != y;\n        }"
+          },
+          {
+            "object": "lciWnK",
+            "key": "KrrRD",
+            "line": 39,
+            "kind": "+",
+            "callLines": [
+              50
+            ],
+            "definition": "'KrrRD': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "lciWnK",
+            "key": "bJgWU",
+            "line": 42,
+            "kind": ">",
+            "callLines": [
+              51
+            ],
+            "definition": "'bJgWU': function (x, y) {\n            return x > y;\n        }"
+          },
+          {
+            "object": "lciWnK",
+            "key": "WitWZ",
+            "line": 45,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              51
+            ],
+            "definition": "'WitWZ': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "fTALsi",
+            "key": "TMXec",
+            "line": 57,
+            "kind": "*",
+            "callLines": [
+              71
+            ],
+            "definition": "'TMXec': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "fTALsi",
+            "key": "EGUnm",
+            "line": 60,
+            "kind": "<",
+            "callLines": [
+              71
+            ],
+            "definition": "'EGUnm': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "fTALsi",
+            "key": "YKXgA",
+            "line": 63,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              72
+            ],
+            "definition": "'YKXgA': function (callee, param1, param2) {\n            return callee(param1, param2);\n        }"
+          },
+          {
+            "object": "fTALsi",
+            "key": "GawOR",
+            "line": 66,
+            "kind": "==",
+            "callLines": [
+              73
+            ],
+            "definition": "'GawOR': function (x, y) {\n            return x == y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00016_1.obf.js",
+      "originalSha256": "ecb528fc1aa5443ed107815ab17e05d219fbccbe07ab20929a73a8d6ff0d064f",
+      "obfuscatedSha256": "a398faff1458062ef0c0e2965454edfceb6a18af62645bcf4fd91537f1460e9d",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "CTuYpW",
+            "key": "fHJYe",
+            "line": 4,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              19
+            ],
+            "definition": "'fHJYe': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "CTuYpW",
+            "key": "hwcWg",
+            "line": 7,
+            "kind": "+",
+            "callLines": [
+              19,
+              19,
+              19
+            ],
+            "definition": "'hwcWg': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "CTuYpW",
+            "key": "aFZqZ",
+            "line": 10,
+            "kind": "+",
+            "callLines": [
+              19
+            ],
+            "definition": "'aFZqZ': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "CTuYpW",
+            "key": "CmECx",
+            "line": 13,
+            "kind": "+",
+            "callLines": [
+              19
+            ],
+            "definition": "'CmECx': function (x, y) {\n            return x + y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00017_1.obf.js",
+      "originalSha256": "08feba71bf0765b195b63c4104561dc50992ce425adb1f5185793162463d4f4e",
+      "obfuscatedSha256": "e822dbffed506c26da1bf950a6bfd33bb0610955f6776795be0dadf5937e7070",
+      "classification": "SURFACE_ONLY",
+      "equalAfterNormalization": true,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00018_1.obf.js",
+      "originalSha256": "77ee0c3c79d7963906d75be6dad7e6d2322c86aa0dd17cdbf42dae5d0da03f13",
+      "obfuscatedSha256": "5dd02b710ba39e932ba920d47563ab6dce097e95b3f5aa557869d1fa2e919466",
+      "classification": "SURFACE_ONLY",
+      "equalAfterNormalization": true,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00019_1.obf.js",
+      "originalSha256": "662b171672bd148d719319270703d31ebbc5417239c138ebd6a51bf91839e1c2",
+      "obfuscatedSha256": "15bfaf723fd18775a1b5153c29a9e345fae2854adc662a7b0d8347854622804b",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "aCJeAq",
+            "key": "Ztzob",
+            "line": 3,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              14
+            ],
+            "definition": "'Ztzob': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "aCJeAq",
+            "key": "PFDIz",
+            "line": 6,
+            "kind": "<=",
+            "callLines": [
+              15
+            ],
+            "definition": "'PFDIz': function (x, y) {\n            return x <= y;\n        }"
+          },
+          {
+            "object": "aCJeAq",
+            "key": "OiwvV",
+            "line": 9,
+            "kind": "*",
+            "callLines": [
+              16
+            ],
+            "definition": "'OiwvV': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "xmzJuQ",
+            "key": "rJkqa",
+            "line": 22,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              26
+            ],
+            "definition": "'rJkqa': function (callee, param1, param2) {\n            return callee(param1, param2);\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00020_1.obf.js",
+      "originalSha256": "1bd75b79f9491f215c7809d51b70727bfb33dfe3e8491a55abf123f19e503a9b",
+      "obfuscatedSha256": "93dbf4f9a07fd44a0cc7b5b0bcdf061000ed202df2df73f85546bbcffd51a6e6",
+      "classification": "SURFACE_ONLY",
+      "equalAfterNormalization": true,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00021_1.obf.js",
+      "originalSha256": "74d30cd31736068a9ec14718672334b78a9f295fda1dc6126f8f407a842c58f9",
+      "obfuscatedSha256": "6c3b913bdb075c66657d37078fe78a7ef4bc2425cab06557f375cb555c8f79c9",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "VLpRhj",
+            "key": "PxMoH",
+            "line": 3,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              27
+            ],
+            "definition": "'PxMoH': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "VLpRhj",
+            "key": "GRXMI",
+            "line": 6,
+            "kind": "<",
+            "callLines": [
+              29
+            ],
+            "definition": "'GRXMI': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "VLpRhj",
+            "key": "zGMAw",
+            "line": 9,
+            "kind": "===",
+            "callLines": [
+              39
+            ],
+            "definition": "'zGMAw': function (x, y) {\n            return x === y;\n        }"
+          },
+          {
+            "object": "VLpRhj",
+            "key": "slwIZ",
+            "line": 12,
+            "kind": "/",
+            "callLines": [
+              39
+            ],
+            "definition": "'slwIZ': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "VLpRhj",
+            "key": "PnQjn",
+            "line": 15,
+            "kind": "-",
+            "callLines": [
+              39,
+              39
+            ],
+            "definition": "'PnQjn': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "VLpRhj",
+            "key": "pgwHS",
+            "line": 18,
+            "kind": "/",
+            "callLines": [
+              39
+            ],
+            "definition": "'pgwHS': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "VLpRhj",
+            "key": "kyZet",
+            "line": 21,
+            "kind": "-",
+            "callLines": [
+              39
+            ],
+            "definition": "'kyZet': function (x, y) {\n            return x - y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00022_1.obf.js",
+      "originalSha256": "659999ee8cae8f0bcd5ea952c73598ad82e08358f9056b82d138f2ff45972b3d",
+      "obfuscatedSha256": "71e3670928a544d239941477966ffbac6df808fac80b2a47158370f5afeb8e43",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "TFCfCt",
+            "key": "aHvRp",
+            "line": 3,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              35
+            ],
+            "definition": "'aHvRp': function (callee) {\n            return callee();\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "ugRhT",
+            "line": 6,
+            "kind": "-",
+            "callLines": [
+              39
+            ],
+            "definition": "'ugRhT': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "fxPTX",
+            "line": 9,
+            "kind": "<",
+            "callLines": [
+              43
+            ],
+            "definition": "'fxPTX': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "qjOMo",
+            "line": 12,
+            "kind": "-",
+            "callLines": [
+              44
+            ],
+            "definition": "'qjOMo': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "WsDZw",
+            "line": 15,
+            "kind": "-",
+            "callLines": [
+              44
+            ],
+            "definition": "'WsDZw': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "PlfXJ",
+            "line": 18,
+            "kind": "==",
+            "callLines": [
+              30
+            ],
+            "definition": "'PlfXJ': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "sQJyQ",
+            "line": 21,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              33
+            ],
+            "definition": "'sQJyQ': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "TFCfCt",
+            "key": "CuqEY",
+            "line": 24,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              34,
+              38
+            ],
+            "definition": "'CuqEY': function (callee, param1, param2) {\n            return callee(param1, param2);\n        }"
+          },
+          {
+            "object": "cuOfQZ",
+            "key": "pawEI",
+            "line": 52,
+            "kind": "<",
+            "callLines": [
+              59
+            ],
+            "definition": "'pawEI': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "cuOfQZ",
+            "key": "CdrxJ",
+            "line": 55,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              60
+            ],
+            "definition": "'CdrxJ': function (callee, param1) {\n            return callee(param1);\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00023_1.obf.js",
+      "originalSha256": "12b3bc3d646d6266012bb7ea57dbd4bad7c6ef526998eb5109794e43b42d88b6",
+      "obfuscatedSha256": "b3edb30b0512a150148f54be4d0e07c985c9501304b08b0f39f1cd79816385e8",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "XrQcUY",
+            "key": "BeUXS",
+            "line": 3,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              23
+            ],
+            "definition": "'BeUXS': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "XrQcUY",
+            "key": "OhwcA",
+            "line": 6,
+            "kind": "<",
+            "callLines": [
+              24,
+              37
+            ],
+            "definition": "'OhwcA': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "XrQcUY",
+            "key": "qUlJa",
+            "line": 9,
+            "kind": "+",
+            "callLines": [
+              32
+            ],
+            "definition": "'qUlJa': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "XrQcUY",
+            "key": "GdjQN",
+            "line": 12,
+            "kind": "-",
+            "callLines": [
+              32
+            ],
+            "definition": "'GdjQN': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "XrQcUY",
+            "key": "DGKNg",
+            "line": 15,
+            "kind": ">",
+            "callLines": [
+              33,
+              35
+            ],
+            "definition": "'DGKNg': function (x, y) {\n            return x > y;\n        }"
+          },
+          {
+            "object": "XrQcUY",
+            "key": "WzdxT",
+            "line": 18,
+            "kind": "+",
+            "callLines": [
+              33
+            ],
+            "definition": "'WzdxT': function (x, y) {\n            return x + y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00024_1.obf.js",
+      "originalSha256": "d3cb1fd4df01e797cdd1d2439423aa3c920241c03b5be15db9797a3b7dd7d159",
+      "obfuscatedSha256": "1d56a6f228e816316d5b926d7b4e226735a1f7dc12a938d5b6076b8dc445a604",
+      "classification": "SURFACE_ONLY",
+      "equalAfterNormalization": true,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00025_1.obf.js",
+      "originalSha256": "c1ca3d5f00223b8f1025b52caa18234f263bcd908165aee583440002d555b133",
+      "obfuscatedSha256": "facc44640c5e6fce9f4be019dccfe2723dc0cb1716520be2abd49e3d384d326e",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": [
+          {
+            "line": 8,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "JvLWAX[xPAjQB++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "order": [
+              "5",
+              "1",
+              "2",
+              "7",
+              "0",
+              "4",
+              "6",
+              "3",
+              "8"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": false,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00026_1.obf.js",
+      "originalSha256": "3a6facd3f8658e0ba960f6f2d51182cb0b9e4aec4332c245dd1349001cd07980",
+      "obfuscatedSha256": "8587d7f6eaf07cb510d606ad66a5977f8ecba61935466679afe57299fd41bb9c",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "KnZJeA",
+            "key": "qYjOi",
+            "line": 86,
+            "kind": "<",
+            "callLines": [
+              126
+            ],
+            "definition": "'qYjOi': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "KnZJeA",
+            "key": "vnagO",
+            "line": 89,
+            "kind": "<",
+            "callLines": [
+              127
+            ],
+            "definition": "'vnagO': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "KnZJeA",
+            "key": "pTnSV",
+            "line": 92,
+            "kind": "==",
+            "callLines": [
+              128
+            ],
+            "definition": "'pTnSV': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "KnZJeA",
+            "key": "ZRKBf",
+            "line": 96,
+            "kind": "+",
+            "callLines": [
+              142
+            ],
+            "definition": "'ZRKBf': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "KnZJeA",
+            "key": "MlQGX",
+            "line": 99,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              145,
+              154
+            ],
+            "definition": "'MlQGX': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "KnZJeA",
+            "key": "zpxXZ",
+            "line": 102,
+            "kind": "-",
+            "callLines": [
+              151
+            ],
+            "definition": "'zpxXZ': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "KnZJeA",
+            "key": "Tarxj",
+            "line": 105,
+            "kind": "+",
+            "callLines": [
+              154
+            ],
+            "definition": "'Tarxj': function (x, y) {\n            return x + y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 112,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "FDfRXw[VfyRMg++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "order": [
+              "6",
+              "5",
+              "2",
+              "1",
+              "4",
+              "3",
+              "0"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          },
+          {
+            "line": 139,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "imbDmA[lYbfze++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "order": [
+              "2",
+              "1",
+              "4",
+              "3",
+              "0"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00027_1.obf.js",
+      "originalSha256": "23f049d8bf10c855a0ef9a0a83b76c7ea361c6f103f7a2bb6a3b57d1cf218991",
+      "obfuscatedSha256": "8edb6095a2c0ce21d648d98327b4b00ae543c47cc682620ddc12dcbdefc765f8",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "USyZlz",
+            "key": "jNdtE",
+            "line": 3,
+            "kind": "-",
+            "callLines": [
+              23
+            ],
+            "definition": "'jNdtE': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "USyZlz",
+            "key": "UtXmf",
+            "line": 6,
+            "kind": "===",
+            "callLines": [
+              29
+            ],
+            "definition": "'UtXmf': function (x, y) {\n            return x === y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 15,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "ewFrwO[hbIkqr++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "order": [
+              "5",
+              "1",
+              "0",
+              "4",
+              "2",
+              "3"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00028_1.obf.js",
+      "originalSha256": "eacfc31cd7ab672fcd66b73700b30725ac8b5c83e089bf6b63df76b61245aada",
+      "obfuscatedSha256": "79854ee8d5e906802b754d7a16a5def469b45c43d3204ae1af281354d2afd68e",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "lfilge",
+            "key": "YhrDo",
+            "line": 5,
+            "kind": ">",
+            "callLines": [
+              10
+            ],
+            "definition": "'YhrDo': function (x, y) {\n            return x > y;\n        }"
+          },
+          {
+            "object": "EpTkJK",
+            "key": "LUorz",
+            "line": 14,
+            "kind": "==",
+            "callLines": [
+              18
+            ],
+            "definition": "'LUorz': function (x, y) {\n            return x == y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00029_1.obf.js",
+      "originalSha256": "0b948f2dbd279a6d5a0bbfbbf2c4c4b3a7ab0aa9484a366241d363ae3f0fd60e",
+      "obfuscatedSha256": "f9d070d532c1aba0051bb8dfa7b9062650ca85d7e71113be615150f6b524f2e9",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "sxHEmk",
+            "key": "WfOIo",
+            "line": 3,
+            "kind": "<",
+            "callLines": [
+              15,
+              16
+            ],
+            "definition": "'WfOIo': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "sxHEmk",
+            "key": "qEkJB",
+            "line": 6,
+            "kind": "+",
+            "callLines": [
+              14,
+              18
+            ],
+            "definition": "'qEkJB': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "sxHEmk",
+            "key": "xbmPQ",
+            "line": 9,
+            "kind": "+",
+            "callLines": [
+              18
+            ],
+            "definition": "'xbmPQ': function (x, y) {\n            return x + y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00030_1.obf.js",
+      "originalSha256": "5c3f65ab4208935e43fc5472d490fdb756b149ba46ffcb0a55fc45c0e59670ee",
+      "obfuscatedSha256": "66d1d65deb8b0864a08c242c58a362891e703ce11b5d5b833e14311680830cbe",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "tPBvag",
+            "key": "DSpli",
+            "line": 3,
+            "kind": "!=",
+            "callLines": [
+              36
+            ],
+            "definition": "'DSpli': function (x, y) {\n            return x != y;\n        }"
+          },
+          {
+            "object": "tPBvag",
+            "key": "OCHEZ",
+            "line": 6,
+            "kind": "<=",
+            "callLines": [
+              42
+            ],
+            "definition": "'OCHEZ': function (x, y) {\n            return x <= y;\n        }"
+          },
+          {
+            "object": "tPBvag",
+            "key": "PFSrR",
+            "line": 9,
+            "kind": "==",
+            "callLines": [
+              47
+            ],
+            "definition": "'PFSrR': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "tPBvag",
+            "key": "ajyWA",
+            "line": 12,
+            "kind": "+",
+            "callLines": [
+              47
+            ],
+            "definition": "'ajyWA': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "tPBvag",
+            "key": "JqKpl",
+            "line": 15,
+            "kind": "-",
+            "callLines": [
+              47,
+              58
+            ],
+            "definition": "'JqKpl': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "tPBvag",
+            "key": "YsByO",
+            "line": 18,
+            "kind": "+",
+            "callLines": [
+              57
+            ],
+            "definition": "'YsByO': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "EeJNtn",
+            "key": "CudrL",
+            "line": 99,
+            "kind": "+",
+            "callLines": [
+              103
+            ],
+            "definition": "'CudrL': function (x, y) {\n                        return x + y;\n                    }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 25,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "cDdBVV[vEVLWO++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "order": [
+              "4",
+              "6",
+              "2",
+              "1",
+              "0",
+              "3",
+              "5"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ReturnStatement",
+              "ContinueStatement"
+            ]
+          },
+          {
+            "line": 40,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "jvnghS[GnEpyK++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "order": [
+              "4",
+              "2",
+              "0",
+              "5",
+              "6",
+              "1",
+              "3"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00031_1.obf.js",
+      "originalSha256": "d2af00d7401f8a7d49162e5e1402bd2fc9c17611e0e0cc76464e69c833ec4ff2",
+      "obfuscatedSha256": "1077d8c30023da6e010cab99b7fad5e82d6a0654ee1486e3683bbbbed4775623",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "mjebJG",
+            "key": "epjCU",
+            "line": 3,
+            "kind": "==",
+            "callLines": [
+              16
+            ],
+            "definition": "'epjCU': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "mjebJG",
+            "key": "naXzh",
+            "line": 6,
+            "kind": "<",
+            "callLines": [
+              12
+            ],
+            "definition": "'naXzh': function (x, y) {\n            return x < y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00032_1.obf.js",
+      "originalSha256": "7536dc8f3a2e44777f4af1d8dcc764a8251020a36ccbe0da9da71e6aeba50aec",
+      "obfuscatedSha256": "a74f37e1df05f2e4d1b433c344362ea65b9de317bf19318db96b42469b6bff28",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": [
+          {
+            "line": 10,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "lImdex[qZhSfd++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "order": [
+              "0",
+              "4",
+              "3",
+              "2",
+              "1"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": false,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00033_1.obf.js",
+      "originalSha256": "6fea13eac6c8ed0f7918f5730b38dee7de7a701a2f9cd0bf01de7b51b421e620",
+      "obfuscatedSha256": "be4aecd0422ed27576be83e6e6f62ff4098ee37b693fa1bdd1bade4ab4d78991",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "dNPsWD",
+            "key": "xfAgD",
+            "line": 3,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              14
+            ],
+            "definition": "'xfAgD': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "dNPsWD",
+            "key": "DUAFl",
+            "line": 6,
+            "kind": "<",
+            "callLines": [
+              15
+            ],
+            "definition": "'DUAFl': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "dNPsWD",
+            "key": "LEWLt",
+            "line": 9,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              17
+            ],
+            "definition": "'LEWLt': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "OTsdlv",
+            "key": "frSpm",
+            "line": 24,
+            "kind": ">",
+            "callLines": [
+              51
+            ],
+            "definition": "'frSpm': function (x, y) {\n            return x > y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 31,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "AGNyle[OhYPqW++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "order": [
+              "3",
+              "1",
+              "5",
+              "4",
+              "6",
+              "2",
+              "0"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ReturnStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00034_1.obf.js",
+      "originalSha256": "59730bd32ea1040b38c7798602a653a867a0867313008465cd0682d06a5bdb06",
+      "obfuscatedSha256": "d6afb3e6db59f03c6c73844ba440d16202700a79071b1d07520c25182dbbe8b1",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "oohZaF",
+            "key": "QjuJI",
+            "line": 3,
+            "kind": "/",
+            "callLines": [
+              16
+            ],
+            "definition": "'QjuJI': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "oohZaF",
+            "key": "qBbfn",
+            "line": 6,
+            "kind": "-",
+            "callLines": [
+              16
+            ],
+            "definition": "'qBbfn': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "oohZaF",
+            "key": "HUmNu",
+            "line": 9,
+            "kind": ">=",
+            "callLines": [
+              16
+            ],
+            "definition": "'HUmNu': function (x, y) {\n            return x >= y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00035_1.obf.js",
+      "originalSha256": "0821adb9e1f5affa8b003bcefe3aa3d952951076565e44e7a5cab7f58e974f43",
+      "obfuscatedSha256": "0452f9100864be61196936d06f14c9aaff0ff6b8477e33affdeb8cb5b5055b73",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "rxKdDu",
+            "key": "WTIkY",
+            "line": 3,
+            "kind": "/",
+            "callLines": [
+              22
+            ],
+            "definition": "'WTIkY': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "rxKdDu",
+            "key": "bNoxu",
+            "line": 6,
+            "kind": "+",
+            "callLines": [
+              22
+            ],
+            "definition": "'bNoxu': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "rxKdDu",
+            "key": "JliDq",
+            "line": 9,
+            "kind": "*",
+            "callLines": [
+              23
+            ],
+            "definition": "'JliDq': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "rxKdDu",
+            "key": "jKhXL",
+            "line": 12,
+            "kind": "*",
+            "callLines": [
+              23
+            ],
+            "definition": "'jKhXL': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "rxKdDu",
+            "key": "WElnl",
+            "line": 15,
+            "kind": "-",
+            "callLines": [
+              23
+            ],
+            "definition": "'WElnl': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "rxKdDu",
+            "key": "XVPiy",
+            "line": 18,
+            "kind": "-",
+            "callLines": [
+              23
+            ],
+            "definition": "'XVPiy': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "xyrEP",
+            "line": 32,
+            "kind": "+",
+            "callLines": [
+              78
+            ],
+            "definition": "'xyrEP': function (x, y) {\n                return x + y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "UrTgs",
+            "line": 35,
+            "kind": "-",
+            "callLines": [
+              78,
+              96
+            ],
+            "definition": "'UrTgs': function (x, y) {\n                return x - y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "bzIlG",
+            "line": 38,
+            "kind": "+",
+            "callLines": [
+              81,
+              84
+            ],
+            "definition": "'bzIlG': function (x, y) {\n                return x + y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "kCoAs",
+            "line": 41,
+            "kind": "-",
+            "callLines": [
+              81,
+              81,
+              87,
+              87
+            ],
+            "definition": "'kCoAs': function (x, y) {\n                return x - y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "TnXNT",
+            "line": 44,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              84
+            ],
+            "definition": "'TnXNT': function (callee, param1, param2, param3) {\n                return callee(param1, param2, param3);\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "cTSEx",
+            "line": 47,
+            "kind": "+",
+            "callLines": [
+              87,
+              90,
+              93
+            ],
+            "definition": "'cTSEx': function (x, y) {\n                return x + y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "XlrfY",
+            "line": 50,
+            "kind": "-",
+            "callLines": [
+              90
+            ],
+            "definition": "'XlrfY': function (x, y) {\n                return x - y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "xuwHJ",
+            "line": 53,
+            "kind": "-",
+            "callLines": [
+              90,
+              96
+            ],
+            "definition": "'xuwHJ': function (x, y) {\n                return x - y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "TSwhq",
+            "line": 56,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              93,
+              93
+            ],
+            "definition": "'TSwhq': function (callee, param1, param2, param3) {\n                return callee(param1, param2, param3);\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "zNEpE",
+            "line": 59,
+            "kind": "+",
+            "callLines": [
+              96,
+              102
+            ],
+            "definition": "'zNEpE': function (x, y) {\n                return x + y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "xkCyN",
+            "line": 62,
+            "kind": "-",
+            "callLines": [
+              102
+            ],
+            "definition": "'xkCyN': function (x, y) {\n                return x - y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "FHtQf",
+            "line": 65,
+            "kind": "-",
+            "callLines": [
+              102
+            ],
+            "definition": "'FHtQf': function (x, y) {\n                return x - y;\n            }"
+          },
+          {
+            "object": "GdUuwP",
+            "key": "TKdQG",
+            "line": 68,
+            "kind": "-",
+            "callLines": [
+              105
+            ],
+            "definition": "'TKdQG': function (x, y) {\n                return x - y;\n            }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 76,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "hHIVyy[pRYEKO++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ],
+            "order": [
+              "1",
+              "4",
+              "0",
+              "6",
+              "8",
+              "3",
+              "5",
+              "2",
+              "9",
+              "7"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00036_1.obf.js",
+      "originalSha256": "33de877e08558036c20834373fcaf560f97a5a2b61b21807fa23c810ba46ef78",
+      "obfuscatedSha256": "1a557d2b4f84efe20a253383040e1c2dd2e173feb030b82511e41f93a9964075",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "KwvjSj",
+            "key": "ASrIa",
+            "line": 3,
+            "kind": "!=",
+            "callLines": [
+              15,
+              15,
+              15,
+              15
+            ],
+            "definition": "'ASrIa': function (x, y) {\n            return x != y;\n        }"
+          },
+          {
+            "object": "KwvjSj",
+            "key": "ugJKs",
+            "line": 9,
+            "kind": "!=",
+            "callLines": [
+              15
+            ],
+            "definition": "'ugJKs': function (x, y) {\n            return x != y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00038_1.obf.js",
+      "originalSha256": "4740d184e1343b8eac2815187e1f6725fb32593aedb14d62d81d3af554220070",
+      "obfuscatedSha256": "d46162d3c85ef547ef79abcde80bae9462c05f113a32cc02cf6c19581d745e1c",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "MxMxVJ",
+            "key": "eChUy",
+            "line": 3,
+            "kind": "==",
+            "callLines": [
+              41,
+              41,
+              41,
+              41
+            ],
+            "definition": "'eChUy': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "MxMxVJ",
+            "key": "qsPpO",
+            "line": 7,
+            "kind": "==",
+            "callLines": [
+              41
+            ],
+            "definition": "'qsPpO': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "MxMxVJ",
+            "key": "ZiGYe",
+            "line": 14,
+            "kind": "==",
+            "callLines": [
+              41
+            ],
+            "definition": "'ZiGYe': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "MxMxVJ",
+            "key": "ZksIx",
+            "line": 17,
+            "kind": "-",
+            "callLines": [
+              41
+            ],
+            "definition": "'ZksIx': function (x, y) {\n            return x - y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 25,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "chtQIj[HXsXZh++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "order": [
+              "2",
+              "0",
+              "5",
+              "1",
+              "3",
+              "4"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00039_1.obf.js",
+      "originalSha256": "413f1de24fb402802efff1b2a6694cae628072054069f745803c781e5221f2f2",
+      "obfuscatedSha256": "59332c442d8cd896f12117c0c6c62cef83ee931b37c17cadd5037acfe63ca404",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "lRBwBl",
+            "key": "hfytq",
+            "line": 3,
+            "kind": "/",
+            "callLines": [
+              17
+            ],
+            "definition": "'hfytq': function (x, y) {\n            return x / y;\n        }"
+          },
+          {
+            "object": "lRBwBl",
+            "key": "KhWIU",
+            "line": 6,
+            "kind": "-",
+            "callLines": [
+              17
+            ],
+            "definition": "'KhWIU': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "lRBwBl",
+            "key": "qZrKF",
+            "line": 9,
+            "kind": "%",
+            "callLines": [
+              17
+            ],
+            "definition": "'qZrKF': function (x, y) {\n            return x % y;\n        }"
+          },
+          {
+            "object": "lRBwBl",
+            "key": "QmfwR",
+            "line": 12,
+            "kind": ">",
+            "callLines": [
+              17
+            ],
+            "definition": "'QmfwR': function (x, y) {\n            return x > y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00040_1.obf.js",
+      "originalSha256": "7d7eac23bb26333d79272fea717a9bf0b77aed7fe0248ef4af52752aca3b07e5",
+      "obfuscatedSha256": "afe2773c935d81a2120351e2d6f96d1933a7485aa89b7fa1a60824941bc92aee",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "cjJjNA",
+            "key": "OxeIU",
+            "line": 3,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              14
+            ],
+            "definition": "'OxeIU': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "cjJjNA",
+            "key": "IAjhs",
+            "line": 6,
+            "kind": "<",
+            "callLines": [
+              15
+            ],
+            "definition": "'IAjhs': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "cjJjNA",
+            "key": "vdyOn",
+            "line": 9,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              16
+            ],
+            "definition": "'vdyOn': function (callee, param1) {\n            return callee(param1);\n        }"
+          },
+          {
+            "object": "auYopq",
+            "key": "AYmCw",
+            "line": 21,
+            "kind": "FORWARD_CALL",
+            "callLines": [
+              29
+            ],
+            "definition": "'AYmCw': function (callee, param1, param2) {\n            return callee(param1, param2);\n        }"
+          },
+          {
+            "object": "xsBIcQ",
+            "key": "zcBIp",
+            "line": 37,
+            "kind": "===",
+            "callLines": [
+              70
+            ],
+            "definition": "'zcBIp': function (x, y) {\n            return x === y;\n        }"
+          },
+          {
+            "object": "xsBIcQ",
+            "key": "RfLEh",
+            "line": 40,
+            "kind": "+",
+            "callLines": [
+              73
+            ],
+            "definition": "'RfLEh': function (x, y) {\n            return x + y;\n        }"
+          },
+          {
+            "object": "xsBIcQ",
+            "key": "NCtAj",
+            "line": 43,
+            "kind": "%",
+            "callLines": [
+              76
+            ],
+            "definition": "'NCtAj': function (x, y) {\n            return x % y;\n        }"
+          },
+          {
+            "object": "pcZeSi",
+            "key": "UQkbN",
+            "line": 86,
+            "kind": "!==",
+            "callLines": [
+              101
+            ],
+            "definition": "'UQkbN': function (x, y) {\n            return x !== y;\n        }"
+          },
+          {
+            "object": "pcZeSi",
+            "key": "PyFPf",
+            "line": 89,
+            "kind": "<",
+            "callLines": [
+              105
+            ],
+            "definition": "'PyFPf': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "pcZeSi",
+            "key": "lhHhm",
+            "line": 92,
+            "kind": "===",
+            "callLines": [
+              110
+            ],
+            "definition": "'lhHhm': function (x, y) {\n            return x === y;\n        }"
+          },
+          {
+            "object": "pcZeSi",
+            "key": "lzFEV",
+            "line": 96,
+            "kind": "===",
+            "callLines": [
+              110
+            ],
+            "definition": "'lzFEV': function (x, y) {\n            return x === y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 50,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "xRTGEQ[tNTehO++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "order": [
+              "4",
+              "2",
+              "1",
+              "3",
+              "0"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ReturnStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00042_1.obf.js",
+      "originalSha256": "9ff5b47efe2aa1aa7e3cb51b87475f34fbd9b73845e207fe57f2e7d223360603",
+      "obfuscatedSha256": "959a2492bd269a0895e1cf8afe7846d6d242e6639c4730f725ffa5a8cd046ac4",
+      "classification": "SURFACE_ONLY",
+      "equalAfterNormalization": true,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": false,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [],
+        "switches": []
+      },
+      "baselineCandidate": false,
+      "currentCandidate": false
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00043_1.obf.js",
+      "originalSha256": "f09d1f6ef6b3107c3b114f43d53ae1045c3ef12d68f1938913f5591de8b88f64",
+      "obfuscatedSha256": "df38ebeb171edca1438e6037d12a823a112a985276511882e39f853202e1a613",
+      "classification": "HELPER_ONLY",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": false,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "zBVFnM",
+            "key": "aNuim",
+            "line": 3,
+            "kind": "-",
+            "callLines": [
+              29
+            ],
+            "definition": "'aNuim': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "zBVFnM",
+            "key": "jJxxb",
+            "line": 8,
+            "kind": "<",
+            "callLines": [
+              23
+            ],
+            "definition": "'jJxxb': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "zBVFnM",
+            "key": "beLZV",
+            "line": 11,
+            "kind": "<",
+            "callLines": [
+              24,
+              26
+            ],
+            "definition": "'beLZV': function (x, y) {\n            return x < y;\n        }"
+          },
+          {
+            "object": "zBVFnM",
+            "key": "wlivZ",
+            "line": 14,
+            "kind": "+",
+            "callLines": [
+              27,
+              27,
+              27
+            ],
+            "definition": "'wlivZ': function (x, y) {\n            return x + y;\n        }"
+          }
+        ],
+        "switches": []
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00044_1.obf.js",
+      "originalSha256": "68543d786f84eb966cc3a56d8265e5b59e35ba86fecf158f2ba672e17fed7f49",
+      "obfuscatedSha256": "3d19956a10f03b81cae9e0cff7c9cab52aefe6eed5a48172be9320b48947b695",
+      "classification": "DISPATCHER",
+      "equalAfterNormalization": false,
+      "introducedDispatcher": true,
+      "introducedUsedHelper": true,
+      "before": {
+        "helpers": [],
+        "switches": []
+      },
+      "after": {
+        "helpers": [
+          {
+            "object": "jZDice",
+            "key": "BQVce",
+            "line": 4,
+            "kind": "==",
+            "callLines": [
+              37,
+              43,
+              51
+            ],
+            "definition": "'BQVce': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "XRiDn",
+            "line": 7,
+            "kind": "==",
+            "callLines": [
+              43,
+              51
+            ],
+            "definition": "'XRiDn': function (x, y) {\n            return x == y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "eVLXx",
+            "line": 10,
+            "kind": "%",
+            "callLines": [
+              43
+            ],
+            "definition": "'eVLXx': function (x, y) {\n            return x % y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "DBkHg",
+            "line": 13,
+            "kind": "<=",
+            "callLines": [
+              50
+            ],
+            "definition": "'DBkHg': function (x, y) {\n            return x <= y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "VTlSr",
+            "line": 16,
+            "kind": "-",
+            "callLines": [
+              50,
+              51
+            ],
+            "definition": "'VTlSr': function (x, y) {\n            return x - y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "ZbrKB",
+            "line": 19,
+            "kind": "*",
+            "callLines": [
+              50,
+              51
+            ],
+            "definition": "'ZbrKB': function (x, y) {\n            return x * y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "rJrnK",
+            "line": 22,
+            "kind": "%",
+            "callLines": [
+              51
+            ],
+            "definition": "'rJrnK': function (x, y) {\n            return x % y;\n        }"
+          },
+          {
+            "object": "jZDice",
+            "key": "tNiAR",
+            "line": 25,
+            "kind": "+",
+            "callLines": [
+              51
+            ],
+            "definition": "'tNiAR': function (x, y) {\n            return x + y;\n        }"
+          }
+        ],
+        "switches": [
+          {
+            "line": 32,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "UKZjEP[QTqzxJ++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "order": [
+              "1",
+              "3",
+              "0",
+              "4",
+              "5",
+              "2"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ReturnStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          },
+          {
+            "line": 67,
+            "inDirectLoop": true,
+            "dispatcherShape": true,
+            "discriminant": "zRziFs[dLDjtE++]",
+            "caseValues": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "order": [
+              "5",
+              "4",
+              "3",
+              "2",
+              "6",
+              "1",
+              "0"
+            ],
+            "reorderedPermutation": true,
+            "tails": [
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement",
+              "ContinueStatement"
+            ]
+          }
+        ]
+      },
+      "baselineCandidate": true,
+      "currentCandidate": true
+    }
+  ]
+}

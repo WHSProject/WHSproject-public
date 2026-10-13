@@ -1,0 +1,225 @@
+{
+  "measuredAt": "2026-10-05T10:47:12.247Z",
+  "node": "v24.18.0",
+  "auditSha256": "f531db9d5270fad2fdf7ede895076c902c765cc86135fdcead84c541a0dadc49",
+  "implementation": {
+    "src/analyzers/obfuscation/detector.ts": "f4332864d200675fc577bbc05831b26dfcab29e1914419f065c8b964c4ec3ac0",
+    "src/analyzers/obfuscation/static-order-dispatch.ts": "d5b0aeb033917a6d861ce55eb1f3416c236e7fa2d1e992ae98284a3fe5fc1340",
+    "src/analyzers/obfuscation/helper-analysis.ts": "968636270dd857c1563ea16a37b4352e78a03f60f1c470018c963763018a477a",
+    "src/analyzers/obfuscation/structure-quality.ts": "acc46de569272db61a63bc8e33c5284167464442ccfda819bc2a9a25d6b05711",
+    "src/analyzers/obfuscation/structure-restorer.ts": "ab79ccd2ab16b4ace1f441b78bd8465351e7f5d15c0b9e7faa7ad4d41531200b",
+    "src/analyzers/obfuscation/restore.pipeline.ts": "f1676e8b6728224e14dafcb08f9c6c8ba66a8282bb2a4ca1b36dc947f5150b73",
+    "src/analyzers/obfuscation/features.ts": "46b412c946fa1f083f596cd45faef541925b68e4262cbe3224aee6d2ae0655ae",
+    "dist/analyzers/obfuscation/detector.js": "b7958d8cc8ba9495bcb54331782aa06d2a8ca70800d3449931633a6075110fc1",
+    "dist/analyzers/obfuscation/static-order-dispatch.js": "ae8cc3d9123378568727e4a4bebd0f685a1b0d59bb508b17348fc3679889678c"
+  },
+  "runnerSha256": "f9d88b4c6e1062930231d655c912d42bfa34d3e79eb394dff097a574c10d83a4",
+  "packageEntrypointExecuted": false,
+  "llmCalls": 0,
+  "rows": [
+    {
+      "path": "control-flow-flattening/codenet_p00002_1.obf.js",
+      "sha256": "86479eaacce1ef22fdde43deae0b750c4da8e5f4fa493da623e3affc9afd9a72",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "NO_CHANGE",
+      "reason": "NO_STRUCTURAL_CHANGE",
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 2,
+        "helperDefinitionsAfter": 2,
+        "helperCallsBefore": 3,
+        "helperCallsAfter": 3,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 0,
+        "syntaxChanged": false
+      },
+      "inputBytes": 630,
+      "outputBytes": null,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00011_1.obf.js",
+      "sha256": "71b959446c33f8be2be5eac8c2b685bc110a0406e1d80930a39e3db3c072a6ca",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 1,
+        "helperDefinitionsAfter": 1,
+        "helperCallsBefore": 2,
+        "helperCallsAfter": 0,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 2,
+        "syntaxChanged": true
+      },
+      "inputBytes": 755,
+      "outputBytes": 612,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00013_1.obf.js",
+      "sha256": "4a9c636cd8454a4785b6a55796cb946d37152031f9ed85c8eae370d17a91e508",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 1,
+        "helperDefinitionsAfter": 1,
+        "helperCallsBefore": 1,
+        "helperCallsAfter": 0,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 1,
+        "syntaxChanged": true
+      },
+      "inputBytes": 284,
+      "outputBytes": 249,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00014_1.obf.js",
+      "sha256": "f22208b7d78d42cc60a1e548393980b257b878ce46fe626eb51858b93a03d11b",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "NO_CHANGE",
+      "reason": "NO_STRUCTURAL_CHANGE",
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 2,
+        "helperDefinitionsAfter": 2,
+        "helperCallsBefore": 3,
+        "helperCallsAfter": 3,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 0,
+        "syntaxChanged": false
+      },
+      "inputBytes": 471,
+      "outputBytes": null,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00025_1.obf.js",
+      "sha256": "facc44640c5e6fce9f4be019dccfe2723dc0cb1716520be2abd49e3d384d326e",
+      "automaticallySelected": true,
+      "diagnosticOnly": false,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": true,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 0,
+        "helperDefinitionsAfter": 0,
+        "helperCallsBefore": 0,
+        "helperCallsAfter": 0,
+        "dispatchersFlattened": 1,
+        "binaryCallsReduced": 0,
+        "syntaxChanged": true
+      },
+      "inputBytes": 1357,
+      "outputBytes": 887,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00028_1.obf.js",
+      "sha256": "79854ee8d5e906802b754d7a16a5def469b45c43d3204ae1af281354d2afd68e",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 2,
+        "helperDefinitionsAfter": 2,
+        "helperCallsBefore": 2,
+        "helperCallsAfter": 0,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 2,
+        "syntaxChanged": true
+      },
+      "inputBytes": 501,
+      "outputBytes": 417,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00031_1.obf.js",
+      "sha256": "1077d8c30023da6e010cab99b7fad5e82d6a0654ee1486e3683bbbbed4775623",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 2,
+        "helperDefinitionsAfter": 2,
+        "helperCallsBefore": 2,
+        "helperCallsAfter": 1,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 1,
+        "syntaxChanged": true
+      },
+      "inputBytes": 690,
+      "outputBytes": 532,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00032_1.obf.js",
+      "sha256": "a74f37e1df05f2e4d1b433c344362ea65b9de317bf19318db96b42469b6bff28",
+      "automaticallySelected": true,
+      "diagnosticOnly": false,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": true,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 0,
+        "helperDefinitionsAfter": 0,
+        "helperCallsBefore": 0,
+        "helperCallsAfter": 0,
+        "dispatchersFlattened": 1,
+        "binaryCallsReduced": 0,
+        "syntaxChanged": true
+      },
+      "inputBytes": 919,
+      "outputBytes": 654,
+      "originalUnchanged": true
+    },
+    {
+      "path": "control-flow-flattening/codenet_p00036_1.obf.js",
+      "sha256": "1a557d2b4f84efe20a253383040e1c2dd2e173feb030b82511e41f93a9964075",
+      "automaticallySelected": false,
+      "diagnosticOnly": true,
+      "status": "COMPLETED",
+      "reason": null,
+      "diagnostics": {
+        "staticDispatchBefore": false,
+        "staticDispatchAfter": false,
+        "helperDefinitionsBefore": 2,
+        "helperDefinitionsAfter": 2,
+        "helperCallsBefore": 5,
+        "helperCallsAfter": 0,
+        "dispatchersFlattened": 0,
+        "binaryCallsReduced": 5,
+        "syntaxChanged": true
+      },
+      "inputBytes": 800,
+      "outputBytes": 591,
+      "originalUnchanged": true
+    }
+  ],
+  "limitations": [
+    "Fixed previously examined regression set, not an independent holdout.",
+    "Seven files are forced restoration diagnostics, not newly selected candidates.",
+    "Residual-structure metrics are not semantic-equivalence or maliciousness proofs.",
+    "Library decoding can evaluate isolated fragments; package entrypoints are never invoked."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "fixture-lifecycle-scripts",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "echo preinstall",
+    "install": "echo install",
+    "postinstall": "echo postinstall"
+  }
+}

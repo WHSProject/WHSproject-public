@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/contracts/policy-v0.1.schema.json",
+  "title": "PolicyV0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["policyKey", "policyVersion", "ecosystem", "rules"],
+  "properties": {
+    "policyKey": {"type": "string", "minLength": 1},
+    "policyVersion": {"type": "string", "minLength": 1},
+    "ecosystem": {"const": "npm"},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ruleId", "decision", "reasonCode", "reason", "priority", "conditions"],
+        "properties": {
+          "ruleId": {"type": "string", "minLength": 1},
+          "decision": {"enum": ["ACCEPT", "REJECT", "HOLD", "REVIEW"]},
+          "reasonCode": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1},
+          "priority": {"type": "integer"},
+          "conditions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "when": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "allOf": {"type": "array", "items": {"$ref": "#/$defs/predicate"}},
+                  "anyOf": {"type": "array", "items": {"$ref": "#/$defs/predicate"}}
+                }
+              },
+              "minimumSupport": {"enum": ["SUPPORTED", "PARTIAL"]},
+              "onUnknown": {"enum": ["HOLD", "REVIEW", "IGNORE"]}
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "predicate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["predicate"],
+      "properties": {
+        "predicate": {"enum": ["LIFECYCLE_TRIGGERED", "EXECUTION_PATH_REACHABLE", "SENSITIVE_DATA_ACCESSED", "DATA_REACHES_EXTERNAL_SINK", "DATA_REACHES_PROCESS_EXECUTION", "BENIGN_ALTERNATIVE_SUPPORTED", "BENIGN_ALTERNATIVE_NOT_SUPPORTED", "FUNCTIONALITY_MISMATCH", "REFERENCE_VALID", "INDEPENDENT_SUPPORT_PRESENT", "DECISIVE_LINK_UNRESOLVED", "ANALYSIS_COVERAGE_INCOMPLETE", "OSV_ADVISORY_APPLIES", "ARTIFACT_IDENTITY_MATCHES"]}
+      }
+    }
+  }
+}

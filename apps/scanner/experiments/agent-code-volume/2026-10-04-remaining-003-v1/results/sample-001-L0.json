@@ -1,0 +1,63 @@
+{
+  "conditionId": "sample-001:L0",
+  "experimentId": "sample-001",
+  "sourceSampleId": "DD-NPM-003",
+  "level": "L0",
+  "inputHash": "4413be397391fe049b6049918b9839643af0d3efe5e967dbff5f334b84994c88",
+  "fixedContractHash": "12b23d1be38860e8da50c1e7d5d82a383366d4009116e43cbc1de1a65fc0870f",
+  "codeHash": "20d08e641f05d3c961776a414f167e44eca8bc942c50af633a0fe007fd8d8b89",
+  "configHash": "f9a0c0a093537fe24c6094d44a65460ee46a60f175be8de4e84fa083542b7629",
+  "promptHash": "96e5d2a64d71d6fbbae4211d41d4b4912c558556cee44ded0ba9723c7c9d0fef",
+  "requestHash": "a9ecfb974ef6d5b53c57ace8532c5054b0de9d9ffe0a4b3225c0324df691e981",
+  "reuseKey": "232adb40bdfa4735535f7ba260c7b07642d1a327b827f6ea018e9cb57cbf5c81",
+  "inputSize": {
+    "findings": 8,
+    "evidences": 8,
+    "codeSlices": 4,
+    "codeBytes": 870,
+    "promptBytes": 31009,
+    "requestBytes": 39315,
+    "requestCharacters": 39315,
+    "estimatedInputTokens": 9818
+  },
+  "modelContextCheck": {
+    "contextWindowTokens": 1050000,
+    "reservedMaxOutputTokens": 32768,
+    "estimatedTotalTokens": 42586,
+    "fits": true
+  },
+  "sameInputAsPrevious": false,
+  "sharedResultOf": null,
+  "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+  "terminal": true,
+  "providerRequests": 1,
+  "runnerCalls": 1,
+  "httpStatus": 200,
+  "runnerStatus": "PARTIAL",
+  "failureReason": null,
+  "additionalCodeNeeded": false,
+  "assessmentCount": 3,
+  "validatorStatusCounts": {
+    "PARTIALLY_VERIFIED": 3
+  },
+  "generatedEvidenceCount": 0,
+  "evidenceConversionFailureCount": 0,
+  "usage": {
+    "inputTokens": 9861,
+    "cachedInputTokens": 0,
+    "outputTokens": 1982,
+    "reasoningTokens": 457,
+    "totalTokens": 11843,
+    "note": "reasoningTokens is a subset of outputTokens and is not added again."
+  },
+  "estimatedCostUsd": 0.0043506,
+  "durationMs": 23998,
+  "summary": {
+    "status": "PARTIAL",
+    "assessmentCount": 3,
+    "verifiedAssessmentCount": 0,
+    "generatedEvidenceCount": 0,
+    "rejectedAssessmentCount": 0,
+    "limitationCount": 9
+  }
+}

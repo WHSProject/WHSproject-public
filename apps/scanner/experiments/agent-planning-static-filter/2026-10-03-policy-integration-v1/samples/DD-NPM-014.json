@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-014",
+  "subject": {
+    "sampleId": "DD-NPM-014",
+    "ecosystem": "npm",
+    "packageName": "discord-bot-server",
+    "packageVersion": "0.1.2"
+  },
+  "artifactSha256": "f622bb299d7a9e402fed77439325de18061723e2eff1a60ee782055839eb9fd4",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 29,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 3920
+}

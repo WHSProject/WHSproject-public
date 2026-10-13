@@ -1,0 +1,30 @@
+storage: /verdaccio/storage
+plugins: /verdaccio/plugins
+
+web:
+  enable: false
+
+auth:
+  htpasswd:
+    file: /verdaccio/storage/htpasswd
+    max_users: -1
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    cache: true
+
+packages:
+  '**':
+    access: $all
+    publish: $all
+    proxy: npmjs
+
+middlewares:
+  whs-approval:
+    endpoint: /-/whs/approvals
+
+log:
+  type: stdout
+  format: json
+  level: info

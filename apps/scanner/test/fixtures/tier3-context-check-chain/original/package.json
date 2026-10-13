@@ -1,0 +1,8 @@
+{
+  "name": "tier3-context-check-chain-fixture",
+  "version": "1.0.0",
+  "main": "lib/runner.js",
+  "scripts": {
+    "postinstall": "node setup.js"
+  }
+}

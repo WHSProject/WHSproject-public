@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "MANUAL_OFFLINE_LIMITATION_CONTEXT_COMPARISON",
+  "generatedAt": "2026-10-04",
+  "manualOfflineDraft": true,
+  "execution": {
+    "apiCalls": 0,
+    "scannerRuns": 0,
+    "packageExecutions": 0,
+    "providerResponsesModified": false,
+    "validatorReplayed": false
+  },
+  "scope": {
+    "logicalConditions": 25,
+    "uniqueResponses": 22,
+    "sharedConditions": 3,
+    "assessmentsInUniqueResponses": 61,
+    "sameInput": [
+      { "condition": "DD-NPM-015:L3", "sharedResultOf": "DD-NPM-015:L2" },
+      { "condition": "DD-NPM-015:L4", "sharedResultOf": "DD-NPM-015:L2" },
+      { "condition": "DD-NPM-001:L4", "sharedResultOf": "DD-NPM-001:L3" }
+    ]
+  },
+  "sourceOfTruth": {
+    "manifest": "apps/scanner/experiments/agent-code-volume/2026-10-04-input-schema-fix-v2/manifest.json",
+    "aggregation": "apps/scanner/experiments/agent-code-volume/2026-10-04-luna-schema-fix-full-live-v1/aggregation.json",
+    "rawItemPointers": {
+      "outputLimitations": "/run/validated/output/limitations/*",
+      "outputMissingContext": "/run/validated/output/missingContext/*",
+      "assessmentLimitations": "/run/validated/assessments/*/assessment/limitations/*"
+    },
+    "note": "원문은 각 고유 응답의 validated-result.json에 그대로 보존되어 있으며 이 파일은 원문을 복제하거나 수정하지 않는다."
+  },
+  "rawCounts": {
+    "outputLimitationItems": 93,
+    "outputMissingContextItems": 97,
+    "assessmentLimitationItems": 163,
+    "totalRawItems": 353,
+    "note": "output.limitations는 현재 assessment status의 직접 조건이 아니다. missingContext는 전 assessment에, assessment.limitations는 해당 assessment에 적용된다."
+  },
+  "manualSplitCounts": {
+    "items": 20,
+    "byPrimaryClassification": {
+      "CONTEXT_RESOLVED": 3,
+      "CORE_GAP_REMAINS": 5,
+      "RUNTIME_ONLY_FOR_STATIC_CLAIM": 5,
+      "UNRELATED_TO_ASSESSMENT": 3,
+      "PROVIDED_BUT_NOT_USED": 2,
+      "UNKNOWN": 2
+    },
+    "note": "353개 원문 수와 20개 분석용 분리 항목 수는 서로 다른 분모다. 아래 분류 합계는 검토한 분리 항목에만 적용된다."
+  },
+  "sampleComparisons": [
+    {
+      "sampleId": "DD-NPM-003",
+      "claimTrack": "MNEMONIC expression to messaging call",
+      "claimScopes": ["CODE_EXPRESSION", "STATIC_DATA_LINK", "STATIC_REACHABILITY", "RUNTIME_SUCCESS", "INTENT"],
+      "levels": {
+        "L0": "ORIGINAL dist/index.js:123-127; expression exists, function declaration/export/caller and TelegramBot binding absent",
+        "L1": "more surrounding slices but core binding/caller gap remains",
+        "L2": "claim changes to POSSIBLE reachability; no independent binding/caller proof",
+        "L3": "broader package context; no caller proof",
+        "L4": "ORIGINAL dist/index.js:1-129; function declaration/export present, __exportStar is not a local TelegramBot declaration, export is not a call"
+      }
+    },
+    {
+      "sampleId": "DD-NPM-010",
+      "claimTrack": "environment and host report to request body; remote payload download/write/spawn",
+      "claimScopes": ["CODE_EXPRESSION", "STATIC_DATA_LINK", "STATIC_INSTALL_PATH", "PAYLOAD_INTERNAL_BEHAVIOR", "RUNTIME_SUCCESS"],
+      "levels": {
+        "L0": "postinstall.js implementation is present; second assessment is REJECTED because flow.trigger uses another assessment's r1-trigger",
+        "L1": "same principal static chains with assessment-local refs",
+        "L2": "environment/system object, JSON serialization and request write are cited with local refs",
+        "L3": "package lifecycle declaration is separated into its own assessment",
+        "L4": "same principal chains with package files; remote payload contents remain external"
+      }
+    },
+    {
+      "sampleId": "DD-NPM-013",
+      "claimTrack": "install-time Windows DLL spawn and native-binding retrieval",
+      "claimScopes": ["CODE_EXPRESSION", "STATIC_INSTALL_PATH", "PAYLOAD_INTERNAL_BEHAVIOR", "RUNTIME_SUCCESS", "INTENT"],
+      "levels": {
+        "L0": "native package retrieval and maintenance only; install.js DLL region absent",
+        "L1": "install.js:152-166 includes Windows DLL spawn definition but not logDiskSpace caller",
+        "L2": "DLL attempt is recognized but caller context is still incomplete",
+        "L3": "install.js:1-191 includes top-level logDiskSpace call and assessment cites 188-191 plus 154-158",
+        "L4": "full ORIGINAL package retains the static path; DLL contents and runtime outcome remain unknown"
+      }
+    },
+    {
+      "sampleId": "DD-NPM-015",
+      "claimTrack": "persistent remote execution and npm credential/authenticated publication",
+      "claimScopes": ["STATIC_DATA_LINK", "STATIC_INSTALL_PATH", "RUNTIME_SUCCESS", "INTENT"],
+      "levels": {
+        "L0": "persistence and token-to-registry/publish code are identified",
+        "L1": "same two principal behaviors",
+        "L2": "publication is split into token delegation and republication capability",
+        "L3": "SAME_INPUT of L2",
+        "L4": "SAME_INPUT of L2"
+      },
+      "reviewCaution": "Registry authentication and publish calls are not by themselves exfiltration; authorization and intent remain external."
+    },
+    {
+      "sampleId": "DD-NPM-001",
+      "claimTrack": "shell-profile persistence and parser collection/archive/messaging upload",
+      "claimScopes": ["CODE_EXPRESSION", "STATIC_DATA_LINK", "STATIC_REACHABILITY", "RUNTIME_SUCCESS", "INTENT"],
+      "levels": {
+        "L0": "ORIGINAL one-line parser is cited for multiple roles; deobfuscated indicator is inconsistent",
+        "L1": "more slices separate obfuscation and mapped indicator but parser control flow remains unresolved",
+        "L2": "persistence and parser data-flow claims remain; parser is still one line",
+        "L3": "bin/sonia caller is present and deobfuscated index.js is separate; parser restoration and exact flow remain unresolved",
+        "L4": "SAME_INPUT of L3"
+      }
+    }
+  ],
+  "manualSplitFindings": [
+    { "id": "003-binding", "sampleId": "DD-NPM-003", "claim": "Telegram API call is executable", "classification": "CORE_GAP_REMAINS", "needed": "local or otherwise demonstrated TelegramBot binding", "provided": "not found in L4 ORIGINAL dist/index.js:1-129; export re-exposure is not local binding" },
+    { "id": "003-caller", "sampleId": "DD-NPM-003", "claim": "ToNano is reached", "classification": "CORE_GAP_REMAINS", "needed": "caller/import use", "provided": "function export only; no caller through L4" },
+    { "id": "003-runtime", "sampleId": "DD-NPM-003", "claim": "MNEMONIC expression is supplied as message argument", "classification": "RUNTIME_ONLY_FOR_STATIC_CLAIM", "needed": "network delivery and credential validity", "provided": "not needed to establish the limited code expression" },
+    { "id": "003-tests", "sampleId": "DD-NPM-003", "claim": "MNEMONIC messaging expression", "classification": "UNRELATED_TO_ASSESSMENT", "needed": "complete client and multisig test contents", "provided": "relates to sibling benign assessments" },
+
+    { "id": "010-payload", "sampleId": "DD-NPM-010", "claim": "fallback environment object is serialized into request body", "classification": "UNRELATED_TO_ASSESSMENT", "needed": "remote downloaded payload contents", "provided": "payload internals are a separate behavior" },
+    { "id": "010-runtime", "sampleId": "DD-NPM-010", "claim": "static environment-to-request-body link", "classification": "RUNTIME_ONLY_FOR_STATIC_CLAIM", "needed": "network success or server receipt", "provided": "not needed for the limited static link" },
+    { "id": "010-imports", "sampleId": "DD-NPM-010", "claim": "postinstall helper uses os/fs/path/http modules", "classification": "PROVIDED_BUT_NOT_USED", "needed": "module definitions/imports", "provided": "L0/L2 postinstall slice includes require declarations at file start" },
+    { "id": "010-lifecycle", "sampleId": "DD-NPM-010", "claim": "actual npm postinstall execution", "classification": "CORE_GAP_REMAINS", "needed": "observed installation execution", "provided": "metadata proves declaration, not runtime execution" },
+
+    { "id": "013-caller", "sampleId": "DD-NPM-013", "claim": "install.js reaches logDiskSpace", "classification": "CONTEXT_RESOLVED", "needed": "top-level caller", "provided": "L3 install.js:190-191 and valid trigger ref 188-191" },
+    { "id": "013-dll-internal", "sampleId": "DD-NPM-013", "claim": "DLL performs a particular malicious action", "classification": "CORE_GAP_REMAINS", "needed": "node-gyp.dll contents/provenance", "provided": "not supplied even at L4" },
+    { "id": "013-runtime", "sampleId": "DD-NPM-013", "claim": "static Windows DLL execution attempt exists", "classification": "RUNTIME_ONLY_FOR_STATIC_CLAIM", "needed": "actual Windows execution and load success", "provided": "not needed for limited static attempt claim" },
+    { "id": "013-helpers", "sampleId": "DD-NPM-013", "claim": "DLL attempt", "classification": "UNRELATED_TO_ASSESSMENT", "needed": "callers of native-binding fallback and cleanup helpers", "provided": "relates to sibling assessments" },
+
+    { "id": "001-launcher", "sampleId": "DD-NPM-001", "claim": "bin launcher reaches parser", "classification": "CONTEXT_RESOLVED", "needed": "bin/sonia implementation", "provided": "L3 ORIGINAL bin/sonia:1-11 starts parser" },
+    { "id": "001-parser-flow", "sampleId": "DD-NPM-001", "claim": "recursive collection to archive to HTTP upload is one proven flow", "classification": "CORE_GAP_REMAINS", "needed": "reliable parser deobfuscation/control-flow reconstruction", "provided": "ORIGINAL parser is one line and restoration failed" },
+    { "id": "001-mapping", "sampleId": "DD-NPM-001", "claim": "mapped restored code supports parser flow", "classification": "PROVIDED_BUT_NOT_USED", "needed": "correct artifact identity and mapping", "provided": "DEOBFUSCATED mapping is for index.js, not bin/parser.js; it cannot support parser locations" },
+    { "id": "001-runtime", "sampleId": "DD-NPM-001", "claim": "static archive/upload code expression", "classification": "RUNTIME_ONLY_FOR_STATIC_CLAIM", "needed": "successful file reads/archive/network receipt", "provided": "runtime outcome is not needed for the limited expression but exact static flow still has a separate core gap" },
+
+    { "id": "015-lifecycle", "sampleId": "DD-NPM-015", "claim": "postinstall reaches persistence/deploy code", "classification": "CONTEXT_RESOLVED", "needed": "manifest and local entry linkage", "provided": "available by L2; L3/L4 add no input" },
+    { "id": "015-runtime", "sampleId": "DD-NPM-015", "claim": "static service/write/spawn or publish attempt", "classification": "RUNTIME_ONLY_FOR_STATIC_CLAIM", "needed": "service start, payload execution or publication success", "provided": "not needed for limited static attempt" },
+    { "id": "015-intent", "sampleId": "DD-NPM-015", "claim": "authenticated publication is unauthorized/malicious", "classification": "UNKNOWN", "needed": "ownership and authorization context", "provided": "not derivable from package code alone" },
+    { "id": "015-credential", "sampleId": "DD-NPM-015", "claim": "npm token use is credential exfiltration rather than registry authentication", "classification": "UNKNOWN", "needed": "destination, ownership and intent boundaries", "provided": "code shows token use for registry/authenticated publishing; label alone is insufficient" }
+  ],
+  "validatorInterpretation": {
+    "noStatusReplay": true,
+    "noVerifiedPromotionClaimed": true,
+    "note": "분류는 저장 응답을 사람이 대조한 초안이며 현재 Validator가 자동 판별할 수 있다고 주장하지 않는다."
+  }
+}

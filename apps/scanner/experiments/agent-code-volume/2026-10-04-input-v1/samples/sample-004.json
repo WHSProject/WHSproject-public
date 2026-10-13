@@ -1,0 +1,326 @@
+{
+  "experimentId": "sample-004",
+  "sourceSampleId": "DD-NPM-015",
+  "preparation": "RERUN_CURRENT_STATIC_PIPELINE:FROZEN_REUSE",
+  "subject": {
+    "packageName": "@teale.io/eslint-config",
+    "packageVersion": "1.8.15",
+    "archiveSha256": "7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a"
+  },
+  "source": {
+    "archive": "guarddog-pilot-selection/artifacts/archives/2026-03-20-@teale.io_eslint-config-v1.8.15.zip",
+    "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2026-03-20-@teale.io_eslint-config-v1.8.15/tmp/tmphth6tkf6/@teale.io-eslint-config/package"
+  },
+  "versions": {
+    "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9",
+    "node": "v26.4.0",
+    "guarddog": "3.1.0",
+    "semgrep": "1.172.0",
+    "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+    "planningSchemaVersion": "0.1.0",
+    "analyzers": [
+      {
+        "analyzer": "metadata",
+        "analyzerVersion": "0.1.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "custom-rule",
+        "analyzerVersion": "0.2.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "guarddog",
+        "analyzerVersion": "0.1.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "obfuscation",
+        "analyzerVersion": "0.2.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "custom-rule-deobfuscated",
+        "analyzerVersion": "0.2.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "guarddog-deobfuscated",
+        "analyzerVersion": "0.1.0",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  "staticFilter": {
+    "status": "STATIC_MALICIOUS",
+    "ruleVersion": "0.4.0",
+    "reasonCodes": [
+      "REQUIRED_RULE_HITS_PRESENT",
+      "MALICIOUS_RULE_SATISFIED",
+      "BEHAVIOR_LINK_UNVERIFIED",
+      "PAYLOAD_CONTENT_UNVERIFIED",
+      "LIFECYCLE_LINK_UNVERIFIED",
+      "RELATION_CANDIDATE_UNVERIFIED",
+      "UNCLASSIFIED_THREAT_REVIEW_REQUIRED",
+      "SCAN_COVERAGE_UNKNOWN"
+    ]
+  },
+  "fixedContractHash": "0a71ee348b1440425bd679288340a2c4af58299844edc325831e8270f99c1864",
+  "levels": [
+    {
+      "level": "L0",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "71bb6def4f819769dfde5c3cad808caf9a621b80aae851f039de8ea5fcaf87f3",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 12946,
+      "codeLines": 233,
+      "providerRequestBytes": 151765,
+      "providerRequestCharacters": 151765,
+      "estimatedTokens": 37942,
+      "ranges": [
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 3,
+          "endLine": 93,
+          "contentSha256": "432bdcc0c88db798020ec7a2dce3f15696c27dae928e992619e86da54c7c5364",
+          "sourceSha256": "432bdcc0c88db798020ec7a2dce3f15696c27dae928e992619e86da54c7c5364",
+          "bytes": 4630,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "scripts/deploy.js",
+          "startLine": 5,
+          "endLine": 77,
+          "contentSha256": "8df8c3c1b00c9bedb247303129989405c401fbd3e14644e00ef8b416f76aadf3",
+          "sourceSha256": "8df8c3c1b00c9bedb247303129989405c401fbd3e14644e00ef8b416f76aadf3",
+          "bytes": 2889,
+          "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 13,
+          "endLine": 81,
+          "contentSha256": "768fd10c82155f51f7186bd38d08bc1ace751d560a8c0cc5bfdbea23b42d8ac5",
+          "sourceSha256": "768fd10c82155f51f7186bd38d08bc1ace751d560a8c0cc5bfdbea23b42d8ac5",
+          "bytes": 5427,
+          "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        }
+      ]
+    },
+    {
+      "level": "L1",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "e16a1a5a99023d66e7dbb692e9d5bf0f504df1c678eda851362b473063e2071e",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 13450,
+      "codeLines": 252,
+      "providerRequestBytes": 156371,
+      "providerRequestCharacters": 156371,
+      "estimatedTokens": 39093,
+      "ranges": [
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 3,
+          "endLine": 87,
+          "contentSha256": "58fdfce22a0f385acd3c6726f38ae6625afdf03b644782128c6101d0199a1024",
+          "sourceSha256": "58fdfce22a0f385acd3c6726f38ae6625afdf03b644782128c6101d0199a1024",
+          "bytes": 5799,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 3,
+          "endLine": 95,
+          "contentSha256": "fe4efb2d3e9d7ca405aecb8dba5dc104ea912b9892baca4e629f89e200e7ac2b",
+          "sourceSha256": "fe4efb2d3e9d7ca405aecb8dba5dc104ea912b9892baca4e629f89e200e7ac2b",
+          "bytes": 4715,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "scripts/deploy.js",
+          "startLine": 4,
+          "endLine": 77,
+          "contentSha256": "a5dd317c35e68fcf6e8ad42d276e901068ecd14a27b492f49835c80cd2fc0f47",
+          "sourceSha256": "a5dd317c35e68fcf6e8ad42d276e901068ecd14a27b492f49835c80cd2fc0f47",
+          "bytes": 2936,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        }
+      ]
+    },
+    {
+      "level": "L2",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "c3682b7f4c6cfb421cad441b194590d7ce2bba309df57f39b96090ab7bedb99a",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 13863,
+      "codeLines": 272,
+      "providerRequestBytes": 156789,
+      "providerRequestCharacters": 156789,
+      "estimatedTokens": 39198,
+      "ranges": [
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 91,
+          "contentSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+          "sourceSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+          "bytes": 5860,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 99,
+          "contentSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+          "sourceSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+          "bytes": 4776,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "scripts/deploy.js",
+          "startLine": 1,
+          "endLine": 82,
+          "contentSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+          "sourceSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+          "bytes": 3227,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        }
+      ]
+    },
+    {
+      "level": "L3",
+      "status": "READY",
+      "sameInputAsPrevious": true,
+      "codeHash": "c3682b7f4c6cfb421cad441b194590d7ce2bba309df57f39b96090ab7bedb99a",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 13863,
+      "codeLines": 272,
+      "providerRequestBytes": 156789,
+      "providerRequestCharacters": 156789,
+      "estimatedTokens": 39198,
+      "ranges": [
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 91,
+          "contentSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+          "sourceSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+          "bytes": 5860,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 99,
+          "contentSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+          "sourceSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+          "bytes": 4776,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "scripts/deploy.js",
+          "startLine": 1,
+          "endLine": 82,
+          "contentSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+          "sourceSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+          "bytes": 3227,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        }
+      ]
+    },
+    {
+      "level": "L4",
+      "status": "READY",
+      "sameInputAsPrevious": true,
+      "codeHash": "c3682b7f4c6cfb421cad441b194590d7ce2bba309df57f39b96090ab7bedb99a",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 13863,
+      "codeLines": 272,
+      "providerRequestBytes": 156789,
+      "providerRequestCharacters": 156789,
+      "estimatedTokens": 39198,
+      "ranges": [
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 91,
+          "contentSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+          "sourceSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+          "bytes": 5860,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 99,
+          "contentSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+          "sourceSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+          "bytes": 4776,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+          "representation": "ORIGINAL",
+          "filePath": "scripts/deploy.js",
+          "startLine": 1,
+          "endLine": 82,
+          "contentSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+          "sourceSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+          "bytes": 3227,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "L4_EXCLUDED:ORIGINAL:README.md:UNSUPPORTED_NON_JS_TS",
+    "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+  ],
+  "validation": {
+    "fixedFieldsIdentical": true,
+    "cumulative": true,
+    "sourceHashesVerified": true,
+    "representationSeparated": true,
+    "noHostPaths": true,
+    "noGroundTruthLabels": true,
+    "additionalCodeRequestsDisabled": true
+  },
+  "status": "PREPARED",
+  "durationMs": 76
+}

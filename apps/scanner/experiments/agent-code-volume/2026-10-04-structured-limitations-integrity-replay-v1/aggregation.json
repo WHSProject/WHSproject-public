@@ -1,0 +1,386 @@
+{
+  "schemaVersion": "1.0.0",
+  "createdAt": "2026-10-04T11:36:59.255Z",
+  "mode": "OFFLINE_REPLAY_NO_PROVIDER_CALLS",
+  "criteriaVersion": "EVIDENCE_INTEGRITY_V1",
+  "sourceInputManifest": "experiments/agent-code-volume/2026-10-04-structured-limitations-input-v1/manifest.json",
+  "sourceLiveResults": "experiments/agent-code-volume/2026-10-04-structured-limitations-live-v1",
+  "conditionCount": 4,
+  "providerRequests": 0,
+  "totals": {
+    "assessments": 14,
+    "before": {
+      "validatorStatusCounts": {
+        "VERIFIED": 0,
+        "PARTIALLY_VERIFIED": 13,
+        "REJECTED": 1
+      },
+      "evidenceCount": 0,
+      "conversionFailureCount": 0
+    },
+    "after": {
+      "validatorStatusCounts": {
+        "VERIFIED": 13,
+        "PARTIALLY_VERIFIED": 0,
+        "REJECTED": 1
+      },
+      "evidenceCount": 13,
+      "conversionFailureCount": 0
+    }
+  },
+  "results": [
+    {
+      "conditionId": "DD-NPM-010:L2",
+      "experimentId": "sample-002",
+      "sourceSampleId": "DD-NPM-010",
+      "level": "L2",
+      "source": {
+        "inputSha256": "244cb078c35649565dafb70b1165197c7b051ff31e937df693b0c5bd5761101f",
+        "priorValidatedResultSha256": "fa0a73da05de4494f332e0866a9ed7522b9ace2fcdf0112f5343315c6b222317"
+      },
+      "before": {
+        "runnerStatus": "PARTIAL",
+        "validatorStatusCounts": {
+          "VERIFIED": 0,
+          "PARTIALLY_VERIFIED": 2,
+          "REJECTED": 1
+        },
+        "evidenceCount": 0
+      },
+      "after": {
+        "runnerStatus": "PARTIAL",
+        "validatorStatusCounts": {
+          "VERIFIED": 2,
+          "PARTIALLY_VERIFIED": 0,
+          "REJECTED": 1
+        },
+        "evidenceCount": 2,
+        "conversionFailureCount": 0
+      },
+      "assessments": [
+        {
+          "assessmentId": "assessment-remote-payload-detached-execution",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "PAYLOAD_UNKNOWN",
+            "BINDING_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "BINDING_UNKNOWN",
+            "PAYLOAD_UNKNOWN",
+            "CALLER_UNKNOWN"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-fallback-environment-exfiltration",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "RUNTIME_UNCONFIRMED",
+            "INTENT_UNKNOWN"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "BINDING_UNKNOWN",
+            "CALLER_UNKNOWN"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-configuration-and-process-environment-propagation",
+          "projectedStatus": "REJECTED",
+          "integrityStatus": "REJECTED",
+          "integrityErrors": [
+            "Unknown flow reference"
+          ],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "PAYLOAD_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "BINDING_UNKNOWN",
+            "PAYLOAD_UNKNOWN",
+            "CALLER_UNKNOWN"
+          ],
+          "evidenceGenerated": false
+        }
+      ]
+    },
+    {
+      "conditionId": "DD-NPM-013:L1",
+      "experimentId": "sample-003",
+      "sourceSampleId": "DD-NPM-013",
+      "level": "L1",
+      "source": {
+        "inputSha256": "222d05a37092a8fd9f8a3e75a08e642df0789c87ceb695ccf68692594ff44eda",
+        "priorValidatedResultSha256": "524af5390551d9bf1363b4ad599503a63beeb8e56b3ff33f78604767647c527b"
+      },
+      "before": {
+        "runnerStatus": "PARTIAL",
+        "validatorStatusCounts": {
+          "VERIFIED": 0,
+          "PARTIALLY_VERIFIED": 4,
+          "REJECTED": 0
+        },
+        "evidenceCount": 0
+      },
+      "after": {
+        "runnerStatus": "COMPLETED",
+        "validatorStatusCounts": {
+          "VERIFIED": 4,
+          "PARTIALLY_VERIFIED": 0,
+          "REJECTED": 0
+        },
+        "evidenceCount": 4,
+        "conversionFailureCount": 0
+      },
+      "assessments": [
+        {
+          "assessmentId": "assessment-obfuscated-windows-command-001",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "PAYLOAD_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "PAYLOAD_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-remote-package-fetch-and-placement-002",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "PAYLOAD_UNKNOWN",
+            "RUNTIME_UNCONFIRMED",
+            "CALLER_UNKNOWN"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "PAYLOAD_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-package-manager-subprocess-003",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "BINDING_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-platform-information-read-004",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "evidenceGenerated": true
+        }
+      ]
+    },
+    {
+      "conditionId": "DD-NPM-013:L3",
+      "experimentId": "sample-003",
+      "sourceSampleId": "DD-NPM-013",
+      "level": "L3",
+      "source": {
+        "inputSha256": "e0b6f13a67b2de34b2b431f6e751828f45e684cf3716b948cb5bfb0f94e6a9f9",
+        "priorValidatedResultSha256": "437a80ebd2a24de8faba3e9b2477ab1d8465296c5d831efc389557bf74beb593"
+      },
+      "before": {
+        "runnerStatus": "PARTIAL",
+        "validatorStatusCounts": {
+          "VERIFIED": 0,
+          "PARTIALLY_VERIFIED": 4,
+          "REJECTED": 0
+        },
+        "evidenceCount": 0
+      },
+      "after": {
+        "runnerStatus": "COMPLETED",
+        "validatorStatusCounts": {
+          "VERIFIED": 4,
+          "PARTIALLY_VERIFIED": 0,
+          "REJECTED": 0
+        },
+        "evidenceCount": 4,
+        "conversionFailureCount": 0
+      },
+      "assessments": [
+        {
+          "assessmentId": "assessment-install-obfuscated-process-launch",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CODE_MISSING",
+            "CALLER_UNKNOWN"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-direct-registry-download-and-file-placement",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "PAYLOAD_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "PAYLOAD_UNKNOWN"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-package-manager-fallback-execution",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-install-maintenance-system-information",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "RUNTIME_UNCONFIRMED",
+            "DATA_FLOW_UNKNOWN"
+          ],
+          "applicableGlobalLimitationKinds": [],
+          "evidenceGenerated": true
+        }
+      ]
+    },
+    {
+      "conditionId": "DD-NPM-003:L4",
+      "experimentId": "sample-001",
+      "sourceSampleId": "DD-NPM-003",
+      "level": "L4",
+      "source": {
+        "inputSha256": "3a0cd3e6cc3962fc1ff59651263f781dadf6bcee2efa02130a019eb50d8d3c80",
+        "priorValidatedResultSha256": "28e51ad5c2bee7b9a116338204b8b5ec1b8880fbb985ca76e2999b19bdd1f4e4"
+      },
+      "before": {
+        "runnerStatus": "PARTIAL",
+        "validatorStatusCounts": {
+          "VERIFIED": 0,
+          "PARTIALLY_VERIFIED": 3,
+          "REJECTED": 0
+        },
+        "evidenceCount": 0
+      },
+      "after": {
+        "runnerStatus": "COMPLETED",
+        "validatorStatusCounts": {
+          "VERIFIED": 3,
+          "PARTIALLY_VERIFIED": 0,
+          "REJECTED": 0
+        },
+        "evidenceCount": 3,
+        "conversionFailureCount": 0
+      },
+      "assessments": [
+        {
+          "assessmentId": "assessment-index-env-telegram-exfil",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED",
+            "INTENT_UNKNOWN"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-network-test-collection",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "STATIC_REACHABILITY",
+          "assessmentLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN",
+            "RUNTIME_UNCONFIRMED"
+          ],
+          "evidenceGenerated": true
+        },
+        {
+          "assessmentId": "assessment-multisig-fixture-encoding",
+          "projectedStatus": "VERIFIED",
+          "integrityStatus": "PASSED",
+          "integrityErrors": [],
+          "claimScope": "CODE_BEHAVIOR",
+          "assessmentLimitationKinds": [
+            "PAYLOAD_UNKNOWN"
+          ],
+          "applicableGlobalLimitationKinds": [
+            "CALLER_UNKNOWN"
+          ],
+          "evidenceGenerated": true
+        }
+      ]
+    }
+  ],
+  "interpretation": "Integrity-passed means deterministic structure, reference, artifact, lineage, slice, line, and source-content checks passed. It does not independently prove semantic data flow, reachability, malicious intent, or runtime success."
+}

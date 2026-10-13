@@ -1,0 +1,1944 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-30T06:44:04.853Z",
+  "dataset": {
+    "name": "OMC-120",
+    "purpose": "reproducible real-package Tier2/Gate-focused validation input",
+    "sourceRepository": "False-Positive-Community/open-malicious-code-benchmark",
+    "sourceRevision": "f0722971eddb654c308106c9086ff69da5b0484b",
+    "sourceManifestUrl": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/results/manifest.csv",
+    "sourceReport": "C:\\Users\\김혜진\\Documents\\GitHub\\WHSproject\\apps\\scanner\\reports\\validation\\tier2-omcbench-120-2026-09-30.json",
+    "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+    "packageExecution": "NOT PERFORMED",
+    "archiveRetention": "local ignored archive cache"
+  },
+  "samples": [
+    {
+      "package": "@react-native/metro-babel-transformer",
+      "version": "0.76.3",
+      "archiveName": "react-native-metro-babel-transformer-0.76.3.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/react-native-metro-babel-transformer-0.76.3.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "bd0e0bce6acfe5ae93f66729385f6c72a52affe18b5e384793294c2ba06c43e9",
+      "archiveBytes": 2988,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/react-native-metro-babel-transformer-0.76.3.tgz"
+    },
+    {
+      "package": "request",
+      "version": "2.88.2",
+      "archiveName": "request-2.88.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/request-2.88.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "e86dae884084b90a300096972f5954c815ebe5877c590df7fd170e8b71724242",
+      "archiveBytes": 59214,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/request-2.88.2.tgz"
+    },
+    {
+      "package": "compression",
+      "version": "1.7.5",
+      "archiveName": "compression-1.7.5.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/compression-1.7.5.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "04986671e47462f74bac09a0751da9e9932ffcb202e1f0b4bf6d53e4b8131fd4",
+      "archiveBytes": 7912,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/compression-1.7.5.tgz"
+    },
+    {
+      "package": "launch-editor",
+      "version": "2.9.1",
+      "archiveName": "launch-editor-2.9.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/launch-editor-2.9.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6f2ba02d1f3e5470c8a265f4799431207cfd25960867dda2f00164e9422bce0a",
+      "archiveBytes": 5933,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/launch-editor-2.9.1.tgz"
+    },
+    {
+      "package": "streamsearch",
+      "version": "1.1.0",
+      "archiveName": "streamsearch-1.1.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/streamsearch-1.1.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "d914d0a943464622a932ee9602bf523bd4fe649dd443689057c0ade0be4aa9a8",
+      "archiveBytes": 5370,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/streamsearch-1.1.0.tgz"
+    },
+    {
+      "package": "parse-filepath",
+      "version": "1.0.2",
+      "archiveName": "parse-filepath-1.0.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/parse-filepath-1.0.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "ea3e21777dbbf6b745f0d592fbc41f1d05fecff76b09fb8a306a0c70b416eb1e",
+      "archiveBytes": 3002,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/parse-filepath-1.0.2.tgz"
+    },
+    {
+      "package": "thread-stream",
+      "version": "3.1.0",
+      "archiveName": "thread-stream-3.1.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/thread-stream-3.1.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "2c2f408b3b76257feb98359b5ba4157c7900f49f31ac26b66a4ce11fbebb044d",
+      "archiveBytes": 18375,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/thread-stream-3.1.0.tgz"
+    },
+    {
+      "package": "cross-inspect",
+      "version": "1.0.1",
+      "archiveName": "cross-inspect-1.0.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/cross-inspect-1.0.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "2683b93e55fb6ae6a7b099d29694b54cec2a34cc0c968eb5c12601f5baa0b7f6",
+      "archiveBytes": 1723,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/cross-inspect-1.0.1.tgz"
+    },
+    {
+      "package": "fs-readdir-recursive",
+      "version": "1.1.0",
+      "archiveName": "fs-readdir-recursive-1.1.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/fs-readdir-recursive-1.1.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "eaf19d49df2319d79282391497fc43d25fe046c2720cb5e06239aefd9e9eaa17",
+      "archiveBytes": 2028,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/fs-readdir-recursive-1.1.0.tgz"
+    },
+    {
+      "package": "@graphql-tools/graphql-file-loader",
+      "version": "8.0.5",
+      "archiveName": "graphql-tools-graphql-file-loader-8.0.5.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/graphql-tools-graphql-file-loader-8.0.5.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "81159c1f67081f57bcde6093d576b189d51e88601ba401853e51c170f8e633ed",
+      "archiveBytes": 2829,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/graphql-tools-graphql-file-loader-8.0.5.tgz"
+    },
+    {
+      "package": "html-minifier",
+      "version": "4.0.0",
+      "archiveName": "html-minifier-4.0.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/html-minifier-4.0.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "765b9e5137615e9e15c93ebcbd449922cdbd8c02e4d0ef50c30126ef5578d934",
+      "archiveBytes": 26751,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/html-minifier-4.0.0.tgz"
+    },
+    {
+      "package": "i18next",
+      "version": "24.0.4",
+      "archiveName": "i18next-24.0.4.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/i18next-24.0.4.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b1323cc1245f93e905842ed7c0344b77be1cf2dcf44024920775a9ebb09eaed8",
+      "archiveBytes": 127286,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/i18next-24.0.4.tgz"
+    },
+    {
+      "package": "@one-ini/wasm",
+      "version": "0.1.2",
+      "archiveName": "one-ini-wasm-0.1.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/one-ini-wasm-0.1.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "e90161a18f264e615c8365b61d0e7428c94cc120df3245f78de0ab3500b3a1d9",
+      "archiveBytes": 40909,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/one-ini-wasm-0.1.2.tgz"
+    },
+    {
+      "package": "glob-parent",
+      "version": "6.0.2",
+      "archiveName": "glob-parent-6.0.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/glob-parent-6.0.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "345bb942f3be1fe234cab09ddc1df2c443cb2e84aaf5743c1862cf2b4e8d5066",
+      "archiveBytes": 3449,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/glob-parent-6.0.2.tgz"
+    },
+    {
+      "package": "@commitlint/rules",
+      "version": "19.6.0",
+      "archiveName": "commitlint-rules-19.6.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/commitlint-rules-19.6.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "9219dc1e1df7a26409b33fd5937f49ec93122d8436c70883b560613defc1a4d4",
+      "archiveBytes": 13336,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/commitlint-rules-19.6.0.tgz"
+    },
+    {
+      "package": "@protobufjs/codegen",
+      "version": "2.0.4",
+      "archiveName": "protobufjs-codegen-2.0.4.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/protobufjs-codegen-2.0.4.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b4afad2d3dd8b1ed25f809ae2a0d953eadcd13ad320bf75fcbf3bda0b8039b47",
+      "archiveBytes": 3410,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/protobufjs-codegen-2.0.4.tgz"
+    },
+    {
+      "package": "@babel/helper-create-regexp-features-plugin",
+      "version": "7.25.9",
+      "archiveName": "babel-helper-create-regexp-features-plugin-7.25.9.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/babel-helper-create-regexp-features-plugin-7.25.9.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6457844b23fbefc524888429c95e3cf9b35dcc66778c4d1c9c1e1e4da70068cc",
+      "archiveBytes": 7858,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/babel-helper-create-regexp-features-plugin-7.25.9.tgz"
+    },
+    {
+      "package": "@webassemblyjs/wasm-opt",
+      "version": "1.14.1",
+      "archiveName": "webassemblyjs-wasm-opt-1.14.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/webassemblyjs-wasm-opt-1.14.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "111bc0e775093d3ae9002da502716432401a36df6d75bccc32fe1b76b43ec05f",
+      "archiveBytes": 3411,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/webassemblyjs-wasm-opt-1.14.1.tgz"
+    },
+    {
+      "package": "@graphql-tools/url-loader",
+      "version": "8.0.17",
+      "archiveName": "graphql-tools-url-loader-8.0.17.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/graphql-tools-url-loader-8.0.17.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "9cf16632f36e1b26584ef0c5ed39b8154061447a2847e3c1f091b4ef77c4d8d6",
+      "archiveBytes": 5741,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/graphql-tools-url-loader-8.0.17.tgz"
+    },
+    {
+      "package": "with",
+      "version": "7.0.2",
+      "archiveName": "with-7.0.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/with-7.0.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "cbe1bc4b3b957eb27d1798e4602eea6d1e129b3248dc720e492b6dbb5d82b772",
+      "archiveBytes": 11708,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/with-7.0.2.tgz"
+    },
+    {
+      "package": "minimist-options",
+      "version": "4.1.0",
+      "archiveName": "minimist-options-4.1.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/minimist-options-4.1.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "07132114eebec519ea7509cf25f8d2d314ac9b9a40a44a34a93947da3dad6b32",
+      "archiveBytes": 3472,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/minimist-options-4.1.0.tgz"
+    },
+    {
+      "package": "ini",
+      "version": "5.0.0",
+      "archiveName": "ini-5.0.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ini-5.0.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "24528c4a937243c4251889a968ec0e3bd180e061a4538d450c777c392f474986",
+      "archiveBytes": 4909,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ini-5.0.0.tgz"
+    },
+    {
+      "package": "lodash.map",
+      "version": "4.6.0",
+      "archiveName": "lodash.map-4.6.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/lodash.map-4.6.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "19c7488b31c9ece87448224f32b965db4639e2875e157ef173e311c1810a2b44",
+      "archiveBytes": 15593,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/lodash.map-4.6.0.tgz"
+    },
+    {
+      "package": "charm",
+      "version": "1.0.2",
+      "archiveName": "charm-1.0.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/charm-1.0.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "08ad9a78c444cf5d7f6c058302eaebef2beee0a22d628c51a4e1b7e3df715112",
+      "archiveBytes": 5304,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/charm-1.0.2.tgz"
+    },
+    {
+      "package": "@humanwhocodes/module-importer",
+      "version": "1.0.1",
+      "archiveName": "humanwhocodes-module-importer-1.0.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/humanwhocodes-module-importer-1.0.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6916df30c976c50fb67af9d9693728b1d93e501f8fb4a46731b4ca3a0d1d0f1a",
+      "archiveBytes": 7090,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/humanwhocodes-module-importer-1.0.1.tgz"
+    },
+    {
+      "package": "crypto-js",
+      "version": "4.2.0",
+      "archiveName": "crypto-js-4.2.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/crypto-js-4.2.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "2d288a658b3eae000d7fadfdfdf5fe2bec3952cb19212360db8c7686c2b6ce09",
+      "archiveBytes": 87283,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/crypto-js-4.2.0.tgz"
+    },
+    {
+      "package": "babylon",
+      "version": "6.18.0",
+      "archiveName": "babylon-6.18.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/babylon-6.18.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "ce1e81d36b5789279f8aba716d2ec5aabecbc306585f867f1a6a1c8dc478d88c",
+      "archiveBytes": 69241,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/babylon-6.18.0.tgz"
+    },
+    {
+      "package": "react-shallow-renderer",
+      "version": "16.15.0",
+      "archiveName": "react-shallow-renderer-16.15.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/react-shallow-renderer-16.15.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "964995e96ec5e3f3240349510953f593fee84eeedfb7505b400c3cd4426b6634",
+      "archiveBytes": 30892,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/react-shallow-renderer-16.15.0.tgz"
+    },
+    {
+      "package": "@ardatan/sync-fetch",
+      "version": "0.0.1",
+      "archiveName": "ardatan-sync-fetch-0.0.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ardatan-sync-fetch-0.0.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "8439a7810d781bc71aa367c71217cae795ed375eec0af9e587169ed5a3ac421d",
+      "archiveBytes": 22229,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ardatan-sync-fetch-0.0.1.tgz"
+    },
+    {
+      "package": "stream-transform",
+      "version": "3.3.3",
+      "archiveName": "stream-transform-3.3.3.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/stream-transform-3.3.3.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "35b0a41db402f839ba3c0792af9be5118d006cae9739402cb19c144d60df71c8",
+      "archiveBytes": 241330,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/stream-transform-3.3.3.tgz"
+    },
+    {
+      "package": "marked",
+      "version": "15.0.3",
+      "archiveName": "marked-15.0.3.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/marked-15.0.3.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "99e8254fb982bdc5e62f7b6301784482fd8632951fcb707839985e3b544fc38d",
+      "archiveBytes": 178855,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/marked-15.0.3.tgz"
+    },
+    {
+      "package": "ejs",
+      "version": "3.1.10",
+      "archiveName": "ejs-3.1.10.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ejs-3.1.10.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "990ad60970b439f79eba9cad9e58f039471ec003f57f4e06e6a9a3fdc9e4bb95",
+      "archiveBytes": 42688,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ejs-3.1.10.tgz"
+    },
+    {
+      "package": "strict-uri-encode",
+      "version": "2.0.0",
+      "archiveName": "strict-uri-encode-2.0.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/strict-uri-encode-2.0.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "652cc5ed88730bf0644a8e27f20fbe638dd376611b9fa2d7f9aa075a85f46879",
+      "archiveBytes": 1511,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/strict-uri-encode-2.0.0.tgz"
+    },
+    {
+      "package": "big.js",
+      "version": "6.2.2",
+      "archiveName": "big.js-6.2.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/big.js-6.2.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "62e015b705d95f3d6e5b1063e95cd8c130ccc0688962289465fbb4d28ebe4a98",
+      "archiveBytes": 16263,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/big.js-6.2.2.tgz"
+    },
+    {
+      "package": "@datadog/browser-rum",
+      "version": "5.32.0",
+      "archiveName": "datadog-browser-rum-5.32.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/datadog-browser-rum-5.32.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "2b60b5d22cc52d0f312936aa9b32df46a94827bfba9dabcabc3927e3a451c241",
+      "archiveBytes": 168125,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/datadog-browser-rum-5.32.0.tgz"
+    },
+    {
+      "package": "oauth",
+      "version": "0.10.0",
+      "archiveName": "oauth-0.10.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/oauth-0.10.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "287a4883576ec1f877cc6fb913cda8fec70dfa90ac80df6949a9a65b415bfad6",
+      "archiveBytes": 28091,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/oauth-0.10.0.tgz"
+    },
+    {
+      "package": "errorhandler",
+      "version": "1.5.1",
+      "archiveName": "errorhandler-1.5.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/errorhandler-1.5.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "5e1a44bace3488ae7449c06175e55ba8b0e33a89c988fde40c1e0036e3a55fbc",
+      "archiveBytes": 5888,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/errorhandler-1.5.1.tgz"
+    },
+    {
+      "package": "get-npm-tarball-url",
+      "version": "2.1.0",
+      "archiveName": "get-npm-tarball-url-2.1.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/get-npm-tarball-url-2.1.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "c0761e6238c2333ca526f4394fb391b12f022edc2f48d2fe027f48e99f637e3c",
+      "archiveBytes": 2924,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/get-npm-tarball-url-2.1.0.tgz"
+    },
+    {
+      "package": "ordered-binary",
+      "version": "1.5.3",
+      "archiveName": "ordered-binary-1.5.3.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ordered-binary-1.5.3.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "d24cc380ef8ae08e8854ec7f9d0f7c6d2e337507f99026891813a81ae2e911c1",
+      "archiveBytes": 28755,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ordered-binary-1.5.3.tgz"
+    },
+    {
+      "package": "lodash.mapvalues",
+      "version": "4.6.0",
+      "archiveName": "lodash.mapvalues-4.6.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/lodash.mapvalues-4.6.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "c614c87f558519951a81bb98c84ffc7596ab24899d0a3a0b444c8ad28e9d51e7",
+      "archiveBytes": 15122,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/lodash.mapvalues-4.6.0.tgz"
+    },
+    {
+      "package": "aws4",
+      "version": "1.13.2",
+      "archiveName": "aws4-1.13.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/aws4-1.13.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "9bf0c14086d184e0ee7b253052cd392965ae53a88ec09c1f24948034504ead62",
+      "archiveBytes": 8148,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/aws4-1.13.2.tgz"
+    },
+    {
+      "package": "@exodus/schemasafe",
+      "version": "1.3.0",
+      "archiveName": "exodus-schemasafe-1.3.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/exodus-schemasafe-1.3.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "3ecdee92d1bd4270f688a1ad9da17bb145f6775c1454ccd891dd18c436ebf1d3",
+      "archiveBytes": 40121,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/exodus-schemasafe-1.3.0.tgz"
+    },
+    {
+      "package": "json-to-pretty-yaml",
+      "version": "1.2.2",
+      "archiveName": "json-to-pretty-yaml-1.2.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/json-to-pretty-yaml-1.2.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b8e23d6462c3db24d9465ca0e4c26a486299a4aa844a8476df934502f5873464",
+      "archiveBytes": 6849,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/json-to-pretty-yaml-1.2.2.tgz"
+    },
+    {
+      "package": "@datadog/native-iast-rewriter",
+      "version": "2.5.0",
+      "archiveName": "datadog-native-iast-rewriter-2.5.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/datadog-native-iast-rewriter-2.5.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "27b7df769b7f69683288d0d83145a12033542f5a65b9559b08b4ed55445c8fc2",
+      "archiveBytes": 753540,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/datadog-native-iast-rewriter-2.5.0.tgz"
+    },
+    {
+      "package": "@webassemblyjs/wast-parser",
+      "version": "1.14.1",
+      "archiveName": "webassemblyjs-wast-parser-1.14.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/webassemblyjs-wast-parser-1.14.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "1ce8dd882460df91225d463f6c90e5ad45f19e277f5fe2f4d154efe5ab72affe",
+      "archiveBytes": 22278,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/webassemblyjs-wast-parser-1.14.1.tgz"
+    },
+    {
+      "package": "@aws-sdk/credential-provider-process",
+      "version": "3.696.0",
+      "archiveName": "aws-sdk-credential-provider-process-3.696.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/aws-sdk-credential-provider-process-3.696.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "8560ffc47f80b4518242f7d660d22f4c1546c82e32e447cd9419dd645c6a290f",
+      "archiveBytes": 7567,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/aws-sdk-credential-provider-process-3.696.0.tgz"
+    },
+    {
+      "package": "encoding",
+      "version": "0.1.13",
+      "archiveName": "encoding-0.1.13.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/encoding-0.1.13.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6cf5b22ca0ee387c5302dcdefd8591c2ada56f1a6d6beaf64f0c021ff28dcf84",
+      "archiveBytes": 3040,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/encoding-0.1.13.tgz"
+    },
+    {
+      "package": "fast-copy",
+      "version": "3.0.2",
+      "archiveName": "fast-copy-3.0.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/fast-copy-3.0.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "4486339c294e24812e7ac7ace2dbf11063d081b23cff37324469d055ddf97046",
+      "archiveBytes": 31108,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/fast-copy-3.0.2.tgz"
+    },
+    {
+      "package": "sass-graph",
+      "version": "4.0.1",
+      "archiveName": "sass-graph-4.0.1.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/sass-graph-4.0.1.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "5c8dcdbb75f26fbcf6e5da4391f1a4da998579cd2274930ffa2b3f816985c4d2",
+      "archiveBytes": 4915,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/sass-graph-4.0.1.tgz"
+    },
+    {
+      "package": "pug-parser",
+      "version": "6.0.0",
+      "archiveName": "pug-parser-6.0.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/pug-parser-6.0.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "d126ac2684da60b20a937c61029bcb0b0d5613755099dacdd616e26cfd1da9fc",
+      "archiveBytes": 7937,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/pug-parser-6.0.0.tgz"
+    },
+    {
+      "package": "@humanfs/node",
+      "version": "0.16.6",
+      "archiveName": "humanfs-node-0.16.6.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/humanfs-node-0.16.6.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "10e1ff7f888c1cc55041352ef280e6d3e61bd176381ae199cec88f79e2a5d59d",
+      "archiveBytes": 9319,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/humanfs-node-0.16.6.tgz"
+    },
+    {
+      "package": "babel-plugin-transform-typescript-metadata",
+      "version": "0.3.2",
+      "archiveName": "babel-plugin-transform-typescript-metadata-0.3.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/babel-plugin-transform-typescript-metadata-0.3.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "0bd7c67ff6e68047fb79aee176d7620b743d695c308c8329dd8d4497182ca68a",
+      "archiveBytes": 9321,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/babel-plugin-transform-typescript-metadata-0.3.2.tgz"
+    },
+    {
+      "package": "findup-sync",
+      "version": "5.0.0",
+      "archiveName": "findup-sync-5.0.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/findup-sync-5.0.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b58f4ab62d83b24a6fcec22a0a621a6e7838b0bd3d8fab7c62acd161017ae4b6",
+      "archiveBytes": 2941,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/findup-sync-5.0.0.tgz"
+    },
+    {
+      "package": "metro-symbolicate",
+      "version": "0.81.0",
+      "archiveName": "metro-symbolicate-0.81.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/metro-symbolicate-0.81.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "c4f8d1e000e9e6067c3a5ee4d23caa5a532fc557ee92c77e4cfc697a76817ca8",
+      "archiveBytes": 25409,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/metro-symbolicate-0.81.0.tgz"
+    },
+    {
+      "package": "url-parse",
+      "version": "1.5.10",
+      "archiveName": "url-parse-1.5.10.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/url-parse-1.5.10.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "714aa16ce764f7d51a4a35afe13ad813b948a1ea1b3d4dc49d1407c45d2e080a",
+      "archiveBytes": 17010,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/url-parse-1.5.10.tgz"
+    },
+    {
+      "package": "reftools",
+      "version": "1.1.9",
+      "archiveName": "reftools-1.1.9.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/reftools-1.1.9.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6ed33b2d3b10a04117f06d311038851bcb74650e1f90aea296ee0ed554418df9",
+      "archiveBytes": 8550,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/reftools-1.1.9.tgz"
+    },
+    {
+      "package": "browserify-des",
+      "version": "1.0.2",
+      "archiveName": "browserify-des-1.0.2.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/browserify-des-1.0.2.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b7503b6a58abbd1a3b0f0aabfcd978edff54ad33ebf97a6f0bbdf45bebda9421",
+      "archiveBytes": 2310,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/browserify-des-1.0.2.tgz"
+    },
+    {
+      "package": "graphql",
+      "version": "16.9.0",
+      "archiveName": "graphql-16.9.0.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/graphql-16.9.0.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "096a7ddef63d247089e5c7ffef9468a41b7adca4178858ab28b4e5e39cc6e0ad",
+      "archiveBytes": 284130,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/graphql-16.9.0.tgz"
+    },
+    {
+      "package": "@sinonjs/fake-timers",
+      "version": "13.0.5",
+      "archiveName": "sinonjs-fake-timers-13.0.5.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/sinonjs-fake-timers-13.0.5.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "74c792a3b80e7d4303a820cc3647dca541dde37661a5abe825adddc04111f11a",
+      "archiveBytes": 21140,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/sinonjs-fake-timers-13.0.5.tgz"
+    },
+    {
+      "package": "critters",
+      "version": "0.0.25",
+      "archiveName": "critters-0.0.25.tgz",
+      "label": "benign",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/critters-0.0.25.tgz"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "a753c950c8123a0fedae7f30abf516a38114a572167a73c3b4adb7841c80dde9",
+      "archiveBytes": 44033,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/critters-0.0.25.tgz"
+    },
+    {
+      "package": "discord-v11",
+      "version": "1.0.0",
+      "archiveName": "discord-v11@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/discord-v11%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "2e8b0d28a18311b2c3ab8ed8431ad399bcbe9b27ab46156f3266c1d2d9824d00",
+      "archiveBytes": 214038,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/discord-v11@1.0.0.zip"
+    },
+    {
+      "package": "troy-common",
+      "version": "0.221.0",
+      "archiveName": "troy-common@0.221.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/troy-common%400.221.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "c1a3b4a3c039ac8cb6d4e0a891e550f6aa7ff3d3205fff3c87e0429824df26ce",
+      "archiveBytes": 121031,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/troy-common@0.221.0.zip"
+    },
+    {
+      "package": "ks-log",
+      "version": "2.0.0-rc6",
+      "archiveName": "ks-log@2.0.0-rc6.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ks-log%402.0.0-rc6.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "493bf1c88bab8dea4f2ae4f147f13388c883a0496e80927a6173ca8da3deba8f",
+      "archiveBytes": 63040,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ks-log@2.0.0-rc6.zip"
+    },
+    {
+      "package": "vibranced",
+      "version": "1.4.45",
+      "archiveName": "vibranced@1.4.45.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/vibranced%401.4.45.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "fa14be8db32c963a22961a99796ad0c1f82c24068d4126595839876bcc392668",
+      "archiveBytes": 19363,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/vibranced@1.4.45.zip"
+    },
+    {
+      "package": "nocuzune",
+      "version": "1.0.0",
+      "archiveName": "nocuzune@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/nocuzune%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "ab3253c3f5186cc50b84dde92fcb2e36cac8c12e644d71e59e1d8ab654fdd224",
+      "archiveBytes": 19086,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/nocuzune@1.0.0.zip"
+    },
+    {
+      "package": "assets-table",
+      "version": "1.0.0",
+      "archiveName": "assets-table@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/assets-table%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "42058966956122799a061cedec73e149b84237165fcc25e6745808422732ed16",
+      "archiveBytes": 35256,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/assets-table@1.0.0.zip"
+    },
+    {
+      "package": "abenoypgxdqlmkwk",
+      "version": "0.1.91",
+      "archiveName": "abenoypgxdqlmkwk@0.1.91.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/abenoypgxdqlmkwk%400.1.91.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "5017d919536b0e40327f1a40d1079f192cfd34940cc667e7bf7a976c662d147a",
+      "archiveBytes": 25254,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/abenoypgxdqlmkwk@0.1.91.zip"
+    },
+    {
+      "package": "snykaudit-helper",
+      "version": "4.1.1",
+      "archiveName": "snykaudit-helper@4.1.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/snykaudit-helper%404.1.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b5e11335a5dcea59eeeeb310cbeb4304e9d71d32bc27ca926d2a07c6ef8871a8",
+      "archiveBytes": 10170,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/snykaudit-helper@4.1.1.zip"
+    },
+    {
+      "package": "asset-detect-filter",
+      "version": "8.99.99",
+      "archiveName": "asset-detect-filter@8.99.99.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/asset-detect-filter%408.99.99.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "ebfc229205ffa0776b18bd6cbca4a94524d38738fda20951c86c1c77927caa88",
+      "archiveBytes": 1597,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/asset-detect-filter@8.99.99.zip"
+    },
+    {
+      "package": "commons-skin",
+      "version": "6.0.4",
+      "archiveName": "commons-skin@6.0.4.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/commons-skin%406.0.4.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "da1301cb96276150ca3aaa76f7663d22849eae985f9e5a142c6d4ae4fc7979a6",
+      "archiveBytes": 2181,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/commons-skin@6.0.4.zip"
+    },
+    {
+      "package": "hub-http",
+      "version": "1.284.999",
+      "archiveName": "hub-http@1.284.999.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/hub-http%401.284.999.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "acb3e9911891311c0dd124766a4066c76f0baf079b466aeaf44af63794471f36",
+      "archiveBytes": 2210,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/hub-http@1.284.999.zip"
+    },
+    {
+      "package": "theremontada12",
+      "version": "99.10.9",
+      "archiveName": "theremontada12@99.10.9.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/theremontada12%4099.10.9.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "97b833256afe76d915c87e113414294f2bcf15dff5e45add45e240e32e81a6f4",
+      "archiveBytes": 9193,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/theremontada12@99.10.9.zip"
+    },
+    {
+      "package": "ac-toolkit",
+      "version": "2.932.1",
+      "archiveName": "ac-toolkit@2.932.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ac-toolkit%402.932.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "f874c80157b1449466aba857386673714b48ab400405a489333d1a2bf7f799b6",
+      "archiveBytes": 1414,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ac-toolkit@2.932.1.zip"
+    },
+    {
+      "package": "ajax-cuuu",
+      "version": "3.6.0",
+      "archiveName": "ajax-cuuu@3.6.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ajax-cuuu%403.6.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "72b8cccca032d330c0f866ad4c4cc4251a096b43d091e67d69f137f9a2f9c753",
+      "archiveBytes": 703,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ajax-cuuu@3.6.0.zip"
+    },
+    {
+      "package": "cms-ui-components",
+      "version": "0.9.9",
+      "archiveName": "cms-ui-components@0.9.9.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/cms-ui-components%400.9.9.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "617f83481c903771a356affd5e82ff618bc54f682a57221b5d20ca9fa450b239",
+      "archiveBytes": 1361,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/cms-ui-components@0.9.9.zip"
+    },
+    {
+      "package": "cwpattern-lib-paypal",
+      "version": "1.9537.2",
+      "archiveName": "cwpattern-lib-paypal@1.9537.2.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/cwpattern-lib-paypal%401.9537.2.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "9ee9826266a18660309382c953b59bb0af4299c1df43f0133c47668975aab463",
+      "archiveBytes": 1250,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/cwpattern-lib-paypal@1.9537.2.zip"
+    },
+    {
+      "package": "discord-intents-remover",
+      "version": "1.0.0",
+      "archiveName": "discord-intents-remover@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/discord-intents-remover%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "ddaeb045c130425d984a488b9a261c8ec633a74ae5b75e3831faa52826245940",
+      "archiveBytes": 2656,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/discord-intents-remover@1.0.0.zip"
+    },
+    {
+      "package": "eslint-plugin-seller-ui-eslint-plugin",
+      "version": "0.0.3",
+      "archiveName": "eslint-plugin-seller-ui-eslint-plugin@0.0.3.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/eslint-plugin-seller-ui-eslint-plugin%400.0.3.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "99717600869c99bebe6d46fe041ce70317d498bef7b46bef16b2dc5a03db87d5",
+      "archiveBytes": 2280,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/eslint-plugin-seller-ui-eslint-plugin@0.0.3.zip"
+    },
+    {
+      "package": "geoadv-proptypes-codegen",
+      "version": "999.9.9",
+      "archiveName": "geoadv-proptypes-codegen@999.9.9.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/geoadv-proptypes-codegen%40999.9.9.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "daacf10b9191291cd59745b3abc131b029172cdbeee29167dc5dc54f664fe618",
+      "archiveBytes": 1449,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/geoadv-proptypes-codegen@999.9.9.zip"
+    },
+    {
+      "package": "import-cost-monorepo",
+      "version": "47.47.48",
+      "archiveName": "import-cost-monorepo@47.47.48.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/import-cost-monorepo%4047.47.48.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "955913da364d0a1644f0deb8c5a1b6accb40564e69e955d454bf8e4544ab36d4",
+      "archiveBytes": 1655,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/import-cost-monorepo@47.47.48.zip"
+    },
+    {
+      "package": "jquery-lh",
+      "version": "2.545.2",
+      "archiveName": "jquery-lh@2.545.2.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/jquery-lh%402.545.2.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "0c8becddb8fae91425631de5154d77c8909ae3124f6df32ce6e3f95f2e120be4",
+      "archiveBytes": 1119,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/jquery-lh@2.545.2.zip"
+    },
+    {
+      "package": "native-svg",
+      "version": "10.0.0",
+      "archiveName": "native-svg@10.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/native-svg%4010.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "4ea8aa3b9103eba75388e5498a6873e225e542e16221a7e6b7bb420a3255de69",
+      "archiveBytes": 1426,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/native-svg@10.0.0.zip"
+    },
+    {
+      "package": "oj-cropper",
+      "version": "1.9.99",
+      "archiveName": "oj-cropper@1.9.99.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/oj-cropper%401.9.99.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "0545f7a5707b72cbca8d63394c91ad4fb94d5d96e004b9a696569dbd23ab5aa0",
+      "archiveBytes": 2064,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/oj-cropper@1.9.99.zip"
+    },
+    {
+      "package": "pcln-config",
+      "version": "1.0.10",
+      "archiveName": "pcln-config@1.0.10.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/pcln-config%401.0.10.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "519722374ccdecd203ff3cbde68f379bed670248f94e98fd3fda3304f9e0182b",
+      "archiveBytes": 1155,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/pcln-config@1.0.10.zip"
+    },
+    {
+      "package": "react-blue-ui",
+      "version": "0.0.1",
+      "archiveName": "react-blue-ui@0.0.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/react-blue-ui%400.0.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "094c618fb54ca893c367afafcee114177e47b5774eca22de4fe004b6ef390185",
+      "archiveBytes": 1943,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/react-blue-ui@0.0.1.zip"
+    },
+    {
+      "package": "registrydependency1",
+      "version": "1.2.3",
+      "archiveName": "registrydependency1@1.2.3.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/registrydependency1%401.2.3.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "a25d82d52a6e654121a44e0a8921ad0f4c638f45f67e2f1d9188b899e665e282",
+      "archiveBytes": 1993,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/registrydependency1@1.2.3.zip"
+    },
+    {
+      "package": "sfdc-aem-master",
+      "version": "44.44.0",
+      "archiveName": "sfdc-aem-master@44.44.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/sfdc-aem-master%4044.44.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "69a8d4e3fc8781580b70fa5a15c414f949e4b88e9160be3f415878bf5ada314e",
+      "archiveBytes": 2084,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/sfdc-aem-master@44.44.0.zip"
+    },
+    {
+      "package": "snackbars",
+      "version": "6.9082.3",
+      "archiveName": "snackbars@6.9082.3.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/snackbars%406.9082.3.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "b336b9c96ff5d184707d50381dcce5a8920b00479d5c694bd314d3cc5168927c",
+      "archiveBytes": 1345,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/snackbars@6.9082.3.zip"
+    },
+    {
+      "package": "syzzfpmkizkljkiibpgb",
+      "version": "1.0.0",
+      "archiveName": "syzzfpmkizkljkiibpgb@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/syzzfpmkizkljkiibpgb%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "0035448eef8f73c0e5cec6b65d5953692bf49f386c95b3c9bfd64b8d1a02b5b6",
+      "archiveBytes": 1221,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/syzzfpmkizkljkiibpgb@1.0.0.zip"
+    },
+    {
+      "package": "usaa-wdio-utils",
+      "version": "1.2.1",
+      "archiveName": "usaa-wdio-utils@1.2.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/usaa-wdio-utils%401.2.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "1ffbf481ccb0e85b70700a9e32939d8c0481422a3229bcb98542ae09e6061bdd",
+      "archiveBytes": 3470,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/usaa-wdio-utils@1.2.1.zip"
+    },
+    {
+      "package": "page-configs",
+      "version": "99.99.1",
+      "archiveName": "page-configs@99.99.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/page-configs%4099.99.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "8f9cee77a820ade8172077da25bf617aeee8927609d7bb8258363c5863050131",
+      "archiveBytes": 151546,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/page-configs@99.99.1.zip"
+    },
+    {
+      "package": "systemrobotassistant",
+      "version": "3.0.8",
+      "archiveName": "systemrobotassistant@3.0.8.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/systemrobotassistant%403.0.8.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "16d88fd05a8a752fbc72def5a36ac28a48e7e77cce8aa667cba5b39fc3bc3112",
+      "archiveBytes": 406148,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/systemrobotassistant@3.0.8.zip"
+    },
+    {
+      "package": "discorddependency",
+      "version": "1.0.0",
+      "archiveName": "discorddependency@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/discorddependency%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6e692c0df91e9fe82689ae6e390bcfddfc3d8694cf170e69ae5d86de485df9f5",
+      "archiveBytes": 29479,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/discorddependency@1.0.0.zip"
+    },
+    {
+      "package": "gd-react-toolbox",
+      "version": "3.99.99",
+      "archiveName": "gd-react-toolbox@3.99.99.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/gd-react-toolbox%403.99.99.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "be6a8a2986e18da6b248676bc1977dd349b2139a1689b857d95a74023bdc267b",
+      "archiveBytes": 1284,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/gd-react-toolbox@3.99.99.zip"
+    },
+    {
+      "package": "revshell",
+      "version": "1.0.5",
+      "archiveName": "revshell@1.0.5.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/revshell%401.0.5.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "4da762271a751821e0b11ba5d3c5ea8def24d4466f7bc673613c54cf67fc5dc2",
+      "archiveBytes": 13770,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/revshell@1.0.5.zip"
+    },
+    {
+      "package": "ac-event-emitter",
+      "version": "3.2.999",
+      "archiveName": "ac-event-emitter@3.2.999.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ac-event-emitter%403.2.999.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "9004224330562109282252fa97e592d73882ab3b72ecf20782099352457da0d7",
+      "archiveBytes": 3279,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ac-event-emitter@3.2.999.zip"
+    },
+    {
+      "package": "addin-fuel-transaction-import",
+      "version": "3.1.1",
+      "archiveName": "addin-fuel-transaction-import@3.1.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/addin-fuel-transaction-import%403.1.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "4ab1f458df80e4db60dbb8f9177240a8be74f9570a8f2b4b8997ef6278359382",
+      "archiveBytes": 873,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/addin-fuel-transaction-import@3.1.1.zip"
+    },
+    {
+      "package": "alfaform-core-ui",
+      "version": "1.1.1",
+      "archiveName": "alfaform-core-ui@1.1.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/alfaform-core-ui%401.1.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "f26220563fd23471a9e1b079173ee6585195b0a78116940d35294107a544128d",
+      "archiveBytes": 2296,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/alfaform-core-ui@1.1.1.zip"
+    },
+    {
+      "package": "anandakshya",
+      "version": "1.0.0",
+      "archiveName": "anandakshya@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/anandakshya%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "9b3eb40b74a610b5578b6c5268f344b0761db1e8a45fb63d9ad6d426bf147183",
+      "archiveBytes": 940,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/anandakshya@1.0.0.zip"
+    },
+    {
+      "package": "angularfire-seed",
+      "version": "3.0.0",
+      "archiveName": "angularfire-seed@3.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/angularfire-seed%403.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "501e5298b158007a3ffdf304cd7076c2868d625a378fce7061bf13fbdc91e912",
+      "archiveBytes": 626,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/angularfire-seed@3.0.0.zip"
+    },
+    {
+      "package": "aonetecha1",
+      "version": "9.9.9",
+      "archiveName": "aonetecha1@9.9.9.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/aonetecha1%409.9.9.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "6e7e1a9beeacd5da041bf9bfe28b54e109c6a93dabdb37cc1c12fa4f4c0b7f6c",
+      "archiveBytes": 884,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/aonetecha1@9.9.9.zip"
+    },
+    {
+      "package": "areyoustillindexing2",
+      "version": "69.2.22",
+      "archiveName": "areyoustillindexing2@69.2.22.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/areyoustillindexing2%4069.2.22.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "539a823ab4bb8ceff15b72e2e6b210b6cbd6025a591cf151e4297f01e335d5cd",
+      "archiveBytes": 783,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/areyoustillindexing2@69.2.22.zip"
+    },
+    {
+      "package": "arkime",
+      "version": "1.0.0",
+      "archiveName": "arkime@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/arkime%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "08c2d3cc6f5ff16e2dd67e5654a5f2a90806b245722c704e396756172ad495dc",
+      "archiveBytes": 964,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/arkime@1.0.0.zip"
+    },
+    {
+      "package": "astar-portal",
+      "version": "1.0.0",
+      "archiveName": "astar-portal@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/astar-portal%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "3820b836ed32352963700819afd274c8c211163acb44c6dfd7ab1ac0c64957de",
+      "archiveBytes": 1080,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/astar-portal@1.0.0.zip"
+    },
+    {
+      "package": "autorest-extension-base",
+      "version": "99.9.8",
+      "archiveName": "autorest-extension-base@99.9.8.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/autorest-extension-base%4099.9.8.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "46ad97be08527d0fd5bec2d8a5138bcca4caaf94f04a7e74860ce1bffc6eea11",
+      "archiveBytes": 1393,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/autorest-extension-base@99.9.8.zip"
+    },
+    {
+      "package": "azuremediaplayer",
+      "version": "2.3.32",
+      "archiveName": "azuremediaplayer@2.3.32.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/azuremediaplayer%402.3.32.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "84b7f2163ad72b77c9e09ba3bf5460b9b0268f2bfc175ed4abb0770782369299",
+      "archiveBytes": 999,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/azuremediaplayer@2.3.32.zip"
+    },
+    {
+      "package": "basubanakar",
+      "version": "1.0.0",
+      "archiveName": "basubanakar@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/basubanakar%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "24958edd753e04fa225419bdc473ddf709e619295eb7e4ec78070cec0bd10734",
+      "archiveBytes": 955,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/basubanakar@1.0.0.zip"
+    },
+    {
+      "package": "bem-mvc",
+      "version": "1.0.0",
+      "archiveName": "bem-mvc@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/bem-mvc%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "4dbee847a93c4efe56a686abf8c47a39b69fca28814954c4f1904ea44bfe26a2",
+      "archiveBytes": 854,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/bem-mvc@1.0.0.zip"
+    },
+    {
+      "package": "bootstrap-sass-official",
+      "version": "3.1.1+2",
+      "archiveName": "bootstrap-sass-official@3.1.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/bootstrap-sass-official%403.1.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "0488494dafa3a5d17f78b05eb359704cfd3fd9a34e990d2c5ea0695d730f9af2",
+      "archiveBytes": 921,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/bootstrap-sass-official@3.1.1.zip"
+    },
+    {
+      "package": "brbsainath",
+      "version": "1.0.1",
+      "archiveName": "brbsainath@1.0.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/brbsainath%401.0.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "43686c9700f3406f837758bb533fdd2a21a7f330b3d53e66e8b1007f43443581",
+      "archiveBytes": 1010,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/brbsainath@1.0.1.zip"
+    },
+    {
+      "package": "ca-bucky-client",
+      "version": "0.0.1",
+      "archiveName": "ca-bucky-client@0.0.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/ca-bucky-client%400.0.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "075487c3093e0285fcfe2392b051d632b6af344cbfa8dc38ec1d2d16cfa52ca0",
+      "archiveBytes": 6691,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/ca-bucky-client@0.0.1.zip"
+    },
+    {
+      "package": "calc_bc8zluyekj",
+      "version": "1.2.0",
+      "archiveName": "calc_bc8zluyekj@1.2.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/calc_bc8zluyekj%401.2.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "ba0cfa30ac94a3b3845fa965608625eb2321efcc9c0fef4f426b3e31497b456d",
+      "archiveBytes": 513,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/calc_bc8zluyekj@1.2.0.zip"
+    },
+    {
+      "package": "calc_zf0nakil18",
+      "version": "1.1.1",
+      "archiveName": "calc_zf0nakil18@1.1.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/calc_zf0nakil18%401.1.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "396bc46480e3650a3f79a2b9932dd8ee816a987bca2be74543a02c364ea8153c",
+      "archiveBytes": 611,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/calc_zf0nakil18@1.1.1.zip"
+    },
+    {
+      "package": "capacitybot-cf-nodejs-fct",
+      "version": "3.0.0",
+      "archiveName": "capacitybot-cf-nodejs-fct@3.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/capacitybot-cf-nodejs-fct%403.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "493c278c749a25972259f0b829a4b7b2de48233afe2550c5f0fb3abbcaa1c632",
+      "archiveBytes": 640,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/capacitybot-cf-nodejs-fct@3.0.0.zip"
+    },
+    {
+      "package": "cd-themes",
+      "version": "5.3.1",
+      "archiveName": "cd-themes@5.3.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/cd-themes%405.3.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "443efc2806073c4f104464f18ec58527831407df3151278cce762e14dbe385ec",
+      "archiveBytes": 884,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/cd-themes@5.3.1.zip"
+    },
+    {
+      "package": "chawla-init-3",
+      "version": "1.0.0",
+      "archiveName": "chawla-init-3@1.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/chawla-init-3%401.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "5c75983127b14b0177cc609324a233da3bcd90ac25bac6b4fd3e8bc5c671702e",
+      "archiveBytes": 906,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/chawla-init-3@1.0.0.zip"
+    },
+    {
+      "package": "coding-with-chrome",
+      "version": "3.0.0",
+      "archiveName": "coding-with-chrome@3.0.0.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/coding-with-chrome%403.0.0.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "688f72f0716f1ad02c6dc8a90e0e1dc8ee4c17f17c8563c3d998c37e694778f4",
+      "archiveBytes": 630,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/coding-with-chrome@3.0.0.zip"
+    },
+    {
+      "package": "com.unity.modules.ai",
+      "version": "5.0.2",
+      "archiveName": "com-unity-modules-ai@5.0.2.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/com-unity-modules-ai%405.0.2.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "bae31d0d6ca117fe7957d0824615670276562126f2f66e7e44dcf1c5c735e5a0",
+      "archiveBytes": 892,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/com-unity-modules-ai@5.0.2.zip"
+    },
+    {
+      "package": "com.unity.modules.physics",
+      "version": "4.0.1",
+      "archiveName": "com-unity-modules-physics@4.0.1.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/com-unity-modules-physics%404.0.1.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "c86ce18d384dbb11446fd9f68346e5da463ed6e2dfcbabb52006f92bb464b0f0",
+      "archiveBytes": 899,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/com-unity-modules-physics@4.0.1.zip"
+    },
+    {
+      "package": "com.unity.modules.ui",
+      "version": "3.0.7",
+      "archiveName": "com-unity-modules-ui@3.0.7.zip",
+      "label": "malicious",
+      "source": {
+        "repository": "False-Positive-Community/open-malicious-code-benchmark",
+        "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+        "url": "https://raw.githubusercontent.com/False-Positive-Community/open-malicious-code-benchmark/f0722971eddb654c308106c9086ff69da5b0484b/packages/com-unity-modules-ui%403.0.7.zip"
+      },
+      "selectionMethod": "OMC results/manifest.csv JS rows; archive size <= 1,000,000 bytes; 60 samples per label using existing tier2-omcbench-eval.mjs midpoint/even-spacing selection",
+      "acquisitionStatus": "SUCCESS",
+      "archiveSha256": "bfcf13d7f472cefdc32578bbf429592f58b4bb961a8bfdfafbc884da1a4bf9df",
+      "archiveBytes": 893,
+      "archivePath": "LOCAL_ARCHIVE_CACHE/com-unity-modules-ui@3.0.7.zip"
+    }
+  ],
+  "summary": {
+    "total": 120,
+    "benign": 60,
+    "malicious": 60,
+    "acquired": 120,
+    "failed": 0
+  }
+}

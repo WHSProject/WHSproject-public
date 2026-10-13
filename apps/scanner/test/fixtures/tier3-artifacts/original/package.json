@@ -1,0 +1,8 @@
+{
+  "name": "tier3-fixture",
+  "version": "1.0.0",
+  "main": "lib/util.js",
+  "scripts": {
+    "postinstall": "node install.js"
+  }
+}

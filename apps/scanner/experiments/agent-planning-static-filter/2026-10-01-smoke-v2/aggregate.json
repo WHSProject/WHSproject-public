@@ -1,0 +1,147 @@
+{
+  "denominators": {
+    "manifestEntries": 20,
+    "acquiredDevelopmentSamples": 15,
+    "selectedForRun": 2,
+    "completedResults": 2
+  },
+  "finalStatusDistribution": {
+    "STATIC_INCOMPLETE": 2
+  },
+  "appliedAmbiguousRules": {
+    "A03": 1,
+    "A05": 2,
+    "A06": 1,
+    "A09": 2
+  },
+  "appliedIncompleteRules": {
+    "I08": 2
+  },
+  "reasonCodes": {
+    "BEHAVIOR_LINK_UNVERIFIED": 2,
+    "LIFECYCLE_LINK_UNVERIFIED": 2,
+    "RELATION_CANDIDATE_UNVERIFIED": 2,
+    "REQUIRED_RULE_HITS_PRESENT": 1,
+    "SCAN_COVERAGE_UNKNOWN": 2,
+    "UNCLASSIFIED_THREAT_REVIEW_REQUIRED": 2
+  },
+  "analyzerStatuses": {
+    "custom-rule:SUCCESS": 2,
+    "guarddog:SUCCESS": 2,
+    "metadata:SUCCESS": 2,
+    "obfuscation:SUCCESS": 2
+  },
+  "resultNotCreated": [],
+  "staticDurationMs": {
+    "total": 3217,
+    "bySample": {
+      "DD-NPM-002": 1676,
+      "DD-NPM-010": 1541
+    }
+  },
+  "maliciousRules": {
+    "M01": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 0,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    },
+    "M02": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 1,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    },
+    "M03": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 2,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    },
+    "M04": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 1,
+      "validConfirmed": 2,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [
+        "DD-NPM-010"
+      ],
+      "blockingConditions": {
+        "CREDENTIAL_OR_FULL_ENV_COLLECTION": 1,
+        "EXTERNAL_EXFILTRATION_CONTEXT": 1
+      }
+    },
+    "M05": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 0,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 0,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    },
+    "M06": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 2,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    },
+    "M07": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 0,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    },
+    "M08": {
+      "denominatorCompleted": 2,
+      "requiredCombinationDetected": 0,
+      "validConfirmed": 1,
+      "sameFileConfirmed": 0,
+      "linkedConfirmed": 0,
+      "linkedUnverified": 2,
+      "finalSatisfied": 0,
+      "samplesWithCombination": [],
+      "blockingConditions": {}
+    }
+  },
+  "relations": {
+    "candidates": 2,
+    "allReferencesPresent": 2,
+    "semanticLinkProven": 0
+  },
+  "unclassifiedThreatRules": {
+    "threat-network-outbound-shady-links": 4,
+    "threat-process-spawn-silent": 3,
+    "threat-runtime-system-info": 5
+  }
+}

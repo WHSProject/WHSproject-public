@@ -1,0 +1,63 @@
+{
+  "conditionId": "sample-001:L4",
+  "experimentId": "sample-001",
+  "sourceSampleId": "DD-NPM-003",
+  "level": "L4",
+  "inputHash": "32030970d5ffdfe7850e172a4f341e8fe663f39fcbc2f0a36adf33e6fc5ec5eb",
+  "fixedContractHash": "12b23d1be38860e8da50c1e7d5d82a383366d4009116e43cbc1de1a65fc0870f",
+  "codeHash": "2e04adf49c5270cd8d7c8e7c7f425c40ab454e2a78733ae5038b3ebfd587873d",
+  "configHash": "7305ccec38df573b8a6f22387502b14bb87d9c73bc19b6453b6afbd903897e0c",
+  "promptHash": "faf52045f340afb0734bbc4e0b2b52a1fa8bcbac1b8a31b34476ccc6839667df",
+  "requestHash": "b80d884c76b1f0e5527067f974e83d53d3fa1c30a78ecc0bf0a88499669bca33",
+  "reuseKey": "6482cbc61cc981e254332d567a76e66a8800c8f934df5f0054dc810393992715",
+  "inputSize": {
+    "findings": 8,
+    "evidences": 8,
+    "codeSlices": 123,
+    "codeBytes": 428543,
+    "promptBytes": 593864,
+    "requestBytes": 629362,
+    "requestCharacters": 629362,
+    "estimatedInputTokens": 148466
+  },
+  "modelContextCheck": {
+    "contextWindowTokens": 1050000,
+    "reservedMaxOutputTokens": 32768,
+    "estimatedTotalTokens": 181234,
+    "fits": true
+  },
+  "sameInputAsPrevious": false,
+  "sharedResultOf": null,
+  "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+  "terminal": true,
+  "providerRequests": 1,
+  "runnerCalls": 1,
+  "httpStatus": 200,
+  "runnerStatus": "PARTIAL",
+  "failureReason": null,
+  "additionalCodeNeeded": false,
+  "assessmentCount": 3,
+  "validatorStatusCounts": {
+    "PARTIALLY_VERIFIED": 3
+  },
+  "generatedEvidenceCount": 0,
+  "evidenceConversionFailureCount": 0,
+  "usage": {
+    "inputTokens": 172634,
+    "cachedInputTokens": 0,
+    "outputTokens": 2853,
+    "reasoningTokens": 839,
+    "totalTokens": 175487,
+    "note": "reasoningTokens is a subset of outputTokens and is not added again."
+  },
+  "estimatedCostUsd": 0.0379504,
+  "durationMs": 26762,
+  "summary": {
+    "status": "PARTIAL",
+    "assessmentCount": 3,
+    "verifiedAssessmentCount": 0,
+    "generatedEvidenceCount": 0,
+    "rejectedAssessmentCount": 0,
+    "limitationCount": 4
+  }
+}

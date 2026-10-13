@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-007",
+  "subject": {
+    "sampleId": "DD-NPM-007",
+    "ecosystem": "npm",
+    "packageName": "bootstrap-setcolors",
+    "packageVersion": "1.9.16"
+  },
+  "artifactSha256": "c37a99d69d37a8b0af28c781a01b583894ad8cedb98fdbd327f8fca7916094a5",
+  "status": "COMPLETED",
+  "filterStatus": "NO_ESCALATION_SIGNAL",
+  "triggerReason": "NO_THREAT_FINDING",
+  "tier3Status": "SKIPPED",
+  "runnerCalls": 0,
+  "providerRequests": 0,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 5,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 1909
+}

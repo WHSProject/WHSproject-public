@@ -1,0 +1,5 @@
+# 이미지에는 Storage Plugin 설치 목록만 넣는다. 설정과 WHS Plugin 은 compose 가
+# 마운트하므로 빌드 context 에 올리지 않는다.
+*
+!storage-plugins/package.json
+!storage-plugins/package-lock.json

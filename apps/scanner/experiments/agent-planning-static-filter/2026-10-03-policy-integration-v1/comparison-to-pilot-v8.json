@@ -1,0 +1,22 @@
+{
+  "baseline": "pilot-v8 documented sample/status mapping",
+  "sampleCount": 15,
+  "mismatchCount": 0,
+  "samples": [
+    { "sampleId": "DD-NPM-001", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-002", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-003", "pilotV8Status": "STATIC_MALICIOUS", "integrationStatus": "STATIC_MALICIOUS", "matches": true },
+    { "sampleId": "DD-NPM-004", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-005", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-006", "pilotV8Status": "NO_ESCALATION_SIGNAL", "integrationStatus": "NO_ESCALATION_SIGNAL", "matches": true },
+    { "sampleId": "DD-NPM-007", "pilotV8Status": "NO_ESCALATION_SIGNAL", "integrationStatus": "NO_ESCALATION_SIGNAL", "matches": true },
+    { "sampleId": "DD-NPM-008", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-009", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-010", "pilotV8Status": "STATIC_MALICIOUS", "integrationStatus": "STATIC_MALICIOUS", "matches": true },
+    { "sampleId": "DD-NPM-011", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-012", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-013", "pilotV8Status": "NO_ESCALATION_SIGNAL", "integrationStatus": "NO_ESCALATION_SIGNAL", "matches": true },
+    { "sampleId": "DD-NPM-014", "pilotV8Status": "STATIC_INCOMPLETE", "integrationStatus": "STATIC_INCOMPLETE", "matches": true },
+    { "sampleId": "DD-NPM-015", "pilotV8Status": "STATIC_MALICIOUS", "integrationStatus": "STATIC_MALICIOUS", "matches": true }
+  ]
+}

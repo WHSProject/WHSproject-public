@@ -1,0 +1,52 @@
+# PR에서 변경된 파일 경로를 기준으로 Component Label을 자동 적용합니다.
+
+Gateway:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'apps/gateway/**'
+
+Dashboard:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'apps/dashboard/**'
+
+Policy:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'apps/policy/**'
+          - 'packages/contracts/policy*.schema.json'
+          - 'infra/postgres/migrations/policy/**'
+
+Scanner:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'apps/scanner/**'
+          - 'packages/contracts/evidence*.schema.json'
+          - 'infra/postgres/migrations/evidence/**'
+
+Verdaccio:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'infra/verdaccio/**'
+
+Database:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'infra/postgres/**'
+
+Data/Feeds:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'apps/data/**'
+          - 'apps/feeds/**'
+          - 'data/**'
+          - 'feeds/**'
+
+DevOps/QA:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+          - 'compose.yaml'
+          - '.env.example'
+          - 'tests/**'
+          - '**/Dockerfile'

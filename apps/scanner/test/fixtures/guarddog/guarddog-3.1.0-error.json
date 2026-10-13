@@ -1,0 +1,17 @@
+{
+  "package": "/scanner/scan-id/extracted",
+  "results": {
+    "capability-network-outbound": {}
+  },
+  "errors": {
+    "threat-broken-rule": "failed to run rule: fixture error"
+  },
+  "issues": 0,
+  "risk_score": {
+    "score": 0.0,
+    "label": "no_risks_detected",
+    "findings_count": 0,
+    "score_breakdown": {}
+  },
+  "risks": []
+}

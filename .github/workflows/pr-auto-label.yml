@@ -1,0 +1,139 @@
+name: PR Component Auto Label
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - edited
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  manage-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      # =========================================================
+      # 1. PR 작성자 자동 Assignee 지정
+      #    + Component Label 존재 여부 확인
+      # =========================================================
+      - name: Assign PR author and ensure component labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+
+            // =====================================================
+            // PR 생성자를 자동 Assignee로 지정
+            // 최초 생성 시에만 실행
+            // =====================================================
+
+            if (context.payload.action === 'opened') {
+              const creator = pr.user?.login;
+
+              if (creator) {
+                try {
+                  await github.rest.issues.addAssignees({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: pr.number,
+                    assignees: [creator]
+                  });
+
+                  core.info(`Assigned PR creator: ${creator}`);
+                } catch (error) {
+                  core.warning(
+                    `Could not assign PR creator ${creator}: ${error.message}`
+                  );
+                }
+              }
+            }
+
+            // =====================================================
+            // Component Label 정의
+            // =====================================================
+
+            const labelDefinitions = {
+              'Gateway': {
+                color: '67C5E5',
+                description: 'Gateway 관련 작업'
+              },
+              'Policy': {
+                color: '6D4AFF',
+                description: 'Policy 관련 작업'
+              },
+              'Scanner': {
+                color: 'B867D6',
+                description: 'Scanner 관련 작업'
+              },
+              'Verdaccio': {
+                color: 'E1E46A',
+                description: 'Verdaccio 관련 작업'
+              },
+              'Data/Feeds': {
+                color: '2F9E89',
+                description: 'Data/Feeds 관련 작업'
+              },
+              'Database': {
+                color: '7A8490',
+                description: 'Database 관련 작업'
+              },
+              'Dashboard': {
+                color: '3F7F68',
+                description: 'Dashboard 관련 작업'
+              },
+              'DevOps/QA': {
+                color: 'C4474D',
+                description: 'DevOps/QA 관련 작업'
+              }
+            };
+
+            // =====================================================
+            // Repository에 존재하는 Label 조회
+            // =====================================================
+
+            const existingLabelsResponse = await github.paginate(
+              github.rest.issues.listLabelsForRepo,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per_page: 100
+              }
+            );
+
+            const existingLabels = new Set(
+              existingLabelsResponse.map(label => label.name)
+            );
+
+            // =====================================================
+            // 없는 Component Label 자동 생성
+            // =====================================================
+
+            for (const [name, definition] of Object.entries(labelDefinitions)) {
+              if (!existingLabels.has(name)) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name,
+                  color: definition.color,
+                  description: definition.description
+                });
+
+                core.info(`Created label: ${name}`);
+              }
+            }
+
+      # =========================================================
+      # 2. 변경 파일 경로 기반 Component Label 자동 적용
+      # =========================================================
+      - name: Apply component labels
+        uses: actions/labeler@v6
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml
+          sync-labels: true

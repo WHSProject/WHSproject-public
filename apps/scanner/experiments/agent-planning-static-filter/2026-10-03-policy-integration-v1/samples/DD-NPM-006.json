@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-006",
+  "subject": {
+    "sampleId": "DD-NPM-006",
+    "ecosystem": "npm",
+    "packageName": "@walletwave/backend",
+    "packageVersion": "1.1.0"
+  },
+  "artifactSha256": "a4eb9d38a292cbdddc56a5bc13e1cc3248075400486d425730bf8e939e23ea1e",
+  "status": "COMPLETED",
+  "filterStatus": "NO_ESCALATION_SIGNAL",
+  "triggerReason": "NO_THREAT_FINDING",
+  "tier3Status": "SKIPPED",
+  "runnerCalls": 0,
+  "providerRequests": 0,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 1,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 2540
+}

@@ -1,0 +1,4046 @@
+{
+  "benchmarkStatus": "VALID",
+  "validationErrors": [],
+  "source": {
+    "repository": "False-Positive-Community/open-malicious-code-benchmark",
+    "revision": "f0722971eddb654c308106c9086ff69da5b0484b",
+    "archiveManifest": "reports/validation/omc-120-reproducibility-manifest-2026-09-30.json",
+    "archiveSamples": {
+      "total": 120,
+      "benign": 60,
+      "malicious": 60,
+      "acquired": 120,
+      "failed": 0
+    }
+  },
+  "metrics": {
+    "positiveCandidateRecall": "UNAVAILABLE",
+    "routingConfusionMatrix": "UNAVAILABLE",
+    "minifyBundleFalsePositive": "NOT_MEASURED",
+    "benignCandidatePackageRate": 0.03333333333333333,
+    "maliciousCandidatePackageRate": 0.1,
+    "analysisP50Ms": 19.15,
+    "analysisP95Ms": 328.87,
+    "packageTotalP50Ms": 530,
+    "packageTotalP95Ms": 1799
+  },
+  "restore": {
+    "statusCounts": {
+      "RESTORED": 8,
+      "PARTIAL_RESTORED": 3,
+      "UNRESOLVED": 0,
+      "SKIPPED": 0,
+      "FAILED": 0
+    },
+    "reasonCounts": {
+      "DYNAMIC_DECODE_UNRESOLVED": 3
+    }
+  },
+  "selectionSkipped": {
+    "MIN_SIZE": 15,
+    "READ_FAILED": 2
+  },
+  "groups": [
+    {
+      "label": "benign",
+      "packages": 60,
+      "withCandidate": 2,
+      "candidateFiles": 4,
+      "scannedFiles": 674,
+      "skippedLargeFiles": 0,
+      "scanLimitPackages": 0,
+      "benignOrMaliciousCandidatePackageRate": 0.03333333333333333,
+      "analysisDurations": [
+        18.86,
+        15.34,
+        3.43,
+        24.99,
+        4.55,
+        55.44,
+        3.01,
+        4.96,
+        32.62,
+        3.65,
+        28.14,
+        31.5,
+        5.88,
+        1.46,
+        33.83,
+        21.38,
+        4.31,
+        3.82,
+        7.26,
+        3.2,
+        1.84,
+        2.03,
+        56.2,
+        35.8,
+        6.44,
+        43.19,
+        517.64,
+        80.19,
+        9.99,
+        196.52,
+        42.85,
+        1223.64,
+        32.65,
+        3.67,
+        61.33,
+        7.02,
+        49.92,
+        3.05,
+        6.04,
+        55.39,
+        3.77,
+        19.82,
+        328.87,
+        9.76,
+        15.3,
+        5.01,
+        3.49,
+        49.9,
+        2.23,
+        3.26,
+        3.54,
+        4.9,
+        1.86,
+        5.14,
+        5.08,
+        10.84,
+        39.75,
+        226,
+        10.99,
+        7.94
+      ],
+      "durations": [
+        551,
+        1018,
+        466,
+        755,
+        533,
+        660,
+        1799,
+        599,
+        516,
+        575,
+        678,
+        1001,
+        587,
+        504,
+        1836,
+        542,
+        505,
+        776,
+        706,
+        754,
+        573,
+        506,
+        520,
+        868,
+        579,
+        2218,
+        1058,
+        711,
+        702,
+        1183,
+        761,
+        1873,
+        477,
+        479,
+        3987,
+        1031,
+        568,
+        600,
+        1214,
+        516,
+        504,
+        927,
+        769,
+        1125,
+        748,
+        751,
+        603,
+        1127,
+        474,
+        505,
+        577,
+        706,
+        615,
+        729,
+        660,
+        874,
+        525,
+        9854,
+        803,
+        659
+      ],
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 3,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {
+          "DYNAMIC_DECODE_UNRESOLVED": 3
+        }
+      },
+      "selectionSkipped": {
+        "MIN_SIZE": 6
+      }
+    },
+    {
+      "label": "malicious",
+      "packages": 60,
+      "withCandidate": 6,
+      "candidateFiles": 7,
+      "scannedFiles": 579,
+      "skippedLargeFiles": 0,
+      "scanLimitPackages": 0,
+      "benignOrMaliciousCandidatePackageRate": 0.1,
+      "analysisDurations": [
+        139.65,
+        44.17,
+        653.18,
+        255.68,
+        16.95,
+        32.49,
+        25.6,
+        16.64,
+        17.1,
+        23.91,
+        14.67,
+        79.78,
+        24.61,
+        27.12,
+        16.5,
+        19.45,
+        27.26,
+        42.48,
+        19.15,
+        17.57,
+        3.34,
+        81.65,
+        15.5,
+        13.55,
+        44.58,
+        25.38,
+        19.29,
+        24.49,
+        1672.59,
+        17.65,
+        99.74,
+        272.58,
+        1005.7,
+        4.05,
+        1101.04,
+        95.36,
+        33.51,
+        20.8,
+        9.72,
+        15.21,
+        11.95,
+        13.31,
+        27.31,
+        37.35,
+        32.24,
+        23.11,
+        19.69,
+        286.1,
+        17.53,
+        2,
+        36.52,
+        17.45,
+        2.55,
+        3.88,
+        15.17,
+        28.27,
+        8.82,
+        29.49,
+        14.6,
+        22.55
+      ],
+      "durations": [
+        975,
+        575,
+        1202,
+        713,
+        381,
+        404,
+        429,
+        415,
+        388,
+        396,
+        412,
+        466,
+        638,
+        427,
+        392,
+        414,
+        377,
+        358,
+        367,
+        416,
+        439,
+        420,
+        374,
+        383,
+        423,
+        397,
+        393,
+        381,
+        2084,
+        433,
+        748,
+        1078,
+        1388,
+        335,
+        1483,
+        635,
+        541,
+        385,
+        384,
+        335,
+        327,
+        367,
+        530,
+        395,
+        409,
+        457,
+        465,
+        654,
+        371,
+        357,
+        481,
+        372,
+        408,
+        352,
+        379,
+        391,
+        388,
+        420,
+        390,
+        356
+      ],
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 7,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "selectionSkipped": {
+        "MIN_SIZE": 9,
+        "READ_FAILED": 2
+      }
+    }
+  ],
+  "cases": [
+    {
+      "label": "benign",
+      "name": "react-native-metro-babel-transformer-0.76.3.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "bd0e0bce6acfe5ae93f66729385f6c72a52affe18b5e384793294c2ba06c43e9"
+    },
+    {
+      "label": "benign",
+      "name": "request-2.88.2.tgz",
+      "status": "완료",
+      "scannedFiles": 13,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "e86dae884084b90a300096972f5954c815ebe5877c590df7fd170e8b71724242"
+    },
+    {
+      "label": "benign",
+      "name": "compression-1.7.5.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "04986671e47462f74bac09a0751da9e9932ffcb202e1f0b4bf6d53e4b8131fd4"
+    },
+    {
+      "label": "benign",
+      "name": "launch-editor-2.9.1.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "6f2ba02d1f3e5470c8a265f4799431207cfd25960867dda2f00164e9422bce0a"
+    },
+    {
+      "label": "benign",
+      "name": "streamsearch-1.1.0.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "d914d0a943464622a932ee9602bf523bd4fe649dd443689057c0ade0be4aa9a8"
+    },
+    {
+      "label": "benign",
+      "name": "parse-filepath-1.0.2.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "ea3e21777dbbf6b745f0d592fbc41f1d05fecff76b09fb8a306a0c70b416eb1e"
+    },
+    {
+      "label": "benign",
+      "name": "thread-stream-3.1.0.tgz",
+      "status": "완료",
+      "scannedFiles": 5,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "2c2f408b3b76257feb98359b5ba4157c7900f49f31ac26b66a4ce11fbebb044d"
+    },
+    {
+      "label": "benign",
+      "name": "cross-inspect-1.0.1.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "2683b93e55fb6ae6a7b099d29694b54cec2a34cc0c968eb5c12601f5baa0b7f6"
+    },
+    {
+      "label": "benign",
+      "name": "fs-readdir-recursive-1.1.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "eaf19d49df2319d79282391497fc43d25fe046c2720cb5e06239aefd9e9eaa17"
+    },
+    {
+      "label": "benign",
+      "name": "graphql-tools-graphql-file-loader-8.0.5.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "81159c1f67081f57bcde6093d576b189d51e88601ba401853e51c170f8e633ed"
+    },
+    {
+      "label": "benign",
+      "name": "html-minifier-4.0.0.tgz",
+      "status": "완료",
+      "scannedFiles": 5,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "765b9e5137615e9e15c93ebcbd449922cdbd8c02e4d0ef50c30126ef5578d934"
+    },
+    {
+      "label": "benign",
+      "name": "i18next-24.0.4.tgz",
+      "status": "완료",
+      "scannedFiles": 8,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "b1323cc1245f93e905842ed7c0344b77be1cf2dcf44024920775a9ebb09eaed8"
+    },
+    {
+      "label": "benign",
+      "name": "one-ini-wasm-0.1.2.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "e90161a18f264e615c8365b61d0e7428c94cc120df3245f78de0ab3500b3a1d9"
+    },
+    {
+      "label": "benign",
+      "name": "glob-parent-6.0.2.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "345bb942f3be1fe234cab09ddc1df2c443cb2e84aaf5743c1862cf2b4e8d5066"
+    },
+    {
+      "label": "benign",
+      "name": "commitlint-rules-19.6.0.tgz",
+      "status": "완료",
+      "scannedFiles": 37,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "9219dc1e1df7a26409b33fd5937f49ec93122d8436c70883b560613defc1a4d4"
+    },
+    {
+      "label": "benign",
+      "name": "protobufjs-codegen-2.0.4.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "b4afad2d3dd8b1ed25f809ae2a0d953eadcd13ad320bf75fcbf3bda0b8039b47"
+    },
+    {
+      "label": "benign",
+      "name": "babel-helper-create-regexp-features-plugin-7.25.9.tgz",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "6457844b23fbefc524888429c95e3cf9b35dcc66778c4d1c9c1e1e4da70068cc"
+    },
+    {
+      "label": "benign",
+      "name": "webassemblyjs-wasm-opt-1.14.1.tgz",
+      "status": "완료",
+      "scannedFiles": 4,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "111bc0e775093d3ae9002da502716432401a36df6d75bccc32fe1b76b43ec05f"
+    },
+    {
+      "label": "benign",
+      "name": "graphql-tools-url-loader-8.0.17.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "9cf16632f36e1b26584ef0c5ed39b8154061447a2847e3c1f091b4ef77c4d8d6"
+    },
+    {
+      "label": "benign",
+      "name": "with-7.0.2.tgz",
+      "status": "완료",
+      "scannedFiles": 4,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "cbe1bc4b3b957eb27d1798e4602eea6d1e129b3248dc720e492b6dbb5d82b772"
+    },
+    {
+      "label": "benign",
+      "name": "minimist-options-4.1.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "07132114eebec519ea7509cf25f8d2d314ac9b9a40a44a34a93947da3dad6b32"
+    },
+    {
+      "label": "benign",
+      "name": "ini-5.0.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "24528c4a937243c4251889a968ec0e3bd180e061a4538d450c777c392f474986"
+    },
+    {
+      "label": "benign",
+      "name": "lodash.map-4.6.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "19c7488b31c9ece87448224f32b965db4639e2875e157ef173e311c1810a2b44"
+    },
+    {
+      "label": "benign",
+      "name": "charm-1.0.2.tgz",
+      "status": "완료",
+      "scannedFiles": 10,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "08ad9a78c444cf5d7f6c058302eaebef2beee0a22d628c51a4e1b7e3df715112"
+    },
+    {
+      "label": "benign",
+      "name": "humanwhocodes-module-importer-1.0.1.tgz",
+      "status": "완료",
+      "scannedFiles": 4,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "6916df30c976c50fb67af9d9693728b1d93e501f8fb4a46731b4ca3a0d1d0f1a"
+    },
+    {
+      "label": "benign",
+      "name": "crypto-js-4.2.0.tgz",
+      "status": "완료",
+      "scannedFiles": 50,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "2d288a658b3eae000d7fadfdfdf5fe2bec3952cb19212360db8c7686c2b6ce09"
+    },
+    {
+      "label": "benign",
+      "name": "babylon-6.18.0.tgz",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "ce1e81d36b5789279f8aba716d2ec5aabecbc306585f867f1a6a1c8dc478d88c"
+    },
+    {
+      "label": "benign",
+      "name": "react-shallow-renderer-16.15.0.tgz",
+      "status": "완료",
+      "scannedFiles": 5,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "964995e96ec5e3f3240349510953f593fee84eeedfb7505b400c3cd4426b6634"
+    },
+    {
+      "label": "benign",
+      "name": "ardatan-sync-fetch-0.0.1.tgz",
+      "status": "완료",
+      "scannedFiles": 5,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "8439a7810d781bc71aa367c71217cae795ed375eec0af9e587169ed5a3ac421d"
+    },
+    {
+      "label": "benign",
+      "name": "stream-transform-3.3.3.tgz",
+      "status": "완료",
+      "scannedFiles": 10,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "35b0a41db402f839ba3c0792af9be5118d006cae9739402cb19c144d60df71c8"
+    },
+    {
+      "label": "benign",
+      "name": "marked-15.0.3.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "99e8254fb982bdc5e62f7b6301784482fd8632951fcb707839985e3b544fc38d"
+    },
+    {
+      "label": "benign",
+      "name": "ejs-3.1.10.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 3,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 3,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {
+          "DYNAMIC_DECODE_UNRESOLVED": 3
+        }
+      },
+      "candidates": [
+        {
+          "path": "ejs-v3.1.10\\ejs.js",
+          "candidateReasons": [
+            "DYNAMIC_EXECUTION_WITH_ENCODED_LITERAL"
+          ],
+          "supportingSignals": [
+            "ESCAPED_LITERAL",
+            "DYNAMIC_EVAL"
+          ],
+          "restoreStatus": "PARTIAL_RESTORED",
+          "reason": "DYNAMIC_DECODE_UNRESOLVED",
+          "limitations": [
+            "DYNAMIC_DECODE_UNRESOLVED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": false,
+              "status": "SKIPPED",
+              "changed": false,
+              "reason": "NOT_APPLICABLE"
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 5,
+                "transformations": [
+                  "CONST_INLINE",
+                  "STRING_CONCAT"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "memberAccessNormalized": 30
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 50139,
+              "identifierCount": 1991,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.1,
+              "signals": [
+                "ESCAPED_LITERAL",
+                "DYNAMIC_EVAL"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 59662,
+              "identifierCount": 2014,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.1,
+              "signals": [
+                "ESCAPED_LITERAL",
+                "DYNAMIC_EVAL"
+              ]
+            },
+            "byteDelta": 9523,
+            "byteRatio": 1.1899319890703843,
+            "identifierDelta": 23,
+            "hexIdentifierDelta": 0,
+            "scoreDelta": 0,
+            "addedSignals": [],
+            "removedSignals": [],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        },
+        {
+          "path": "ejs-v3.1.10\\ejs.min.js",
+          "candidateReasons": [
+            "DYNAMIC_EXECUTION_WITH_ENCODED_LITERAL"
+          ],
+          "supportingSignals": [
+            "ESCAPED_LITERAL",
+            "DYNAMIC_EVAL"
+          ],
+          "restoreStatus": "PARTIAL_RESTORED",
+          "reason": "DYNAMIC_DECODE_UNRESOLVED",
+          "limitations": [
+            "DYNAMIC_DECODE_UNRESOLVED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": false,
+              "status": "SKIPPED",
+              "changed": false,
+              "reason": "NOT_APPLICABLE"
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 5,
+                "transformations": [
+                  "CONST_INLINE",
+                  "STRING_CONCAT"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 24323,
+              "identifierCount": 2021,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.1,
+              "signals": [
+                "ESCAPED_LITERAL",
+                "DYNAMIC_EVAL"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 38730,
+              "identifierCount": 2014,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.1,
+              "signals": [
+                "ESCAPED_LITERAL",
+                "DYNAMIC_EVAL"
+              ]
+            },
+            "byteDelta": 14407,
+            "byteRatio": 1.5923200263125437,
+            "identifierDelta": -7,
+            "hexIdentifierDelta": 0,
+            "scoreDelta": 0,
+            "addedSignals": [],
+            "removedSignals": [],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        },
+        {
+          "path": "ejs-v3.1.10\\lib\\ejs.js",
+          "candidateReasons": [
+            "DYNAMIC_EXECUTION_WITH_ENCODED_LITERAL"
+          ],
+          "supportingSignals": [
+            "ESCAPED_LITERAL",
+            "DYNAMIC_EVAL"
+          ],
+          "restoreStatus": "PARTIAL_RESTORED",
+          "reason": "DYNAMIC_DECODE_UNRESOLVED",
+          "limitations": [
+            "DYNAMIC_DECODE_UNRESOLVED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": false,
+              "status": "SKIPPED",
+              "changed": false,
+              "reason": "NOT_APPLICABLE"
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 3,
+                "transformations": [
+                  "CONST_INLINE",
+                  "STRING_CONCAT"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 27477,
+              "identifierCount": 1113,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.1,
+              "signals": [
+                "ESCAPED_LITERAL",
+                "DYNAMIC_EVAL"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 27310,
+              "identifierCount": 1106,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.1,
+              "signals": [
+                "ESCAPED_LITERAL",
+                "DYNAMIC_EVAL"
+              ]
+            },
+            "byteDelta": -167,
+            "byteRatio": 0.9939221894675547,
+            "identifierDelta": -7,
+            "hexIdentifierDelta": 0,
+            "scoreDelta": 0,
+            "addedSignals": [],
+            "removedSignals": [],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "990ad60970b439f79eba9cad9e58f039471ec003f57f4e06e6a9a3fdc9e4bb95"
+    },
+    {
+      "label": "benign",
+      "name": "strict-uri-encode-2.0.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "652cc5ed88730bf0644a8e27f20fbe638dd376611b9fa2d7f9aa075a85f46879"
+    },
+    {
+      "label": "benign",
+      "name": "big.js-6.2.2.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "62e015b705d95f3d6e5b1063e95cd8c130ccc0688962289465fbb4d28ebe4a98"
+    },
+    {
+      "label": "benign",
+      "name": "datadog-browser-rum-5.32.0.tgz",
+      "status": "완료",
+      "scannedFiles": 101,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "2b60b5d22cc52d0f312936aa9b32df46a94827bfba9dabcabc3927e3a451c241"
+    },
+    {
+      "label": "benign",
+      "name": "oauth-0.10.0.tgz",
+      "status": "완료",
+      "scannedFiles": 9,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "287a4883576ec1f877cc6fb913cda8fec70dfa90ac80df6949a9a65b415bfad6"
+    },
+    {
+      "label": "benign",
+      "name": "errorhandler-1.5.1.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "5e1a44bace3488ae7449c06175e55ba8b0e33a89c988fde40c1e0036e3a55fbc"
+    },
+    {
+      "label": "benign",
+      "name": "get-npm-tarball-url-2.1.0.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "c0761e6238c2333ca526f4394fb391b12f022edc2f48d2fe027f48e99f637e3c"
+    },
+    {
+      "label": "benign",
+      "name": "ordered-binary-1.5.3.tgz",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "d24cc380ef8ae08e8854ec7f9d0f7c6d2e337507f99026891813a81ae2e911c1"
+    },
+    {
+      "label": "benign",
+      "name": "lodash.mapvalues-4.6.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "c614c87f558519951a81bb98c84ffc7596ab24899d0a3a0b444c8ad28e9d51e7"
+    },
+    {
+      "label": "benign",
+      "name": "aws4-1.13.2.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "9bf0c14086d184e0ee7b253052cd392965ae53a88ec09c1f24948034504ead62"
+    },
+    {
+      "label": "benign",
+      "name": "exodus-schemasafe-1.3.0.tgz",
+      "status": "완료",
+      "scannedFiles": 11,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "3ecdee92d1bd4270f688a1ad9da17bb145f6775c1454ccd891dd18c436ebf1d3"
+    },
+    {
+      "label": "benign",
+      "name": "json-to-pretty-yaml-1.2.2.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 1,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "package\\index.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION"
+          ],
+          "supportingSignals": [
+            "CONTROL_FLOW_FLATTENING"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "rounds": 1,
+                "transformations": [],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 3359,
+              "identifierCount": 100,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.35,
+              "signals": [
+                "CONTROL_FLOW_FLATTENING"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 2745,
+              "identifierCount": 108,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0,
+              "signals": []
+            },
+            "byteDelta": -614,
+            "byteRatio": 0.8172075022328074,
+            "identifierDelta": 8,
+            "hexIdentifierDelta": 0,
+            "scoreDelta": -0.35,
+            "addedSignals": [],
+            "removedSignals": [
+              "CONTROL_FLOW_FLATTENING"
+            ],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "b8e23d6462c3db24d9465ca0e4c26a486299a4aa844a8476df934502f5873464"
+    },
+    {
+      "label": "benign",
+      "name": "datadog-native-iast-rewriter-2.5.0.tgz",
+      "status": "완료",
+      "scannedFiles": 8,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "27b7df769b7f69683288d0d83145a12033542f5a65b9559b08b4ed55445c8fc2"
+    },
+    {
+      "label": "benign",
+      "name": "webassemblyjs-wast-parser-1.14.1.tgz",
+      "status": "완료",
+      "scannedFiles": 8,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "1ce8dd882460df91225d463f6c90e5ad45f19e277f5fe2f4d154efe5ab72affe"
+    },
+    {
+      "label": "benign",
+      "name": "aws-sdk-credential-provider-process-3.696.0.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 2
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "8560ffc47f80b4518242f7d660d22f4c1546c82e32e447cd9419dd645c6a290f"
+    },
+    {
+      "label": "benign",
+      "name": "encoding-0.1.13.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "6cf5b22ca0ee387c5302dcdefd8591c2ada56f1a6d6beaf64f0c021ff28dcf84"
+    },
+    {
+      "label": "benign",
+      "name": "fast-copy-3.0.2.tgz",
+      "status": "완료",
+      "scannedFiles": 11,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "4486339c294e24812e7ac7ace2dbf11063d081b23cff37324469d055ddf97046"
+    },
+    {
+      "label": "benign",
+      "name": "sass-graph-4.0.1.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "5c8dcdbb75f26fbcf6e5da4391f1a4da998579cd2274930ffa2b3f816985c4d2"
+    },
+    {
+      "label": "benign",
+      "name": "pug-parser-6.0.0.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "d126ac2684da60b20a937c61029bcb0b0d5613755099dacdd616e26cfd1da9fc"
+    },
+    {
+      "label": "benign",
+      "name": "humanfs-node-0.16.6.tgz",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "10e1ff7f888c1cc55041352ef280e6d3e61bd176381ae199cec88f79e2a5d59d"
+    },
+    {
+      "label": "benign",
+      "name": "babel-plugin-transform-typescript-metadata-0.3.2.tgz",
+      "status": "완료",
+      "scannedFiles": 4,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "0bd7c67ff6e68047fb79aee176d7620b743d695c308c8329dd8d4497182ca68a"
+    },
+    {
+      "label": "benign",
+      "name": "findup-sync-5.0.0.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "b58f4ab62d83b24a6fcec22a0a621a6e7838b0bd3d8fab7c62acd161017ae4b6"
+    },
+    {
+      "label": "benign",
+      "name": "metro-symbolicate-0.81.0.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "c4f8d1e000e9e6067c3a5ee4d23caa5a532fc557ee92c77e4cfc697a76817ca8"
+    },
+    {
+      "label": "benign",
+      "name": "url-parse-1.5.10.tgz",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "714aa16ce764f7d51a4a35afe13ad813b948a1ea1b3d4dc49d1407c45d2e080a"
+    },
+    {
+      "label": "benign",
+      "name": "reftools-1.1.9.tgz",
+      "status": "완료",
+      "scannedFiles": 10,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "6ed33b2d3b10a04117f06d311038851bcb74650e1f90aea296ee0ed554418df9"
+    },
+    {
+      "label": "benign",
+      "name": "browserify-des-1.0.2.tgz",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "b7503b6a58abbd1a3b0f0aabfcd978edff54ad33ebf97a6f0bbdf45bebda9421"
+    },
+    {
+      "label": "benign",
+      "name": "graphql-16.9.0.tgz",
+      "status": "완료",
+      "scannedFiles": 258,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 4
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "096a7ddef63d247089e5c7ffef9468a41b7adca4178858ab28b4e5e39cc6e0ad"
+    },
+    {
+      "label": "benign",
+      "name": "sinonjs-fake-timers-13.0.5.tgz",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "74c792a3b80e7d4303a820cc3647dca541dde37661a5abe825adddc04111f11a"
+    },
+    {
+      "label": "benign",
+      "name": "critters-0.0.25.tgz",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "a753c950c8123a0fedae7f30abf516a38114a572167a73c3b4adb7841c80dde9"
+    },
+    {
+      "label": "malicious",
+      "name": "discord-v11@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 169,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "2e8b0d28a18311b2c3ab8ed8431ad399bcbe9b27ab46156f3266c1d2d9824d00"
+    },
+    {
+      "label": "malicious",
+      "name": "troy-common@0.221.0.zip",
+      "status": "완료",
+      "scannedFiles": 59,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "c1a3b4a3c039ac8cb6d4e0a891e550f6aa7ff3d3205fff3c87e0429824df26ce"
+    },
+    {
+      "label": "malicious",
+      "name": "ks-log@2.0.0-rc6.zip",
+      "status": "완료",
+      "scannedFiles": 34,
+      "candidateFiles": 2,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 2,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "init.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION",
+            "EXECUTION_PATH_WITH_OBFUSCATION_SIGNAL"
+          ],
+          "supportingSignals": [
+            "IDENTIFIER_MANGLING",
+            "CONTROL_FLOW_FLATTENING"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [
+            "LINE_MAPPING_UNMAPPED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 2,
+                "transformations": [
+                  "CONST_INLINE"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "memberAccessNormalized": 4
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 23373,
+              "identifierCount": 1136,
+              "hexIdentifierCount": 1045,
+              "hexIdRatio": 0.44849785407725323,
+              "score": 0.8,
+              "signals": [
+                "IDENTIFIER_MANGLING",
+                "CONTROL_FLOW_FLATTENING"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 28139,
+              "identifierCount": 1329,
+              "hexIdentifierCount": 1039,
+              "hexIdRatio": 0.4593280282935455,
+              "score": 0.5,
+              "signals": [
+                "IDENTIFIER_MANGLING",
+                "CHAR_CODE"
+              ]
+            },
+            "byteDelta": 4766,
+            "byteRatio": 1.2039104950156163,
+            "identifierDelta": 193,
+            "hexIdentifierDelta": -6,
+            "scoreDelta": -0.30000000000000004,
+            "addedSignals": [
+              "CHAR_CODE"
+            ],
+            "removedSignals": [
+              "CONTROL_FLOW_FLATTENING"
+            ],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        },
+        {
+          "path": "util.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION"
+          ],
+          "supportingSignals": [
+            "IDENTIFIER_MANGLING",
+            "CONTROL_FLOW_FLATTENING"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [
+            "LINE_MAPPING_UNMAPPED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 2,
+                "transformations": [
+                  "CONST_INLINE"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "memberAccessNormalized": 4
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 24762,
+              "identifierCount": 1192,
+              "hexIdentifierCount": 1128,
+              "hexIdRatio": 0.47394957983193275,
+              "score": 0.8,
+              "signals": [
+                "IDENTIFIER_MANGLING",
+                "CONTROL_FLOW_FLATTENING"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 29441,
+              "identifierCount": 1428,
+              "hexIdentifierCount": 1122,
+              "hexIdRatio": 0.4829961256995265,
+              "score": 0.5,
+              "signals": [
+                "IDENTIFIER_MANGLING",
+                "CHAR_CODE"
+              ]
+            },
+            "byteDelta": 4679,
+            "byteRatio": 1.1889588886196591,
+            "identifierDelta": 236,
+            "hexIdentifierDelta": -6,
+            "scoreDelta": -0.30000000000000004,
+            "addedSignals": [
+              "CHAR_CODE"
+            ],
+            "removedSignals": [
+              "CONTROL_FLOW_FLATTENING"
+            ],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "493bf1c88bab8dea4f2ae4f147f13388c883a0496e80927a6173ca8da3deba8f"
+    },
+    {
+      "label": "malicious",
+      "name": "vibranced@1.4.45.zip",
+      "status": "완료",
+      "scannedFiles": 18,
+      "candidateFiles": 1,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "lib\\custom\\spawn.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION"
+          ],
+          "supportingSignals": [
+            "IDENTIFIER_MANGLING"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [
+            "LINE_MAPPING_UNMAPPED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "rounds": 1,
+                "transformations": [],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 1497,
+              "identifierCount": 86,
+              "hexIdentifierCount": 61,
+              "hexIdRatio": 0.3630952380952381,
+              "score": 0.45,
+              "signals": [
+                "IDENTIFIER_MANGLING"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 414,
+              "identifierCount": 23,
+              "hexIdentifierCount": 6,
+              "hexIdRatio": 0.14634146341463414,
+              "score": 0.45,
+              "signals": [
+                "IDENTIFIER_MANGLING"
+              ]
+            },
+            "byteDelta": -1083,
+            "byteRatio": 0.27655310621242485,
+            "identifierDelta": -63,
+            "hexIdentifierDelta": -55,
+            "scoreDelta": 0,
+            "addedSignals": [],
+            "removedSignals": [],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "fa14be8db32c963a22961a99796ad0c1f82c24068d4126595839876bcc392668"
+    },
+    {
+      "label": "malicious",
+      "name": "nocuzune@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 16,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "ab3253c3f5186cc50b84dde92fcb2e36cac8c12e644d71e59e1d8ab654fdd224"
+    },
+    {
+      "label": "malicious",
+      "name": "assets-table@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 12,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "42058966956122799a061cedec73e149b84237165fcc25e6745808422732ed16"
+    },
+    {
+      "label": "malicious",
+      "name": "abenoypgxdqlmkwk@0.1.91.zip",
+      "status": "완료",
+      "scannedFiles": 6,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "5017d919536b0e40327f1a40d1079f192cfd34940cc667e7bf7a976c662d147a"
+    },
+    {
+      "label": "malicious",
+      "name": "snykaudit-helper@4.1.1.zip",
+      "status": "완료",
+      "scannedFiles": 4,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "b5e11335a5dcea59eeeeb310cbeb4304e9d71d32bc27ca926d2a07c6ef8871a8"
+    },
+    {
+      "label": "malicious",
+      "name": "asset-detect-filter@8.99.99.zip",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "ebfc229205ffa0776b18bd6cbca4a94524d38738fda20951c86c1c77927caa88"
+    },
+    {
+      "label": "malicious",
+      "name": "commons-skin@6.0.4.zip",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "da1301cb96276150ca3aaa76f7663d22849eae985f9e5a142c6d4ae4fc7979a6"
+    },
+    {
+      "label": "malicious",
+      "name": "hub-http@1.284.999.zip",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "acb3e9911891311c0dd124766a4066c76f0baf079b466aeaf44af63794471f36"
+    },
+    {
+      "label": "malicious",
+      "name": "theremontada12@99.10.9.zip",
+      "status": "완료",
+      "scannedFiles": 3,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "97b833256afe76d915c87e113414294f2bcf15dff5e45add45e240e32e81a6f4"
+    },
+    {
+      "label": "malicious",
+      "name": "ac-toolkit@2.932.1.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "f874c80157b1449466aba857386673714b48ab400405a489333d1a2bf7f799b6"
+    },
+    {
+      "label": "malicious",
+      "name": "ajax-cuuu@3.6.0.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "72b8cccca032d330c0f866ad4c4cc4251a096b43d091e67d69f137f9a2f9c753"
+    },
+    {
+      "label": "malicious",
+      "name": "cms-ui-components@0.9.9.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "617f83481c903771a356affd5e82ff618bc54f682a57221b5d20ca9fa450b239"
+    },
+    {
+      "label": "malicious",
+      "name": "cwpattern-lib-paypal@1.9537.2.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "9ee9826266a18660309382c953b59bb0af4299c1df43f0133c47668975aab463"
+    },
+    {
+      "label": "malicious",
+      "name": "discord-intents-remover@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "ddaeb045c130425d984a488b9a261c8ec633a74ae5b75e3831faa52826245940"
+    },
+    {
+      "label": "malicious",
+      "name": "eslint-plugin-seller-ui-eslint-plugin@0.0.3.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "99717600869c99bebe6d46fe041ce70317d498bef7b46bef16b2dc5a03db87d5"
+    },
+    {
+      "label": "malicious",
+      "name": "geoadv-proptypes-codegen@999.9.9.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "daacf10b9191291cd59745b3abc131b029172cdbeee29167dc5dc54f664fe618"
+    },
+    {
+      "label": "malicious",
+      "name": "import-cost-monorepo@47.47.48.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "955913da364d0a1644f0deb8c5a1b6accb40564e69e955d454bf8e4544ab36d4"
+    },
+    {
+      "label": "malicious",
+      "name": "jquery-lh@2.545.2.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "0c8becddb8fae91425631de5154d77c8909ae3124f6df32ce6e3f95f2e120be4"
+    },
+    {
+      "label": "malicious",
+      "name": "native-svg@10.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 1,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "extract.js",
+          "candidateReasons": [
+            "EXECUTION_PATH_WITH_OBFUSCATION_SIGNAL"
+          ],
+          "supportingSignals": [
+            "LONG_ENCODED_BLOB"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": false,
+              "status": "SKIPPED",
+              "changed": false,
+              "reason": "NOT_APPLICABLE"
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 2,
+                "transformations": [
+                  "CONST_INLINE"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 1154,
+              "identifierCount": 59,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.05,
+              "signals": [
+                "LONG_ENCODED_BLOB"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 1335,
+              "identifierCount": 57,
+              "hexIdentifierCount": 0,
+              "hexIdRatio": 0,
+              "score": 0.05,
+              "signals": [
+                "LONG_ENCODED_BLOB"
+              ]
+            },
+            "byteDelta": 181,
+            "byteRatio": 1.15684575389948,
+            "identifierDelta": -2,
+            "hexIdentifierDelta": 0,
+            "scoreDelta": 0,
+            "addedSignals": [],
+            "removedSignals": [],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "4ea8aa3b9103eba75388e5498a6873e225e542e16221a7e6b7bb420a3255de69"
+    },
+    {
+      "label": "malicious",
+      "name": "oj-cropper@1.9.99.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "0545f7a5707b72cbca8d63394c91ad4fb94d5d96e004b9a696569dbd23ab5aa0"
+    },
+    {
+      "label": "malicious",
+      "name": "pcln-config@1.0.10.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "519722374ccdecd203ff3cbde68f379bed670248f94e98fd3fda3304f9e0182b"
+    },
+    {
+      "label": "malicious",
+      "name": "react-blue-ui@0.0.1.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "094c618fb54ca893c367afafcee114177e47b5774eca22de4fe004b6ef390185"
+    },
+    {
+      "label": "malicious",
+      "name": "registrydependency1@1.2.3.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "a25d82d52a6e654121a44e0a8921ad0f4c638f45f67e2f1d9188b899e665e282"
+    },
+    {
+      "label": "malicious",
+      "name": "sfdc-aem-master@44.44.0.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "69a8d4e3fc8781580b70fa5a15c414f949e4b88e9160be3f415878bf5ada314e"
+    },
+    {
+      "label": "malicious",
+      "name": "snackbars@6.9082.3.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "b336b9c96ff5d184707d50381dcce5a8920b00479d5c694bd314d3cc5168927c"
+    },
+    {
+      "label": "malicious",
+      "name": "syzzfpmkizkljkiibpgb@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "0035448eef8f73c0e5cec6b65d5953692bf49f386c95b3c9bfd64b8d1a02b5b6"
+    },
+    {
+      "label": "malicious",
+      "name": "usaa-wdio-utils@1.2.1.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "1ffbf481ccb0e85b70700a9e32939d8c0481422a3229bcb98542ae09e6061bdd"
+    },
+    {
+      "label": "malicious",
+      "name": "page-configs@99.99.1.zip",
+      "status": "완료",
+      "scannedFiles": 74,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "8f9cee77a820ade8172077da25bf617aeee8927609d7bb8258363c5863050131"
+    },
+    {
+      "label": "malicious",
+      "name": "systemrobotassistant@3.0.8.zip",
+      "status": "완료",
+      "scannedFiles": 107,
+      "candidateFiles": 1,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 2
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "src\\main.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION",
+            "EXECUTION_PATH_WITH_OBFUSCATION_SIGNAL"
+          ],
+          "supportingSignals": [
+            "IDENTIFIER_MANGLING",
+            "ESCAPED_LITERAL"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [
+            "LINE_MAPPING_UNMAPPED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "rounds": 1,
+                "transformations": [],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 5508,
+              "identifierCount": 297,
+              "hexIdentifierCount": 155,
+              "hexIdRatio": 0.2631578947368421,
+              "score": 0.5,
+              "signals": [
+                "IDENTIFIER_MANGLING",
+                "ESCAPED_LITERAL"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 3924,
+              "identifierCount": 237,
+              "hexIdentifierCount": 63,
+              "hexIdRatio": 0.17647058823529413,
+              "score": 0.45,
+              "signals": [
+                "IDENTIFIER_MANGLING"
+              ]
+            },
+            "byteDelta": -1584,
+            "byteRatio": 0.7124183006535948,
+            "identifierDelta": -60,
+            "hexIdentifierDelta": -92,
+            "scoreDelta": -0.04999999999999999,
+            "addedSignals": [],
+            "removedSignals": [
+              "ESCAPED_LITERAL"
+            ],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "16d88fd05a8a752fbc72def5a36ac28a48e7e77cce8aa667cba5b39fc3bc3112"
+    },
+    {
+      "label": "malicious",
+      "name": "discorddependency@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 4,
+      "candidateFiles": 1,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "READ_FAILED": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "Injection\\aryzsminified.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION"
+          ],
+          "supportingSignals": [
+            "IDENTIFIER_MANGLING",
+            "SELF_DEFENDING",
+            "ESCAPED_LITERAL"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [
+            "LINE_MAPPING_UNMAPPED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 2,
+                "transformations": [
+                  "CONST_INLINE"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 37008,
+              "identifierCount": 1790,
+              "hexIdentifierCount": 1495,
+              "hexIdRatio": 0.35714285714285715,
+              "score": 0.8500000000000001,
+              "signals": [
+                "IDENTIFIER_MANGLING",
+                "SELF_DEFENDING",
+                "ESCAPED_LITERAL"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 33730,
+              "identifierCount": 1709,
+              "hexIdentifierCount": 884,
+              "hexIdRatio": 0.2989516401758539,
+              "score": 0.45,
+              "signals": [
+                "IDENTIFIER_MANGLING"
+              ]
+            },
+            "byteDelta": -3278,
+            "byteRatio": 0.9114245568525724,
+            "identifierDelta": -81,
+            "hexIdentifierDelta": -611,
+            "scoreDelta": -0.4000000000000001,
+            "addedSignals": [],
+            "removedSignals": [
+              "SELF_DEFENDING",
+              "ESCAPED_LITERAL"
+            ],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "6e692c0df91e9fe82689ae6e390bcfddfc3d8694cf170e69ae5d86de485df9f5"
+    },
+    {
+      "label": "malicious",
+      "name": "gd-react-toolbox@3.99.99.zip",
+      "status": "완료",
+      "scannedFiles": 2,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "MIN_SIZE": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "be6a8a2986e18da6b248676bc1977dd349b2139a1689b857d95a74023bdc267b"
+    },
+    {
+      "label": "malicious",
+      "name": "revshell@1.0.5.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "4da762271a751821e0b11ba5d3c5ea8def24d4466f7bc673613c54cf67fc5dc2"
+    },
+    {
+      "label": "malicious",
+      "name": "ac-event-emitter@3.2.999.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 1,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 1,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [
+        {
+          "path": "build.js",
+          "candidateReasons": [
+            "STRONG_CONTROL_FLOW_OBFUSCATION",
+            "EXECUTION_PATH_WITH_OBFUSCATION_SIGNAL"
+          ],
+          "supportingSignals": [
+            "IDENTIFIER_MANGLING"
+          ],
+          "restoreStatus": "RESTORED",
+          "limitations": [
+            "LINE_MAPPING_UNMAPPED"
+          ],
+          "stageResults": [
+            {
+              "stage": "STRUCTURE",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true
+            },
+            {
+              "stage": "STRING",
+              "applied": true,
+              "status": "COMPLETED",
+              "changed": true,
+              "metadata": {
+                "rounds": 3,
+                "transformations": [
+                  "CONST_INLINE",
+                  "STRING_CONCAT"
+                ],
+                "payloadCount": 0,
+                "payloads": []
+              }
+            },
+            {
+              "stage": "NORMALIZE",
+              "applied": false,
+              "status": "NO_CHANGE",
+              "changed": false,
+              "metadata": {
+                "memberAccessNormalized": 0
+              }
+            }
+          ],
+          "validation": {
+            "original": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 2345,
+              "identifierCount": 123,
+              "hexIdentifierCount": 105,
+              "hexIdRatio": 0.41832669322709165,
+              "score": 0.45,
+              "signals": [
+                "IDENTIFIER_MANGLING"
+              ]
+            },
+            "restored": {
+              "parse": {
+                "valid": true
+              },
+              "bytes": 1143,
+              "identifierCount": 61,
+              "hexIdentifierCount": 36,
+              "hexIdRatio": 0.35294117647058826,
+              "score": 0.45,
+              "signals": [
+                "IDENTIFIER_MANGLING"
+              ]
+            },
+            "byteDelta": -1202,
+            "byteRatio": 0.48742004264392325,
+            "identifierDelta": -62,
+            "hexIdentifierDelta": -69,
+            "scoreDelta": 0,
+            "addedSignals": [],
+            "removedSignals": [],
+            "capability": {
+              "before": [],
+              "after": null,
+              "status": "NOT_APPLICABLE",
+              "preserved": [],
+              "lost": [],
+              "discovered": [],
+              "comparisons": [],
+              "limitations": []
+            }
+          },
+          "capabilityStatus": "NOT_APPLICABLE"
+        }
+      ],
+      "archiveSha256": "9004224330562109282252fa97e592d73882ab3b72ecf20782099352457da0d7"
+    },
+    {
+      "label": "malicious",
+      "name": "addin-fuel-transaction-import@3.1.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "4ab1f458df80e4db60dbb8f9177240a8be74f9570a8f2b4b8997ef6278359382"
+    },
+    {
+      "label": "malicious",
+      "name": "alfaform-core-ui@1.1.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "f26220563fd23471a9e1b079173ee6585195b0a78116940d35294107a544128d"
+    },
+    {
+      "label": "malicious",
+      "name": "anandakshya@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "9b3eb40b74a610b5578b6c5268f344b0761db1e8a45fb63d9ad6d426bf147183"
+    },
+    {
+      "label": "malicious",
+      "name": "angularfire-seed@3.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "501e5298b158007a3ffdf304cd7076c2868d625a378fce7061bf13fbdc91e912"
+    },
+    {
+      "label": "malicious",
+      "name": "aonetecha1@9.9.9.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "6e7e1a9beeacd5da041bf9bfe28b54e109c6a93dabdb37cc1c12fa4f4c0b7f6c"
+    },
+    {
+      "label": "malicious",
+      "name": "areyoustillindexing2@69.2.22.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "539a823ab4bb8ceff15b72e2e6b210b6cbd6025a591cf151e4297f01e335d5cd"
+    },
+    {
+      "label": "malicious",
+      "name": "arkime@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "08c2d3cc6f5ff16e2dd67e5654a5f2a90806b245722c704e396756172ad495dc"
+    },
+    {
+      "label": "malicious",
+      "name": "astar-portal@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "3820b836ed32352963700819afd274c8c211163acb44c6dfd7ab1ac0c64957de"
+    },
+    {
+      "label": "malicious",
+      "name": "autorest-extension-base@99.9.8.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "46ad97be08527d0fd5bec2d8a5138bcca4caaf94f04a7e74860ce1bffc6eea11"
+    },
+    {
+      "label": "malicious",
+      "name": "azuremediaplayer@2.3.32.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "84b7f2163ad72b77c9e09ba3bf5460b9b0268f2bfc175ed4abb0770782369299"
+    },
+    {
+      "label": "malicious",
+      "name": "basubanakar@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "24958edd753e04fa225419bdc473ddf709e619295eb7e4ec78070cec0bd10734"
+    },
+    {
+      "label": "malicious",
+      "name": "bem-mvc@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {
+        "READ_FAILED": 1
+      },
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "4dbee847a93c4efe56a686abf8c47a39b69fca28814954c4f1904ea44bfe26a2"
+    },
+    {
+      "label": "malicious",
+      "name": "bootstrap-sass-official@3.1.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "0488494dafa3a5d17f78b05eb359704cfd3fd9a34e990d2c5ea0695d730f9af2"
+    },
+    {
+      "label": "malicious",
+      "name": "brbsainath@1.0.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "43686c9700f3406f837758bb533fdd2a21a7f330b3d53e66e8b1007f43443581"
+    },
+    {
+      "label": "malicious",
+      "name": "ca-bucky-client@0.0.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "075487c3093e0285fcfe2392b051d632b6af344cbfa8dc38ec1d2d16cfa52ca0"
+    },
+    {
+      "label": "malicious",
+      "name": "calc_bc8zluyekj@1.2.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "ba0cfa30ac94a3b3845fa965608625eb2321efcc9c0fef4f426b3e31497b456d"
+    },
+    {
+      "label": "malicious",
+      "name": "calc_zf0nakil18@1.1.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "396bc46480e3650a3f79a2b9932dd8ee816a987bca2be74543a02c364ea8153c"
+    },
+    {
+      "label": "malicious",
+      "name": "capacitybot-cf-nodejs-fct@3.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "493c278c749a25972259f0b829a4b7b2de48233afe2550c5f0fb3abbcaa1c632"
+    },
+    {
+      "label": "malicious",
+      "name": "cd-themes@5.3.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "443efc2806073c4f104464f18ec58527831407df3151278cce762e14dbe385ec"
+    },
+    {
+      "label": "malicious",
+      "name": "chawla-init-3@1.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "5c75983127b14b0177cc609324a233da3bcd90ac25bac6b4fd3e8bc5c671702e"
+    },
+    {
+      "label": "malicious",
+      "name": "coding-with-chrome@3.0.0.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "688f72f0716f1ad02c6dc8a90e0e1dc8ee4c17f17c8563c3d998c37e694778f4"
+    },
+    {
+      "label": "malicious",
+      "name": "com-unity-modules-ai@5.0.2.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "bae31d0d6ca117fe7957d0824615670276562126f2f66e7e44dcf1c5c735e5a0"
+    },
+    {
+      "label": "malicious",
+      "name": "com-unity-modules-physics@4.0.1.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "c86ce18d384dbb11446fd9f68346e5da463ed6e2dfcbabb52006f92bb464b0f0"
+    },
+    {
+      "label": "malicious",
+      "name": "com-unity-modules-ui@3.0.7.zip",
+      "status": "완료",
+      "scannedFiles": 1,
+      "candidateFiles": 0,
+      "scanLimitHit": false,
+      "skippedLargeFiles": 0,
+      "selectionSkipped": {},
+      "restore": {
+        "statusCounts": {
+          "RESTORED": 0,
+          "PARTIAL_RESTORED": 0,
+          "UNRESOLVED": 0,
+          "SKIPPED": 0,
+          "FAILED": 0
+        },
+        "reasonCounts": {}
+      },
+      "candidates": [],
+      "archiveSha256": "bfcf13d7f472cefdc32578bbf429592f58b4bb961a8bfdfafbc884da1a4bf9df"
+    }
+  ]
+}

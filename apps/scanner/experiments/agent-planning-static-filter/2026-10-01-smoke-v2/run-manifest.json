@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "EVIDENCE_AVAILABILITY_NOT_ACCURACY",
+  "mode": "smoke",
+  "createdAt": "2026-10-01T09:26:31.832Z",
+  "sourceManifest": "guarddog-pilot-selection/guarddog-pilot-samples.json",
+  "sourceManifestSha256": "1d6302137bc0de1189b07908918e7b9bc6af630cc4b2f7ee051f252e7db37d0d",
+  "acquiredCount": 15,
+  "selectedCount": 2,
+  "unavailable": [
+    {
+      "sampleId": "DD-NPM-016",
+      "packageName": "@solana/web3.js",
+      "packageVersion": "1.95.6",
+      "reason": "ORIGINAL_ARTIFACT_NOT_ACQUIRED"
+    },
+    {
+      "sampleId": "DD-NPM-017",
+      "packageName": "node-ipc",
+      "packageVersion": "9.1.5",
+      "reason": "ORIGINAL_ARTIFACT_NOT_ACQUIRED"
+    },
+    {
+      "sampleId": "DD-NPM-018",
+      "packageName": "napi-postinstall",
+      "packageVersion": "0.3.0",
+      "reason": "ORIGINAL_ARTIFACT_NOT_ACQUIRED"
+    },
+    {
+      "sampleId": "DD-NPM-019",
+      "packageName": "discord-bot-server",
+      "packageVersion": "0.1.1",
+      "reason": "ORIGINAL_ARTIFACT_NOT_ACQUIRED"
+    },
+    {
+      "sampleId": "DD-NPM-020",
+      "packageName": "@teale.io/eslint-config",
+      "packageVersion": "1.8.8",
+      "reason": "ORIGINAL_ARTIFACT_NOT_ACQUIRED"
+    }
+  ],
+  "selected": [
+    {
+      "sampleId": "DD-NPM-002",
+      "ecosystem": "npm",
+      "packageName": "@add-wallet-exchange/import-type",
+      "packageVersion": "1.0.0"
+    },
+    {
+      "sampleId": "DD-NPM-010",
+      "ecosystem": "npm",
+      "packageName": "@cloudplatform-single-spa/installations",
+      "packageVersion": "99.99.99"
+    }
+  ],
+  "reusedAnalysisCount": 0,
+  "newAnalysisCount": 2,
+  "reasonExistingResultsNotReused": "Existing pilot outputs contain GuardDog 3.1.0 raw output only; current Tier 2, relation candidates, normalization, Planning input, and filter result are absent.",
+  "runtime": {
+    "node": "v26.4.0",
+    "requiredNode": ">=24.0.0 <25",
+    "platform": "darwin/arm64",
+    "scannerCommit": "e766f2e2724e119e9989b7e382b74b98a9ddbe3e",
+    "scannerBranch": "feat/435--agent-planning-filter1",
+    "dockerImageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+    "guarddogTool": "3.1.0",
+    "semgrepTool": "1.172.0",
+    "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+    "filterRuleVersion": "0.1.0",
+    "planningSchemaVersion": "0.1.0"
+  },
+  "safety": {
+    "network": "DOCKER_NETWORK_NONE",
+    "packageRootMount": "READ_ONLY",
+    "containerRootFilesystem": "READ_ONLY",
+    "tier2GptMode": "off",
+    "llmGuard": "THROW_ON_INVOCATION",
+    "packageInstall": false,
+    "lifecycleExecution": false,
+    "packageImportOrEntryPointExecution": false,
+    "tier3LegacyPolicyHistoryReachable": false
+  },
+  "preflight": {
+    "guardDog": {
+      "verified": true,
+      "mode": "VERIFIED_NETWORK_NONE",
+      "mechanism": "DOCKER_NETWORK_NONE",
+      "imageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+      "runtimeVersion": "29.2.1",
+      "policyVersion": "1.0.0",
+      "mountPolicy": "SINGLE_READ_ONLY_PACKAGE_ROOT",
+      "rootFilesystem": "READ_ONLY",
+      "resourceLimits": {
+        "pids": 64,
+        "memory": "512m",
+        "cpus": "1",
+        "tmpfsSize": "64m",
+        "timeoutMs": 120000
+      }
+    },
+    "customRule": {
+      "verified": true,
+      "mode": "VERIFIED_NETWORK_NONE",
+      "imageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+      "semgrepVersion": "1.172.0",
+      "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+      "runtimeVersion": "29.2.1",
+      "policyVersion": "1.0.0",
+      "environmentVersion": "1.0.0",
+      "mountPolicy": "SINGLE_READ_ONLY_PACKAGE_ROOT_IMAGE_RULESET",
+      "rootFilesystem": "READ_ONLY",
+      "resourceLimits": {
+        "pids": 64,
+        "memory": "512m",
+        "cpus": "1",
+        "tmpfsSize": "64m",
+        "timeoutMs": 120000
+      }
+    }
+  }
+}

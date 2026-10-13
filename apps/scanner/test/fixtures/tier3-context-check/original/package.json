@@ -1,0 +1,9 @@
+{
+  "name": "tier3-context-check-fixture",
+  "version": "1.0.0",
+  "description": "Synthetic fixture for the Agent Planning context check.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node install.js"
+  }
+}

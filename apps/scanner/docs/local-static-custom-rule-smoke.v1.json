@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "executionPurpose": "CUSTOM_RULE_ONLY_SMOKE",
+  "resultRef": "SYSTEM_TEMP/scanner-custom-rule-smoke-ThFo3l",
+  "imageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+  "semgrepVersion": "1.172.0",
+  "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+  "invocationPolicy": {
+    "maxUniqueSamples": 3,
+    "maxCallsPerSampleAnalyzer": 1,
+    "maxTotalCalls": 3,
+    "maxCallsByAnalyzer": { "guarddog": 0, "metadata": 0, "custom-rule": 3 },
+    "retryLimit": 0,
+    "concurrency": 1
+  },
+  "samples": [
+    {
+      "sampleId": "NPM-MAL-013754",
+      "status": "SUCCESS",
+      "findingCount": 2,
+      "atomicEvidenceCount": 2,
+      "ruleDistribution": { "custom.collection-source": 1, "custom.process-execution": 1 },
+      "packageTreeDigest": "7fdc7f50f858694afed31ff02c4cddf79fd323d75510f31ebae71344a5ef2734",
+      "resultSha256": "98f390bd31ed0597e1734e64094ec180d9f6f27b1c12c7a58f58ce292b66ce18"
+    },
+    {
+      "sampleId": "NPM-MAL-002841",
+      "status": "SUCCESS",
+      "findingCount": 0,
+      "atomicEvidenceCount": 0,
+      "ruleDistribution": {},
+      "packageTreeDigest": "7bc54b58dbc0a4433df9509c19957e77b05e752450e3054bdccd0f40f5aee67c",
+      "resultSha256": "a74153d0892adbc3154de9da9ab6baaaf423f688be7c80f61449196bc69e2b9e"
+    },
+    {
+      "sampleId": "NPM-MAL-012617",
+      "status": "SUCCESS",
+      "findingCount": 0,
+      "atomicEvidenceCount": 0,
+      "ruleDistribution": {},
+      "packageTreeDigest": "55dda47a14b8edcf1daaee9ddf3a042612c7d7dffa9f42cc84ac915050b81631",
+      "resultSha256": "0c12602b4f5757e06367ac9827e0b07825117aa6aba64a1b7e4ec1a9fd631d98"
+    }
+  ],
+  "ledgerSha256": "5cb65b1290c4bba7b7f85be7aee875c5e08ad373a3f4327ee8ddbb2a34204143",
+  "summarySha256": "0e106521e92fc7c16873b55e75b85820285f8b946f5c72a6e208649d81e2284a",
+  "violations": [],
+  "guardDogCalls": 0,
+  "metadataCalls": 0,
+  "customRuleCalls": 3,
+  "assessment": "READY_FOR_DATASET_BATCH_ADAPTER"
+}

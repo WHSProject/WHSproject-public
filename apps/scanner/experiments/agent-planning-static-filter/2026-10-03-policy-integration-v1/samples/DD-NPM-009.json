@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-009",
+  "subject": {
+    "sampleId": "DD-NPM-009",
+    "ecosystem": "npm",
+    "packageName": "airbnb-babel",
+    "packageVersion": "1.0.0"
+  },
+  "artifactSha256": "13291b6dae4e8aaed645f700b4443f8fd7c1fa6ca5f15aa9ef91d3a92777ae80",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 2,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 1694
+}

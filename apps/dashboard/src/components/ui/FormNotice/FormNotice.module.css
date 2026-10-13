@@ -1,0 +1,26 @@
+.notice {
+  padding: 12px 14px;
+  border-radius: var(--radius-cell);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.notice a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.info {
+  background: var(--color-fill-soft);
+  color: var(--color-text);
+}
+
+.success {
+  background: var(--risk-bg);
+  color: var(--risk-text);
+}
+
+.error {
+  background: var(--color-accent-bg);
+  color: var(--decision-reject);
+}

@@ -1,0 +1,3671 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "CODE_VOLUME_INPUT_COMPARISON_NOT_MODEL_EVALUATION",
+  "createdAt": "2026-10-04T05:02:48.644Z",
+  "scannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9",
+  "scannerBranch": "feat/458--agent-planning-adapter",
+  "sourceManifest": "guarddog-pilot-selection/guarddog-pilot-samples.json",
+  "sourceManifestSha256": "1d6302137bc0de1189b07908918e7b9bc6af630cc4b2f7ee051f252e7db37d0d",
+  "baseline": "experiments/agent-planning-static-filter/2026-10-01-pilot-v2",
+  "targetCount": 5,
+  "preparedCount": 5,
+  "failedCount": 0,
+  "configuration": {
+    "productionL0Policy": {
+      "codeSlices": {
+        "maxInitialSlices": 10,
+        "maxLinesPerSlice": 120,
+        "maxInitialCodeLines": 800,
+        "maxTotalCodeLines": 1040,
+        "maxFileSizeBytes": 1048576
+      },
+      "maxToolCalls": 4,
+      "maxAdditionalCodeRequests": 2
+    },
+    "experimentMaxCodeFileBytes": 12582912,
+    "providerRequestLimitBytes": 4194304,
+    "tokenizer": "CHARACTERS_DIVIDED_BY_4_CEILING_ESTIMATE",
+    "additionalCodeRequests": "DISABLED",
+    "jev": "DISABLED",
+    "llmCalls": 0,
+    "registryDownloads": 0,
+    "packageInstall": false,
+    "packageExecution": false,
+    "lifecycleExecution": false
+  },
+  "preparation": {
+    "reusedPilotV2": [
+      "DD-NPM-003",
+      "DD-NPM-010",
+      "DD-NPM-013"
+    ],
+    "rerunCurrentStatic": [
+      "DD-NPM-001",
+      "DD-NPM-015"
+    ]
+  },
+  "samples": [
+    {
+      "experimentId": "sample-001",
+      "sourceSampleId": "DD-NPM-003",
+      "preparation": "REUSED_PILOT_V2_STATIC_RESULTS:FROZEN_REUSE",
+      "subject": {
+        "packageName": "@ton-wallet/create",
+        "packageVersion": "14.0.3",
+        "archiveSha256": "bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35"
+      },
+      "source": {
+        "archive": "guarddog-pilot-selection/artifacts/archives/2025-02-25-@ton-wallet_create-v14.0.3.zip",
+        "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2025-02-25-@ton-wallet_create-v14.0.3/tmp/tmpstcvwg2f/@ton-wallet-create/package"
+      },
+      "versions": {
+        "source": {
+          "node": "v26.4.0",
+          "requiredNode": ">=24.0.0 <25",
+          "platform": "darwin/arm64",
+          "scannerCommit": "e766f2e2724e119e9989b7e382b74b98a9ddbe3e",
+          "scannerBranch": "feat/435--agent-planning-filter1",
+          "dockerImageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+          "guarddogTool": "3.1.0",
+          "semgrepTool": "1.172.0",
+          "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+          "filterRuleVersion": "0.1.0",
+          "planningSchemaVersion": "0.1.0"
+        },
+        "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9"
+      },
+      "staticFilter": {
+        "status": "STATIC_MALICIOUS",
+        "ruleVersion": "0.4.0",
+        "reasonCodes": [
+          "REQUIRED_RULE_HITS_PRESENT",
+          "MALICIOUS_RULE_SATISFIED",
+          "BEHAVIOR_LINK_UNVERIFIED",
+          "SCAN_COVERAGE_UNKNOWN"
+        ]
+      },
+      "fixedContractHash": "12b23d1be38860e8da50c1e7d5d82a383366d4009116e43cbc1de1a65fc0870f",
+      "levels": [
+        {
+          "level": "L0",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "20d08e641f05d3c961776a414f167e44eca8bc942c50af633a0fe007fd8d8b89",
+          "fileCount": 4,
+          "sliceCount": 4,
+          "codeBytes": 870,
+          "codeLines": 8,
+          "providerRequestBytes": 39921,
+          "providerRequestCharacters": 39921,
+          "estimatedTokens": 9981,
+          "ranges": [
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.spec.js",
+              "startLine": 5,
+              "endLine": 5,
+              "contentSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "sourceSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "bytes": 78,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.spec.js",
+              "startLine": 6,
+              "endLine": 6,
+              "contentSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "sourceSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "bytes": 78,
+              "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 123,
+              "endLine": 127,
+              "contentSha256": "0e2848dcd640a2ca8ff4bc1eff0c2c2f074f38543707c607ec7e37beaa4de695",
+              "sourceSha256": "0e2848dcd640a2ca8ff4bc1eff0c2c2f074f38543707c607ec7e37beaa4de695",
+              "bytes": 468,
+              "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 128,
+              "endLine": 128,
+              "contentSha256": "b1a047bea8acc533cd83aa9eb7bd043c360487148aa8144f1c00b554f5a151cd",
+              "sourceSha256": "b1a047bea8acc533cd83aa9eb7bd043c360487148aa8144f1c00b554f5a151cd",
+              "bytes": 246,
+              "selectionReason": "Planning target planning-tier3-target-004: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L1",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "2efb472c7cf7625ea75394ee24db1f00060f549e444c069e5ab5abeec6edd7ae",
+          "fileCount": 4,
+          "sliceCount": 6,
+          "codeBytes": 2405,
+          "codeLines": 23,
+          "providerRequestBytes": 44914,
+          "providerRequestCharacters": 44914,
+          "estimatedTokens": 11229,
+          "ranges": [
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.spec.js",
+              "startLine": 5,
+              "endLine": 5,
+              "contentSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "sourceSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "bytes": 78,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.spec.js",
+              "startLine": 6,
+              "endLine": 6,
+              "contentSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "sourceSha256": "967fc473762a094487923e7d290b704e6b5a2178df28b24f3f92bbc4b8cbb1ea",
+              "bytes": 78,
+              "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 122,
+              "endLine": 128,
+              "contentSha256": "0430ca2ad9ea49d86e18b4b221f3ad6375ee24137a7ccbff2a2bdbf5ebf0dc96",
+              "sourceSha256": "0430ca2ad9ea49d86e18b4b221f3ad6375ee24137a7ccbff2a2bdbf5ebf0dc96",
+              "bytes": 490,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 4,
+              "endLine": 4,
+              "contentSha256": "9e2d2601ea88f70fbefac1266cc9f382db71fe7f1eedd938cd1102495ce4c230",
+              "sourceSha256": "9e2d2601ea88f70fbefac1266cc9f382db71fe7f1eedd938cd1102495ce4c230",
+              "bytes": 36,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 9,
+              "endLine": 9,
+              "contentSha256": "78b2e70f94db733582825d1353b533968cb6f4bc1aba68f3be2ae948476aca63",
+              "sourceSha256": "78b2e70f94db733582825d1353b533968cb6f4bc1aba68f3be2ae948476aca63",
+              "bytes": 51,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 127,
+              "endLine": 138,
+              "contentSha256": "ab9e58e10ee27ef8833a0cf419ce8e652e1118f52aee45ff03438e7ae7f1be40",
+              "sourceSha256": "ab9e58e10ee27ef8833a0cf419ce8e652e1118f52aee45ff03438e7ae7f1be40",
+              "bytes": 1672,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L2",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "f76964a9396bd8e3612a80e4b1e89eef1bffd5d108fcf1f47694af18dbf2c57c",
+          "fileCount": 4,
+          "sliceCount": 4,
+          "codeBytes": 25330,
+          "codeLines": 355,
+          "providerRequestBytes": 67284,
+          "providerRequestCharacters": 67284,
+          "estimatedTokens": 16821,
+          "ranges": [
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.spec.js",
+              "startLine": 1,
+              "endLine": 45,
+              "contentSha256": "fd450ba44d919ea17c625ce3f1571709390342916f40b813d9651823bfb5d566",
+              "sourceSha256": "fd450ba44d919ea17c625ce3f1571709390342916f40b813d9651823bfb5d566",
+              "bytes": 2093,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.spec.js",
+              "startLine": 1,
+              "endLine": 42,
+              "contentSha256": "9478dd1c87cc2fae331361d4189161314c12135515a85456cba9e2a22dada821",
+              "sourceSha256": "9478dd1c87cc2fae331361d4189161314c12135515a85456cba9e2a22dada821",
+              "bytes": 2138,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 1,
+              "endLine": 129,
+              "contentSha256": "01a66a67c584fbcfd3fdee24a8cac8683f69c4188736dbedfccca4596f8fc025",
+              "sourceSha256": "01a66a67c584fbcfd3fdee24a8cac8683f69c4188736dbedfccca4596f8fc025",
+              "bytes": 11195,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 1,
+              "endLine": 139,
+              "contentSha256": "28dc8da92e7d0b8e615449f8860821036c13bccadf95c5f7cc1350c600174a01",
+              "sourceSha256": "28dc8da92e7d0b8e615449f8860821036c13bccadf95c5f7cc1350c600174a01",
+              "bytes": 9904,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L3",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "0303b6567727bcb90759cf666f975eed9be92bd2e4d3c97f9d5535b0f16ff6a6",
+          "fileCount": 36,
+          "sliceCount": 36,
+          "codeBytes": 200714,
+          "codeLines": 5094,
+          "providerRequestBytes": 288560,
+          "providerRequestCharacters": 288560,
+          "estimatedTokens": 72140,
+          "ranges": [
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/api/HttpApi.js",
+              "startLine": 1,
+              "endLine": 306,
+              "contentSha256": "1b353ce76ac5f67114db27491c11ab56a468a3fa2f6e9e4d69a04525babdb600",
+              "sourceSha256": "1b353ce76ac5f67114db27491c11ab56a468a3fa2f6e9e4d69a04525babdb600",
+              "bytes": 11063,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/api/TonCache.js",
+              "startLine": 1,
+              "endLine": 33,
+              "contentSha256": "3848968a003fb6ee83c7dd7307f38a620f51ceb0ed9175f26c9d4c1046b026ae",
+              "sourceSha256": "3848968a003fb6ee83c7dd7307f38a620f51ceb0ed9175f26c9d4c1046b026ae",
+              "bytes": 949,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.js",
+              "startLine": 1,
+              "endLine": 441,
+              "contentSha256": "17716b3c82359e633363186c04bb579b7d759f4caca8f832a651813b5788be2a",
+              "sourceSha256": "17716b3c82359e633363186c04bb579b7d759f4caca8f832a651813b5788be2a",
+              "bytes": 14711,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.spec.js",
+              "startLine": 1,
+              "endLine": 45,
+              "contentSha256": "fd450ba44d919ea17c625ce3f1571709390342916f40b813d9651823bfb5d566",
+              "sourceSha256": "fd450ba44d919ea17c625ce3f1571709390342916f40b813d9651823bfb5d566",
+              "bytes": 2093,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.js",
+              "startLine": 1,
+              "endLine": 687,
+              "contentSha256": "7eeb389c97e1b5822fe7d6b7a0524762d16828afd5cca3dd788a738560845203",
+              "sourceSha256": "7eeb389c97e1b5822fe7d6b7a0524762d16828afd5cca3dd788a738560845203",
+              "bytes": 28359,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.spec.js",
+              "startLine": 1,
+              "endLine": 42,
+              "contentSha256": "9478dd1c87cc2fae331361d4189161314c12135515a85456cba9e2a22dada821",
+              "sourceSha256": "9478dd1c87cc2fae331361d4189161314c12135515a85456cba9e2a22dada821",
+              "bytes": 2138,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/config/ConfigParser.js",
+              "startLine": 1,
+              "endLine": 711,
+              "contentSha256": "78a78d9d06fe596c454ce4bf735e3e0bfc91a656e3831a91fc609fa4da895d27",
+              "sourceSha256": "78a78d9d06fe596c454ce4bf735e3e0bfc91a656e3831a91fc609fa4da895d27",
+              "bytes": 24830,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/elector/ElectorContract.js",
+              "startLine": 1,
+              "endLine": 192,
+              "contentSha256": "0af6df3894bfef3e192376a60c9c03c48351adf4f602b0e4d0a7e60a10d026b6",
+              "sourceSha256": "0af6df3894bfef3e192376a60c9c03c48351adf4f602b0e4d0a7e60a10d026b6",
+              "bytes": 9258,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 1,
+              "endLine": 129,
+              "contentSha256": "01a66a67c584fbcfd3fdee24a8cac8683f69c4188736dbedfccca4596f8fc025",
+              "sourceSha256": "01a66a67c584fbcfd3fdee24a8cac8683f69c4188736dbedfccca4596f8fc025",
+              "bytes": 11195,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonMaster.js",
+              "startLine": 1,
+              "endLine": 39,
+              "contentSha256": "f82c609bf73b381f46ec231da84ba155f2b78d323c1318c8d7fe9a838d7a8d5c",
+              "sourceSha256": "f82c609bf73b381f46ec231da84ba155f2b78d323c1318c8d7fe9a838d7a8d5c",
+              "bytes": 1263,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonWallet.js",
+              "startLine": 1,
+              "endLine": 27,
+              "contentSha256": "5196b685da604f090238081527633ee002c2dcd641153c1b6c6433020d8dd035",
+              "sourceSha256": "5196b685da604f090238081527633ee002c2dcd641153c1b6c6433020d8dd035",
+              "bytes": 767,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.js",
+              "startLine": 1,
+              "endLine": 73,
+              "contentSha256": "9509491dcb30f173f8fdb6ac28ae3494b560f59a35cb4924da980335a9fde71c",
+              "sourceSha256": "9509491dcb30f173f8fdb6ac28ae3494b560f59a35cb4924da980335a9fde71c",
+              "bytes": 2557,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 1,
+              "endLine": 139,
+              "contentSha256": "28dc8da92e7d0b8e615449f8860821036c13bccadf95c5f7cc1350c600174a01",
+              "sourceSha256": "28dc8da92e7d0b8e615449f8860821036c13bccadf95c5f7cc1350c600174a01",
+              "bytes": 9904,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrderBuilder.js",
+              "startLine": 1,
+              "endLine": 37,
+              "contentSha256": "17177dc19243ae4108f2865b7ac12d237489c01e54ee27bb9c443f844b9f7e05",
+              "sourceSha256": "17177dc19243ae4108f2865b7ac12d237489c01e54ee27bb9c443f844b9f7e05",
+              "bytes": 1316,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigWallet.js",
+              "startLine": 1,
+              "endLine": 134,
+              "contentSha256": "e8e5dfeed5a36c3a537b3cfb9addbb6ad5ed4126083199a29b61770d4a33fb87",
+              "sourceSha256": "e8e5dfeed5a36c3a537b3cfb9addbb6ad5ed4126083199a29b61770d4a33fb87",
+              "bytes": 6388,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/fees.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "2dd508b5e7a462d4f249f40707dcf4c78403bdf30d18071d3c37279344b51ed7",
+              "sourceSha256": "2dd508b5e7a462d4f249f40707dcf4c78403bdf30d18071d3c37279344b51ed7",
+              "bytes": 4298,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/time.js",
+              "startLine": 1,
+              "endLine": 63,
+              "contentSha256": "c551cc915e162b342d8301719bd8c33a3630d53ab652cfbb287f02e5c3a63825",
+              "sourceSha256": "c551cc915e162b342d8301719bd8c33a3630d53ab652cfbb287f02e5c3a63825",
+              "bytes": 2056,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/toUrlSafe.js",
+              "startLine": 1,
+              "endLine": 23,
+              "contentSha256": "41dd6e05ac4d04b4aa1539ef1f230fc30095c309e13b9d44a1fcc73fcd37d9e5",
+              "sourceSha256": "41dd6e05ac4d04b4aa1539ef1f230fc30095c309e13b9d44a1fcc73fcd37d9e5",
+              "bytes": 606,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/signing/createWalletTransfer.js",
+              "startLine": 1,
+              "endLine": 190,
+              "contentSha256": "445d8d4b96d9af97f3dadf2eab75d3b003c722aef49dce685848fd5abf7bd446",
+              "sourceSha256": "445d8d4b96d9af97f3dadf2eab75d3b003c722aef49dce685848fd5abf7bd446",
+              "bytes": 7780,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletContractV5Beta.js",
+              "startLine": 1,
+              "endLine": 211,
+              "contentSha256": "800e08b4a5947b23a96c27af7705f19ca3859925372f70a40db33f34f088c929",
+              "sourceSha256": "800e08b4a5947b23a96c27af7705f19ca3859925372f70a40db33f34f088c929",
+              "bytes": 6898,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaActions.js",
+              "startLine": 1,
+              "endLine": 92,
+              "contentSha256": "93bde46eff8b1a9b5f845ed420f6a86179dabea3d400f559b71dc036d78e7e5c",
+              "sourceSha256": "93bde46eff8b1a9b5f845ed420f6a86179dabea3d400f559b71dc036d78e7e5c",
+              "bytes": 3752,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaWalletId.js",
+              "startLine": 1,
+              "endLine": 31,
+              "contentSha256": "2d7d5a2568f55eed263a3ecfea428259e8646ba37103dba70edf8f28a6f8f249",
+              "sourceSha256": "2d7d5a2568f55eed263a3ecfea428259e8646ba37103dba70edf8f28a6f8f249",
+              "bytes": 1472,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletContractV5R1.js",
+              "startLine": 1,
+              "endLine": 207,
+              "contentSha256": "8a16064046bfb7fc078c5f03bd891602368c0f0663415483769b282a04b40eff",
+              "sourceSha256": "8a16064046bfb7fc078c5f03bd891602368c0f0663415483769b282a04b40eff",
+              "bytes": 8196,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1Actions.js",
+              "startLine": 1,
+              "endLine": 128,
+              "contentSha256": "3832e896f6ce2cfa5726b6e4b03973522cc6b030afd8035333892df37a09eb81",
+              "sourceSha256": "3832e896f6ce2cfa5726b6e4b03973522cc6b030afd8035333892df37a09eb81",
+              "bytes": 5051,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1WalletId.js",
+              "startLine": 1,
+              "endLine": 69,
+              "contentSha256": "ffaeef20b71b02ef4751dc00102d9f46d23b46fb23510c3221c68d7620b88745",
+              "sourceSha256": "ffaeef20b71b02ef4751dc00102d9f46d23b46fb23510c3221c68d7620b88745",
+              "bytes": 2721,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R1.js",
+              "startLine": 1,
+              "endLine": 100,
+              "contentSha256": "fc6451cde3c2932355e7aa7aa1d0473ffd4b641d0dde7ef6ee9a1bfe71ce48b5",
+              "sourceSha256": "fc6451cde3c2932355e7aa7aa1d0473ffd4b641d0dde7ef6ee9a1bfe71ce48b5",
+              "bytes": 3164,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R2.js",
+              "startLine": 1,
+              "endLine": 101,
+              "contentSha256": "dac62b94e33c158c7ae01911756626069f74dc18362cbf1f96cd18abc5b81210",
+              "sourceSha256": "dac62b94e33c158c7ae01911756626069f74dc18362cbf1f96cd18abc5b81210",
+              "bytes": 3195,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R3.js",
+              "startLine": 1,
+              "endLine": 101,
+              "contentSha256": "e1a42f36fc587e0d209fe5a7eb00b2fcb4ed61579000429f427e5553b1a3a42c",
+              "sourceSha256": "e1a42f36fc587e0d209fe5a7eb00b2fcb4ed61579000429f427e5553b1a3a42c",
+              "bytes": 3221,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R1.js",
+              "startLine": 1,
+              "endLine": 102,
+              "contentSha256": "6b6f48d84d3361b088373bfd3704bd54745583e2a6ca7b896d700eee1b4950df",
+              "sourceSha256": "6b6f48d84d3361b088373bfd3704bd54745583e2a6ca7b896d700eee1b4950df",
+              "bytes": 3263,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R2.js",
+              "startLine": 1,
+              "endLine": 102,
+              "contentSha256": "8b219381e5a11d4289c912fb2b34c30e98862d23d7cedf9603f659b3f192a87b",
+              "sourceSha256": "8b219381e5a11d4289c912fb2b34c30e98862d23d7cedf9603f659b3f192a87b",
+              "bytes": 3279,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R1.js",
+              "startLine": 1,
+              "endLine": 104,
+              "contentSha256": "91e7b516144a68c03f98694448040338ed8c57a8b9c19be21db036acbac0c3ab",
+              "sourceSha256": "91e7b516144a68c03f98694448040338ed8c57a8b9c19be21db036acbac0c3ab",
+              "bytes": 3345,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R2.js",
+              "startLine": 1,
+              "endLine": 104,
+              "contentSha256": "f35f76cc5404af2d3e5e41df223a1e05fbca1fc3fe46914654ffdcbb6df140bc",
+              "sourceSha256": "f35f76cc5404af2d3e5e41df223a1e05fbca1fc3fe46914654ffdcbb6df140bc",
+              "bytes": 3365,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV4.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "edd85577d67d59fb185f6a8232fe323229a8255757102170da33ab569aad7401",
+              "sourceSha256": "edd85577d67d59fb185f6a8232fe323229a8255757102170da33ab569aad7401",
+              "bytes": 4226,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV5Beta.js",
+              "startLine": 1,
+              "endLine": 19,
+              "contentSha256": "41f1b1e49cdcfc59db5f5eaf8e096448d322cb5a4931eaecee8ade80f713ba01",
+              "sourceSha256": "41f1b1e49cdcfc59db5f5eaf8e096448d322cb5a4931eaecee8ade80f713ba01",
+              "bytes": 950,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV5R1.js",
+              "startLine": 1,
+              "endLine": 19,
+              "contentSha256": "acc5fef400e3daa5a822d766fbd6e7ca662162c616457a9e02d45efe5980fe36",
+              "sourceSha256": "acc5fef400e3daa5a822d766fbd6e7ca662162c616457a9e02d45efe5980fe36",
+              "bytes": 938,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "package.json",
+              "startLine": 1,
+              "endLine": 83,
+              "contentSha256": "aba80c3a4f07dd796c9e4ded3612d2e43cca70d1ff024c8254f5d29490f8c44c",
+              "sourceSha256": "aba80c3a4f07dd796c9e4ded3612d2e43cca70d1ff024c8254f5d29490f8c44c",
+              "bytes": 2147,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L4",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "2e04adf49c5270cd8d7c8e7c7f425c40ab454e2a78733ae5038b3ebfd587873d",
+          "fileCount": 123,
+          "sliceCount": 123,
+          "codeBytes": 428543,
+          "codeLines": 11325,
+          "providerRequestBytes": 626485,
+          "providerRequestCharacters": 626485,
+          "estimatedTokens": 156622,
+          "ranges": [
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/api/HttpApi.d.ts",
+              "startLine": 1,
+              "endLine": 764,
+              "contentSha256": "d17a106cb128cfaaf0a68c3b795477ab8fd91e74b0465dc9458bb08cc332a430",
+              "sourceSha256": "d17a106cb128cfaaf0a68c3b795477ab8fd91e74b0465dc9458bb08cc332a430",
+              "bytes": 21226,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/api/HttpApi.js",
+              "startLine": 1,
+              "endLine": 306,
+              "contentSha256": "1b353ce76ac5f67114db27491c11ab56a468a3fa2f6e9e4d69a04525babdb600",
+              "sourceSha256": "1b353ce76ac5f67114db27491c11ab56a468a3fa2f6e9e4d69a04525babdb600",
+              "bytes": 11063,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/api/TonCache.d.ts",
+              "startLine": 1,
+              "endLine": 16,
+              "contentSha256": "b33f71d7362f5531d4949aad8b9d8934049e313a6c74f8a17004e97e9f9abfa8",
+              "sourceSha256": "b33f71d7362f5531d4949aad8b9d8934049e313a6c74f8a17004e97e9f9abfa8",
+              "bytes": 592,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/api/TonCache.js",
+              "startLine": 1,
+              "endLine": 33,
+              "contentSha256": "3848968a003fb6ee83c7dd7307f38a620f51ceb0ed9175f26c9d4c1046b026ae",
+              "sourceSha256": "3848968a003fb6ee83c7dd7307f38a620f51ceb0ed9175f26c9d4c1046b026ae",
+              "bytes": 949,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.d.ts",
+              "startLine": 1,
+              "endLine": 228,
+              "contentSha256": "43c842893c4756dd6cc415126830c14b8e8fb6ef3de47673b9692bf7f86be89b",
+              "sourceSha256": "43c842893c4756dd6cc415126830c14b8e8fb6ef3de47673b9692bf7f86be89b",
+              "bytes": 6780,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.js",
+              "startLine": 1,
+              "endLine": 441,
+              "contentSha256": "17716b3c82359e633363186c04bb579b7d759f4caca8f832a651813b5788be2a",
+              "sourceSha256": "17716b3c82359e633363186c04bb579b7d759f4caca8f832a651813b5788be2a",
+              "bytes": 14711,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient.spec.js",
+              "startLine": 1,
+              "endLine": 45,
+              "contentSha256": "fd450ba44d919ea17c625ce3f1571709390342916f40b813d9651823bfb5d566",
+              "sourceSha256": "fd450ba44d919ea17c625ce3f1571709390342916f40b813d9651823bfb5d566",
+              "bytes": 2093,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.d.ts",
+              "startLine": 1,
+              "endLine": 1130,
+              "contentSha256": "9c802a9ba259fa9aa460847c2752bff1b1bb0edc14f5dad1056e813795fae9f9",
+              "sourceSha256": "9c802a9ba259fa9aa460847c2752bff1b1bb0edc14f5dad1056e813795fae9f9",
+              "bytes": 33013,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.js",
+              "startLine": 1,
+              "endLine": 687,
+              "contentSha256": "7eeb389c97e1b5822fe7d6b7a0524762d16828afd5cca3dd788a738560845203",
+              "sourceSha256": "7eeb389c97e1b5822fe7d6b7a0524762d16828afd5cca3dd788a738560845203",
+              "bytes": 28359,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/client/TonClient4.spec.js",
+              "startLine": 1,
+              "endLine": 42,
+              "contentSha256": "9478dd1c87cc2fae331361d4189161314c12135515a85456cba9e2a22dada821",
+              "sourceSha256": "9478dd1c87cc2fae331361d4189161314c12135515a85456cba9e2a22dada821",
+              "bytes": 2138,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/config/ConfigParser.d.ts",
+              "startLine": 1,
+              "endLine": 622,
+              "contentSha256": "e0f039f82f0e9756481fb6d588db0989a87fac5852f8dcf9a73754bcf7a9c6d8",
+              "sourceSha256": "e0f039f82f0e9756481fb6d588db0989a87fac5852f8dcf9a73754bcf7a9c6d8",
+              "bytes": 18823,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/config/ConfigParser.js",
+              "startLine": 1,
+              "endLine": 711,
+              "contentSha256": "78a78d9d06fe596c454ce4bf735e3e0bfc91a656e3831a91fc609fa4da895d27",
+              "sourceSha256": "78a78d9d06fe596c454ce4bf735e3e0bfc91a656e3831a91fc609fa4da895d27",
+              "bytes": 24830,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/config/ConfigParser.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/config/ConfigParser.spec.js",
+              "startLine": 1,
+              "endLine": 97,
+              "contentSha256": "e62d66c5dc47063973a28bf9bca2c92fe45cdcf516d365208dbf43af9eecd271",
+              "sourceSha256": "e62d66c5dc47063973a28bf9bca2c92fe45cdcf516d365208dbf43af9eecd271",
+              "bytes": 5567,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/elector/ElectorContract.d.ts",
+              "startLine": 1,
+              "endLine": 51,
+              "contentSha256": "5e216914226df8ca832cf883b5752acf0f09efe54295e0bb597e23b04dd3dd9c",
+              "sourceSha256": "5e216914226df8ca832cf883b5752acf0f09efe54295e0bb597e23b04dd3dd9c",
+              "bytes": 1609,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/elector/ElectorContract.js",
+              "startLine": 1,
+              "endLine": 192,
+              "contentSha256": "0af6df3894bfef3e192376a60c9c03c48351adf4f602b0e4d0a7e60a10d026b6",
+              "sourceSha256": "0af6df3894bfef3e192376a60c9c03c48351adf4f602b0e4d0a7e60a10d026b6",
+              "bytes": 9258,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/elector/ElectorContract.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/elector/ElectorContract.spec.js",
+              "startLine": 1,
+              "endLine": 104,
+              "contentSha256": "d13136d46712475f22a3f167c4d2c48c243cb622b6549964c384109c5699f52b",
+              "sourceSha256": "d13136d46712475f22a3f167c4d2c48c243cb622b6549964c384109c5699f52b",
+              "bytes": 6066,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.d.ts",
+              "startLine": 1,
+              "endLine": 33,
+              "contentSha256": "f46bdc642bc5264ab0fdb5238438303960620e739d94f3ad82cf579db4b28551",
+              "sourceSha256": "f46bdc642bc5264ab0fdb5238438303960620e739d94f3ad82cf579db4b28551",
+              "bytes": 2309,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 1,
+              "endLine": 129,
+              "contentSha256": "01a66a67c584fbcfd3fdee24a8cac8683f69c4188736dbedfccca4596f8fc025",
+              "sourceSha256": "01a66a67c584fbcfd3fdee24a8cac8683f69c4188736dbedfccca4596f8fc025",
+              "bytes": 11195,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonMaster.d.ts",
+              "startLine": 1,
+              "endLine": 21,
+              "contentSha256": "91109d26877d5442cfa766d7a1003d618ed289c6675f396b30c39736ba24b34c",
+              "sourceSha256": "91109d26877d5442cfa766d7a1003d618ed289c6675f396b30c39736ba24b34c",
+              "bytes": 755,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonMaster.js",
+              "startLine": 1,
+              "endLine": 39,
+              "contentSha256": "f82c609bf73b381f46ec231da84ba155f2b78d323c1318c8d7fe9a838d7a8d5c",
+              "sourceSha256": "f82c609bf73b381f46ec231da84ba155f2b78d323c1318c8d7fe9a838d7a8d5c",
+              "bytes": 1263,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonMaster.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonMaster.spec.js",
+              "startLine": 1,
+              "endLine": 27,
+              "contentSha256": "6fcad3ba82949f5d543dc5f6dc67886e95b02d75f71118af62bb70aa28dea7ca",
+              "sourceSha256": "6fcad3ba82949f5d543dc5f6dc67886e95b02d75f71118af62bb70aa28dea7ca",
+              "bytes": 1453,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonWallet.d.ts",
+              "startLine": 1,
+              "endLine": 14,
+              "contentSha256": "981b9c90c3c43a425fffb4f89765741eb179aadaa2762479466edbbb456aae73",
+              "sourceSha256": "981b9c90c3c43a425fffb4f89765741eb179aadaa2762479466edbbb456aae73",
+              "bytes": 483,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/jetton/JettonWallet.js",
+              "startLine": 1,
+              "endLine": 27,
+              "contentSha256": "5196b685da604f090238081527633ee002c2dcd641153c1b6c6433020d8dd035",
+              "sourceSha256": "5196b685da604f090238081527633ee002c2dcd641153c1b6c6433020d8dd035",
+              "bytes": 767,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.d.ts",
+              "startLine": 1,
+              "endLine": 17,
+              "contentSha256": "bfceee17cb88a420d6dbae71ce1e10dd26f044436444a1dbc245f44754a719e1",
+              "sourceSha256": "bfceee17cb88a420d6dbae71ce1e10dd26f044436444a1dbc245f44754a719e1",
+              "bytes": 620,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.js",
+              "startLine": 1,
+              "endLine": 73,
+              "contentSha256": "9509491dcb30f173f8fdb6ac28ae3494b560f59a35cb4924da980335a9fde71c",
+              "sourceSha256": "9509491dcb30f173f8fdb6ac28ae3494b560f59a35cb4924da980335a9fde71c",
+              "bytes": 2557,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrder.spec.js",
+              "startLine": 1,
+              "endLine": 139,
+              "contentSha256": "28dc8da92e7d0b8e615449f8860821036c13bccadf95c5f7cc1350c600174a01",
+              "sourceSha256": "28dc8da92e7d0b8e615449f8860821036c13bccadf95c5f7cc1350c600174a01",
+              "bytes": 9904,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrderBuilder.d.ts",
+              "startLine": 1,
+              "endLine": 13,
+              "contentSha256": "fdf28f0e570917f3b78901c4d0aa6ad0061ffa2520f63a7b731551e512123645",
+              "sourceSha256": "fdf28f0e570917f3b78901c4d0aa6ad0061ffa2520f63a7b731551e512123645",
+              "bytes": 433,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigOrderBuilder.js",
+              "startLine": 1,
+              "endLine": 37,
+              "contentSha256": "17177dc19243ae4108f2865b7ac12d237489c01e54ee27bb9c443f844b9f7e05",
+              "sourceSha256": "17177dc19243ae4108f2865b7ac12d237489c01e54ee27bb9c443f844b9f7e05",
+              "bytes": 1316,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigWallet.d.ts",
+              "startLine": 1,
+              "endLine": 27,
+              "contentSha256": "5f55ec319a3b11559e1e7700b6610216d1cd3c73330c7cca7d743292d3ef33a4",
+              "sourceSha256": "5f55ec319a3b11559e1e7700b6610216d1cd3c73330c7cca7d743292d3ef33a4",
+              "bytes": 1182,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigWallet.js",
+              "startLine": 1,
+              "endLine": 134,
+              "contentSha256": "e8e5dfeed5a36c3a537b3cfb9addbb6ad5ed4126083199a29b61770d4a33fb87",
+              "sourceSha256": "e8e5dfeed5a36c3a537b3cfb9addbb6ad5ed4126083199a29b61770d4a33fb87",
+              "bytes": 6388,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigWallet.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/multisig/MultisigWallet.spec.js",
+              "startLine": 1,
+              "endLine": 248,
+              "contentSha256": "2426fd459e060f6e0b86aa16b9717b8177cfb7cb19a990c5c197eb3ef0b0944c",
+              "sourceSha256": "2426fd459e060f6e0b86aa16b9717b8177cfb7cb19a990c5c197eb3ef0b0944c",
+              "bytes": 13623,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/createTestClient.d.ts",
+              "startLine": 1,
+              "endLine": 9,
+              "contentSha256": "8551b39f4f8b397410ab0dcc34dac85b8acafce8976e276b19a845a177a58fa4",
+              "sourceSha256": "8551b39f4f8b397410ab0dcc34dac85b8acafce8976e276b19a845a177a58fa4",
+              "bytes": 321,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/createTestClient.js",
+              "startLine": 1,
+              "endLine": 18,
+              "contentSha256": "73b5c6770e099a67b7a50bcdc52910a803c71536d29d6ce8092d37e7c1125bc5",
+              "sourceSha256": "73b5c6770e099a67b7a50bcdc52910a803c71536d29d6ce8092d37e7c1125bc5",
+              "bytes": 724,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/createTestClient4.d.ts",
+              "startLine": 1,
+              "endLine": 9,
+              "contentSha256": "16a8fbec88bdcb89b5a164dbe8df667af5c38370682014ec3f1e19e3b448287f",
+              "sourceSha256": "16a8fbec88bdcb89b5a164dbe8df667af5c38370682014ec3f1e19e3b448287f",
+              "bytes": 325,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/createTestClient4.js",
+              "startLine": 1,
+              "endLine": 15,
+              "contentSha256": "7c8c660f53253d3098acab8207b34110ace08a8a2ae5db121a8ef5877e3f00f3",
+              "sourceSha256": "7c8c660f53253d3098acab8207b34110ace08a8a2ae5db121a8ef5877e3f00f3",
+              "bytes": 587,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/fees.d.ts",
+              "startLine": 1,
+              "endLine": 25,
+              "contentSha256": "e9328042e0fa5ec7c52c371f1ed453063e816b8a6d3a87b1c00e81dc8025e67a",
+              "sourceSha256": "e9328042e0fa5ec7c52c371f1ed453063e816b8a6d3a87b1c00e81dc8025e67a",
+              "bytes": 855,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/fees.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "2dd508b5e7a462d4f249f40707dcf4c78403bdf30d18071d3c37279344b51ed7",
+              "sourceSha256": "2dd508b5e7a462d4f249f40707dcf4c78403bdf30d18071d3c37279344b51ed7",
+              "bytes": 4298,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/fees.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/fees.spec.js",
+              "startLine": 1,
+              "endLine": 83,
+              "contentSha256": "2427ade71a0f9c12f869ad6aec17953631855f9aa149d1604cbc3ff7de925622",
+              "sourceSha256": "2427ade71a0f9c12f869ad6aec17953631855f9aa149d1604cbc3ff7de925622",
+              "bytes": 4002,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/maybe.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "3fa7ed8f1ef50d9108ab125dae6dc39b8e5d5792acbb35b0daf63527d97ac75a",
+              "sourceSha256": "3fa7ed8f1ef50d9108ab125dae6dc39b8e5d5792acbb35b0daf63527d97ac75a",
+              "bytes": 235,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/maybe.js",
+              "startLine": 1,
+              "endLine": 9,
+              "contentSha256": "2297ece697010dcb9e9e6970c670ca67b6762b10c345a6e205d5ce993ae13f83",
+              "sourceSha256": "2297ece697010dcb9e9e6970c670ca67b6762b10c345a6e205d5ce993ae13f83",
+              "bytes": 267,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/randomTestKey.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "4f5f84a30aefde427081f36d32cb24cedc1efc8c4308512427e3b010e0e78488",
+              "sourceSha256": "4f5f84a30aefde427081f36d32cb24cedc1efc8c4308512427e3b010e0e78488",
+              "bytes": 274,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/randomTestKey.js",
+              "startLine": 1,
+              "endLine": 24,
+              "contentSha256": "d1e31775b3b448d680bff150c731d4901cf3d940b49f6072aa3854f7b568bb61",
+              "sourceSha256": "d1e31775b3b448d680bff150c731d4901cf3d940b49f6072aa3854f7b568bb61",
+              "bytes": 818,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/time.d.ts",
+              "startLine": 1,
+              "endLine": 15,
+              "contentSha256": "bae482360c9d8b72a9289b1c1134ec3084aea2c0ae7a678ba9463cab5b17ba1b",
+              "sourceSha256": "bae482360c9d8b72a9289b1c1134ec3084aea2c0ae7a678ba9463cab5b17ba1b",
+              "bytes": 655,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/time.js",
+              "startLine": 1,
+              "endLine": 63,
+              "contentSha256": "c551cc915e162b342d8301719bd8c33a3630d53ab652cfbb287f02e5c3a63825",
+              "sourceSha256": "c551cc915e162b342d8301719bd8c33a3630d53ab652cfbb287f02e5c3a63825",
+              "bytes": 2056,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/toUrlSafe.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "990c874a49a636d2c525989dfbf8812e8e0457cc251e7b846a4eae926e808699",
+              "sourceSha256": "990c874a49a636d2c525989dfbf8812e8e0457cc251e7b846a4eae926e808699",
+              "bytes": 246,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/utils/toUrlSafe.js",
+              "startLine": 1,
+              "endLine": 23,
+              "contentSha256": "41dd6e05ac4d04b4aa1539ef1f230fc30095c309e13b9d44a1fcc73fcd37d9e5",
+              "sourceSha256": "41dd6e05ac4d04b4aa1539ef1f230fc30095c309e13b9d44a1fcc73fcd37d9e5",
+              "bytes": 606,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/signing/createWalletTransfer.d.ts",
+              "startLine": 1,
+              "endLine": 48,
+              "contentSha256": "7850f27141e01a423bd4f7a065029db1e8fce066b57225eeb9e5d002af446613",
+              "sourceSha256": "7850f27141e01a423bd4f7a065029db1e8fce066b57225eeb9e5d002af446613",
+              "bytes": 2302,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/signing/createWalletTransfer.js",
+              "startLine": 1,
+              "endLine": 190,
+              "contentSha256": "445d8d4b96d9af97f3dadf2eab75d3b003c722aef49dce685848fd5abf7bd446",
+              "sourceSha256": "445d8d4b96d9af97f3dadf2eab75d3b003c722aef49dce685848fd5abf7bd446",
+              "bytes": 7780,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/signing/singer.d.ts",
+              "startLine": 1,
+              "endLine": 9,
+              "contentSha256": "a5e3469adba54bce82ec9270134f94b24df233a54ce49eb1b36622ff82c0b7af",
+              "sourceSha256": "a5e3469adba54bce82ec9270134f94b24df233a54ce49eb1b36622ff82c0b7af",
+              "bytes": 448,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/signing/singer.js",
+              "startLine": 1,
+              "endLine": 21,
+              "contentSha256": "c8ad3f2208315b7b1182892e4de9f40eeb6b2fc74c36d6b312f7655398ccd710",
+              "sourceSha256": "c8ad3f2208315b7b1182892e4de9f40eeb6b2fc74c36d6b312f7655398ccd710",
+              "bytes": 790,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletContractV5Beta.d.ts",
+              "startLine": 1,
+              "endLine": 130,
+              "contentSha256": "6924fb85719a7e541362ae497e09547fd43023a40f89ee2b875bcf240d005c8e",
+              "sourceSha256": "6924fb85719a7e541362ae497e09547fd43023a40f89ee2b875bcf240d005c8e",
+              "bytes": 4268,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletContractV5Beta.js",
+              "startLine": 1,
+              "endLine": 211,
+              "contentSha256": "800e08b4a5947b23a96c27af7705f19ca3859925372f70a40db33f34f088c929",
+              "sourceSha256": "800e08b4a5947b23a96c27af7705f19ca3859925372f70a40db33f34f088c929",
+              "bytes": 6898,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletContractV5Beta.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletContractV5Beta.spec.js",
+              "startLine": 1,
+              "endLine": 298,
+              "contentSha256": "eefda799d1c0386c8411d7f38752e35e9a97e954b9ce9999b63415fdfbce2820",
+              "sourceSha256": "eefda799d1c0386c8411d7f38752e35e9a97e954b9ce9999b63415fdfbce2820",
+              "bytes": 14284,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaActions.d.ts",
+              "startLine": 1,
+              "endLine": 6,
+              "contentSha256": "2ea70292e46b0da7fe971b7ce56145c36b42079d4a8cd6439ee1ea39db3e0172",
+              "sourceSha256": "2ea70292e46b0da7fe971b7ce56145c36b42079d4a8cd6439ee1ea39db3e0172",
+              "bytes": 552,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaActions.js",
+              "startLine": 1,
+              "endLine": 92,
+              "contentSha256": "93bde46eff8b1a9b5f845ed420f6a86179dabea3d400f559b71dc036d78e7e5c",
+              "sourceSha256": "93bde46eff8b1a9b5f845ed420f6a86179dabea3d400f559b71dc036d78e7e5c",
+              "bytes": 3752,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaActions.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaActions.spec.js",
+              "startLine": 1,
+              "endLine": 166,
+              "contentSha256": "fd52d402ab7a82d31031f8687e3734e4378a55ffafc3ad33a7a4dbdc57379901",
+              "sourceSha256": "fd52d402ab7a82d31031f8687e3734e4378a55ffafc3ad33a7a4dbdc57379901",
+              "bytes": 6856,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaWalletId.d.ts",
+              "startLine": 1,
+              "endLine": 13,
+              "contentSha256": "8281b369f9a3301ec7ab309587b340fdeb9c5cba3f145c76f5ecdb852f8de9e4",
+              "sourceSha256": "8281b369f9a3301ec7ab309587b340fdeb9c5cba3f145c76f5ecdb852f8de9e4",
+              "bytes": 497,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaWalletId.js",
+              "startLine": 1,
+              "endLine": 31,
+              "contentSha256": "2d7d5a2568f55eed263a3ecfea428259e8646ba37103dba70edf8f28a6f8f249",
+              "sourceSha256": "2d7d5a2568f55eed263a3ecfea428259e8646ba37103dba70edf8f28a6f8f249",
+              "bytes": 1472,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaWalletId.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5BetaWalletId.spec.js",
+              "startLine": 1,
+              "endLine": 68,
+              "contentSha256": "57317bf7d05eb1663c0f2551acacc9c6f49c333467814accfb7e1149629dbbc5",
+              "sourceSha256": "57317bf7d05eb1663c0f2551acacc9c6f49c333467814accfb7e1149629dbbc5",
+              "bytes": 2662,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5OutActions.d.ts",
+              "startLine": 1,
+              "endLine": 17,
+              "contentSha256": "e053896ef0a02ca1c993d63694b7384b900a86594c7547b626242aa0cec4acaf",
+              "sourceSha256": "e053896ef0a02ca1c993d63694b7384b900a86594c7547b626242aa0cec4acaf",
+              "bytes": 774,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5beta/WalletV5OutActions.js",
+              "startLine": 1,
+              "endLine": 11,
+              "contentSha256": "5b035bfb41aab8d9b70460075e7af7946acc72e96ae3a061b1c9445458381fcb",
+              "sourceSha256": "5b035bfb41aab8d9b70460075e7af7946acc72e96ae3a061b1c9445458381fcb",
+              "bytes": 482,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletContractV5R1.d.ts",
+              "startLine": 1,
+              "endLine": 125,
+              "contentSha256": "b13976ae66e4a47df5069fa68ebbfa5801828212edfbd620eaeee075fc9a5dd6",
+              "sourceSha256": "b13976ae66e4a47df5069fa68ebbfa5801828212edfbd620eaeee075fc9a5dd6",
+              "bytes": 4319,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletContractV5R1.js",
+              "startLine": 1,
+              "endLine": 207,
+              "contentSha256": "8a16064046bfb7fc078c5f03bd891602368c0f0663415483769b282a04b40eff",
+              "sourceSha256": "8a16064046bfb7fc078c5f03bd891602368c0f0663415483769b282a04b40eff",
+              "bytes": 8196,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletContractV5R1.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletContractV5R1.spec.js",
+              "startLine": 1,
+              "endLine": 321,
+              "contentSha256": "509258b5df5f936469db9a7ee81ead9087615cba900b6c322001e06e9f66e5a0",
+              "sourceSha256": "509258b5df5f936469db9a7ee81ead9087615cba900b6c322001e06e9f66e5a0",
+              "bytes": 15207,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1Actions.d.ts",
+              "startLine": 1,
+              "endLine": 12,
+              "contentSha256": "d4699a3bfba8f1d680fdc007510f866c56f6d2ef8c313063b34874dc680628fe",
+              "sourceSha256": "d4699a3bfba8f1d680fdc007510f866c56f6d2ef8c313063b34874dc680628fe",
+              "bytes": 1038,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1Actions.js",
+              "startLine": 1,
+              "endLine": 128,
+              "contentSha256": "3832e896f6ce2cfa5726b6e4b03973522cc6b030afd8035333892df37a09eb81",
+              "sourceSha256": "3832e896f6ce2cfa5726b6e4b03973522cc6b030afd8035333892df37a09eb81",
+              "bytes": 5051,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1Actions.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1Actions.spec.js",
+              "startLine": 1,
+              "endLine": 262,
+              "contentSha256": "99eca82dee8fd51a710d820363f664ae797d396cdce59d460ab9c0335e85aa00",
+              "sourceSha256": "99eca82dee8fd51a710d820363f664ae797d396cdce59d460ab9c0335e85aa00",
+              "bytes": 11440,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1WalletId.d.ts",
+              "startLine": 1,
+              "endLine": 47,
+              "contentSha256": "50ac7da2523dd525593a4c24c8c58d3c14fca7b17fa44fdbbe9bf892ffa465c9",
+              "sourceSha256": "50ac7da2523dd525593a4c24c8c58d3c14fca7b17fa44fdbbe9bf892ffa465c9",
+              "bytes": 1804,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1WalletId.js",
+              "startLine": 1,
+              "endLine": 69,
+              "contentSha256": "ffaeef20b71b02ef4751dc00102d9f46d23b46fb23510c3221c68d7620b88745",
+              "sourceSha256": "ffaeef20b71b02ef4751dc00102d9f46d23b46fb23510c3221c68d7620b88745",
+              "bytes": 2721,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1WalletId.spec.d.ts",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "sourceSha256": "2e29cd9a98755c46896f7a2d56524db2d6d96b248e36db46de14c30bf47c8d05",
+              "bytes": 10,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/v5r1/WalletV5R1WalletId.spec.js",
+              "startLine": 1,
+              "endLine": 72,
+              "contentSha256": "dafaaa91a4396a916f40b529603920a3cc6f248a7a94636c9eda08c6ca8d66e1",
+              "sourceSha256": "dafaaa91a4396a916f40b529603920a3cc6f248a7a94636c9eda08c6ca8d66e1",
+              "bytes": 3093,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R1.d.ts",
+              "startLine": 1,
+              "endLine": 58,
+              "contentSha256": "95aa38692369b718c19f4a9fc0b0ae53963b134fb963f7eb263f5711db40bc65",
+              "sourceSha256": "95aa38692369b718c19f4a9fc0b0ae53963b134fb963f7eb263f5711db40bc65",
+              "bytes": 1609,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R1.js",
+              "startLine": 1,
+              "endLine": 100,
+              "contentSha256": "fc6451cde3c2932355e7aa7aa1d0473ffd4b641d0dde7ef6ee9a1bfe71ce48b5",
+              "sourceSha256": "fc6451cde3c2932355e7aa7aa1d0473ffd4b641d0dde7ef6ee9a1bfe71ce48b5",
+              "bytes": 3164,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R1.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R1.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "6a9468e5db641834bf4a73668be2e9ce2f2129ce9d2d4520e955948c6121682b",
+              "sourceSha256": "6a9468e5db641834bf4a73668be2e9ce2f2129ce9d2d4520e955948c6121682b",
+              "bytes": 1949,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R2.d.ts",
+              "startLine": 1,
+              "endLine": 58,
+              "contentSha256": "39d4d8b7eec27221a87cb98d82d6c1eb2614bbc95b40749945a4167d241f8718",
+              "sourceSha256": "39d4d8b7eec27221a87cb98d82d6c1eb2614bbc95b40749945a4167d241f8718",
+              "bytes": 1609,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R2.js",
+              "startLine": 1,
+              "endLine": 101,
+              "contentSha256": "dac62b94e33c158c7ae01911756626069f74dc18362cbf1f96cd18abc5b81210",
+              "sourceSha256": "dac62b94e33c158c7ae01911756626069f74dc18362cbf1f96cd18abc5b81210",
+              "bytes": 3195,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R2.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R2.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "6c4938844037c57ab503cdeba15bc00614dc6af60b2796c755297c98be071652",
+              "sourceSha256": "6c4938844037c57ab503cdeba15bc00614dc6af60b2796c755297c98be071652",
+              "bytes": 1949,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R3.d.ts",
+              "startLine": 1,
+              "endLine": 58,
+              "contentSha256": "0e9ae604d0553897c1338b4061e6b6e61bf7d3fc4fc28e1830bf7544e33ad7d8",
+              "sourceSha256": "0e9ae604d0553897c1338b4061e6b6e61bf7d3fc4fc28e1830bf7544e33ad7d8",
+              "bytes": 1609,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R3.js",
+              "startLine": 1,
+              "endLine": 101,
+              "contentSha256": "e1a42f36fc587e0d209fe5a7eb00b2fcb4ed61579000429f427e5553b1a3a42c",
+              "sourceSha256": "e1a42f36fc587e0d209fe5a7eb00b2fcb4ed61579000429f427e5553b1a3a42c",
+              "bytes": 3221,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R3.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV1R3.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "5b8be91fd0f2db257653ea02e6970583a563454629e25399944af8d317a7a50c",
+              "sourceSha256": "5b8be91fd0f2db257653ea02e6970583a563454629e25399944af8d317a7a50c",
+              "bytes": 1949,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R1.d.ts",
+              "startLine": 1,
+              "endLine": 60,
+              "contentSha256": "0354c28bb7cdc17299ba8713f0c1aa5aa59bf5cffcc9d3d3f3d35d3424530475",
+              "sourceSha256": "0354c28bb7cdc17299ba8713f0c1aa5aa59bf5cffcc9d3d3f3d35d3424530475",
+              "bytes": 1665,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R1.js",
+              "startLine": 1,
+              "endLine": 102,
+              "contentSha256": "6b6f48d84d3361b088373bfd3704bd54745583e2a6ca7b896d700eee1b4950df",
+              "sourceSha256": "6b6f48d84d3361b088373bfd3704bd54745583e2a6ca7b896d700eee1b4950df",
+              "bytes": 3263,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R1.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R1.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "fe147cd561e371082e05c7df371299cd22cb49f3c7ac85f315c4f4b6f67d3564",
+              "sourceSha256": "fe147cd561e371082e05c7df371299cd22cb49f3c7ac85f315c4f4b6f67d3564",
+              "bytes": 1968,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R2.d.ts",
+              "startLine": 1,
+              "endLine": 60,
+              "contentSha256": "80d2f7a427e8a69349228e4e8b9092ed1da68aa55b6293b4e848b60b168ae35d",
+              "sourceSha256": "80d2f7a427e8a69349228e4e8b9092ed1da68aa55b6293b4e848b60b168ae35d",
+              "bytes": 1665,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R2.js",
+              "startLine": 1,
+              "endLine": 102,
+              "contentSha256": "8b219381e5a11d4289c912fb2b34c30e98862d23d7cedf9603f659b3f192a87b",
+              "sourceSha256": "8b219381e5a11d4289c912fb2b34c30e98862d23d7cedf9603f659b3f192a87b",
+              "bytes": 3279,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R2.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV2R2.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "1f198588983bab73485f37a4818a0c0b8007f9ee74745599ed27bbeeac86aef4",
+              "sourceSha256": "1f198588983bab73485f37a4818a0c0b8007f9ee74745599ed27bbeeac86aef4",
+              "bytes": 1968,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R1.d.ts",
+              "startLine": 1,
+              "endLine": 57,
+              "contentSha256": "9fb0b4cc14414ddb432181942a492a4e61cbb2e71a9f403c0651f4b6d8db9d6f",
+              "sourceSha256": "9fb0b4cc14414ddb432181942a492a4e61cbb2e71a9f403c0651f4b6d8db9d6f",
+              "bytes": 1768,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R1.js",
+              "startLine": 1,
+              "endLine": 104,
+              "contentSha256": "91e7b516144a68c03f98694448040338ed8c57a8b9c19be21db036acbac0c3ab",
+              "sourceSha256": "91e7b516144a68c03f98694448040338ed8c57a8b9c19be21db036acbac0c3ab",
+              "bytes": 3345,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R1.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R1.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "e448c6b4122acb03f7634c1678823b6193cf4399b897cda7a70d3f9b6a3ede0f",
+              "sourceSha256": "e448c6b4122acb03f7634c1678823b6193cf4399b897cda7a70d3f9b6a3ede0f",
+              "bytes": 1968,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R2.d.ts",
+              "startLine": 1,
+              "endLine": 57,
+              "contentSha256": "55c87b1fb6c338c7f2bf3584ed23a8e210956da8514979ca7138c4058db4bf06",
+              "sourceSha256": "55c87b1fb6c338c7f2bf3584ed23a8e210956da8514979ca7138c4058db4bf06",
+              "bytes": 1768,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R2.js",
+              "startLine": 1,
+              "endLine": 104,
+              "contentSha256": "f35f76cc5404af2d3e5e41df223a1e05fbca1fc3fe46914654ffdcbb6df140bc",
+              "sourceSha256": "f35f76cc5404af2d3e5e41df223a1e05fbca1fc3fe46914654ffdcbb6df140bc",
+              "bytes": 3365,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R2.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3R2.spec.js",
+              "startLine": 1,
+              "endLine": 44,
+              "contentSha256": "b1902c927c98c8be9690f48d63ac2989be27ae888e70487508c05181cb96bfe8",
+              "sourceSha256": "b1902c927c98c8be9690f48d63ac2989be27ae888e70487508c05181cb96bfe8",
+              "bytes": 1968,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3Types.d.ts",
+              "startLine": 1,
+              "endLine": 12,
+              "contentSha256": "a9cc71292f1244cf22d4e6a151d6fb423acdfcb01cb98bef9adf6be1d52ff87d",
+              "sourceSha256": "a9cc71292f1244cf22d4e6a151d6fb423acdfcb01cb98bef9adf6be1d52ff87d",
+              "bytes": 508,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV3Types.js",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "bf41466e80b90456fdef7eb186a28c76d9f3f51e0b4e42b114987893bf9a53f4",
+              "sourceSha256": "bf41466e80b90456fdef7eb186a28c76d9f3f51e0b4e42b114987893bf9a53f4",
+              "bytes": 76,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV4.d.ts",
+              "startLine": 1,
+              "endLine": 65,
+              "contentSha256": "3129c241e7736f93ad95581d6f0342fa738668f6d252cc81c2a02cbce3517cd4",
+              "sourceSha256": "3129c241e7736f93ad95581d6f0342fa738668f6d252cc81c2a02cbce3517cd4",
+              "bytes": 2054,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV4.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "edd85577d67d59fb185f6a8232fe323229a8255757102170da33ab569aad7401",
+              "sourceSha256": "edd85577d67d59fb185f6a8232fe323229a8255757102170da33ab569aad7401",
+              "bytes": 4226,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV4.spec.d.ts",
+              "startLine": 1,
+              "endLine": 8,
+              "contentSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "sourceSha256": "79b5bbdf42029577fb9e850f304d3592499abf8f65d78a22634844a03c90a94f",
+              "bytes": 201,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV4.spec.js",
+              "startLine": 1,
+              "endLine": 48,
+              "contentSha256": "032761ee867095fc99b595756d43ba36765544330d40da8e9dcef1a9c93f7a8c",
+              "sourceSha256": "032761ee867095fc99b595756d43ba36765544330d40da8e9dcef1a9c93f7a8c",
+              "bytes": 2151,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV5Beta.d.ts",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "36e1eaded501496ff40fe9f017ab0a01271ef4701ab88c5fe80c151780a07fb9",
+              "sourceSha256": "36e1eaded501496ff40fe9f017ab0a01271ef4701ab88c5fe80c151780a07fb9",
+              "bytes": 139,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV5Beta.js",
+              "startLine": 1,
+              "endLine": 19,
+              "contentSha256": "41f1b1e49cdcfc59db5f5eaf8e096448d322cb5a4931eaecee8ade80f713ba01",
+              "sourceSha256": "41f1b1e49cdcfc59db5f5eaf8e096448d322cb5a4931eaecee8ade80f713ba01",
+              "bytes": 950,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV5R1.d.ts",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "7158e418de5a8e74944c60f9031f69b64d1c99ee5a1e26d1a17694fa1bad09bb",
+              "sourceSha256": "7158e418de5a8e74944c60f9031f69b64d1c99ee5a1e26d1a17694fa1bad09bb",
+              "bytes": 127,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "dist/wallets/WalletContractV5R1.js",
+              "startLine": 1,
+              "endLine": 19,
+              "contentSha256": "acc5fef400e3daa5a822d766fbd6e7ca662162c616457a9e02d45efe5980fe36",
+              "sourceSha256": "acc5fef400e3daa5a822d766fbd6e7ca662162c616457a9e02d45efe5980fe36",
+              "bytes": 938,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+              "representation": "ORIGINAL",
+              "filePath": "package.json",
+              "startLine": 1,
+              "endLine": 83,
+              "contentSha256": "aba80c3a4f07dd796c9e4ded3612d2e43cca70d1ff024c8254f5d29490f8c44c",
+              "sourceSha256": "aba80c3a4f07dd796c9e4ded3612d2e43cca70d1ff024c8254f5d29490f8c44c",
+              "bytes": 2147,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "RESTORED_ARTIFACT_NOT_REUSED:PILOT_V2_RUNTIME_PATH_CLEANED",
+        "L4_EXCLUDED:ORIGINAL:LICENSE:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:README.md:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+      ],
+      "validation": {
+        "fixedFieldsIdentical": true,
+        "cumulative": true,
+        "sourceHashesVerified": true,
+        "representationSeparated": true,
+        "noHostPaths": true,
+        "noGroundTruthLabels": true,
+        "additionalCodeRequestsDisabled": true
+      },
+      "status": "PREPARED",
+      "durationMs": 165
+    },
+    {
+      "experimentId": "sample-002",
+      "sourceSampleId": "DD-NPM-010",
+      "preparation": "REUSED_PILOT_V2_STATIC_RESULTS:FROZEN_REUSE",
+      "subject": {
+        "packageName": "@cloudplatform-single-spa/installations",
+        "packageVersion": "99.99.99",
+        "archiveSha256": "b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5"
+      },
+      "source": {
+        "archive": "guarddog-pilot-selection/artifacts/archives/2026-05-27-@cloudplatform-single-spa_installations-v99.99.99.zip",
+        "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2026-05-27-@cloudplatform-single-spa_installations-v99.99.99/tmp/tmp8bnc8pkb/@cloudplatform-single-spa-installations/package"
+      },
+      "versions": {
+        "source": {
+          "node": "v26.4.0",
+          "requiredNode": ">=24.0.0 <25",
+          "platform": "darwin/arm64",
+          "scannerCommit": "e766f2e2724e119e9989b7e382b74b98a9ddbe3e",
+          "scannerBranch": "feat/435--agent-planning-filter1",
+          "dockerImageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+          "guarddogTool": "3.1.0",
+          "semgrepTool": "1.172.0",
+          "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+          "filterRuleVersion": "0.1.0",
+          "planningSchemaVersion": "0.1.0"
+        },
+        "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9"
+      },
+      "staticFilter": {
+        "status": "STATIC_MALICIOUS",
+        "ruleVersion": "0.4.0",
+        "reasonCodes": [
+          "REQUIRED_RULE_HITS_PRESENT",
+          "MALICIOUS_RULE_SATISFIED",
+          "BEHAVIOR_LINK_UNVERIFIED",
+          "LIFECYCLE_LINK_UNVERIFIED",
+          "RELATION_CANDIDATE_UNVERIFIED",
+          "UNCLASSIFIED_THREAT_REVIEW_REQUIRED",
+          "SCAN_COVERAGE_UNKNOWN"
+        ]
+      },
+      "fixedContractHash": "15cf62374a633e8777191b1648932689b2738b8f814ca1dc65d4a810d4eb20c3",
+      "levels": [
+        {
+          "level": "L0",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "50241248c53d5b101ae96d8abb5212fece9d9a3d99bf5f3e09a56c3460e3f59e",
+          "fileCount": 1,
+          "sliceCount": 1,
+          "codeBytes": 4173,
+          "codeLines": 109,
+          "providerRequestBytes": 68400,
+          "providerRequestCharacters": 68241,
+          "estimatedTokens": 17061,
+          "ranges": [
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/postinstall.js",
+              "startLine": 11,
+              "endLine": 119,
+              "contentSha256": "b3b38ea5da45801ed9b91eac18398297d4add384fb1b0c1342503abd11e8b4e9",
+              "sourceSha256": "b3b38ea5da45801ed9b91eac18398297d4add384fb1b0c1342503abd11e8b4e9",
+              "bytes": 4173,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L1",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "c3edc54dca364a4cd9756a371acafc528e5723e4498b8365a81a6e25520d3506",
+          "fileCount": 1,
+          "sliceCount": 1,
+          "codeBytes": 4389,
+          "codeLines": 117,
+          "providerRequestBytes": 70351,
+          "providerRequestCharacters": 70192,
+          "estimatedTokens": 17548,
+          "ranges": [
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/postinstall.js",
+              "startLine": 8,
+              "endLine": 124,
+              "contentSha256": "c70252c63d1a4ab941742984758dc021b4b38cd09408b6bb29b86e530bb28536",
+              "sourceSha256": "c70252c63d1a4ab941742984758dc021b4b38cd09408b6bb29b86e530bb28536",
+              "bytes": 4389,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L2",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "99a1835879a8bab5d642a70b907e89087d02cc96547de486fb4856a549ab0971",
+          "fileCount": 1,
+          "sliceCount": 1,
+          "codeBytes": 4573,
+          "codeLines": 124,
+          "providerRequestBytes": 70547,
+          "providerRequestCharacters": 70386,
+          "estimatedTokens": 17597,
+          "ranges": [
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/postinstall.js",
+              "startLine": 1,
+              "endLine": 124,
+              "contentSha256": "1f688ba02b28b9921f58dd18c08b0c56895792eecd34cdf2aeaf0742d406c2ed",
+              "sourceSha256": "1f688ba02b28b9921f58dd18c08b0c56895792eecd34cdf2aeaf0742d406c2ed",
+              "bytes": 4573,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L3",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "c2b206b1e820ed6f85ebcd3effb4d696ac57155e87b2301e19d529a9f9defe16",
+          "fileCount": 2,
+          "sliceCount": 2,
+          "codeBytes": 4648,
+          "codeLines": 127,
+          "providerRequestBytes": 71662,
+          "providerRequestCharacters": 71501,
+          "estimatedTokens": 17876,
+          "ranges": [
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "33a6337b804f5708d7fffb02621845d0a97986cb7b726990acf18e4120ba17b5",
+              "sourceSha256": "33a6337b804f5708d7fffb02621845d0a97986cb7b726990acf18e4120ba17b5",
+              "bytes": 75,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/postinstall.js",
+              "startLine": 1,
+              "endLine": 124,
+              "contentSha256": "1f688ba02b28b9921f58dd18c08b0c56895792eecd34cdf2aeaf0742d406c2ed",
+              "sourceSha256": "1f688ba02b28b9921f58dd18c08b0c56895792eecd34cdf2aeaf0742d406c2ed",
+              "bytes": 4573,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L4",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "88ff5c089a96f9f06e75f6d48555ec19f111f4449bc27501fdef1ad048ff8180",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 5219,
+          "codeLines": 140,
+          "providerRequestBytes": 73299,
+          "providerRequestCharacters": 73138,
+          "estimatedTokens": 18285,
+          "ranges": [
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.d.ts",
+              "startLine": 1,
+              "endLine": 13,
+              "contentSha256": "29b0a0b0b9cfae2539705c6078f80674f0aff58d1ccf0932e71ab2303352cf78",
+              "sourceSha256": "29b0a0b0b9cfae2539705c6078f80674f0aff58d1ccf0932e71ab2303352cf78",
+              "bytes": 571,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "dist/index.js",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "33a6337b804f5708d7fffb02621845d0a97986cb7b726990acf18e4120ba17b5",
+              "sourceSha256": "33a6337b804f5708d7fffb02621845d0a97986cb7b726990acf18e4120ba17b5",
+              "bytes": 75,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/postinstall.js",
+              "startLine": 1,
+              "endLine": 124,
+              "contentSha256": "1f688ba02b28b9921f58dd18c08b0c56895792eecd34cdf2aeaf0742d406c2ed",
+              "sourceSha256": "1f688ba02b28b9921f58dd18c08b0c56895792eecd34cdf2aeaf0742d406c2ed",
+              "bytes": 4573,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "RESTORED_ARTIFACT_NOT_REUSED:PILOT_V2_RUNTIME_PATH_CLEANED",
+        "L3_IMPORT_UNRESOLVED:ca27d2b6:dist/index.js:../src/index.js",
+        "L4_EXCLUDED:ORIGINAL:README.md:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+      ],
+      "validation": {
+        "fixedFieldsIdentical": true,
+        "cumulative": true,
+        "sourceHashesVerified": true,
+        "representationSeparated": true,
+        "noHostPaths": true,
+        "noGroundTruthLabels": true,
+        "additionalCodeRequestsDisabled": true
+      },
+      "status": "PREPARED",
+      "durationMs": 55
+    },
+    {
+      "experimentId": "sample-003",
+      "sourceSampleId": "DD-NPM-013",
+      "preparation": "REUSED_PILOT_V2_STATIC_RESULTS:FROZEN_REUSE",
+      "subject": {
+        "packageName": "napi-postinstall",
+        "packageVersion": "0.3.1",
+        "archiveSha256": "850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f"
+      },
+      "source": {
+        "archive": "guarddog-pilot-selection/artifacts/archives/2025-07-18-napi-postinstall-v0.3.1.zip",
+        "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2025-07-18-napi-postinstall-v0.3.1/tmp/tmpyb59lbal/napi-postinstall/package"
+      },
+      "versions": {
+        "source": {
+          "node": "v26.4.0",
+          "requiredNode": ">=24.0.0 <25",
+          "platform": "darwin/arm64",
+          "scannerCommit": "e766f2e2724e119e9989b7e382b74b98a9ddbe3e",
+          "scannerBranch": "feat/435--agent-planning-filter1",
+          "dockerImageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+          "guarddogTool": "3.1.0",
+          "semgrepTool": "1.172.0",
+          "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+          "filterRuleVersion": "0.1.0",
+          "planningSchemaVersion": "0.1.0"
+        },
+        "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9"
+      },
+      "staticFilter": {
+        "status": "NO_ESCALATION_SIGNAL",
+        "ruleVersion": "0.4.0",
+        "reasonCodes": [
+          "REQUIRED_RULE_HITS_PRESENT",
+          "LIFECYCLE_LINK_UNVERIFIED",
+          "RELATION_CANDIDATE_UNVERIFIED",
+          "SCAN_COVERAGE_UNKNOWN",
+          "NO_THREAT_FINDING"
+        ]
+      },
+      "fixedContractHash": "20a98403ad4b18170172965b2a26a179f6e66569cbe39c17ea79683a13b83120",
+      "levels": [
+        {
+          "level": "L0",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "5770f0da6353654def10974e4c858ac3bdbae298ec784a294412e75dc6b6218a",
+          "fileCount": 5,
+          "sliceCount": 6,
+          "codeBytes": 6396,
+          "codeLines": 148,
+          "providerRequestBytes": 62557,
+          "providerRequestCharacters": 62557,
+          "estimatedTokens": 15640,
+          "ranges": [
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 154,
+              "endLine": 154,
+              "contentSha256": "35ebe907492835c866b2c392fa0b1b17f75beb4f32a48d17453891be4e5ba9fb",
+              "sourceSha256": "35ebe907492835c866b2c392fa0b1b17f75beb4f32a48d17453891be4e5ba9fb",
+              "bytes": 39,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.js",
+              "startLine": 6,
+              "endLine": 6,
+              "contentSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+              "sourceSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+              "bytes": 67,
+              "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.js",
+              "startLine": 51,
+              "endLine": 51,
+              "contentSha256": "e31e723843b7cd3b000dbe13859d423c223ef8656b8de8f8027a57022d09d7be",
+              "sourceSha256": "e31e723843b7cd3b000dbe13859d423c223ef8656b8de8f8027a57022d09d7be",
+              "bytes": 81,
+              "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.js",
+              "startLine": 102,
+              "endLine": 102,
+              "contentSha256": "8318b0ee872e0f0ff20ae3ad7e500394c2b51a2623034e18fa05ff574eae68f3",
+              "sourceSha256": "8318b0ee872e0f0ff20ae3ad7e500394c2b51a2623034e18fa05ff574eae68f3",
+              "bytes": 72,
+              "selectionReason": "Planning target planning-tier3-target-004: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 14,
+              "endLine": 133,
+              "contentSha256": "ea7c3bd5c8169df1beaac5adddaf941c9ae99d5f5a084ab8d1c6186e410122c4",
+              "sourceSha256": "ea7c3bd5c8169df1beaac5adddaf941c9ae99d5f5a084ab8d1c6186e410122c4",
+              "bytes": 4824,
+              "selectionReason": "Planning target planning-tier3-target-005: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 134,
+              "endLine": 157,
+              "contentSha256": "a490b49a2a9b4120c7268a3d13bebc02544dc229a8daa4ab45d5a986a86e4a58",
+              "sourceSha256": "a490b49a2a9b4120c7268a3d13bebc02544dc229a8daa4ab45d5a986a86e4a58",
+              "bytes": 1313,
+              "selectionReason": "Planning target planning-tier3-target-005: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L1",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "77ae2753bf33d89ce1c547f5b5f38a296d122a0c12bc654721712c40e845fb33",
+          "fileCount": 5,
+          "sliceCount": 11,
+          "codeBytes": 14577,
+          "codeLines": 350,
+          "providerRequestBytes": 80177,
+          "providerRequestCharacters": 80177,
+          "estimatedTokens": 20045,
+          "ranges": [
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "ce024ce7dc8a37d233bdc110d5ce1639a979e75fc18864dc4027e15960543bd0",
+              "sourceSha256": "ce024ce7dc8a37d233bdc110d5ce1639a979e75fc18864dc4027e15960543bd0",
+              "bytes": 84,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 16,
+              "endLine": 22,
+              "contentSha256": "e3e9b776c0a66810ecb9fa885e779b15effac6cde710770047010505a381b7d5",
+              "sourceSha256": "e3e9b776c0a66810ecb9fa885e779b15effac6cde710770047010505a381b7d5",
+              "bytes": 118,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 25,
+              "endLine": 34,
+              "contentSha256": "434abba4fb8075042bd239b441b173441c19772c8e4b01a628d13e539e4548d1",
+              "sourceSha256": "434abba4fb8075042bd239b441b173441c19772c8e4b01a628d13e539e4548d1",
+              "bytes": 239,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 152,
+              "endLine": 166,
+              "contentSha256": "5557d73c836b4304ba2009595216bd45f7a34321bb68a485b69614db74b7e327",
+              "sourceSha256": "5557d73c836b4304ba2009595216bd45f7a34321bb68a485b69614db74b7e327",
+              "bytes": 556,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.js",
+              "startLine": 4,
+              "endLine": 4,
+              "contentSha256": "4f2e92bbb42d421fd491d8270752ba148e3537a90440075e8b364fc588a7a7d9",
+              "sourceSha256": "4f2e92bbb42d421fd491d8270752ba148e3537a90440075e8b364fc588a7a7d9",
+              "bytes": 34,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.js",
+              "startLine": 6,
+              "endLine": 6,
+              "contentSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+              "sourceSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+              "bytes": 67,
+              "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.js",
+              "startLine": 2,
+              "endLine": 72,
+              "contentSha256": "041e0636cd3d6af7732132dfe19ef32f4bf1e9f2c7ed9e3e54c081763cb81b00",
+              "sourceSha256": "041e0636cd3d6af7732132dfe19ef32f4bf1e9f2c7ed9e3e54c081763cb81b00",
+              "bytes": 3110,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.js",
+              "startLine": 13,
+              "endLine": 13,
+              "contentSha256": "208029eced518f701e15061509a7153aa0e9868536c0db1d67ac462cb062e802",
+              "sourceSha256": "208029eced518f701e15061509a7153aa0e9868536c0db1d67ac462cb062e802",
+              "bytes": 30,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.js",
+              "startLine": 100,
+              "endLine": 107,
+              "contentSha256": "808f275558f707776e56e8d67a6d2797fe4984cf6968fbf37854642575e33e61",
+              "sourceSha256": "808f275558f707776e56e8d67a6d2797fe4984cf6968fbf37854642575e33e61",
+              "bytes": 163,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 6,
+              "endLine": 9,
+              "contentSha256": "348e31e65144fdcc5fa949a2b3d54e5624852ed23ba4cda78d94bb3c6345f982",
+              "sourceSha256": "348e31e65144fdcc5fa949a2b3d54e5624852ed23ba4cda78d94bb3c6345f982",
+              "bytes": 162,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 11,
+              "endLine": 239,
+              "contentSha256": "6b27128896c0ef01ffebdf827f12abfff964586c47f7759a4889dbad7a612991",
+              "sourceSha256": "6b27128896c0ef01ffebdf827f12abfff964586c47f7759a4889dbad7a612991",
+              "bytes": 10014,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L2",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "6d18d1e8028ed5a3682926aa1c63c7d4b2cb13948f0e585e28e852f625a75095",
+          "fileCount": 5,
+          "sliceCount": 5,
+          "codeBytes": 27371,
+          "codeLines": 753,
+          "providerRequestBytes": 85826,
+          "providerRequestCharacters": 85826,
+          "estimatedTokens": 21457,
+          "ranges": [
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 1,
+              "endLine": 191,
+              "contentSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+              "sourceSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+              "bytes": 5616,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.js",
+              "startLine": 1,
+              "endLine": 14,
+              "contentSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+              "sourceSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+              "bytes": 703,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.js",
+              "startLine": 1,
+              "endLine": 74,
+              "contentSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+              "sourceSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+              "bytes": 3188,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.js",
+              "startLine": 1,
+              "endLine": 234,
+              "contentSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+              "sourceSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+              "bytes": 7438,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 1,
+              "endLine": 240,
+              "contentSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+              "sourceSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+              "bytes": 10426,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L3",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "51d9df88529f8bd406eea7c1ac00b2a35d65d289f9b26754b2cca2694800db8c",
+          "fileCount": 11,
+          "sliceCount": 11,
+          "codeBytes": 31016,
+          "codeLines": 861,
+          "providerRequestBytes": 96231,
+          "providerRequestCharacters": 96231,
+          "estimatedTokens": 24058,
+          "ranges": [
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 1,
+              "endLine": 191,
+              "contentSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+              "sourceSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+              "bytes": 5616,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/cli.js",
+              "startLine": 1,
+              "endLine": 6,
+              "contentSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+              "sourceSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+              "bytes": 306,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.js",
+              "startLine": 1,
+              "endLine": 14,
+              "contentSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+              "sourceSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+              "bytes": 703,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.d.ts",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+              "sourceSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+              "bytes": 110,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.js",
+              "startLine": 1,
+              "endLine": 74,
+              "contentSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+              "sourceSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+              "bytes": 3188,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.js",
+              "startLine": 1,
+              "endLine": 234,
+              "contentSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+              "sourceSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+              "bytes": 7438,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.d.ts",
+              "startLine": 1,
+              "endLine": 6,
+              "contentSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+              "sourceSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+              "bytes": 414,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 1,
+              "endLine": 240,
+              "contentSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+              "sourceSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+              "bytes": 10426,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/target.js",
+              "startLine": 1,
+              "endLine": 56,
+              "contentSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+              "sourceSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+              "bytes": 1609,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/types.js",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+              "sourceSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+              "bytes": 110,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "package.json",
+              "startLine": 1,
+              "endLine": 35,
+              "contentSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+              "sourceSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+              "bytes": 1096,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L4",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "ba25f616dfd9973d3fa297f653e5806ef02c979aa17e41d99598772dcedeaa46",
+          "fileCount": 16,
+          "sliceCount": 16,
+          "codeBytes": 33236,
+          "codeLines": 924,
+          "providerRequestBytes": 103807,
+          "providerRequestCharacters": 103807,
+          "estimatedTokens": 25952,
+          "ranges": [
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "install.js",
+              "startLine": 1,
+              "endLine": 191,
+              "contentSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+              "sourceSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+              "bytes": 5616,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/cli.d.ts",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "559e30b989d19ead3a96682f6abecf9ae919135baefa8e148513aeedaf2c5a9f",
+              "sourceSha256": "559e30b989d19ead3a96682f6abecf9ae919135baefa8e148513aeedaf2c5a9f",
+              "bytes": 30,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/cli.js",
+              "startLine": 1,
+              "endLine": 6,
+              "contentSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+              "sourceSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+              "bytes": 306,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.d.ts",
+              "startLine": 1,
+              "endLine": 9,
+              "contentSha256": "1b36ba485dfac38f79c35563be5f398182d744ea85c82ee26432b13712f49689",
+              "sourceSha256": "1b36ba485dfac38f79c35563be5f398182d744ea85c82ee26432b13712f49689",
+              "bytes": 416,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/constants.js",
+              "startLine": 1,
+              "endLine": 14,
+              "contentSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+              "sourceSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+              "bytes": 703,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.d.ts",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+              "sourceSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+              "bytes": 110,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/fallback.js",
+              "startLine": 1,
+              "endLine": 74,
+              "contentSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+              "sourceSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+              "bytes": 3188,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.d.ts",
+              "startLine": 1,
+              "endLine": 13,
+              "contentSha256": "e9a88f8b71ae3a9e8515dbf856b4186f7491267ae1e2affd3b7ec356e815338f",
+              "sourceSha256": "e9a88f8b71ae3a9e8515dbf856b4186f7491267ae1e2affd3b7ec356e815338f",
+              "bytes": 845,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/helpers.js",
+              "startLine": 1,
+              "endLine": 234,
+              "contentSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+              "sourceSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+              "bytes": 7438,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.d.ts",
+              "startLine": 1,
+              "endLine": 6,
+              "contentSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+              "sourceSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+              "bytes": 414,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/index.js",
+              "startLine": 1,
+              "endLine": 240,
+              "contentSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+              "sourceSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+              "bytes": 10426,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/target.d.ts",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "09ef6b1c303742b0c308d057b8dc93dbf49480bb5b03436a384a54a56c009384",
+              "sourceSha256": "09ef6b1c303742b0c308d057b8dc93dbf49480bb5b03436a384a54a56c009384",
+              "bytes": 105,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/target.js",
+              "startLine": 1,
+              "endLine": 56,
+              "contentSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+              "sourceSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+              "bytes": 1609,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/types.d.ts",
+              "startLine": 1,
+              "endLine": 37,
+              "contentSha256": "b4c627919da5e1b0b8c6704563f4f3fa1732086e7d720315e1162d8210e1da0e",
+              "sourceSha256": "b4c627919da5e1b0b8c6704563f4f3fa1732086e7d720315e1162d8210e1da0e",
+              "bytes": 824,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "lib/types.js",
+              "startLine": 1,
+              "endLine": 3,
+              "contentSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+              "sourceSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+              "bytes": 110,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+              "representation": "ORIGINAL",
+              "filePath": "package.json",
+              "startLine": 1,
+              "endLine": 35,
+              "contentSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+              "sourceSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+              "bytes": 1096,
+              "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "RESTORED_ARTIFACT_NOT_REUSED:PILOT_V2_RUNTIME_PATH_CLEANED",
+        "L4_EXCLUDED:ORIGINAL:LICENSE:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:README.md:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:lib/cli.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:lib/constants.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:lib/fallback.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:lib/helpers.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:lib/index.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:lib/target.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:lib/types.js.map:SOURCE_MAP",
+        "L4_EXCLUDED:ORIGINAL:node-gyp.dll:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+      ],
+      "validation": {
+        "fixedFieldsIdentical": true,
+        "cumulative": true,
+        "sourceHashesVerified": true,
+        "representationSeparated": true,
+        "noHostPaths": true,
+        "noGroundTruthLabels": true,
+        "additionalCodeRequestsDisabled": true
+      },
+      "status": "PREPARED",
+      "durationMs": 74
+    },
+    {
+      "experimentId": "sample-004",
+      "sourceSampleId": "DD-NPM-015",
+      "preparation": "RERUN_CURRENT_STATIC_PIPELINE:FROZEN_REUSE",
+      "subject": {
+        "packageName": "@teale.io/eslint-config",
+        "packageVersion": "1.8.15",
+        "archiveSha256": "7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a"
+      },
+      "source": {
+        "archive": "guarddog-pilot-selection/artifacts/archives/2026-03-20-@teale.io_eslint-config-v1.8.15.zip",
+        "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2026-03-20-@teale.io_eslint-config-v1.8.15/tmp/tmphth6tkf6/@teale.io-eslint-config/package"
+      },
+      "versions": {
+        "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9",
+        "node": "v26.4.0",
+        "guarddog": "3.1.0",
+        "semgrep": "1.172.0",
+        "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+        "planningSchemaVersion": "0.1.0",
+        "analyzers": [
+          {
+            "analyzer": "metadata",
+            "analyzerVersion": "0.1.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "custom-rule",
+            "analyzerVersion": "0.2.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "guarddog",
+            "analyzerVersion": "0.1.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "obfuscation",
+            "analyzerVersion": "0.2.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "custom-rule-deobfuscated",
+            "analyzerVersion": "0.2.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "guarddog-deobfuscated",
+            "analyzerVersion": "0.1.0",
+            "status": "SUCCESS"
+          }
+        ]
+      },
+      "staticFilter": {
+        "status": "STATIC_MALICIOUS",
+        "ruleVersion": "0.4.0",
+        "reasonCodes": [
+          "REQUIRED_RULE_HITS_PRESENT",
+          "MALICIOUS_RULE_SATISFIED",
+          "BEHAVIOR_LINK_UNVERIFIED",
+          "PAYLOAD_CONTENT_UNVERIFIED",
+          "LIFECYCLE_LINK_UNVERIFIED",
+          "RELATION_CANDIDATE_UNVERIFIED",
+          "UNCLASSIFIED_THREAT_REVIEW_REQUIRED",
+          "SCAN_COVERAGE_UNKNOWN"
+        ]
+      },
+      "fixedContractHash": "0a71ee348b1440425bd679288340a2c4af58299844edc325831e8270f99c1864",
+      "levels": [
+        {
+          "level": "L0",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "71bb6def4f819769dfde5c3cad808caf9a621b80aae851f039de8ea5fcaf87f3",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 12946,
+          "codeLines": 233,
+          "providerRequestBytes": 151765,
+          "providerRequestCharacters": 151765,
+          "estimatedTokens": 37942,
+          "ranges": [
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 3,
+              "endLine": 93,
+              "contentSha256": "432bdcc0c88db798020ec7a2dce3f15696c27dae928e992619e86da54c7c5364",
+              "sourceSha256": "432bdcc0c88db798020ec7a2dce3f15696c27dae928e992619e86da54c7c5364",
+              "bytes": 4630,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/deploy.js",
+              "startLine": 5,
+              "endLine": 77,
+              "contentSha256": "8df8c3c1b00c9bedb247303129989405c401fbd3e14644e00ef8b416f76aadf3",
+              "sourceSha256": "8df8c3c1b00c9bedb247303129989405c401fbd3e14644e00ef8b416f76aadf3",
+              "bytes": 2889,
+              "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 13,
+              "endLine": 81,
+              "contentSha256": "768fd10c82155f51f7186bd38d08bc1ace751d560a8c0cc5bfdbea23b42d8ac5",
+              "sourceSha256": "768fd10c82155f51f7186bd38d08bc1ace751d560a8c0cc5bfdbea23b42d8ac5",
+              "bytes": 5427,
+              "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L1",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "e16a1a5a99023d66e7dbb692e9d5bf0f504df1c678eda851362b473063e2071e",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 13450,
+          "codeLines": 252,
+          "providerRequestBytes": 156371,
+          "providerRequestCharacters": 156371,
+          "estimatedTokens": 39093,
+          "ranges": [
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 3,
+              "endLine": 87,
+              "contentSha256": "58fdfce22a0f385acd3c6726f38ae6625afdf03b644782128c6101d0199a1024",
+              "sourceSha256": "58fdfce22a0f385acd3c6726f38ae6625afdf03b644782128c6101d0199a1024",
+              "bytes": 5799,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 3,
+              "endLine": 95,
+              "contentSha256": "fe4efb2d3e9d7ca405aecb8dba5dc104ea912b9892baca4e629f89e200e7ac2b",
+              "sourceSha256": "fe4efb2d3e9d7ca405aecb8dba5dc104ea912b9892baca4e629f89e200e7ac2b",
+              "bytes": 4715,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/deploy.js",
+              "startLine": 4,
+              "endLine": 77,
+              "contentSha256": "a5dd317c35e68fcf6e8ad42d276e901068ecd14a27b492f49835c80cd2fc0f47",
+              "sourceSha256": "a5dd317c35e68fcf6e8ad42d276e901068ecd14a27b492f49835c80cd2fc0f47",
+              "bytes": 2936,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L2",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "c3682b7f4c6cfb421cad441b194590d7ce2bba309df57f39b96090ab7bedb99a",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 13863,
+          "codeLines": 272,
+          "providerRequestBytes": 156789,
+          "providerRequestCharacters": 156789,
+          "estimatedTokens": 39198,
+          "ranges": [
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 91,
+              "contentSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+              "sourceSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+              "bytes": 5860,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 99,
+              "contentSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+              "sourceSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+              "bytes": 4776,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/deploy.js",
+              "startLine": 1,
+              "endLine": 82,
+              "contentSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+              "sourceSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+              "bytes": 3227,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L3",
+          "status": "READY",
+          "sameInputAsPrevious": true,
+          "codeHash": "c3682b7f4c6cfb421cad441b194590d7ce2bba309df57f39b96090ab7bedb99a",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 13863,
+          "codeLines": 272,
+          "providerRequestBytes": 156789,
+          "providerRequestCharacters": 156789,
+          "estimatedTokens": 39198,
+          "ranges": [
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 91,
+              "contentSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+              "sourceSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+              "bytes": 5860,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 99,
+              "contentSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+              "sourceSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+              "bytes": 4776,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/deploy.js",
+              "startLine": 1,
+              "endLine": 82,
+              "contentSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+              "sourceSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+              "bytes": 3227,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            }
+          ]
+        },
+        {
+          "level": "L4",
+          "status": "READY",
+          "sameInputAsPrevious": true,
+          "codeHash": "c3682b7f4c6cfb421cad441b194590d7ce2bba309df57f39b96090ab7bedb99a",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 13863,
+          "codeLines": 272,
+          "providerRequestBytes": 156789,
+          "providerRequestCharacters": 156789,
+          "estimatedTokens": 39198,
+          "ranges": [
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a:deobfuscated:65c46488c94c98f6f036029d8b8e4b316d0e7f4c4fc6e7f2014e28da438ed13c",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 91,
+              "contentSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+              "sourceSha256": "f478f39becfdc91d9621e18958fa971da79d6d6f587ca5203d2d3e7caf28ae4d",
+              "bytes": 5860,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 99,
+              "contentSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+              "sourceSha256": "c37c0ae9641d2e5329fcdee847a756bf1140fdb7f0b7c78a40fdc39055e7d926",
+              "bytes": 4776,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+              "representation": "ORIGINAL",
+              "filePath": "scripts/deploy.js",
+              "startLine": 1,
+              "endLine": 82,
+              "contentSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+              "sourceSha256": "86861b23f79e3b90db82d93e451e94ecceee262d9b6bc4af5d69ed3eb0f7b977",
+              "bytes": 3227,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "L4_EXCLUDED:ORIGINAL:README.md:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+      ],
+      "validation": {
+        "fixedFieldsIdentical": true,
+        "cumulative": true,
+        "sourceHashesVerified": true,
+        "representationSeparated": true,
+        "noHostPaths": true,
+        "noGroundTruthLabels": true,
+        "additionalCodeRequestsDisabled": true
+      },
+      "status": "PREPARED",
+      "durationMs": 76
+    },
+    {
+      "experimentId": "sample-005",
+      "sourceSampleId": "DD-NPM-001",
+      "preparation": "RERUN_CURRENT_STATIC_PIPELINE:FROZEN_REUSE",
+      "subject": {
+        "packageName": "aesdecryptor",
+        "packageVersion": "1.0.0",
+        "archiveSha256": "c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135"
+      },
+      "source": {
+        "archive": "guarddog-pilot-selection/artifacts/archives/2026-03-07-aesdecryptor-v1.0.0.zip",
+        "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2026-03-07-aesdecryptor-v1.0.0/tmp/tmp4ryxtgru/aesdecryptor/package"
+      },
+      "versions": {
+        "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9",
+        "node": "v26.4.0",
+        "guarddog": "3.1.0",
+        "semgrep": "1.172.0",
+        "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+        "planningSchemaVersion": "0.1.0",
+        "analyzers": [
+          {
+            "analyzer": "metadata",
+            "analyzerVersion": "0.1.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "custom-rule",
+            "analyzerVersion": "0.2.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "guarddog",
+            "analyzerVersion": "0.1.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "obfuscation",
+            "analyzerVersion": "0.2.0",
+            "status": "PARTIAL"
+          },
+          {
+            "analyzer": "custom-rule-deobfuscated",
+            "analyzerVersion": "0.2.0",
+            "status": "SUCCESS"
+          },
+          {
+            "analyzer": "guarddog-deobfuscated",
+            "analyzerVersion": "0.1.0",
+            "status": "SUCCESS"
+          }
+        ]
+      },
+      "staticFilter": {
+        "status": "STATIC_INCOMPLETE",
+        "ruleVersion": "0.4.0",
+        "reasonCodes": [
+          "REQUIRED_RULE_HITS_PRESENT",
+          "BEHAVIOR_LINK_UNVERIFIED",
+          "LIFECYCLE_LINK_UNVERIFIED",
+          "UNCLASSIFIED_THREAT_REVIEW_REQUIRED",
+          "ANALYZER_INCOMPLETE",
+          "ANALYZER_SCOPE_RELEVANCE_UNKNOWN",
+          "RESTORATION_INCOMPLETE",
+          "SCAN_COVERAGE_UNKNOWN"
+        ]
+      },
+      "fixedContractHash": "72485e4a9f8e2a86ceec52503a691f53c83f39e6591a438b9f9c8935ce28e4af",
+      "levels": [
+        {
+          "level": "L0",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "3ca02c991490b674d35ae62e5bb085c6291137156f97e18bb4329285f152ebb3",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 184672,
+          "codeLines": 4,
+          "providerRequestBytes": 231538,
+          "providerRequestCharacters": 180099,
+          "estimatedTokens": 45025,
+          "ranges": [
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/parser.js",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "bytes": 151725,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "bytes": 32849,
+              "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 45,
+              "endLine": 45,
+              "contentSha256": "9793ef69ab4362fe18b666a022bc759fe21bf962ca2eca4ce1b6b3dd9c3c672b",
+              "sourceSha256": "9793ef69ab4362fe18b666a022bc759fe21bf962ca2eca4ce1b6b3dd9c3c672b",
+              "bytes": 98,
+              "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L1",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "6772dfb4f1f7269d0dc645aa55c5bed1c15327c6130dfc6488afd5e2af4f3b01",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 185051,
+          "codeLines": 21,
+          "providerRequestBytes": 232369,
+          "providerRequestCharacters": 180918,
+          "estimatedTokens": 45230,
+          "ranges": [
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 29,
+              "endLine": 46,
+              "contentSha256": "ae04a6d54fd1d723ddc77422fb21661a43d6395717f50c6a907b68b10507bd22",
+              "sourceSha256": "ae04a6d54fd1d723ddc77422fb21661a43d6395717f50c6a907b68b10507bd22",
+              "bytes": 477,
+              "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/parser.js",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "bytes": 151725,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "bytes": 32849,
+              "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L2",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "05b6a6d1eb78398e6cdfccc4934f208c5b24d2c8ba6de9a1bf3cea4ed970d33a",
+          "fileCount": 3,
+          "sliceCount": 3,
+          "codeBytes": 218179,
+          "codeLines": 108,
+          "providerRequestBytes": 272137,
+          "providerRequestCharacters": 211806,
+          "estimatedTokens": 52952,
+          "ranges": [
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+              "sourceSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+              "bytes": 33605,
+              "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/parser.js",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "bytes": 151725,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "bytes": 32849,
+              "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L3",
+          "status": "READY",
+          "sameInputAsPrevious": false,
+          "codeHash": "8b9fa46e7d53c834efa3f237e439420d16eb26f0d121900895f4d462debdd236",
+          "fileCount": 4,
+          "sliceCount": 4,
+          "codeBytes": 218367,
+          "codeLines": 119,
+          "providerRequestBytes": 273397,
+          "providerRequestCharacters": 213066,
+          "estimatedTokens": 53267,
+          "ranges": [
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+              "sourceSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+              "bytes": 33605,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/parser.js",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "bytes": 151725,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/sonia",
+              "startLine": 1,
+              "endLine": 11,
+              "contentSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+              "sourceSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+              "bytes": 188,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "bytes": 32849,
+              "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+            }
+          ]
+        },
+        {
+          "level": "L4",
+          "status": "READY",
+          "sameInputAsPrevious": true,
+          "codeHash": "8b9fa46e7d53c834efa3f237e439420d16eb26f0d121900895f4d462debdd236",
+          "fileCount": 4,
+          "sliceCount": 4,
+          "codeBytes": 218367,
+          "codeLines": 119,
+          "providerRequestBytes": 273397,
+          "providerRequestCharacters": 213066,
+          "estimatedTokens": 53267,
+          "ranges": [
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+              "representation": "DEOBFUSCATED",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 105,
+              "contentSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+              "sourceSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+              "bytes": 33605,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/parser.js",
+              "startLine": 1,
+              "endLine": 1,
+              "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+              "bytes": 151725,
+              "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "bin/sonia",
+              "startLine": 1,
+              "endLine": 11,
+              "contentSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+              "sourceSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+              "bytes": 188,
+              "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+            },
+            {
+              "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+              "representation": "ORIGINAL",
+              "filePath": "index.js",
+              "startLine": 1,
+              "endLine": 2,
+              "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+              "bytes": 32849,
+              "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "L3_FILE_UNAVAILABLE:5f675bdf:bin/sonia:Artifact code read failed: FILE_UNAVAILABLE",
+        "L4_EXCLUDED:ORIGINAL:bin/sonia:UNSUPPORTED_NON_JS_TS",
+        "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+      ],
+      "validation": {
+        "fixedFieldsIdentical": true,
+        "cumulative": true,
+        "sourceHashesVerified": true,
+        "representationSeparated": true,
+        "noHostPaths": true,
+        "noGroundTruthLabels": true,
+        "additionalCodeRequestsDisabled": true
+      },
+      "status": "PREPARED",
+      "durationMs": 123
+    }
+  ]
+}

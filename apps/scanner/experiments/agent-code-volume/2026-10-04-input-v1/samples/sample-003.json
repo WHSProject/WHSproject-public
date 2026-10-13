@@ -1,0 +1,683 @@
+{
+  "experimentId": "sample-003",
+  "sourceSampleId": "DD-NPM-013",
+  "preparation": "REUSED_PILOT_V2_STATIC_RESULTS:FROZEN_REUSE",
+  "subject": {
+    "packageName": "napi-postinstall",
+    "packageVersion": "0.3.1",
+    "archiveSha256": "850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f"
+  },
+  "source": {
+    "archive": "guarddog-pilot-selection/artifacts/archives/2025-07-18-napi-postinstall-v0.3.1.zip",
+    "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2025-07-18-napi-postinstall-v0.3.1/tmp/tmpyb59lbal/napi-postinstall/package"
+  },
+  "versions": {
+    "source": {
+      "node": "v26.4.0",
+      "requiredNode": ">=24.0.0 <25",
+      "platform": "darwin/arm64",
+      "scannerCommit": "e766f2e2724e119e9989b7e382b74b98a9ddbe3e",
+      "scannerBranch": "feat/435--agent-planning-filter1",
+      "dockerImageDigest": "sha256:6c9b0e051011000600036ecacd0209081f58754eec65b13255d87cf2881e9640",
+      "guarddogTool": "3.1.0",
+      "semgrepTool": "1.172.0",
+      "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+      "filterRuleVersion": "0.1.0",
+      "planningSchemaVersion": "0.1.0"
+    },
+    "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9"
+  },
+  "staticFilter": {
+    "status": "NO_ESCALATION_SIGNAL",
+    "ruleVersion": "0.4.0",
+    "reasonCodes": [
+      "REQUIRED_RULE_HITS_PRESENT",
+      "LIFECYCLE_LINK_UNVERIFIED",
+      "RELATION_CANDIDATE_UNVERIFIED",
+      "SCAN_COVERAGE_UNKNOWN",
+      "NO_THREAT_FINDING"
+    ]
+  },
+  "fixedContractHash": "20a98403ad4b18170172965b2a26a179f6e66569cbe39c17ea79683a13b83120",
+  "levels": [
+    {
+      "level": "L0",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "5770f0da6353654def10974e4c858ac3bdbae298ec784a294412e75dc6b6218a",
+      "fileCount": 5,
+      "sliceCount": 6,
+      "codeBytes": 6396,
+      "codeLines": 148,
+      "providerRequestBytes": 62557,
+      "providerRequestCharacters": 62557,
+      "estimatedTokens": 15640,
+      "ranges": [
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 154,
+          "endLine": 154,
+          "contentSha256": "35ebe907492835c866b2c392fa0b1b17f75beb4f32a48d17453891be4e5ba9fb",
+          "sourceSha256": "35ebe907492835c866b2c392fa0b1b17f75beb4f32a48d17453891be4e5ba9fb",
+          "bytes": 39,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.js",
+          "startLine": 6,
+          "endLine": 6,
+          "contentSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+          "sourceSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+          "bytes": 67,
+          "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.js",
+          "startLine": 51,
+          "endLine": 51,
+          "contentSha256": "e31e723843b7cd3b000dbe13859d423c223ef8656b8de8f8027a57022d09d7be",
+          "sourceSha256": "e31e723843b7cd3b000dbe13859d423c223ef8656b8de8f8027a57022d09d7be",
+          "bytes": 81,
+          "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.js",
+          "startLine": 102,
+          "endLine": 102,
+          "contentSha256": "8318b0ee872e0f0ff20ae3ad7e500394c2b51a2623034e18fa05ff574eae68f3",
+          "sourceSha256": "8318b0ee872e0f0ff20ae3ad7e500394c2b51a2623034e18fa05ff574eae68f3",
+          "bytes": 72,
+          "selectionReason": "Planning target planning-tier3-target-004: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 14,
+          "endLine": 133,
+          "contentSha256": "ea7c3bd5c8169df1beaac5adddaf941c9ae99d5f5a084ab8d1c6186e410122c4",
+          "sourceSha256": "ea7c3bd5c8169df1beaac5adddaf941c9ae99d5f5a084ab8d1c6186e410122c4",
+          "bytes": 4824,
+          "selectionReason": "Planning target planning-tier3-target-005: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 134,
+          "endLine": 157,
+          "contentSha256": "a490b49a2a9b4120c7268a3d13bebc02544dc229a8daa4ab45d5a986a86e4a58",
+          "sourceSha256": "a490b49a2a9b4120c7268a3d13bebc02544dc229a8daa4ab45d5a986a86e4a58",
+          "bytes": 1313,
+          "selectionReason": "Planning target planning-tier3-target-005: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        }
+      ]
+    },
+    {
+      "level": "L1",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "77ae2753bf33d89ce1c547f5b5f38a296d122a0c12bc654721712c40e845fb33",
+      "fileCount": 5,
+      "sliceCount": 11,
+      "codeBytes": 14577,
+      "codeLines": 350,
+      "providerRequestBytes": 80177,
+      "providerRequestCharacters": 80177,
+      "estimatedTokens": 20045,
+      "ranges": [
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 1,
+          "endLine": 3,
+          "contentSha256": "ce024ce7dc8a37d233bdc110d5ce1639a979e75fc18864dc4027e15960543bd0",
+          "sourceSha256": "ce024ce7dc8a37d233bdc110d5ce1639a979e75fc18864dc4027e15960543bd0",
+          "bytes": 84,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 16,
+          "endLine": 22,
+          "contentSha256": "e3e9b776c0a66810ecb9fa885e779b15effac6cde710770047010505a381b7d5",
+          "sourceSha256": "e3e9b776c0a66810ecb9fa885e779b15effac6cde710770047010505a381b7d5",
+          "bytes": 118,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 25,
+          "endLine": 34,
+          "contentSha256": "434abba4fb8075042bd239b441b173441c19772c8e4b01a628d13e539e4548d1",
+          "sourceSha256": "434abba4fb8075042bd239b441b173441c19772c8e4b01a628d13e539e4548d1",
+          "bytes": 239,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 152,
+          "endLine": 166,
+          "contentSha256": "5557d73c836b4304ba2009595216bd45f7a34321bb68a485b69614db74b7e327",
+          "sourceSha256": "5557d73c836b4304ba2009595216bd45f7a34321bb68a485b69614db74b7e327",
+          "bytes": 556,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.js",
+          "startLine": 4,
+          "endLine": 4,
+          "contentSha256": "4f2e92bbb42d421fd491d8270752ba148e3537a90440075e8b364fc588a7a7d9",
+          "sourceSha256": "4f2e92bbb42d421fd491d8270752ba148e3537a90440075e8b364fc588a7a7d9",
+          "bytes": 34,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.js",
+          "startLine": 6,
+          "endLine": 6,
+          "contentSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+          "sourceSha256": "a9a1c069a1674c0317ecaf5e3faa29e7440cc08ce97a15406da2aba407c1d719",
+          "bytes": 67,
+          "selectionReason": "Planning target planning-tier3-target-002: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.js",
+          "startLine": 2,
+          "endLine": 72,
+          "contentSha256": "041e0636cd3d6af7732132dfe19ef32f4bf1e9f2c7ed9e3e54c081763cb81b00",
+          "sourceSha256": "041e0636cd3d6af7732132dfe19ef32f4bf1e9f2c7ed9e3e54c081763cb81b00",
+          "bytes": 3110,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.js",
+          "startLine": 13,
+          "endLine": 13,
+          "contentSha256": "208029eced518f701e15061509a7153aa0e9868536c0db1d67ac462cb062e802",
+          "sourceSha256": "208029eced518f701e15061509a7153aa0e9868536c0db1d67ac462cb062e802",
+          "bytes": 30,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.js",
+          "startLine": 100,
+          "endLine": 107,
+          "contentSha256": "808f275558f707776e56e8d67a6d2797fe4984cf6968fbf37854642575e33e61",
+          "sourceSha256": "808f275558f707776e56e8d67a6d2797fe4984cf6968fbf37854642575e33e61",
+          "bytes": 163,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 6,
+          "endLine": 9,
+          "contentSha256": "348e31e65144fdcc5fa949a2b3d54e5624852ed23ba4cda78d94bb3c6345f982",
+          "sourceSha256": "348e31e65144fdcc5fa949a2b3d54e5624852ed23ba4cda78d94bb3c6345f982",
+          "bytes": 162,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 11,
+          "endLine": 239,
+          "contentSha256": "6b27128896c0ef01ffebdf827f12abfff964586c47f7759a4889dbad7a612991",
+          "sourceSha256": "6b27128896c0ef01ffebdf827f12abfff964586c47f7759a4889dbad7a612991",
+          "bytes": 10014,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        }
+      ]
+    },
+    {
+      "level": "L2",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "6d18d1e8028ed5a3682926aa1c63c7d4b2cb13948f0e585e28e852f625a75095",
+      "fileCount": 5,
+      "sliceCount": 5,
+      "codeBytes": 27371,
+      "codeLines": 753,
+      "providerRequestBytes": 85826,
+      "providerRequestCharacters": 85826,
+      "estimatedTokens": 21457,
+      "ranges": [
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 1,
+          "endLine": 191,
+          "contentSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+          "sourceSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+          "bytes": 5616,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.js",
+          "startLine": 1,
+          "endLine": 14,
+          "contentSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+          "sourceSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+          "bytes": 703,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.js",
+          "startLine": 1,
+          "endLine": 74,
+          "contentSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+          "sourceSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+          "bytes": 3188,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.js",
+          "startLine": 1,
+          "endLine": 234,
+          "contentSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+          "sourceSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+          "bytes": 7438,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 1,
+          "endLine": 240,
+          "contentSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+          "sourceSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+          "bytes": 10426,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        }
+      ]
+    },
+    {
+      "level": "L3",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "51d9df88529f8bd406eea7c1ac00b2a35d65d289f9b26754b2cca2694800db8c",
+      "fileCount": 11,
+      "sliceCount": 11,
+      "codeBytes": 31016,
+      "codeLines": 861,
+      "providerRequestBytes": 96231,
+      "providerRequestCharacters": 96231,
+      "estimatedTokens": 24058,
+      "ranges": [
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 1,
+          "endLine": 191,
+          "contentSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+          "sourceSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+          "bytes": 5616,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/cli.js",
+          "startLine": 1,
+          "endLine": 6,
+          "contentSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+          "sourceSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+          "bytes": 306,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.js",
+          "startLine": 1,
+          "endLine": 14,
+          "contentSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+          "sourceSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+          "bytes": 703,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.d.ts",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+          "sourceSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+          "bytes": 110,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.js",
+          "startLine": 1,
+          "endLine": 74,
+          "contentSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+          "sourceSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+          "bytes": 3188,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.js",
+          "startLine": 1,
+          "endLine": 234,
+          "contentSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+          "sourceSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+          "bytes": 7438,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.d.ts",
+          "startLine": 1,
+          "endLine": 6,
+          "contentSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+          "sourceSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+          "bytes": 414,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 1,
+          "endLine": 240,
+          "contentSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+          "sourceSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+          "bytes": 10426,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/target.js",
+          "startLine": 1,
+          "endLine": 56,
+          "contentSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+          "sourceSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+          "bytes": 1609,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/types.js",
+          "startLine": 1,
+          "endLine": 3,
+          "contentSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+          "sourceSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+          "bytes": 110,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "package.json",
+          "startLine": 1,
+          "endLine": 35,
+          "contentSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+          "sourceSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+          "bytes": 1096,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        }
+      ]
+    },
+    {
+      "level": "L4",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "ba25f616dfd9973d3fa297f653e5806ef02c979aa17e41d99598772dcedeaa46",
+      "fileCount": 16,
+      "sliceCount": 16,
+      "codeBytes": 33236,
+      "codeLines": 924,
+      "providerRequestBytes": 103807,
+      "providerRequestCharacters": 103807,
+      "estimatedTokens": 25952,
+      "ranges": [
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "install.js",
+          "startLine": 1,
+          "endLine": 191,
+          "contentSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+          "sourceSha256": "7d09991e1045f23113e1b49b8f7cab131f2db8161bd086d91a745088667a0272",
+          "bytes": 5616,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/cli.d.ts",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "559e30b989d19ead3a96682f6abecf9ae919135baefa8e148513aeedaf2c5a9f",
+          "sourceSha256": "559e30b989d19ead3a96682f6abecf9ae919135baefa8e148513aeedaf2c5a9f",
+          "bytes": 30,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/cli.js",
+          "startLine": 1,
+          "endLine": 6,
+          "contentSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+          "sourceSha256": "104a4925192272108d1c13b28d45985be8812062047c3820195b24395f9e53d5",
+          "bytes": 306,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.d.ts",
+          "startLine": 1,
+          "endLine": 9,
+          "contentSha256": "1b36ba485dfac38f79c35563be5f398182d744ea85c82ee26432b13712f49689",
+          "sourceSha256": "1b36ba485dfac38f79c35563be5f398182d744ea85c82ee26432b13712f49689",
+          "bytes": 416,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/constants.js",
+          "startLine": 1,
+          "endLine": 14,
+          "contentSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+          "sourceSha256": "4e9382602f4ea68f6c598e7fd7a20088cb6a0da67700619b6dad654d811c9b61",
+          "bytes": 703,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.d.ts",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+          "sourceSha256": "5b31f82da3664a5af9b5a360df2b446409156827ec0b9b4c2cca25c0a262c9a7",
+          "bytes": 110,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/fallback.js",
+          "startLine": 1,
+          "endLine": 74,
+          "contentSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+          "sourceSha256": "5a521941269561605f36c6d577abeb2590507ff239cbe5c9922145e8ef9aa65b",
+          "bytes": 3188,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.d.ts",
+          "startLine": 1,
+          "endLine": 13,
+          "contentSha256": "e9a88f8b71ae3a9e8515dbf856b4186f7491267ae1e2affd3b7ec356e815338f",
+          "sourceSha256": "e9a88f8b71ae3a9e8515dbf856b4186f7491267ae1e2affd3b7ec356e815338f",
+          "bytes": 845,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/helpers.js",
+          "startLine": 1,
+          "endLine": 234,
+          "contentSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+          "sourceSha256": "abdf6a2c35fdfa2dc3fd1494b1f98926e654d7a6e1862e9d91f3861c89014a20",
+          "bytes": 7438,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.d.ts",
+          "startLine": 1,
+          "endLine": 6,
+          "contentSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+          "sourceSha256": "a51c3e0d53ca014574c13a31a24de079fad6978598f9de1d71d39ae3378ff458",
+          "bytes": 414,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/index.js",
+          "startLine": 1,
+          "endLine": 240,
+          "contentSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+          "sourceSha256": "382dd034f0244a4e88c59f83b0d17856961331d6e17690e01040fc187216b855",
+          "bytes": 10426,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/target.d.ts",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "09ef6b1c303742b0c308d057b8dc93dbf49480bb5b03436a384a54a56c009384",
+          "sourceSha256": "09ef6b1c303742b0c308d057b8dc93dbf49480bb5b03436a384a54a56c009384",
+          "bytes": 105,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/target.js",
+          "startLine": 1,
+          "endLine": 56,
+          "contentSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+          "sourceSha256": "cb5040d3182f87bcd158151528df0b49129ddc72e0a283e125e6c3c98d1f0f26",
+          "bytes": 1609,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/types.d.ts",
+          "startLine": 1,
+          "endLine": 37,
+          "contentSha256": "b4c627919da5e1b0b8c6704563f4f3fa1732086e7d720315e1162d8210e1da0e",
+          "sourceSha256": "b4c627919da5e1b0b8c6704563f4f3fa1732086e7d720315e1162d8210e1da0e",
+          "bytes": 824,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "lib/types.js",
+          "startLine": 1,
+          "endLine": 3,
+          "contentSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+          "sourceSha256": "b0d2bc4142d0c62d43f996aaeb64f22c4889ac853f8a3765758b505d972d0149",
+          "bytes": 110,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:850f36aba8ef372bce46866199d2ad5a7d4590527813dcc1486921ea5cca2f5f",
+          "representation": "ORIGINAL",
+          "filePath": "package.json",
+          "startLine": 1,
+          "endLine": 35,
+          "contentSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+          "sourceSha256": "35889d9e3417715fa08d11bfc1c3bdee20c2ec0f0df269fc9159d132872d42d0",
+          "bytes": 1096,
+          "selectionReason": "EXPERIMENT_L4_CODE_SCOPE"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "RESTORED_ARTIFACT_NOT_REUSED:PILOT_V2_RUNTIME_PATH_CLEANED",
+    "L4_EXCLUDED:ORIGINAL:LICENSE:UNSUPPORTED_NON_JS_TS",
+    "L4_EXCLUDED:ORIGINAL:README.md:UNSUPPORTED_NON_JS_TS",
+    "L4_EXCLUDED:ORIGINAL:lib/cli.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:lib/constants.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:lib/fallback.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:lib/helpers.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:lib/index.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:lib/target.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:lib/types.js.map:SOURCE_MAP",
+    "L4_EXCLUDED:ORIGINAL:node-gyp.dll:UNSUPPORTED_NON_JS_TS",
+    "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+  ],
+  "validation": {
+    "fixedFieldsIdentical": true,
+    "cumulative": true,
+    "sourceHashesVerified": true,
+    "representationSeparated": true,
+    "noHostPaths": true,
+    "noGroundTruthLabels": true,
+    "additionalCodeRequestsDisabled": true
+  },
+  "status": "PREPARED",
+  "durationMs": 74
+}

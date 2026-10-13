@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "1.0.0",
+  "issue": 410,
+  "purpose": "Record the recovery audit for the historical large Tier3 Gate experiment without treating unrelated corpora as comparable.",
+  "auditedAt": "2026-09-30",
+  "scannerHead": {
+    "commit": "13f3e33bd9452485dd721177c3cc96d8dbd30884",
+    "branch": "test/410-tier3-gate-large-dataset",
+    "includes": [391, 407]
+  },
+  "historicalExperiments": [
+    {
+      "name": "historical-600",
+      "reportedComposition": { "benign": 300, "malicious": 300 },
+      "reportedResults": {
+        "scannerFailures": 14,
+        "socketUnresolved": 6,
+        "comparable": 580,
+        "malicious": 293,
+        "benign": 287,
+        "tier3Inputs": 22
+      },
+      "sources": ["OMC", "MPAD", "Datadog"],
+      "recoveryClass": "D_AGGREGATE_REPORT_ONLY",
+      "exactManifest": false,
+      "archiveAvailable": false,
+      "rawPerSampleAvailable": false,
+      "rerun": "NOT_RUN",
+      "reason": "Only aggregate counts were supplied or found; no package/version/label rows or archive identity were recoverable."
+    },
+    {
+      "name": "historical-580-comparable",
+      "reportedComposition": { "malicious": 293, "benign": 287 },
+      "recoveryClass": "D_AGGREGATE_REPORT_ONLY",
+      "exactManifest": false,
+      "archiveAvailable": false,
+      "rawPerSampleAvailable": false,
+      "rerun": "NOT_RUN",
+      "reason": "The comparable-set total and class counts were recoverable only as aggregate claims, not as sample rows."
+    },
+    {
+      "name": "historical-140",
+      "recoveryClass": "D_AGGREGATE_REPORT_ONLY",
+      "exactManifest": false,
+      "archiveAvailable": false,
+      "rawPerSampleAvailable": false,
+      "rerun": "NOT_RUN",
+      "reason": "No independent 140-sample manifest, archive directory, or raw result was found."
+    }
+  ],
+  "recoveredArtifacts": [
+    {
+      "name": "omc-40-stored-pilot",
+      "location": "reports/validation/omc-tier1-tier2-pilot-2026-09-28.json",
+      "source": "False-Positive-Community/open-malicious-code-benchmark@f0722971eddb654c308106c9086ff69da5b0484b",
+      "composition": { "benign": 20, "malicious": 20 },
+      "recoveryClass": "B_EXACT_MANIFEST_WITHOUT_ARCHIVE",
+      "rawPerSample": true,
+      "sha256": "277B6D8DDD2788527DA16D677DDDB9D4EE0EE25946E708CCF66EC061261B37D4",
+      "rerun": "STORED_RESULT_ONLY"
+    },
+    {
+      "name": "agent-lab-lab4-87",
+      "location": "external: Documents/GitHub/agent-lab/Lab4/dataset/manifest.json + evaluation/labels.json",
+      "composition": { "benign": 30, "malicious": 57 },
+      "recoveryClass": "B_EXACT_MANIFEST_WITHOUT_ARCHIVE",
+      "manifestSha256": "41D99259DF6CABF9DA466941BC0C99687214E2ABFACC806DD19CD77D79763AAA",
+      "labelsSha256": "011DEEA8E76B06C24E149091BAA33B7A1871E0E02F0A093684B4B16FF87E8267",
+      "historicalRelation": "UNRELATED_CORPUS",
+      "rerun": "NOT_RUN",
+      "reason": "The manifest is a separate Lab4 corpus; archives are ignored/absent and payload hashes do not prove an exact npm archive re-collection."
+    },
+    {
+      "name": "datadog-evidence-export",
+      "location": "external: Downloads/datadog-evidence-consolidated.csv",
+      "packageRows": 25767,
+      "recoveryClass": "B_PACKAGE_ROWS_NOT_HISTORICAL_SELECTION",
+      "sha256": "DD57E7BA4E29317F0E2C63942FDAE46C9853C3A33DDD14B9E274598F99A93345",
+      "historicalRelation": "UNRELATED_CORPUS",
+      "rerun": "NOT_RUN",
+      "reason": "It does not identify the historical 600-sample selection and is not a current-HEAD production funnel result."
+    }
+  ],
+  "trackedRepositoryEvidence": {
+    "historicalCommit9298fb9": "9298fb9dd95e8b802f7e306af45802295888ddfa",
+    "commit9298Meaning": "Merge commit for dashboard OAuth work; no 600-sample manifest/archive/result was present in its tree.",
+    "stored40SourceReport": "reports/validation/tier2-omcbench-2026-09-23.json",
+    "stored40SourceReportSha256": "218AFBB18396944A9A1010826EFAB527E51DDCCB6B551AB45CC44F929EAA4613",
+    "reportsAreGitIgnored": true
+  },
+  "rerunDecision": {
+    "historical600": "BLOCKED_BY_MISSING_EXACT_ARTIFACTS",
+    "historical580": "BLOCKED_BY_MISSING_EXACT_ARTIFACTS",
+    "historical140": "BLOCKED_BY_MISSING_EXACT_ARTIFACTS",
+    "current40": "SANITY_ONLY",
+    "apiProviderCalled": false,
+    "dockerGuardDogAvailable": false
+  }
+}

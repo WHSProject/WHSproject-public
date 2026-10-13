@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-003",
+  "subject": {
+    "sampleId": "DD-NPM-003",
+    "ecosystem": "npm",
+    "packageName": "@ton-wallet/create",
+    "packageVersion": "14.0.3"
+  },
+  "artifactSha256": "bbec94db72b77a11beba22bf9c713abd71c8c21028730443f9dcd81a20df1d35",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_MALICIOUS",
+  "triggerReason": "STATIC_FILTER_MALICIOUS",
+  "tier3Status": "SKIPPED",
+  "runnerCalls": 0,
+  "providerRequests": 0,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 8,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 2614
+}

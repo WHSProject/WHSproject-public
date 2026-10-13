@@ -1,0 +1,95 @@
+name: "🛠️ Task"
+description: "문서화, 테스트, 리팩터링, DevOps/QA 등 일반 작업"
+title: "[TASK] "
+labels: []
+type: task
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        기능 개발 외의 일반 작업을 위한 Issue입니다.
+        상황에 따라 필요한 항목만 작성해주세요.
+
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: 작업 유형
+      description: 작업 성격이 명확하다면 선택해주세요.
+      multiple: false
+      options:
+        - Chore
+        - Docs
+        - Test
+        - Refactor
+        - DevOps
+        - QA
+        - Research
+        - 기타
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 작업 목적
+      description: 왜 필요한 작업인지 작성해주세요.
+      placeholder: |
+        예)
+        Issue Form의 필수 입력 항목을 줄여
+        직접 작성 및 AI 기반 개발 시 부담을 줄입니다.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: 관련 Component
+      description: 관련된 Component가 있다면 선택해주세요.
+      multiple: true
+      options:
+        - Gateway
+        - Policy
+        - Scanner
+        - Verdaccio
+        - Data / Feeds
+        - Database
+        - Dashboard
+        - DevOps / QA
+        - 공통
+        - 기타
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 작업 내용
+      description: 현재 알고 있는 작업 내용을 작성해주세요.
+      placeholder: |
+        예)
+        - Feature Form 간소화
+        - Bug Form 간소화
+        - Task Form 간소화
+        - 기존 자동화 정상 동작 확인
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 조건
+      description: 완료 기준이 명확한 경우 작성해주세요.
+      placeholder: |
+        예)
+        - Issue 작성 시 불필요한 필수 입력이 없다.
+        - 기존 Type / Label 자동화가 정상 동작한다.
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: 관련 문서 / WBS
+      description: 관련 Issue, PR, WBS, Notion 등이 있다면 작성해주세요.
+      placeholder: |
+        Related Issue:
+        Related PR:
+        WBS:
+        Notion:
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 참고사항
+      description: 추가로 공유할 내용이 있다면 작성해주세요.

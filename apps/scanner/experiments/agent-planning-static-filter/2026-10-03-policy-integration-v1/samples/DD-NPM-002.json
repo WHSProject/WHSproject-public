@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-002",
+  "subject": {
+    "sampleId": "DD-NPM-002",
+    "ecosystem": "npm",
+    "packageName": "@add-wallet-exchange/import-type",
+    "packageVersion": "1.0.0"
+  },
+  "artifactSha256": "b6758431f8d26421749a45b59ae92cd5dee771dd520a547a192c26fbe6d98d65",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 24,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 1649
+}

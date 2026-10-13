@@ -1,0 +1,12 @@
+--- a/apps/policy/src/llm/policy-llm.prompt.ts
++++ b/apps/policy/src/llm/policy-llm.prompt.ts
+@@ -44,6 +44,9 @@
+   const correction = [
+     'The previous judgment failed deterministic citation/schema validation.',
+     `Validation code: ${validationCode}.`,
++    ...(validationCode === 'NOT_SUPPORTED_CANNOT_CITE_POSITIVE_EVIDENCE'
++      ? ['For every predicate whose status is NOT_SUPPORTED, evidenceIds, assessmentIds, and feedEvidenceIds must all be empty arrays. Keep the status grounded in the supplied evidence; do not change it to SUPPORTED or UNKNOWN merely to retain citations.']
++      : []),
+     'Return the complete judgment again. Correct only the invalid structure or citation references; use IDs only from the matching namespace in the PolicyCase. Do not infer a predicate status from this validation error.',
+   ].join(' ');
+   return payloadStart < 0

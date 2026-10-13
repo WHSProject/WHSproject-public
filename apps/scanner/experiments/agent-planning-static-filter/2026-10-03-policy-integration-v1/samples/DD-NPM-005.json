@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-005",
+  "subject": {
+    "sampleId": "DD-NPM-005",
+    "ecosystem": "npm",
+    "packageName": "@typescript_eslinter/eslint",
+    "packageVersion": "1.5.0"
+  },
+  "artifactSha256": "6d4b04df4aae4098d3ded713e447b6209e9549f20ae512d5485fd639f12033ba",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 20,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 2006
+}

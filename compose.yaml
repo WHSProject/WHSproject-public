@@ -1,0 +1,300 @@
+# WHSProject 통합 Docker Compose 설정 파일
+# 각 Component의 Runtime / Port / 환경변수 / 의존성 정보가 확정되면
+# 이 파일에 서비스 설정을 순차적으로 추가합니다.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?POSTGRES_USER must be set}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      POSTGRES_DB: postgres
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d:ro
+      - ./infra/postgres/migrations:/migrations:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    # Gateway(whs 네트워크)가 다운로드 기록을 남기도록 양쪽에 참여한다.
+    networks:
+      - default
+      - whs
+
+  evidence-api:
+    build:
+      context: ./apps/policy
+      dockerfile: Dockerfile.db
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:?POSTGRES_USER must be set}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      DB_NAME: evidence_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${EVIDENCE_API_PORT:-8100}:8100"
+    command: ["uvicorn", "app.evidence_api:app", "--host", "0.0.0.0", "--port", "8100"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8100/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - default
+      - whs
+
+  policy-db-api:
+    build:
+      context: ./apps/policy
+      dockerfile: Dockerfile.db
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:?POSTGRES_USER must be set}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      DB_NAME: policy_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${POLICY_DB_API_PORT:-9000}:9000"
+    command: ["uvicorn", "app.policy_db_api:app", "--host", "0.0.0.0", "--port", "9000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:9000/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  policy:
+    build:
+      context: .
+      dockerfile: apps/policy/Dockerfile
+    environment:
+      POLICY_DB_URL: ${POLICY_DB_URL:-http://policy-db-api:9000}
+      POLICY_DB_TIMEOUT_SECONDS: ${POLICY_DB_TIMEOUT_SECONDS:-5}
+      EVIDENCE_DB_URL: ${EVIDENCE_DB_URL:-http://evidence-api:8100}
+      DECISION_DB_URL: ${DECISION_DB_URL:-http://decision-db-api:9100}
+      DECISION_DB_TIMEOUT_SECONDS: ${DECISION_DB_TIMEOUT_SECONDS:-5}
+      POLICY_LLM_MODE: ${POLICY_LLM_MODE:-openai}
+      POLICY_LLM_MODEL: ${POLICY_LLM_MODEL:-gpt-4.1-mini}
+      POLICY_LLM_TIMEOUT_MS: ${POLICY_LLM_TIMEOUT_MS:-20000}
+      POLICY_LLM_SHADOW_MODE: ${POLICY_LLM_SHADOW_MODE:-off}
+      POLICY_LLM_SHADOW_MODEL: ${POLICY_LLM_SHADOW_MODEL:-}
+      POLICY_LLM_FIXTURE_SCENARIO: ${POLICY_LLM_FIXTURE_SCENARIO:-evidence}
+      POLICY_LLM_FIXTURE_TARGET_PREDICATE: ${POLICY_LLM_FIXTURE_TARGET_PREDICATE:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com}
+    depends_on:
+      policy-db-api:
+        condition: service_healthy
+      evidence-api:
+        condition: service_healthy
+      decision-db-api:
+        condition: service_healthy
+    ports:
+      - "${POLICY_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8000/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - default
+      - whs
+
+  decision-db-api:
+    build:
+      context: ./apps/policy
+      dockerfile: Dockerfile.db
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:?POSTGRES_USER must be set}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      DB_NAME: decision_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${DECISION_DB_API_PORT:-9100}:9100"
+    command: ["uvicorn", "app.decision_db_api:app", "--host", "0.0.0.0", "--port", "9100"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:9100/health')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+    networks:
+      - default
+      - whs
+  scanner:
+    build:
+      context: .
+      dockerfile: apps/scanner/Dockerfile
+      target: runtime
+    environment:
+      SCANNER_PORT: 3001
+      POLICY_URL: http://policy:8000
+      DECISION_DB_URL: ${DECISION_DB_URL:-http://decision-db-api:9100}
+      EVIDENCE_DB_URL: ${EVIDENCE_DB_URL:-http://evidence-api:8100}
+      FEED_CACHE_TIMEOUT_MS: ${FEED_CACHE_TIMEOUT_MS:-750}
+      OSV_REFRESH_WORKER_ENABLED: ${OSV_REFRESH_WORKER_ENABLED:-true}
+      SCANNER_ADMIN_TOKEN: ${SCANNER_ADMIN_TOKEN:-}
+      POLICY_TIMEOUT_MS: ${POLICY_TIMEOUT_MS:-30000}
+      SCANNER_PACKAGE_TIMEOUT_MS: ${SCANNER_PACKAGE_TIMEOUT_MS:-240000}
+      OBFUSCATION_GPT_MODE: ${OBFUSCATION_GPT_MODE:-off}
+      OBFUSCATION_LLM_PROVIDER: ${OBFUSCATION_LLM_PROVIDER:-gpt}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      LLM_AGENT_PROVIDER: ${LLM_AGENT_PROVIDER:-openai}
+      LLM_AGENT_ENABLED: ${LLM_AGENT_ENABLED:-false}
+      LLM_AGENT_TRIGGER_MODE: ${LLM_AGENT_TRIGGER_MODE:-DISABLED}
+      LLM_AGENT_MODEL: ${LLM_AGENT_MODEL:-}
+      LLM_AGENT_TIMEOUT_MS: ${LLM_AGENT_TIMEOUT_MS:-180000}
+      LLM_AGENT_MAX_RETRIES: ${LLM_AGENT_MAX_RETRIES:-1}
+      # Jev context checks use the existing Scanner contract; keys stay in .env.
+      LLM_AGENT_CONTEXT_CHECK_ENABLED: ${LLM_AGENT_CONTEXT_CHECK_ENABLED:-true}
+      LLM_AGENT_CONTEXT_CHECK_MODEL: ${LLM_AGENT_CONTEXT_CHECK_MODEL:-jev-latest}
+      LLM_AGENT_CONTEXT_CHECK_TIMEOUT_MS: ${LLM_AGENT_CONTEXT_CHECK_TIMEOUT_MS:-3000}
+      LLM_AGENT_CONTEXT_RECHECK_ENABLED: ${LLM_AGENT_CONTEXT_RECHECK_ENABLED:-false}
+      TYPESAFE_BASE_URL: ${TYPESAFE_BASE_URL:-https://api.typesafe.ai}
+      TYPESAFE_API_KEY: ${TYPESAFE_API_KEY:-}
+      OBFUSCATION_GPT_MODEL: ${OBFUSCATION_GPT_MODEL:-gpt-4o-mini}
+      OBFUSCATION_GPT_BASE_URL: ${OBFUSCATION_GPT_BASE_URL:-https://api.openai.com/v1}
+      OBFUSCATION_GEMINI_MODEL: ${OBFUSCATION_GEMINI_MODEL:-gemini-3.5-flash}
+      OBFUSCATION_GEMINI_BASE_URL: ${OBFUSCATION_GEMINI_BASE_URL:-https://generativelanguage.googleapis.com/v1beta/openai}
+      OBFUSCATION_GPT_TIMEOUT_MS: ${OBFUSCATION_GPT_TIMEOUT_MS:-20000}
+      OBFUSCATION_GPT_MAX_OUTPUT_TOKENS: ${OBFUSCATION_GPT_MAX_OUTPUT_TOKENS:-2048}
+    depends_on:
+      evidence-api:
+        condition: service_healthy
+    expose:
+      - "3001"
+    networks:
+      - whs
+
+  gateway:
+    build:
+      context: ./apps/gateway
+    environment:
+      GATEWAY_PORT: 3000
+      DECISION_DB_URL: ${DECISION_DB_URL:-http://decision-db-api:9100}
+      DECISION_DB_TIMEOUT_SECONDS: ${DECISION_DB_TIMEOUT_SECONDS:-5}
+      # 꺼져 있으면 미판정 Package는 분석·집행 없이 통과한다.
+      SCANNER_ENABLED: ${SCANNER_ENABLED:-false}
+      SCANNER_URL: ${SCANNER_URL:-http://scanner:3001}
+      SCANNER_TIMEOUT_MS: ${SCANNER_TIMEOUT_MS:-300000}
+      # 트리 분석을 마친 Artifact 보관 수. Arborist 재구성만 건너뛰며
+      # Decision 조회와 집행은 요청마다 그대로 수행한다.
+      ANALYSIS_CACHE_MAX_ENTRIES: ${ANALYSIS_CACHE_MAX_ENTRIES:-5000}
+      VERDACCIO_URL: ${VERDACCIO_URL:-http://verdaccio:4873}
+      VERDACCIO_SERVICE_USER: ${VERDACCIO_SERVICE_USER:-}
+      VERDACCIO_SERVICE_PASSWORD: ${VERDACCIO_SERVICE_PASSWORD:-}
+      VERDACCIO_TIMEOUT_MS: ${VERDACCIO_TIMEOUT_MS:-60000}
+      WHS_APPROVAL_SERVICE_TOKEN: ${WHS_APPROVAL_SERVICE_TOKEN:-}
+      # npm 인증 + 다운로드 기록(user_db). 인증 조회 실패는 설치를 막고 기록 실패만 무시한다.
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:?POSTGRES_USER must be set}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      DB_NAME: user_db
+    ports:
+      - "${GATEWAY_PORT:-3000}:3000"
+    networks:
+      - whs
+
+  dashboard:
+    build:
+      context: ./apps/dashboard
+    # Next.js standalone는 기존 내부 포트 80을 유지합니다.
+    # 호스트에는 127.0.0.1로만 공개해 같은 네트워크의 다른 기기에서는 접속할 수 없게 합니다.
+    environment:
+      PORT: 80
+      HOSTNAME: 0.0.0.0
+      # 사용자 DB(user_db). 접속 계정은 다른 서비스와 같은 POSTGRES_* 값을 사용합니다.
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:?POSTGRES_USER must be set}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+      DB_NAME: user_db
+      # 로그인에 필요합니다. 비어 있으면 인증 API만 오류(500)를 내고 기동·상태 검사·로그인 화면은 동작합니다.
+      # 필수(:?)로 두면 secret이 없는 .env에서 compose 전체가 실패하므로(CI, 다른 파트의 로컬 스택) 필수로 두지 않습니다.
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:-}
+      BETTER_AUTH_URL: ${DASHBOARD_PUBLIC_URL:-http://localhost:5173}
+      # Rule 페이지가 정책을 읽고 새 버전을 적용합니다. Policy DB API가 꺼져 있어도 Dashboard는 기동하고 Rule 페이지만 오류를 표시합니다.
+      POLICY_DB_URL: ${POLICY_DB_URL:-http://policy-db-api:9000}
+      # Package·Overview 페이지에서 판정 및 근거를 읽습니다.
+      DECISION_DB_URL: ${DECISION_DB_URL:-http://decision-db-api:9100}
+      EVIDENCE_DB_URL: ${EVIDENCE_DB_URL:-http://evidence-api:8100}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${DASHBOARD_PORT:-5173}:80"
+
+  verdaccio:
+    # 공식 이미지(verdaccio/verdaccio:6.10.0)에 AWS S3 Storage Plugin 만 더한 이미지.
+    build:
+      context: ./infra/verdaccio
+    image: whs-verdaccio:6.10.0
+    container_name: whs-verdaccio
+    restart: unless-stopped
+    environment:
+      # 앱 레벨 graceful shutdown (없으면 SIGTERM 시 exit 143으로 즉시 종료)
+      VERDACCIO_HANDLE_KILL_SIGNALS: "true"
+      # metadata의 dist.tarball URL이 가리킬 주소.
+      # 지정하지 않으면 요청 Host 헤더를 따라가므로, Gateway가 Host를
+      # 재작성하는 순간 tarball 요청이 Verdaccio 내부 주소로 향해 실패한다.
+      VERDACCIO_PUBLIC_URL: ${VERDACCIO_PUBLIC_URL:?VERDACCIO_PUBLIC_URL is required}
+      # Gateway와 공유하는 Approval API 서비스 인증 Secret.
+      # 비어 있으면 Approval API 요청을 모두 401로 차단한다(service_auth_enabled: true).
+      WHS_APPROVAL_SERVICE_TOKEN: ${WHS_APPROVAL_SERVICE_TOKEN:-}
+      # WHS_STORAGE_MODE=s3 일 때만 쓴다. 값을 비워 두면 컨테이너에 넘기지 않는다.
+      # 빈 문자열로 넘어가면 S3 Plugin 이 변수 이름을 값으로 쓰므로 기본값을 두지 않는다.
+      AWS_S3_BUCKET:
+      AWS_REGION:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_ENDPOINT_URL_S3:
+    volumes:
+      # 공식 Image는 UID 10001, GID 65533으로 실행된다. Bind Mount를
+      # 사용한다면 Host 경로의 소유권·쓰기 권한을 이에 맞춰야 한다.
+      # 계정(htpasswd)은 저장소 구성과 관계없이 이 Volume 에 있다.
+      - verdaccio_storage:/verdaccio/storage
+      # 저장소 구성: local(기본, Volume) 또는 s3. 컨테이너 안 경로는 같다.
+      - ./infra/verdaccio/config.${WHS_STORAGE_MODE:-local}.yaml:/verdaccio/conf/config.yaml:ro
+      - ./infra/verdaccio/plugins:/verdaccio/plugins:ro
+    # 외부 Host Port를 공개하지 않는다. 유일한 진입점은 Gateway.
+    expose:
+      - "4873"
+    networks:
+      - whs
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:4873/-/ping"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    # graceful shutdown은 진행 중 전송을 기다리지 않으므로 기본값으로 충분(실측)
+    stop_grace_period: 10s
+
+volumes:
+  postgres_data:
+  verdaccio_storage:
+
+networks:
+  whs:
+    driver: bridge
+    # config.yaml 의 trustProxy 와 반드시 일치시킨다.
+    # 고정하지 않으면 Docker 기본 풀에서 자동 할당되어 환경마다 달라진다.
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24

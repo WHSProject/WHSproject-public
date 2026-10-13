@@ -1,0 +1,64 @@
+{
+  "name": "scanner",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "node --no-node-snapshot ./node_modules/@nestjs/cli/bin/nest.js start --watch",
+    "start": "node --no-node-snapshot dist/main.js",
+    "build": "nest build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --no-node-snapshot --experimental-vm-modules ./node_modules/jest/bin/jest.js --config jest.config.cjs",
+    "test:unit": "node --no-node-snapshot --experimental-vm-modules ./node_modules/jest/bin/jest.js --config jest.config.cjs",
+    "test:tier2:restore": "npm run test:unit -- --runInBand src/analyzers/obfuscation/string-restorer.spec.ts src/analyzers/obfuscation/string-restorer.semantics.spec.ts src/analyzers/obfuscation/restore.pipeline.spec.ts src/analyzers/obfuscation/line-mapping.spec.ts",
+    "test:agent-experiment:cli": "node --no-node-snapshot --experimental-vm-modules ./node_modules/jest/bin/jest.js --config jest.agent-experiment-cli.config.cjs --runInBand",
+    "test:e2e": "node --no-node-snapshot --experimental-vm-modules ./node_modules/jest/bin/jest.js --config test/jest-e2e.config.cjs",
+
+    "test:llm-smoke": "node scripts/obfuscation-llm-live-smoke.mjs"
+    ,"test:context-check-smoke": "node scripts/context-check-live-smoke.mjs"
+    ,"dataset:analyze": "node scripts/dataset-batch-analyze.mjs"
+    ,"agent:experiment": "node scripts/agent-experiment.mjs"
+    ,"benchmark:tier1-tier2": "node scripts/tier1-tier2-gate-benchmark.mjs"
+    ,"benchmark:omc-metadata": "node scripts/omc-metadata-ablation.mjs"
+    ,"benchmark:omc-gate": "node scripts/omc-gate-profile-eval.mjs"
+    ,"pilot:omc-tier1-tier2": "node --no-node-snapshot scripts/omc-tier1-tier2-pilot.mjs"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.28.3",
+    "@babel/parser": "^7.28.4",
+    "@babel/traverse": "^7.28.4",
+    "@babel/types": "^7.28.4",
+    "@nestjs/common": "^11.2.1",
+    "@nestjs/core": "^11.2.1",
+    "@nestjs/platform-fastify": "^11.2.1",
+    "npm-registry-fetch": "^19.1.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "semver": "^7.8.5",
+    "ssri": "^13.0.1",
+    "validate-npm-package-name": "^7.0.2",
+    "webcrack": "^2.16.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.24",
+    "@nestjs/schematics": "^11.0.7",
+    "@nestjs/testing": "^11.2.1",
+    "@types/jest": "^29.5.14",
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^24.0.0",
+    "@types/npm-registry-fetch": "^8.0.9",
+    "@types/semver": "^7.8.0",
+    "@types/ssri": "^7.1.5",
+    "@types/validate-npm-package-name": "^4.0.2",
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.0"
+  }
+}

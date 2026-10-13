@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-001",
+  "subject": {
+    "sampleId": "DD-NPM-001",
+    "ecosystem": "npm",
+    "packageName": "aesdecryptor",
+    "packageVersion": "1.0.0"
+  },
+  "artifactSha256": "c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 8,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 4502
+}

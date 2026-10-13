@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-011",
+  "subject": {
+    "sampleId": "DD-NPM-011",
+    "ecosystem": "npm",
+    "packageName": "@solana/web3.js",
+    "packageVersion": "1.95.7"
+  },
+  "artifactSha256": "9059d6e4265a83aa89f47b6254947ae147889c2bada930f67c9cc7c0521a46bb",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 1046,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 280953
+}

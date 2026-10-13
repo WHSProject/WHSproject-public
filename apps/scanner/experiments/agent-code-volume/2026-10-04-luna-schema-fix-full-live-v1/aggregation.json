@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": "1.1.0",
+  "purpose": "CODE_VOLUME_SCHEMA_FIX_FULL_RESULT_AGGREGATION",
+  "generatedAt": "2026-10-04",
+  "executionStatus": "COMPLETE",
+  "privateDataPolicy": "Raw requests, responses, and code remain in ignored private result directories.",
+  "inputs": {
+    "manifest": "../2026-10-04-input-schema-fix-v2/manifest.json",
+    "manifestSha256": "041330f661444e66db95c8dcfcdb1a154343efeee1b7d7f2f2a18f943ed9ad63",
+    "scannerCommit": "0ad642467272efac2730184e5169c43f06a90f42",
+    "apiSchemaSha256": "2e118f46e4185a1a4c86ffb07a1d36cd7d93866f65803ff5772041cd29143d13"
+  },
+  "configuration": {
+    "model": "gpt-5.6-luna",
+    "reasoningEffort": "medium",
+    "maxOutputTokens": 32768,
+    "timeoutMs": 180000,
+    "maxRetries": 0,
+    "promptVersion": "scanner-single-agent-0.2.0",
+    "outputSchemaVersion": "0.2.0",
+    "jev": "DISABLED",
+    "additionalCodeRequests": "DISABLED",
+    "store": false,
+    "note": "Per-run maxProviderRequests/configHash differ by isolated result directory; model, reasoning, budget, prompt, schema, and runtime behavior compared here are identical."
+  },
+  "counts": {
+    "logicalConditions": 25,
+    "uniqueFinalRequests": 22,
+    "directCompletedConditions": 22,
+    "sharedCompletedConditions": 3,
+    "actualProviderRequests": 22,
+    "http200Responses": 22,
+    "failedConditions": 0,
+    "unknownConditions": 0,
+    "notRunConditions": 0,
+    "runnerPartial": 22,
+    "parsingFailures": 0,
+    "timeouts": 0,
+    "truncations": 0,
+    "additionalCodeRequests": 0,
+    "finalEvidence": 0
+  },
+  "totals": {
+    "providerRequests": 22,
+    "inputTokens": 1012497,
+    "cachedInputTokens": 0,
+    "outputTokens": 60161,
+    "reasoningTokens": 15049,
+    "totalTokens": 1072658,
+    "durationMs": 540810,
+    "assessments": 61,
+    "partiallyVerified": 60,
+    "rejected": 1,
+    "verified": 0,
+    "finalEvidence": 0,
+    "adapterConversionFailures": 0,
+    "note": "Totals include only 22 unique Provider requests. reasoningTokens is already included in outputTokens; SAME_INPUT usage is not counted twice."
+  },
+  "sameInput": [
+    {
+      "condition": "DD-NPM-015:L3",
+      "sharedResultOf": "DD-NPM-015:L2"
+    },
+    {
+      "condition": "DD-NPM-015:L4",
+      "sharedResultOf": "DD-NPM-015:L2"
+    },
+    {
+      "condition": "DD-NPM-001:L4",
+      "sharedResultOf": "DD-NPM-001:L3"
+    }
+  ],
+  "validatorAnalysis": {
+    "allOutputsHaveLimitationsOrMissingContext": true,
+    "assessmentCount": 61,
+    "statusCounts": {
+      "VERIFIED": 0,
+      "PARTIALLY_VERIFIED": 60,
+      "REJECTED": 1
+    },
+    "onlyExplicitReferenceError": {
+      "condition": "DD-NPM-010:L0",
+      "reason": "Unknown flow reference in the second assessment"
+    },
+    "adapterRule": "Only VERIFIED assessments are converted to Evidence.",
+    "adapterConversionFailures": 0,
+    "evidenceZeroCause": "All assessments were excluded before conversion: 60 PARTIALLY_VERIFIED due limitations/missingContext and 1 REJECTED due an invalid flow reference."
+  },
+  "samples": [
+    {
+      "sourceSampleId": "DD-NPM-003",
+      "groundTruth": "CONFIRMED_MALICIOUS",
+      "firstGroundedMaliciousOrSuspiciousStage": "L0",
+      "interpretation": "L0부터 환경 mnemonic의 수집→Telegram 전송 연결을 찾았다. L4까지 결론은 유지됐지만 VERIFIED Evidence는 늘지 않았다.",
+      "levels": [
+        {
+          "conditionId": "sample-001:L0",
+          "sourceSampleId": "DD-NPM-003",
+          "level": "L0",
+          "code": {
+            "bytes": 870,
+            "lines": 8,
+            "files": 4,
+            "slices": 4
+          },
+          "requestHash": "a9ecfb974ef6d5b53c57ace8532c5054b0de9d9ffe0a4b3225c0324df691e981",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-003-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 9861,
+            "cachedInputTokens": 0,
+            "outputTokens": 1982,
+            "reasoningTokens": 457,
+            "totalTokens": 11843,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 23998,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "환경 mnemonic 수집→Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-001:L1",
+          "sourceSampleId": "DD-NPM-003",
+          "level": "L1",
+          "code": {
+            "bytes": 2405,
+            "lines": 23,
+            "files": 4,
+            "slices": 6
+          },
+          "requestHash": "84cae4c7c2e70ccfadc19cee28dac4863188f537308745335760f5c6e9fed6bc",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-003-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 11557,
+            "cachedInputTokens": 0,
+            "outputTokens": 2196,
+            "reasoningTokens": 516,
+            "totalTokens": 13753,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 20693,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "환경 mnemonic 수집→Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-001:L2",
+          "sourceSampleId": "DD-NPM-003",
+          "level": "L2",
+          "code": {
+            "bytes": 25330,
+            "lines": 355,
+            "files": 4,
+            "slices": 4
+          },
+          "requestHash": "c1efabe67dba2ce4c933d32ff66e468102627f235e054c31f8945a8e4a369127",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-003-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 17546,
+            "cachedInputTokens": 0,
+            "outputTokens": 2458,
+            "reasoningTokens": 498,
+            "totalTokens": 20004,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 23911,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "환경 mnemonic 수집→Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-001:L3",
+          "sourceSampleId": "DD-NPM-003",
+          "level": "L3",
+          "code": {
+            "bytes": 200714,
+            "lines": 5094,
+            "files": 36,
+            "slices": 36
+          },
+          "requestHash": "649126cfc3d750bdce4a93976822ebf19ba84a56d801d8646ae5eb7708530b1f",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-003-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 78581,
+            "cachedInputTokens": 0,
+            "outputTokens": 2331,
+            "reasoningTokens": 445,
+            "totalTokens": 80912,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 22401,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "환경 mnemonic 수집→Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-001:L4",
+          "sourceSampleId": "DD-NPM-003",
+          "level": "L4",
+          "code": {
+            "bytes": 428543,
+            "lines": 11325,
+            "files": 123,
+            "slices": 123
+          },
+          "requestHash": "116f2e59413469225b0de608d028e9d03214e9bb6c47825b5a29501fa6af7255",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-003-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 171924,
+            "cachedInputTokens": 0,
+            "outputTokens": 2257,
+            "reasoningTokens": 344,
+            "totalTokens": 174181,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 18423,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "환경 mnemonic 수집→Telegram 전송",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "sourceSampleId": "DD-NPM-010",
+      "groundTruth": "CONFIRMED_MALICIOUS",
+      "firstGroundedMaliciousOrSuspiciousStage": "L0",
+      "interpretation": "L0부터 원격 JS 저장·은닉 분리 실행과 환경/시스템 정보 유출 흐름을 찾았다. L0의 두 번째 assessment만 다른 assessment의 flow ref를 써 REJECTED였다.",
+      "levels": [
+        {
+          "conditionId": "sample-002:L0",
+          "sourceSampleId": "DD-NPM-010",
+          "level": "L0",
+          "code": {
+            "bytes": 4173,
+            "lines": 109,
+            "files": 1,
+            "slices": 1
+          },
+          "requestHash": "901a7357dcc35d9e2d8c04deb61277b15e23a1c8c4e6875e1d92adf4afd476b1",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-luna-schema-fix-live-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 1,
+            "REJECTED": 1
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 16995,
+            "cachedInputTokens": 0,
+            "outputTokens": 2497,
+            "reasoningTokens": 702,
+            "totalTokens": 19492,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 21651,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "원격 payload 실행 + 환경/시스템 정보 유출",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-002:L1",
+          "sourceSampleId": "DD-NPM-010",
+          "level": "L1",
+          "code": {
+            "bytes": 4389,
+            "lines": 117,
+            "files": 1,
+            "slices": 1
+          },
+          "requestHash": "ae9e7d7379dd4297d64079d395c754e3c3bd0492c3e8b30924d8d07c8391b09c",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-010-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 2,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 17535,
+            "cachedInputTokens": 0,
+            "outputTokens": 2363,
+            "reasoningTokens": 685,
+            "totalTokens": 19898,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 25782,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "원격 payload 실행 + 환경/시스템 정보 유출",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-002:L2",
+          "sourceSampleId": "DD-NPM-010",
+          "level": "L2",
+          "code": {
+            "bytes": 4573,
+            "lines": 124,
+            "files": 1,
+            "slices": 1
+          },
+          "requestHash": "ece73352d8a9220495368f5e41b87854b7f579015b9215807ec6bd8b6f02f4ac",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-luna-schema-fix-live-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 2,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 17589,
+            "cachedInputTokens": 0,
+            "outputTokens": 2989,
+            "reasoningTokens": 1034,
+            "totalTokens": 20578,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 25770,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "원격 payload 실행 + 환경/시스템 정보 유출",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-002:L3",
+          "sourceSampleId": "DD-NPM-010",
+          "level": "L3",
+          "code": {
+            "bytes": 4648,
+            "lines": 127,
+            "files": 2,
+            "slices": 2
+          },
+          "requestHash": "83202f82d243d5b581875ab0ac8adc8d61291960092a88605b2a17880fceed79",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-010-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 17934,
+            "cachedInputTokens": 0,
+            "outputTokens": 3422,
+            "reasoningTokens": 1165,
+            "totalTokens": 21356,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 22836,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "설치 수명주기 + payload 실행 + 유출",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-002:L4",
+          "sourceSampleId": "DD-NPM-010",
+          "level": "L4",
+          "code": {
+            "bytes": 5219,
+            "lines": 140,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "af0a61f4cb7eb5d90ac13303c888befc7c0ee97fd76112ed343e2e9a9020b2ea",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-010-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 18410,
+            "cachedInputTokens": 0,
+            "outputTokens": 2787,
+            "reasoningTokens": 516,
+            "totalTokens": 21197,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 24682,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "설치 수명주기 + payload 실행 + 유출",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "sourceSampleId": "DD-NPM-013",
+      "groundTruth": "CONFIRMED_MALICIOUS",
+      "firstGroundedMaliciousOrSuspiciousStage": "L1",
+      "interpretation": "L0은 악성 없음, L1부터 난독화된 Windows 프로세스/DLL 실행을 의심했다. L3 요약만 LIKELY_MALICIOUS였고 L4에서 SUSPICIOUS로 돌아가 전체 코드에서도 확정하지 못했다.",
+      "levels": [
+        {
+          "conditionId": "sample-003:L0",
+          "sourceSampleId": "DD-NPM-013",
+          "level": "L0",
+          "code": {
+            "bytes": 6396,
+            "lines": 148,
+            "files": 5,
+            "slices": 6
+          },
+          "requestHash": "5ee404b66f48053d7ad50f5f6f24d6460da1d3962a331c041741b227cd7927ff",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-013-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 15489,
+            "cachedInputTokens": 0,
+            "outputTokens": 2559,
+            "reasoningTokens": 515,
+            "totalTokens": 18048,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 21793,
+          "modelEvaluation": "NO_MALICIOUS_BEHAVIOR_FOUND",
+          "groundedBehavior": "악성 연결 근거 없음",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-003:L1",
+          "sourceSampleId": "DD-NPM-013",
+          "level": "L1",
+          "code": {
+            "bytes": 14577,
+            "lines": 350,
+            "files": 5,
+            "slices": 11
+          },
+          "requestHash": "f0e7238cb36310081e306e8fd1644e357fd627fccd540e5f26338fbda78bdc9f",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-013-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 20394,
+            "cachedInputTokens": 0,
+            "outputTokens": 3294,
+            "reasoningTokens": 980,
+            "totalTokens": 23688,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 28834,
+          "modelEvaluation": "SUSPICIOUS",
+          "groundedBehavior": "설치 시 temp 검사 + 난독화된 Windows 프로세스 실행",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-003:L2",
+          "sourceSampleId": "DD-NPM-013",
+          "level": "L2",
+          "code": {
+            "bytes": 27371,
+            "lines": 753,
+            "files": 5,
+            "slices": 5
+          },
+          "requestHash": "d8a4f453d3e38596a65500e234a645c538807ca4b2f821a31e8337445f8fc635",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-013-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 21590,
+            "cachedInputTokens": 0,
+            "outputTokens": 2781,
+            "reasoningTokens": 516,
+            "totalTokens": 24371,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 23102,
+          "modelEvaluation": "SUSPICIOUS",
+          "groundedBehavior": "번들 DLL 실행",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-003:L3",
+          "sourceSampleId": "DD-NPM-013",
+          "level": "L3",
+          "code": {
+            "bytes": 31016,
+            "lines": 861,
+            "files": 11,
+            "slices": 11
+          },
+          "requestHash": "bc24dcc531582c8b3172ced00748f52e2727303dfee42d9e3ccd65fbf4c4dc35",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-013-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 24771,
+            "cachedInputTokens": 0,
+            "outputTokens": 2819,
+            "reasoningTokens": 462,
+            "totalTokens": 27590,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 23957,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "요약은 악성; 관련 assessment intent는 SUSPICIOUS",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-003:L4",
+          "sourceSampleId": "DD-NPM-013",
+          "level": "L4",
+          "code": {
+            "bytes": 33236,
+            "lines": 924,
+            "files": 16,
+            "slices": 16
+          },
+          "requestHash": "c838d102fe69482803ca9e91c290813714a51a3600fa9730e4ce11f7057dbaf5",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-013-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 26999,
+            "cachedInputTokens": 0,
+            "outputTokens": 3307,
+            "reasoningTokens": 991,
+            "totalTokens": 30306,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 30065,
+          "modelEvaluation": "SUSPICIOUS",
+          "groundedBehavior": "전체 패키지에서도 DLL/프로세스 의심에 머묾",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "sourceSampleId": "DD-NPM-015",
+      "groundTruth": "CONFIRMED_MALICIOUS",
+      "firstGroundedMaliciousOrSuspiciousStage": "L0",
+      "interpretation": "L0부터 인코딩된 원격 payload의 사용자 서비스 지속성/반복 실행과 npm 자격정보 수집·인증 게시를 찾았다. L3/L4는 L2와 동일 입력이라 호출 없이 공유됐다.",
+      "levels": [
+        {
+          "conditionId": "sample-004:L0",
+          "sourceSampleId": "DD-NPM-015",
+          "level": "L0",
+          "code": {
+            "bytes": 12946,
+            "lines": 233,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "4e1edcdb0d5d011ae6f0bb2e0f90f701dc2081a9479baac5e1a1bedc7ee073ad",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-015-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 41325,
+            "cachedInputTokens": 0,
+            "outputTokens": 3053,
+            "reasoningTokens": 467,
+            "totalTokens": 44378,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 20149,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 payload 실행 + npm 자격정보 수집/게시",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-004:L1",
+          "sourceSampleId": "DD-NPM-015",
+          "level": "L1",
+          "code": {
+            "bytes": 13450,
+            "lines": 252,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "34e1582c0b733a613720f2610dc98a52b5d49766ac2833b43621b00126b29bc9",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-015-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 2,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 42685,
+            "cachedInputTokens": 0,
+            "outputTokens": 2851,
+            "reasoningTokens": 890,
+            "totalTokens": 45536,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 29060,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 payload 실행 + npm 자격정보 수집/게시",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-004:L2",
+          "sourceSampleId": "DD-NPM-015",
+          "level": "L2",
+          "code": {
+            "bytes": 13863,
+            "lines": 272,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "f160413a9d0e6adb50b969c401b151eec80541a93a3441298ef0138973eaadc7",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-015-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 42815,
+            "cachedInputTokens": 0,
+            "outputTokens": 2962,
+            "reasoningTokens": 516,
+            "totalTokens": 45777,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 23954,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 payload 실행 + npm 자격정보 수집/게시",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-004:L3",
+          "sourceSampleId": "DD-NPM-015",
+          "level": "L3",
+          "code": {
+            "bytes": 13863,
+            "lines": 272,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "f160413a9d0e6adb50b969c401b151eec80541a93a3441298ef0138973eaadc7",
+          "sameInputAsPrevious": true,
+          "status": "SHARED_COMPLETED",
+          "resultDirectory": "../2026-10-04-remaining-015-v1",
+          "sharedResultOf": "DD-NPM-015:L2",
+          "providerRequests": 0,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": null,
+          "sharedUsageFrom": "DD-NPM-015:L2",
+          "durationMs": 0,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 payload 실행 + npm 자격정보 수집/게시",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-004:L4",
+          "sourceSampleId": "DD-NPM-015",
+          "level": "L4",
+          "code": {
+            "bytes": 13863,
+            "lines": 272,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "f160413a9d0e6adb50b969c401b151eec80541a93a3441298ef0138973eaadc7",
+          "sameInputAsPrevious": true,
+          "status": "SHARED_COMPLETED",
+          "resultDirectory": "../2026-10-04-remaining-015-v1",
+          "sharedResultOf": "DD-NPM-015:L2",
+          "providerRequests": 0,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": null,
+          "sharedUsageFrom": "DD-NPM-015:L2",
+          "durationMs": 0,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 payload 실행 + npm 자격정보 수집/게시",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "sourceSampleId": "DD-NPM-001",
+      "groundTruth": "CONFIRMED_MALICIOUS",
+      "firstGroundedMaliciousOrSuspiciousStage": "L0",
+      "interpretation": "L0부터 shell-profile 지속성과 재귀 파일 수집·압축·Telegram 업로드를 찾았다. 큰 단일행 난독화와 실행/호출 그래프 부재로 L3까지도 부분 검증에 머물렀고 L4는 L3 공유다.",
+      "levels": [
+        {
+          "conditionId": "sample-005:L0",
+          "sourceSampleId": "DD-NPM-001",
+          "level": "L0",
+          "code": {
+            "bytes": 184672,
+            "lines": 4,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "217b4e4d0dacb87d60cf902e7ffc61dce39cd8ee40dfd278b53ed2de6907d74d",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-001-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 3,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 3,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 91596,
+            "cachedInputTokens": 0,
+            "outputTokens": 2862,
+            "reasoningTokens": 896,
+            "totalTokens": 94458,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 30238,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "shell-profile 지속성 + 파일 수집/압축/Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-005:L1",
+          "sourceSampleId": "DD-NPM-001",
+          "level": "L1",
+          "code": {
+            "bytes": 185051,
+            "lines": 21,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "0a4ea30a9697133c06fb1114eb8176c392408c5941f1d790d25e8cb05c6d11fb",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-001-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 4,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 4,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 91884,
+            "cachedInputTokens": 0,
+            "outputTokens": 3678,
+            "reasoningTokens": 1194,
+            "totalTokens": 95562,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 34375,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 + 파일 수집/압축/Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-005:L2",
+          "sourceSampleId": "DD-NPM-001",
+          "level": "L2",
+          "code": {
+            "bytes": 218179,
+            "lines": 108,
+            "files": 3,
+            "slices": 3
+          },
+          "requestHash": "23a559eefd10b68b5b947bf37586c7e00a1329348d4269182746cfb669fdd331",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-001-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 2,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 107315,
+            "cachedInputTokens": 0,
+            "outputTokens": 2389,
+            "reasoningTokens": 610,
+            "totalTokens": 109704,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 24568,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 + 파일 수집/압축/Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-005:L3",
+          "sourceSampleId": "DD-NPM-001",
+          "level": "L3",
+          "code": {
+            "bytes": 218367,
+            "lines": 119,
+            "files": 4,
+            "slices": 4
+          },
+          "requestHash": "b89a4b31f5e349439c7d37c95ac244e8df109349e1b034a7fdffc44b8e238bc8",
+          "sameInputAsPrevious": false,
+          "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+          "resultDirectory": "../2026-10-04-remaining-001-v1",
+          "sharedResultOf": null,
+          "providerRequests": 1,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 2,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": {
+            "inputTokens": 107702,
+            "cachedInputTokens": 0,
+            "outputTokens": 2324,
+            "reasoningTokens": 650,
+            "totalTokens": 110026,
+            "note": "reasoningTokens is a subset of outputTokens and is not added again."
+          },
+          "sharedUsageFrom": null,
+          "durationMs": 20568,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 + 파일 수집/압축/Telegram 전송",
+          "failureReason": null
+        },
+        {
+          "conditionId": "sample-005:L4",
+          "sourceSampleId": "DD-NPM-001",
+          "level": "L4",
+          "code": {
+            "bytes": 218367,
+            "lines": 119,
+            "files": 4,
+            "slices": 4
+          },
+          "requestHash": "b89a4b31f5e349439c7d37c95ac244e8df109349e1b034a7fdffc44b8e238bc8",
+          "sameInputAsPrevious": true,
+          "status": "SHARED_COMPLETED",
+          "resultDirectory": "../2026-10-04-remaining-001-v1",
+          "sharedResultOf": "DD-NPM-001:L3",
+          "providerRequests": 0,
+          "runnerStatus": "PARTIAL",
+          "responseParsing": "PASSED",
+          "assessmentCount": 2,
+          "validatorStatusCounts": {
+            "VERIFIED": 0,
+            "PARTIALLY_VERIFIED": 2,
+            "REJECTED": 0
+          },
+          "verifiedEvidenceCount": 0,
+          "usage": null,
+          "sharedUsageFrom": "DD-NPM-001:L3",
+          "durationMs": 0,
+          "modelEvaluation": "LIKELY_MALICIOUS",
+          "groundedBehavior": "지속성 + 파일 수집/압축/Telegram 전송",
+          "failureReason": null
+        }
+      ]
+    }
+  ],
+  "conclusions": {
+    "codeVolumeEffect": "Non-monotonic. Four samples already exposed grounded malicious behavior at L0; extra code mostly added detail without VERIFIED Evidence. DD-NPM-013 first exposed suspicious behavior at L1, briefly reached a LIKELY_MALICIOUS summary at L3, then regressed to SUSPICIOUS at L4.",
+    "fullPackageLimit": "DD-NPM-003 and DD-NPM-013 received L4 package-wide context but still produced no VERIFIED Evidence; DD-NPM-013 did not reach a stable malicious conclusion.",
+    "nextPriority": [
+      "Separate well-grounded limitations from reference-invalid outputs in Validator/Jev evaluation without changing the production contract in this experiment.",
+      "Prioritize Jev checks for per-assessment ref/flow consistency, especially cross-assessment ref leakage.",
+      "Improve slicing around install/lifecycle entry points and native/DLL execution for DD-NPM-013; prioritize deobfuscation/restoration and call graph context for DD-NPM-001."
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "fixture-negative",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "node build.js"
+  }
+}

@@ -1,0 +1,71 @@
+rules:
+  # JavaScript and TypeScript are the analysis targets of these initial rules;
+  # project-wide supported languages remain subject to the documented decision.
+  - id: custom.signal.sensitive-file-access
+    languages: [javascript, typescript]
+    message: Sensitive file access pattern observed
+    severity: INFO
+    metadata:
+      signal: SENSITIVE_FILE_ACCESS
+    patterns:
+      - pattern-either:
+          - pattern: fs.readFile($PATH, ...)
+          - pattern: fs.readFileSync($PATH, ...)
+          - pattern: fs.promises.readFile($PATH, ...)
+          - pattern: readFile($PATH, ...)
+          - pattern: readFileSync($PATH, ...)
+      - metavariable-regex:
+          metavariable: $PATH
+          regex: (?i)(\.npmrc|\.ssh(?:/|\\\\)|id_rsa|id_ed25519)
+
+  - id: custom.signal.process-access
+    languages: [javascript, typescript]
+    message: Process API pattern observed
+    severity: INFO
+    metadata:
+      signal: PROCESS_ACCESS
+    pattern-either:
+      - pattern: child_process.exec(...)
+      - pattern: child_process.execFile(...)
+      - pattern: child_process.spawn(...)
+      - pattern: child_process.spawnSync(...)
+      - pattern: child_process.fork(...)
+      - pattern: exec(...)
+      - pattern: execFile(...)
+      - pattern: spawn(...)
+      - pattern: spawnSync(...)
+      - pattern: fork(...)
+
+  - id: custom.signal.environment-access
+    languages: [javascript, typescript]
+    message: Environment access pattern observed
+    severity: INFO
+    metadata:
+      signal: ENVIRONMENT_ACCESS
+    pattern: process.env.$KEY
+
+  - id: custom.signal.network-access
+    languages: [javascript, typescript]
+    message: Network access pattern observed
+    severity: INFO
+    metadata:
+      signal: NETWORK_ACCESS
+    pattern-either:
+      - pattern: http.request(...)
+      - pattern: https.request(...)
+      - pattern: fetch(...)
+      - pattern: axios(...)
+      - pattern: axios.request(...)
+      - pattern: axios.get(...)
+      - pattern: axios.post(...)
+      - pattern: request(...)
+      - pattern: request.get(...)
+      - pattern: request.post(...)
+      - patterns:
+          - pattern-inside: |
+              $SOCKET = require('socket.io-client')(...)
+              ...
+          - pattern-either:
+              - pattern: $SOCKET.emit(...)
+              - pattern: $SOCKET.send(...)
+      - pattern: net.connect(...)

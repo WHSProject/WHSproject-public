@@ -1,0 +1,44 @@
+{
+  "conditionId": "sample-005:L4",
+  "experimentId": "sample-005",
+  "sourceSampleId": "DD-NPM-001",
+  "level": "L4",
+  "inputHash": "228d92d2921eab10f77d7b0042aa2d6b7477bef3c6f9b74197626f112bbe1bcb",
+  "fixedContractHash": "72485e4a9f8e2a86ceec52503a691f53c83f39e6591a438b9f9c8935ce28e4af",
+  "codeHash": "8b9fa46e7d53c834efa3f237e439420d16eb26f0d121900895f4d462debdd236",
+  "configHash": "24e43508dd294044610eb96b7a388a1b2db611e30d8f393eb8d0618e71ea6885",
+  "promptHash": "a65b30bbc81e80b009cff016db371f19295624c98f83311136d15ff7b054db1c",
+  "requestHash": "b89a4b31f5e349439c7d37c95ac244e8df109349e1b034a7fdffc44b8e238bc8",
+  "reuseKey": "191808b5dfb03850bd0019e5668ed29a4e6302cb5cedb8d72e7f61349258385a",
+  "inputSize": {
+    "findings": 17,
+    "evidences": 8,
+    "codeSlices": 4,
+    "codeBytes": 218367,
+    "promptBytes": 259256,
+    "requestBytes": 272791,
+    "requestCharacters": 212460,
+    "estimatedInputTokens": 53104
+  },
+  "modelContextCheck": {
+    "contextWindowTokens": 1050000,
+    "reservedMaxOutputTokens": 32768,
+    "estimatedTotalTokens": 85872,
+    "fits": true
+  },
+  "sameInputAsPrevious": true,
+  "sharedResultOf": "sample-005:L3",
+  "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+  "terminal": true,
+  "providerRequests": 0,
+  "runnerCalls": 0,
+  "usage": {
+    "inputTokens": 107702,
+    "cachedInputTokens": 0,
+    "outputTokens": 2324,
+    "reasoningTokens": 650,
+    "totalTokens": 110026,
+    "note": "reasoningTokens is a subset of outputTokens and is not added again."
+  },
+  "durationMs": 0
+}

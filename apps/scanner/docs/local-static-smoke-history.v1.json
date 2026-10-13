@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "runHistory": {
+    "approvedUniqueSampleLimit": 3,
+    "actualUniqueSamples": 4,
+    "limitExceededBy": 1,
+    "samples": [
+      {
+        "sampleId": "NPM-MAL-013754",
+        "executionClassification": "FINAL_COHORT",
+        "resultRef": "SYSTEM_TEMP/scanner-local-static-smoke-0I2ZdE/NPM-MAL-013754.json",
+        "resultSha256": "aa292ad3faf50cbf4f56a3fd8a6f782cadb14f8bd3f0f4cec040ab1444aa5f90"
+      },
+      {
+        "sampleId": "NPM-MAL-002841",
+        "executionClassification": "FINAL_COHORT",
+        "resultRef": "SYSTEM_TEMP/scanner-local-static-smoke-0I2ZdE/NPM-MAL-002841.json",
+        "resultSha256": "64e2978e553e48a3c0e922e79e3fd2fa99efb22ba0e856d791b0c68b9bdd28b5"
+      },
+      {
+        "sampleId": "NPM-MAL-012617",
+        "executionClassification": "FINAL_COHORT",
+        "resultRef": "SYSTEM_TEMP/scanner-local-static-smoke-0I2ZdE/NPM-MAL-012617.json",
+        "resultSha256": "83f2fbacd58f46fe093229240e82597a39f4c99c11e452f9328cb94fe6f0e4c5"
+      },
+      {
+        "sampleId": "NPM-MAL-001888",
+        "executionClassification": "DIAGNOSTIC_ACCIDENTAL_EXECUTION",
+        "resultRef": null,
+        "resultSha256": null,
+        "note": "No result file remains; it was not regenerated."
+      }
+    ],
+    "summaryRef": "SYSTEM_TEMP/scanner-local-static-smoke-0I2ZdE/summary.json",
+    "summarySha256": "9b4e3b18bf39060c0ee866a59d01890085dbb63013a0ffb6f5114c3170378b59"
+  },
+  "historicalAssessment": {
+    "technicalReadiness": "READY_WITHOUT_CUSTOM_RULE",
+    "executionCompliance": "LIMIT_EXCEEDED",
+    "approvedForFullBatch": false
+  },
+  "currentAssessment": {
+    "technicalReadiness": "READY_WITHOUT_CUSTOM_RULE",
+    "executionCompliance": "FIXED_NOT_REEXECUTED",
+    "approvedForFullBatch": true
+  }
+}

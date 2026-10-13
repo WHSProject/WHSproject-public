@@ -1,0 +1,85 @@
+name: "🐛 Bug"
+description: "오류 또는 예상과 다른 동작 수정"
+title: "[BUG] "
+labels: []
+type: bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        오류 또는 예상과 다른 동작을 기록하는 Issue입니다.
+        상황에 따라 필요한 항목만 작성해주세요.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 문제 설명
+      description: 어떤 문제가 발생했는지 작성해주세요.
+      placeholder: |
+        예)
+        REJECT된 패키지가 차단되지 않고 Verdaccio로 전달됩니다.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: 관련 Component
+      description: 관련된 Component가 있다면 선택해주세요.
+      multiple: true
+      options:
+        - Gateway
+        - Policy
+        - Scanner
+        - Verdaccio
+        - Data / Feeds
+        - Database
+        - Dashboard
+        - DevOps / QA
+        - 기타
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 재현 방법
+      description: 재현 방법을 알고 있다면 작성해주세요.
+      placeholder: |
+        예)
+        1. docker compose up
+        2. npm install suspicious-package
+        3. Gateway 로그 확인
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과
+      description: 현재 어떤 동작이 발생하는지 작성해주세요.
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 결과
+      description: 정상이라면 어떻게 동작해야 하는지 작성해주세요.
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 로그 / 에러 / 스크린샷
+      description: 관련 로그나 에러 메시지가 있다면 첨부해주세요.
+      render: shell
+
+  - type: input
+    id: environment
+    attributes:
+      label: 발생 환경
+      description: 환경이 문제와 관련 있어 보이는 경우에만 작성해주세요.
+      placeholder: "예: Windows 11 / Docker / Node.js 22"
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: 참고사항
+      description: 관련 Issue, PR, 문서 또는 추가로 공유할 내용이 있다면 작성해주세요.
+      placeholder: |
+        Related Issue:
+        Related PR:
+        관련 문서:

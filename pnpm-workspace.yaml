@@ -1,0 +1,6 @@
+packages:
+  - apps/scanner
+  - apps/policy
+
+allowBuilds:
+  isolated-vm: true

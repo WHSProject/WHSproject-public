@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-010",
+  "subject": {
+    "sampleId": "DD-NPM-010",
+    "ecosystem": "npm",
+    "packageName": "@cloudplatform-single-spa/installations",
+    "packageVersion": "99.99.99"
+  },
+  "artifactSha256": "b404f8e698c5fac85ef754cb7c2797f4bb04dca42087f5307416622b1af9a6b5",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_MALICIOUS",
+  "triggerReason": "STATIC_FILTER_MALICIOUS",
+  "tier3Status": "SKIPPED",
+  "runnerCalls": 0,
+  "providerRequests": 0,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 22,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 1776
+}

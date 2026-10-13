@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-015",
+  "subject": {
+    "sampleId": "DD-NPM-015",
+    "ecosystem": "npm",
+    "packageName": "@teale.io/eslint-config",
+    "packageVersion": "1.8.15"
+  },
+  "artifactSha256": "7499a54d715a7cd3acdf200bfe670f2d4660d0b1348f4c78f083156eb540f93a",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_MALICIOUS",
+  "triggerReason": "STATIC_FILTER_MALICIOUS",
+  "tier3Status": "SKIPPED",
+  "runnerCalls": 0,
+  "providerRequests": 0,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 43,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 2748
+}

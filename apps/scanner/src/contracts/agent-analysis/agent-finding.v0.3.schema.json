@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/agent-finding.v0.3.schema.json",
+  "title": "Scanner-owned Agent Finding Projection v0.3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["findingId", "analyzer", "analyzerVersion", "ruleId", "type", "message", "data"],
+  "properties": {
+    "findingId": { "type": "string", "minLength": 1 },
+    "analyzer": { "enum": ["guarddog", "metadata", "custom-rule"] },
+    "analyzerVersion": { "type": "string", "minLength": 1 },
+    "ruleId": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "minLength": 1 },
+    "message": { "type": "string" },
+    "location": { "$ref": "#/$defs/location" },
+    "data": { "type": "object" }
+  },
+  "$defs": {
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["SOURCE_FILE", "METADATA"] },
+        "path": { "type": "string", "minLength": 1 },
+        "startLine": { "type": "integer", "minimum": 1 },
+        "startColumn": { "type": "integer", "minimum": 1 },
+        "endLine": { "type": "integer", "minimum": 1 },
+        "endColumn": { "type": "integer", "minimum": 1 },
+        "jsonPointer": { "type": "string" },
+        "representation": { "enum": ["ORIGINAL", "DEOBFUSCATED"] },
+        "lineageStatus": { "enum": ["DIRECT", "MAPPED", "UNMAPPED"] },
+        "derivedFrom": {
+          "type": "object", "additionalProperties": false, "required": ["path"],
+          "properties": {
+            "path": { "type": "string", "minLength": 1 },
+            "startLine": { "type": "integer", "minimum": 1 },
+            "endLine": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    }
+  }
+}

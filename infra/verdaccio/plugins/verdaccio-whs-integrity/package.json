@@ -1,0 +1,14 @@
+{
+  "name": "verdaccio-whs-integrity",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WHS cache integrity verification for Verdaccio",
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

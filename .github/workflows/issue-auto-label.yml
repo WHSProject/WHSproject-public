@@ -1,0 +1,209 @@
+name: Issue Component Auto Label
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  manage-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign author and sync component labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+
+            // =========================================================
+            // 1. Issue 생성자를 자동 Assignee로 지정
+            // =========================================================
+
+            if (context.payload.action === 'opened') {
+              const creator = issue.user?.login;
+
+              if (creator) {
+                try {
+                  await github.rest.issues.addAssignees({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    assignees: [creator]
+                  });
+
+                  core.info(`Assigned issue creator: ${creator}`);
+                } catch (error) {
+                  core.warning(
+                    `Could not assign issue creator ${creator}: ${error.message}`
+                  );
+                }
+              }
+            }
+
+            // =========================================================
+            // 2. Issue Form의 "관련 Component" 영역 추출
+            // =========================================================
+
+            const sectionMatch = body.match(
+              /### 관련 Component\s*\n([\s\S]*?)(?=\n### |\s*$)/
+            );
+
+            const componentSection = sectionMatch
+              ? sectionMatch[1]
+              : '';
+
+            core.info(`Component section: ${componentSection}`);
+
+            // =========================================================
+            // 3. Issue Form 이름 → GitHub Label 이름
+            // =========================================================
+
+            const componentMap = {
+              'Gateway': 'Gateway',
+              'Policy': 'Policy',
+              'Scanner': 'Scanner',
+              'Verdaccio': 'Verdaccio',
+              'Data / Feeds': 'Data/Feeds',
+              'Database': 'Database',
+              'Dashboard': 'Dashboard',
+              'DevOps / QA': 'DevOps/QA'
+            };
+
+            // =========================================================
+            // 4. Component Label 정의
+            //    존재하지 않는 Label은 자동 생성
+            // =========================================================
+
+            const labelDefinitions = {
+              'Gateway': {
+                color: '67C5E5',
+                description: 'Gateway 관련 작업'
+              },
+              'Policy': {
+                color: '6D4AFF',
+                description: 'Policy 관련 작업'
+              },
+              'Scanner': {
+                color: 'B867D6',
+                description: 'Scanner 관련 작업'
+              },
+              'Verdaccio': {
+                color: 'E1E46A',
+                description: 'Verdaccio 관련 작업'
+              },
+              'Data/Feeds': {
+                color: '2F9E89',
+                description: 'Data/Feeds 관련 작업'
+              },
+              'Database': {
+                color: '7A8490',
+                description: 'Database 관련 작업'
+              },
+              'Dashboard': {
+                color: '3F7F68',
+                description: 'Dashboard 관련 작업'
+              },
+              'DevOps/QA': {
+                color: 'C4474D',
+                description: 'DevOps/QA 관련 작업'
+              }
+            };
+
+            // =========================================================
+            // 5. Form에서 선택한 Component 확인
+            // =========================================================
+
+            const selectedLabels = [];
+
+            for (const [formName, labelName] of Object.entries(componentMap)) {
+              if (componentSection.includes(formName)) {
+                selectedLabels.push(labelName);
+              }
+            }
+
+            core.info(
+              `Selected component labels: ${selectedLabels.join(', ')}`
+            );
+
+            // =========================================================
+            // 6. Repository Label 조회
+            // =========================================================
+
+            const existingLabelsResponse =
+              await github.rest.issues.listLabelsForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per_page: 100
+              });
+
+            const existingLabels = new Set(
+              existingLabelsResponse.data.map(label => label.name)
+            );
+
+            // =========================================================
+            // 7. 없는 Component Label 자동 생성
+            // =========================================================
+
+            for (const labelName of Object.keys(labelDefinitions)) {
+              if (!existingLabels.has(labelName)) {
+                const definition = labelDefinitions[labelName];
+
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: labelName,
+                  color: definition.color,
+                  description: definition.description
+                });
+
+                core.info(`Created label: ${labelName}`);
+              }
+            }
+
+            // =========================================================
+            // 8. 기존 Label 중 Component Label만 제거
+            //    다른 Label은 그대로 유지
+            // =========================================================
+
+            const componentLabels = Object.keys(labelDefinitions);
+
+            const currentLabels = issue.labels.map(label =>
+              typeof label === 'string'
+                ? label
+                : label.name
+            );
+
+            const nonComponentLabels = currentLabels.filter(
+              label => !componentLabels.includes(label)
+            );
+
+            // =========================================================
+            // 9. 선택된 Component Label과 기존 일반 Label 결합
+            // =========================================================
+
+            const finalLabels = [
+              ...nonComponentLabels,
+              ...selectedLabels
+            ];
+
+            // =========================================================
+            // 10. Label 동기화
+            // =========================================================
+
+            await github.rest.issues.setLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              labels: finalLabels
+            });
+
+            core.info(
+              `Final labels: ${finalLabels.join(', ')}`
+            );

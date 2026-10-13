@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-008",
+  "subject": {
+    "sampleId": "DD-NPM-008",
+    "ecosystem": "npm",
+    "packageName": "@discord-external/activity-iframe-sdk",
+    "packageVersion": "2.3.2"
+  },
+  "artifactSha256": "74018d78fdca028e5309880861ee0a3e8bc9a9a93b3e1e1f39e2bc56ba32b33a",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 2,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 1594
+}

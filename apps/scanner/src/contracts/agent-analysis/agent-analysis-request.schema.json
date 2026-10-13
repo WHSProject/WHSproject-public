@@ -1,0 +1,535 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whsproject.local/agent-analysis-request.schema.json",
+  "title": "AgentAnalysisRequestV0_2Prototype",
+  "description": "Prototype Agent input contract. This is not an operating Scanner domain contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request",
+    "subject",
+    "packageContext",
+    "findings",
+    "atomicEvidences",
+    "analysisPolicy",
+    "initialCodeSlices",
+    "analysisTargets",
+    "toolResponseCatalog",
+    "missingData"
+  ],
+  "properties": {
+    "request": {
+      "$ref": "#/$defs/request"
+    },
+    "subject": {
+      "$ref": "#/$defs/subject"
+    },
+    "packageContext": {
+      "$ref": "#/$defs/packageContext"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "atomicEvidences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/atomicEvidenceWrapper"
+      }
+    },
+    "analysisPolicy": {
+      "$ref": "#/$defs/analysisPolicy"
+    },
+    "initialCodeSlices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/codeSlice"
+      }
+    },
+    "analysisTargets": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "ENV_OR_SENSITIVE_FILE_TO_NETWORK",
+          "NETWORK_DOWNLOAD_TO_FILE_WRITE_TO_PROCESS_EXECUTION",
+          "LIFECYCLE_TO_PROCESS_EXECUTION"
+        ]
+      }
+    },
+    "toolResponseCatalog": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/toolCapability"
+      }
+    },
+    "missingData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/missingData"
+      }
+    }
+  },
+  "$defs": {
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "analysisRequestId",
+        "requestType",
+        "inputProfile",
+        "schemaVersion",
+        "sampleId",
+        "createdAt"
+      ],
+      "properties": {
+        "analysisRequestId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requestType": {
+          "const": "MALICIOUS_CODE_ANALYSIS"
+        },
+        "inputProfile": {
+          "enum": [
+            "CODE_ONLY",
+            "CODE_FINDING",
+            "CODE_FINDING_EVIDENCE"
+          ]
+        },
+        "schemaVersion": {
+          "const": "0.2.0"
+        },
+        "sampleId": {
+          "type": "string",
+          "pattern": "^SAMPLE-[0-9]{3}$"
+        },
+        "createdAt": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ecosystem",
+        "packageName",
+        "packageVersion",
+        "archiveSha256"
+      ],
+      "properties": {
+        "ecosystem": {
+          "const": "npm"
+        },
+        "packageName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packageVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "archiveSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "packageContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "description",
+        "main",
+        "exports",
+        "scripts",
+        "dependencies",
+        "entryPoints",
+        "lifecycleScripts"
+      ],
+      "properties": {
+        "source": {
+          "const": "TARBALL_PACKAGE_MANIFEST_PROJECTION"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "main": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exports": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "null"
+          ]
+        },
+        "scripts": {
+          "type": "object"
+        },
+        "dependencies": {
+          "type": "object"
+        },
+        "entryPoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entryPoint"
+          }
+        },
+        "lifecycleScripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lifecycleScript"
+          }
+        }
+      }
+    },
+    "analysisPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxToolCalls": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxAdditionalCodeRequests": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxTotalCodeLines": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "entryPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "value",
+        "location"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "MAIN",
+            "BIN",
+            "EXPORTS"
+          ]
+        },
+        "value": {},
+        "location": {
+          "$ref": "#/$defs/location"
+        }
+      }
+    },
+    "lifecycleScript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "command",
+        "location"
+      ],
+      "properties": {
+        "name": {
+          "enum": [
+            "preinstall",
+            "install",
+            "postinstall"
+          ]
+        },
+        "command": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/$defs/location"
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "findingId",
+        "analyzer",
+        "analyzerVersion",
+        "ruleId",
+        "kind",
+        "description",
+        "location",
+        "rawMatch"
+      ],
+      "properties": {
+        "findingId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "analyzer": {
+          "const": "guarddog"
+        },
+        "analyzerVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ruleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "CAPABILITY",
+            "THREAT",
+            "OTHER"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "location": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/location"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rawMatch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "atomicEvidenceWrapper": {
+      "type": "object",
+      "description": "Minimal wrapper only. Full Atomic Evidence semantics remain governed by the unavailable external Evidence contract.",
+      "additionalProperties": true,
+      "required": [
+        "schemaVersion",
+        "evidenceId",
+        "kind",
+        "sources"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidenceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "ATOMIC"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "rawFindingId"
+            ],
+            "properties": {
+              "rawFindingId": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "startLine",
+        "endLine"
+      ],
+      "properties": {
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "startLine": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "endLine": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "codeSlice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sliceId",
+        "file",
+        "startLine",
+        "endLine",
+        "content",
+        "contentSha256",
+        "sourceSha256",
+        "contentRedacted",
+        "redactionTypes",
+        "boundaryConfidence",
+        "selectionReason",
+        "relatedFindingIds"
+      ],
+      "properties": {
+        "sliceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "startLine": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "endLine": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "content": {
+          "type": "string"
+        },
+        "contentSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "contentRedacted": {
+          "type": "boolean"
+        },
+        "redactionTypes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "URL",
+              "DOMAIN",
+              "CREDENTIAL_LIKE_LITERAL",
+              "LONG_ENCODED_LITERAL"
+            ]
+          }
+        },
+        "boundaryConfidence": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ]
+        },
+        "selectionReason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relatedFindingIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "toolCapability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool",
+        "status"
+      ],
+      "properties": {
+        "tool": {
+          "enum": [
+            "GET_FILE_RANGE",
+            "GET_SYMBOL_DEFINITION",
+            "GET_SYMBOL_REFERENCES",
+            "GET_CALLERS",
+            "GET_IMPORT_RELATIONS",
+            "GET_PACKAGE_METADATA"
+          ]
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "UNAVAILABLE"
+          ]
+        },
+        "indexPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "missingData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field",
+        "reason"
+      ],
+      "properties": {
+        "field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

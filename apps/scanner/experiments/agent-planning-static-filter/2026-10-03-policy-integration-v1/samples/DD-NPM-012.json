@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-012",
+  "subject": {
+    "sampleId": "DD-NPM-012",
+    "ecosystem": "npm",
+    "packageName": "node-ipc",
+    "packageVersion": "12.0.1"
+  },
+  "artifactSha256": "49dae8e1c1a92816bbf262b4dca15339402bed8e67b6cbb13c89e2c58e294c5e",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 9,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 2623
+}

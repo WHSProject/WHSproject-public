@@ -1,0 +1,63 @@
+{
+  "conditionId": "sample-004:L0",
+  "experimentId": "sample-004",
+  "sourceSampleId": "DD-NPM-015",
+  "level": "L0",
+  "inputHash": "f873efa50df9427a8ffcc1b631336158575cbaecc37cff45816db902415dc966",
+  "fixedContractHash": "0a71ee348b1440425bd679288340a2c4af58299844edc325831e8270f99c1864",
+  "codeHash": "71bb6def4f819769dfde5c3cad808caf9a621b80aae851f039de8ea5fcaf87f3",
+  "configHash": "d4aec58a63a94710ce340b242153790df8fbb58041510f21df039427837515e7",
+  "promptHash": "c8055f761be779db5a2cc56c257915d57e4f62cfc9ddc45065d56881e409cf23",
+  "requestHash": "4e1edcdb0d5d011ae6f0bb2e0f90f701dc2081a9479baac5e1a1bedc7ee073ad",
+  "reuseKey": "83992f7599718cc7b9bae47b30e02d6e8d56e8635cf4108f9b816e1289b6a3a2",
+  "inputSize": {
+    "findings": 44,
+    "evidences": 43,
+    "codeSlices": 3,
+    "codeBytes": 12946,
+    "promptBytes": 133283,
+    "requestBytes": 151159,
+    "requestCharacters": 151159,
+    "estimatedInputTokens": 37779
+  },
+  "modelContextCheck": {
+    "contextWindowTokens": 1050000,
+    "reservedMaxOutputTokens": 32768,
+    "estimatedTotalTokens": 70547,
+    "fits": true
+  },
+  "sameInputAsPrevious": false,
+  "sharedResultOf": null,
+  "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+  "terminal": true,
+  "providerRequests": 1,
+  "runnerCalls": 1,
+  "httpStatus": 200,
+  "runnerStatus": "PARTIAL",
+  "failureReason": null,
+  "additionalCodeNeeded": false,
+  "assessmentCount": 3,
+  "validatorStatusCounts": {
+    "PARTIALLY_VERIFIED": 3
+  },
+  "generatedEvidenceCount": 0,
+  "evidenceConversionFailureCount": 0,
+  "usage": {
+    "inputTokens": 41325,
+    "cachedInputTokens": 0,
+    "outputTokens": 3053,
+    "reasoningTokens": 467,
+    "totalTokens": 44378,
+    "note": "reasoningTokens is a subset of outputTokens and is not added again."
+  },
+  "estimatedCostUsd": 0.0119286,
+  "durationMs": 20149,
+  "summary": {
+    "status": "PARTIAL",
+    "assessmentCount": 3,
+    "verifiedAssessmentCount": 0,
+    "generatedEvidenceCount": 0,
+    "rejectedAssessmentCount": 0,
+    "limitationCount": 8
+  }
+}

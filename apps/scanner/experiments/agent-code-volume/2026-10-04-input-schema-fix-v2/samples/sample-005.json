@@ -1,0 +1,349 @@
+{
+  "experimentId": "sample-005",
+  "sourceSampleId": "DD-NPM-001",
+  "preparation": "RERUN_CURRENT_STATIC_PIPELINE:FROZEN_REUSE",
+  "subject": {
+    "packageName": "aesdecryptor",
+    "packageVersion": "1.0.0",
+    "archiveSha256": "c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135"
+  },
+  "source": {
+    "archive": "guarddog-pilot-selection/artifacts/archives/2026-03-07-aesdecryptor-v1.0.0.zip",
+    "originalRoot": "guarddog-pilot-selection/artifacts/extracted/2026-03-07-aesdecryptor-v1.0.0/tmp/tmp4ryxtgru/aesdecryptor/package"
+  },
+  "versions": {
+    "currentScannerCommit": "2484bd9416d21946ad75c6513362a7dea7fbc0b9",
+    "node": "v26.4.0",
+    "guarddog": "3.1.0",
+    "semgrep": "1.172.0",
+    "rulesetSha256": "969bb8f9a053a2ec6c1bbb46805cfe0deadbf1aeccc68a129de35a4b9c6138f1",
+    "planningSchemaVersion": "0.1.0",
+    "analyzers": [
+      {
+        "analyzer": "metadata",
+        "analyzerVersion": "0.1.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "custom-rule",
+        "analyzerVersion": "0.2.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "guarddog",
+        "analyzerVersion": "0.1.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "obfuscation",
+        "analyzerVersion": "0.2.0",
+        "status": "PARTIAL"
+      },
+      {
+        "analyzer": "custom-rule-deobfuscated",
+        "analyzerVersion": "0.2.0",
+        "status": "SUCCESS"
+      },
+      {
+        "analyzer": "guarddog-deobfuscated",
+        "analyzerVersion": "0.1.0",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  "staticFilter": {
+    "status": "STATIC_INCOMPLETE",
+    "ruleVersion": "0.4.0",
+    "reasonCodes": [
+      "REQUIRED_RULE_HITS_PRESENT",
+      "BEHAVIOR_LINK_UNVERIFIED",
+      "LIFECYCLE_LINK_UNVERIFIED",
+      "UNCLASSIFIED_THREAT_REVIEW_REQUIRED",
+      "ANALYZER_INCOMPLETE",
+      "ANALYZER_SCOPE_RELEVANCE_UNKNOWN",
+      "RESTORATION_INCOMPLETE",
+      "SCAN_COVERAGE_UNKNOWN"
+    ]
+  },
+  "fixedContractHash": "72485e4a9f8e2a86ceec52503a691f53c83f39e6591a438b9f9c8935ce28e4af",
+  "levels": [
+    {
+      "level": "L0",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "3ca02c991490b674d35ae62e5bb085c6291137156f97e18bb4329285f152ebb3",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 184672,
+      "codeLines": 4,
+      "providerRequestBytes": 230888,
+      "providerRequestCharacters": 179449,
+      "estimatedTokens": 44863,
+      "ranges": [
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/parser.js",
+          "startLine": 1,
+          "endLine": 1,
+          "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "bytes": 151725,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "bytes": 32849,
+          "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 45,
+          "endLine": 45,
+          "contentSha256": "9793ef69ab4362fe18b666a022bc759fe21bf962ca2eca4ce1b6b3dd9c3c672b",
+          "sourceSha256": "9793ef69ab4362fe18b666a022bc759fe21bf962ca2eca4ce1b6b3dd9c3c672b",
+          "bytes": 98,
+          "selectionReason": "Planning target planning-tier3-target-003: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        }
+      ]
+    },
+    {
+      "level": "L1",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "6772dfb4f1f7269d0dc645aa55c5bed1c15327c6130dfc6488afd5e2af4f3b01",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 185051,
+      "codeLines": 21,
+      "providerRequestBytes": 231719,
+      "providerRequestCharacters": 180268,
+      "estimatedTokens": 45067,
+      "ranges": [
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 29,
+          "endLine": 46,
+          "contentSha256": "ae04a6d54fd1d723ddc77422fb21661a43d6395717f50c6a907b68b10507bd22",
+          "sourceSha256": "ae04a6d54fd1d723ddc77422fb21661a43d6395717f50c6a907b68b10507bd22",
+          "bytes": 477,
+          "selectionReason": "EXPERIMENT_L1_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/parser.js",
+          "startLine": 1,
+          "endLine": 1,
+          "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "bytes": 151725,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "bytes": 32849,
+          "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+        }
+      ]
+    },
+    {
+      "level": "L2",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "05b6a6d1eb78398e6cdfccc4934f208c5b24d2c8ba6de9a1bf3cea4ed970d33a",
+      "fileCount": 3,
+      "sliceCount": 3,
+      "codeBytes": 218179,
+      "codeLines": 108,
+      "providerRequestBytes": 271487,
+      "providerRequestCharacters": 211156,
+      "estimatedTokens": 52789,
+      "ranges": [
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 105,
+          "contentSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+          "sourceSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+          "bytes": 33605,
+          "selectionReason": "EXPERIMENT_L2_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/parser.js",
+          "startLine": 1,
+          "endLine": 1,
+          "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "bytes": 151725,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "bytes": 32849,
+          "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+        }
+      ]
+    },
+    {
+      "level": "L3",
+      "status": "READY",
+      "sameInputAsPrevious": false,
+      "codeHash": "8b9fa46e7d53c834efa3f237e439420d16eb26f0d121900895f4d462debdd236",
+      "fileCount": 4,
+      "sliceCount": 4,
+      "codeBytes": 218367,
+      "codeLines": 119,
+      "providerRequestBytes": 272747,
+      "providerRequestCharacters": 212416,
+      "estimatedTokens": 53104,
+      "ranges": [
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 105,
+          "contentSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+          "sourceSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+          "bytes": 33605,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/parser.js",
+          "startLine": 1,
+          "endLine": 1,
+          "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "bytes": 151725,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/sonia",
+          "startLine": 1,
+          "endLine": 11,
+          "contentSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+          "sourceSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+          "bytes": 188,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "bytes": 32849,
+          "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+        }
+      ]
+    },
+    {
+      "level": "L4",
+      "status": "READY",
+      "sameInputAsPrevious": true,
+      "codeHash": "8b9fa46e7d53c834efa3f237e439420d16eb26f0d121900895f4d462debdd236",
+      "fileCount": 4,
+      "sliceCount": 4,
+      "codeBytes": 218367,
+      "codeLines": 119,
+      "providerRequestBytes": 272747,
+      "providerRequestCharacters": 212416,
+      "estimatedTokens": 53104,
+      "ranges": [
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135:deobfuscated:4a313ec393c65747790ee5c9bbcd025e62f5c0d2362dcad45e32ce59bf701cde",
+          "representation": "DEOBFUSCATED",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 105,
+          "contentSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+          "sourceSha256": "06d9fe3e6a4edf42fa91e53638374ebe9f95346cfc3fe9455afd922a364a8037",
+          "bytes": 33605,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/parser.js",
+          "startLine": 1,
+          "endLine": 1,
+          "contentSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "sourceSha256": "7343c498981f3110b0cc0163424756b7825c53688397e75d6a8e9778798666a3",
+          "bytes": 151725,
+          "selectionReason": "Planning target planning-tier3-target-001: NORMALIZED_EVIDENCE_LOCATION, RAW_FINDING_LOCATION"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "bin/sonia",
+          "startLine": 1,
+          "endLine": 11,
+          "contentSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+          "sourceSha256": "bbe47abcfdc593dfff8f44f3d9e834410c353d4f447073fbbdcc229866644964",
+          "bytes": 188,
+          "selectionReason": "EXPERIMENT_L3_CODE_SCOPE"
+        },
+        {
+          "artifactId": "artifact:c0cd30940f1758e859200308dbe86c0d69d7c58c7851044fac45b6d3519f0135",
+          "representation": "ORIGINAL",
+          "filePath": "index.js",
+          "startLine": 1,
+          "endLine": 2,
+          "contentSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "sourceSha256": "37557bd4d95a9ac89186cba84e792d5f9f6f8f7727874be4801516184b7041d3",
+          "bytes": 32849,
+          "selectionReason": "Planning target planning-tier3-target-002: RAW_FINDING_LOCATION"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "L3_FILE_UNAVAILABLE:5f675bdf:bin/sonia:Artifact code read failed: FILE_UNAVAILABLE",
+    "L4_EXCLUDED:ORIGINAL:bin/sonia:UNSUPPORTED_NON_JS_TS",
+    "L4_EXCLUDED:ORIGINAL:package.json:UNSUPPORTED_NON_JS_TS"
+  ],
+  "validation": {
+    "fixedFieldsIdentical": true,
+    "cumulative": true,
+    "sourceHashesVerified": true,
+    "representationSeparated": true,
+    "noHostPaths": true,
+    "noGroundTruthLabels": true,
+    "additionalCodeRequestsDisabled": true
+  },
+  "status": "PREPARED",
+  "durationMs": 146
+}

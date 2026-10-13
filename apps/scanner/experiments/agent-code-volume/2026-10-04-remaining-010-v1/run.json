@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.0.0",
+  "purpose": "CODE_VOLUME_LUNA_SMOKE_NOT_ACCURACY_EVALUATION",
+  "createdAt": "2026-10-04T07:43:03.511Z",
+  "mode": "LIVE",
+  "scannerCommit": "592206d55df58a8fef751ddc07f5e07a45238907",
+  "scannerBranch": "fix/459--tier3-schema-fix",
+  "inputManifest": "experiments/agent-code-volume/2026-10-04-input-schema-fix-v2/manifest.json",
+  "inputManifestSha256": "041330f661444e66db95c8dcfcdb1a154343efeee1b7d7f2f2a18f943ed9ad63",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "model": "gpt-5.6-luna",
+    "reasoningEffort": "medium",
+    "endpoint": "https://api.openai.com",
+    "maxOutputTokens": 32768,
+    "timeoutMs": 180000,
+    "maxRetries": 0,
+    "maxProviderRequests": 3,
+    "contextWindowTokens": 1050000,
+    "modelMaxOutputTokens": 128000,
+    "promptVersion": "scanner-single-agent-0.2.0",
+    "outputSchemaVersion": "0.2.0",
+    "jev": "DISABLED",
+    "additionalCodeRequests": "DISABLED",
+    "store": false
+  },
+  "configHash": "d4aec58a63a94710ce340b242153790df8fbb58041510f21df039427837515e7",
+  "requestedConditionCount": 3,
+  "providerRequestLimit": 3,
+  "keyConfigured": true,
+  "officialModelReference": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+  "pricingAsOf": "2026-10-04",
+  "pricingUsdPerMillionTokens": {
+    "input": 0.2,
+    "cachedInput": 0.02,
+    "outputIncludingReasoning": 1.2
+  },
+  "results": [
+    {
+      "conditionId": "sample-002:L1",
+      "experimentId": "sample-002",
+      "sourceSampleId": "DD-NPM-010",
+      "level": "L1",
+      "inputHash": "e414139bbaba3aa72338790bc7f50cd74f428a84b20c65a91d3bb1642fd6abba",
+      "fixedContractHash": "15cf62374a633e8777191b1648932689b2738b8f814ca1dc65d4a810d4eb20c3",
+      "codeHash": "c3edc54dca364a4cd9756a371acafc528e5723e4498b8365a81a6e25520d3506",
+      "configHash": "d4aec58a63a94710ce340b242153790df8fbb58041510f21df039427837515e7",
+      "promptHash": "e23a0b30d717c047e3135a2654a65b5b292a634218f1c56545777df3e19bc2ad",
+      "requestHash": "ae9e7d7379dd4297d64079d395c754e3c3bd0492c3e8b30924d8d07c8391b09c",
+      "reuseKey": "17977148d1d98e208789e892843496bd776676494f93e316d751615ca28faf50",
+      "inputSize": {
+        "findings": 22,
+        "evidences": 22,
+        "codeSlices": 1,
+        "codeBytes": 4389,
+        "promptBytes": 58893,
+        "requestBytes": 69745,
+        "requestCharacters": 69586,
+        "estimatedInputTokens": 17386
+      },
+      "modelContextCheck": {
+        "contextWindowTokens": 1050000,
+        "reservedMaxOutputTokens": 32768,
+        "estimatedTotalTokens": 50154,
+        "fits": true
+      },
+      "sameInputAsPrevious": false,
+      "sharedResultOf": null,
+      "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+      "terminal": true,
+      "providerRequests": 1,
+      "runnerCalls": 1,
+      "httpStatus": 200,
+      "runnerStatus": "PARTIAL",
+      "failureReason": null,
+      "additionalCodeNeeded": false,
+      "assessmentCount": 2,
+      "validatorStatusCounts": {
+        "PARTIALLY_VERIFIED": 2
+      },
+      "generatedEvidenceCount": 0,
+      "evidenceConversionFailureCount": 0,
+      "usage": {
+        "inputTokens": 17535,
+        "cachedInputTokens": 0,
+        "outputTokens": 2363,
+        "reasoningTokens": 685,
+        "totalTokens": 19898,
+        "note": "reasoningTokens is a subset of outputTokens and is not added again."
+      },
+      "estimatedCostUsd": 0.0063426,
+      "durationMs": 25782,
+      "summary": {
+        "status": "PARTIAL",
+        "assessmentCount": 2,
+        "verifiedAssessmentCount": 0,
+        "generatedEvidenceCount": 0,
+        "rejectedAssessmentCount": 0,
+        "limitationCount": 8
+      }
+    },
+    {
+      "conditionId": "sample-002:L3",
+      "experimentId": "sample-002",
+      "sourceSampleId": "DD-NPM-010",
+      "level": "L3",
+      "inputHash": "18392c5e7fed9b0e9d396ef733422269349953b502164fa9c054c3aabc1838d3",
+      "fixedContractHash": "15cf62374a633e8777191b1648932689b2738b8f814ca1dc65d4a810d4eb20c3",
+      "codeHash": "c2b206b1e820ed6f85ebcd3effb4d696ac57155e87b2301e19d529a9f9defe16",
+      "configHash": "d4aec58a63a94710ce340b242153790df8fbb58041510f21df039427837515e7",
+      "promptHash": "a190db4ff58999eab58ac268baa3523be50459b6711d0917f32c4d7ccea15ab5",
+      "requestHash": "83202f82d243d5b581875ab0ac8adc8d61291960092a88605b2a17880fceed79",
+      "reuseKey": "d7e9edb3b22c28a348dcb95536465f6dcbb9453def9e15e09290ce800e27fda4",
+      "inputSize": {
+        "findings": 22,
+        "evidences": 22,
+        "codeSlices": 2,
+        "codeBytes": 4648,
+        "promptBytes": 60105,
+        "requestBytes": 71056,
+        "requestCharacters": 70895,
+        "estimatedInputTokens": 17713
+      },
+      "modelContextCheck": {
+        "contextWindowTokens": 1050000,
+        "reservedMaxOutputTokens": 32768,
+        "estimatedTotalTokens": 50481,
+        "fits": true
+      },
+      "sameInputAsPrevious": false,
+      "sharedResultOf": null,
+      "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+      "terminal": true,
+      "providerRequests": 1,
+      "runnerCalls": 1,
+      "httpStatus": 200,
+      "runnerStatus": "PARTIAL",
+      "failureReason": null,
+      "additionalCodeNeeded": false,
+      "assessmentCount": 3,
+      "validatorStatusCounts": {
+        "PARTIALLY_VERIFIED": 3
+      },
+      "generatedEvidenceCount": 0,
+      "evidenceConversionFailureCount": 0,
+      "usage": {
+        "inputTokens": 17934,
+        "cachedInputTokens": 0,
+        "outputTokens": 3422,
+        "reasoningTokens": 1165,
+        "totalTokens": 21356,
+        "note": "reasoningTokens is a subset of outputTokens and is not added again."
+      },
+      "estimatedCostUsd": 0.0076932,
+      "durationMs": 22836,
+      "summary": {
+        "status": "PARTIAL",
+        "assessmentCount": 3,
+        "verifiedAssessmentCount": 0,
+        "generatedEvidenceCount": 0,
+        "rejectedAssessmentCount": 0,
+        "limitationCount": 8
+      }
+    },
+    {
+      "conditionId": "sample-002:L4",
+      "experimentId": "sample-002",
+      "sourceSampleId": "DD-NPM-010",
+      "level": "L4",
+      "inputHash": "e885770fe17ee38b0c582806c43ac10fc74495bae4dbaf8d69a5f04913a40841",
+      "fixedContractHash": "15cf62374a633e8777191b1648932689b2738b8f814ca1dc65d4a810d4eb20c3",
+      "codeHash": "88ff5c089a96f9f06e75f6d48555ec19f111f4449bc27501fdef1ad048ff8180",
+      "configHash": "d4aec58a63a94710ce340b242153790df8fbb58041510f21df039427837515e7",
+      "promptHash": "7d7e164c7037e9cfd4c57700c2db763bc07a458ed1e48b37112a6b42e100535d",
+      "requestHash": "af0a61f4cb7eb5d90ac13303c888befc7c0ee97fd76112ed343e2e9a9020b2ea",
+      "reuseKey": "2916a60899e6288d45977b3abaaa40bbcbe3948051284ba6b28da8c0dff180b3",
+      "inputSize": {
+        "findings": 22,
+        "evidences": 22,
+        "codeSlices": 3,
+        "codeBytes": 5219,
+        "promptBytes": 61640,
+        "requestBytes": 72693,
+        "requestCharacters": 72532,
+        "estimatedInputTokens": 18122
+      },
+      "modelContextCheck": {
+        "contextWindowTokens": 1050000,
+        "reservedMaxOutputTokens": 32768,
+        "estimatedTotalTokens": 50890,
+        "fits": true
+      },
+      "sameInputAsPrevious": false,
+      "sharedResultOf": null,
+      "status": "COMPLETED_NO_VERIFIED_EVIDENCE",
+      "terminal": true,
+      "providerRequests": 1,
+      "runnerCalls": 1,
+      "httpStatus": 200,
+      "runnerStatus": "PARTIAL",
+      "failureReason": null,
+      "additionalCodeNeeded": false,
+      "assessmentCount": 3,
+      "validatorStatusCounts": {
+        "PARTIALLY_VERIFIED": 3
+      },
+      "generatedEvidenceCount": 0,
+      "evidenceConversionFailureCount": 0,
+      "usage": {
+        "inputTokens": 18410,
+        "cachedInputTokens": 0,
+        "outputTokens": 2787,
+        "reasoningTokens": 516,
+        "totalTokens": 21197,
+        "note": "reasoningTokens is a subset of outputTokens and is not added again."
+      },
+      "estimatedCostUsd": 0.0070264,
+      "durationMs": 24682,
+      "summary": {
+        "status": "PARTIAL",
+        "assessmentCount": 3,
+        "verifiedAssessmentCount": 0,
+        "generatedEvidenceCount": 0,
+        "rejectedAssessmentCount": 0,
+        "limitationCount": 7
+      }
+    }
+  ],
+  "providerRequestCount": 3,
+  "stopReason": null,
+  "completedAt": "2026-10-04T07:44:16.873Z"
+}

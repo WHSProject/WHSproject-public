@@ -1,0 +1,8 @@
+{
+  "name": "whs-verdaccio-storage-plugins",
+  "private": true,
+  "description": "Verdaccio 이미지에 함께 설치하는 Storage Plugin. 버전은 정확히 고정한다.",
+  "dependencies": {
+    "verdaccio-aws-s3-storage": "12.1.1"
+  }
+}

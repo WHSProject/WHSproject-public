@@ -1,0 +1,6 @@
+rules:
+  - id: synthetic-eval
+    languages: [javascript]
+    message: synthetic match
+    severity: WARNING
+    pattern: eval(...)

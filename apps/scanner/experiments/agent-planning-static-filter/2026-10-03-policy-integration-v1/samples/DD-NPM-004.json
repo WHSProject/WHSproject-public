@@ -1,0 +1,27 @@
+{
+  "sampleId": "DD-NPM-004",
+  "subject": {
+    "sampleId": "DD-NPM-004",
+    "ecosystem": "npm",
+    "packageName": "@solana-launchpads/sdk",
+    "packageVersion": "1.0.12"
+  },
+  "artifactSha256": "d1ccc6b1d29084b36fa381d2a6950b3cb4c1d8f4ae77ed3358b1719be1faea3a",
+  "status": "COMPLETED",
+  "filterStatus": "STATIC_INCOMPLETE",
+  "triggerReason": "STATIC_FILTER_STATIC_INCOMPLETE",
+  "tier3Status": "COMPLETED",
+  "runnerCalls": 1,
+  "providerRequests": 1,
+  "legacyCalls": 0,
+  "tier2GptCalls": 0,
+  "llmEvidenceCount": 0,
+  "policyLlmEvidenceCount": 0,
+  "staticEvidenceCount": 9,
+  "policyCalls": 1,
+  "historySaveCalls": 1,
+  "evidenceSaveCalls": 1,
+  "cleanupCalls": 1,
+  "scanStatus": "COMPLETED",
+  "durationMs": 2283
+}

@@ -1,0 +1,55 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Local npm authentication settings
+.npmrc
+.npmrc.*
+!.npmrc.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+vendor/
+.venv/
+venv/
+
+# Build
+dist/
+build/
+out/
+target/
+
+# Test / cache
+coverage/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# 로컬 검증 보고서
+reports/validation/
+
+# Scanner validation outputs are generated locally. Keep only the small OMC
+# source report and reproducibility manifest tracked for dataset identity.
+apps/scanner/reports/validation/*
+!apps/scanner/reports/validation/omc-120-pilot-source.json
+!apps/scanner/reports/validation/omc-120-reproducibility-manifest-2026-09-30.json
+
+# Local OMC validation archives are reproducibility inputs, not repository artifacts.
+apps/scanner/reports/validation/omc-120-archives-2026-09-30/

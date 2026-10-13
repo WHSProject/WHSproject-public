@@ -1,0 +1,39 @@
+{
+  "selected": 15,
+  "completed": 15,
+  "resultNotCreated": 0,
+  "denominator": {
+    "selected": 15,
+    "completed": 15,
+    "resultNotCreated": 0
+  },
+  "finalStatusDistribution": {
+    "NO_ESCALATION_SIGNAL": 3,
+    "STATIC_INCOMPLETE": 9,
+    "STATIC_MALICIOUS": 3
+  },
+  "tier3StatusDistribution": {
+    "COMPLETED": 9,
+    "SKIPPED": 6
+  },
+  "routing": {
+    "skipCandidates": 6,
+    "analysisCandidates": 9,
+    "runnerExecutions": 9,
+    "providerRequests": 9,
+    "legacyCalls": 0,
+    "tier2GptCalls": 0
+  },
+  "postProcessing": {
+    "policyCalls": 15,
+    "historySaveCalls": 15,
+    "evidenceSaveCalls": 15,
+    "cleanupCalls": 15,
+    "llmEvidenceGenerated": 0,
+    "llmEvidenceInPolicy": 0
+  },
+  "failures": [],
+  "externalLlmCalls": 0,
+  "externalPolicyCalls": 0,
+  "tier2GptCalls": 0
+}
