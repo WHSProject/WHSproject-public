@@ -9,6 +9,8 @@ overrides:
 
 importers:
 
+  .: {}
+
   apps/policy:
     dependencies:
       semver:

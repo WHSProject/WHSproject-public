@@ -23,7 +23,7 @@ jobs:
       #    + Component Label 존재 여부 확인
       # =========================================================
       - name: Assign PR author and ensure component labels
-        uses: actions/github-script@v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         with:
           script: |
             const pr = context.payload.pull_request;
@@ -132,7 +132,7 @@ jobs:
       # 2. 변경 파일 경로 기반 Component Label 자동 적용
       # =========================================================
       - name: Apply component labels
-        uses: actions/labeler@v6
+        uses: actions/labeler@b8dd2d9be0f68b860e7dae5dae7d772984eacd6d # v6
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: .github/labeler.yml
