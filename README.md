@@ -4,6 +4,8 @@
 
 ARGUS는 한국인터넷진흥원(KISA)이 주관하는 화이트햇스쿨 4기 팀 프로젝트 「공공의 적」의 결과물입니다.
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/whsproject/whsproject-public/badge)](https://scorecard.dev/viewer/?uri=github.com/whsproject/whsproject-public)
+
 ## 소개
 
 공공의 적(Argus)은 npm 패키지의 보안 위험을 분석하고, 정책에 따라 패키지 다운로드를 허용하거나 차단하는 NPM Security Platform입니다.
@@ -59,6 +61,7 @@ ARGUS의 특징은 분석 결과를 실제 패키지 다운로드 제어로 연�
 - [개발 및 테스트](#개발-및-테스트)
 - [프로젝트 구조](#프로젝트-구조)
 - [팀원 및 Maintainers](#팀원-및-maintainers)
+- [OpenSSF Scorecard](#openssf-scorecard)
 - [라이선스](#라이선스)
 
 ## 아키텍처
@@ -437,6 +440,18 @@ Full E2E는 실제 패키지 설치를 수행하며, `ACCEPT` 판정이 확인�
 | [tests](tests) | Integration·E2E 테스트 |
 | [docs](docs) | 기술 문서 및 실행 가이드 |
 | [compose.yaml](compose.yaml) | 전체 서비스 통합 실행 설정 |
+
+## OpenSSF Scorecard
+
+[OpenSSF Scorecard](https://scorecard.dev/)는 브랜치 보호, 코드 리뷰, CI 테스트, 정적 분석, 워크플로 토큰 권한 등 저장소의 보안 관리 관행을 자동 점검하는 도구입니다. ARGUS의 패키지 악성 여부 분석과는 별개이며, Scorecard 점수는 취약점이 없다는 보증이나 보안 인증이 아닙니다.
+
+[Scorecard 워크플로](.github/workflows/scorecard.yml)는 `main`에 변경이 반영될 때와 매주 토요일 10:30 KST에 실행되도록 설정되어 있습니다. 평가 결과는 OpenSSF에 공개되며, 상단 배지는 최신 공개 결과로 연결됩니다. 첫 실행 및 결과 공개 반영 전에는 점수가 표시되지 않을 수 있습니다.
+
+- [저장소 공개 보고서](https://scorecard.dev/viewer/?uri=github.com/whsproject/whsproject-public)
+- [검사 실행 내역](https://github.com/WHSProject/WHSproject-public/actions/workflows/scorecard.yml) · [GitHub Code scanning](https://github.com/WHSProject/WHSproject-public/security/code-scanning)
+- [검사 항목과 점수 해석](https://github.com/ossf/scorecard/blob/main/docs/checks.md)
+
+공개 저장소의 표준 GitHub-hosted 러너를 사용하며, 개인 PAT나 LLM API 키는 필요하지 않습니다. 별도 Actions artifact 및 캐시는 저장하지 않습니다. 공개 보고서와 GitHub Code scanning의 SARIF 결과를 활용하며, 점수가 낮은 항목도 숨기지 않습니다.
 
 ## 라이선스
 
