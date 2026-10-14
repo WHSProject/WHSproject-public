@@ -6,6 +6,8 @@ settings:
 
 importers:
 
+  .: {}
+
   apps/policy:
     dependencies:
       semver:

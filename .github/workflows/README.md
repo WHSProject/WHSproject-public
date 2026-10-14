@@ -20,6 +20,9 @@ Dependabot PR의 릴리스 내용과 CI 결과를 검토한 뒤 병합합니다.
 pnpm workspace(Scanner / Policy), Gateway와 Dashboard의 npm lockfile,
 Verdaccio storage plugin, Policy Python, Dockerfile, GitHub Actions를 대상으로 합니다.
 Scanner의 테스트용 package.json 파일은 독립적인 업데이트 대상으로 등록하지 않습니다.
+루트 `package.json`은 Dependabot이 pnpm workspace를 인식하기 위한 최소 manifest이며,
+실행 의존성이나 npm workspace 정의를 추가하지 않습니다. `packageManager`는 기존 CI의
+pnpm 10.34.5와 같습니다.
 
 - 설정 파일은 기본 브랜치 `main`에도 반영되어야 활성화됩니다.
 - 일반 버전 업데이트 PR은 `dev`를 대상으로 하며 자동 병합하지 않습니다.
