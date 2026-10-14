@@ -1,0 +1,54 @@
+version: 2
+
+# This file must also reach main (the default branch) to activate Dependabot.
+# Version updates follow our normal dev -> main release workflow.
+# GitHub security updates target main independently; see workflows/README.md.
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Seoul
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: npm
+    directories:
+      - /
+      - /apps/gateway
+      - /apps/dashboard
+      - /infra/verdaccio/storage-plugins
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Seoul
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /apps/policy
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Seoul
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: docker
+    directories:
+      - /apps/gateway
+      - /apps/scanner
+      - /apps/dashboard
+      - /apps/policy
+      - /infra/verdaccio
+    target-branch: dev
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Seoul
+    open-pull-requests-limit: 3
