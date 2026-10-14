@@ -2,5 +2,9 @@ packages:
   - apps/scanner
   - apps/policy
 
+# Keep the transitive template compiler outside the affected advisory range.
+overrides:
+  'handlebars@<4.7.10': 4.7.10
+
 allowBuilds:
   isolated-vm: true
