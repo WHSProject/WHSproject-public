@@ -12,20 +12,23 @@
 - 이미지: Gateway, Scanner, Dashboard, Policy Docker build
 
 외부 Action은 전체 커밋 SHA로 고정합니다. 새 버전은 자동으로 신뢰하지 않고
-Dependabot PR의 릴리스 내용과 CI 결과를 검토한 뒤 병합합니다.
+관련 보안 경보, 릴리스 내용과 CI 결과를 검토한 뒤 반영합니다.
 
 ## Dependabot
 
-`.github/dependabot.yml`은 매주 월요일 09:00 (Asia/Seoul)에 업데이트를 확인합니다.
-pnpm workspace(Scanner / Policy), Gateway와 Dashboard의 npm lockfile,
-Verdaccio storage plugin, Policy Python, Dockerfile, GitHub Actions를 대상으로 합니다.
+`.github/dependabot.yml`은 pnpm workspace(Scanner / Policy), Gateway와 Dashboard의
+npm lockfile, Verdaccio storage plugin, Policy Python, Dockerfile, GitHub Actions의
+manifest 위치를 정의합니다.
 Scanner의 테스트용 package.json 파일은 독립적인 업데이트 대상으로 등록하지 않습니다.
 루트 `package.json`은 Dependabot이 pnpm workspace를 인식하기 위한 최소 manifest이며,
 실행 의존성이나 npm workspace 정의를 추가하지 않습니다. `packageManager`는 기존 CI의
 pnpm 10.34.5와 같습니다.
 
 - 설정 파일은 기본 브랜치 `main`에도 반영되어야 활성화됩니다.
-- 일반 버전 업데이트 PR은 `dev`를 대상으로 하며 자동 병합하지 않습니다.
+- 일반 버전 업데이트 PR은 각 생태계의 `open-pull-requests-limit: 0`으로 비활성화합니다.
+  공개 직후 안정화 단계에서는 자동 메이저 업그레이드와 대량 PR 생성을 허용하지 않습니다.
+- Dependabot Alerts와 Repository Security Updates는 계속 사용합니다. 일반 버전 업데이트를
+  비활성화해도 취약점 경보를 닫거나 보안 업데이트를 자동 병합하지 않습니다.
 - GitHub의 보안 업데이트 PR은 `target-branch`와 별개로 기본 브랜치 `main`을 대상으로 합니다.
   기존 `dev → main` 절차를 유지하려면 보안 패치를 별도 작업 브랜치에서 검증하여
   `dev`에 반영하고 릴리스합니다. 기본 브랜치 경보가 닫혔는지 확인하기 전에는
