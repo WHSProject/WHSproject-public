@@ -4,7 +4,16 @@
 
 ARGUS는 한국인터넷진흥원(KISA)이 주관하는 화이트햇스쿨 4기 팀 프로젝트 「공공의 적」의 결과물입니다.
 
+[![PR CI](https://github.com/WHSProject/WHSproject-public/actions/workflows/pr-ci.yml/badge.svg?event=pull_request)](https://github.com/WHSProject/WHSproject-public/actions/workflows/pr-ci.yml)
+[![CodeQL](https://github.com/WHSProject/WHSproject-public/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/WHSProject/WHSproject-public/actions/workflows/github-code-scanning/codeql)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/WHSProject/WHSproject-public/badge)](https://scorecard.dev/viewer/?uri=github.com/WHSProject/WHSproject-public)
+[![License: Apache-2.0](https://img.shields.io/github/license/WHSProject/WHSproject-public)](LICENSE)
+
+[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)](apps/dashboard/package.json)
+[![NestJS](https://img.shields.io/badge/NestJS-E0234E?logo=nestjs&logoColor=white)](apps/scanner/package.json)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](apps/policy/requirements.txt)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](infra/postgres)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](compose.yaml)
 
 ## 소개
 
