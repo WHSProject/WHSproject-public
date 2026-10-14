@@ -4,7 +4,7 @@
 
 ARGUS는 한국인터넷진흥원(KISA)이 주관하는 화이트햇스쿨 4기 팀 프로젝트 「공공의 적」의 결과물입니다.
 
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/whsproject/whsproject-public/badge)](https://scorecard.dev/viewer/?uri=github.com/whsproject/whsproject-public)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/WHSProject/WHSproject-public/badge)](https://scorecard.dev/viewer/?uri=github.com/WHSProject/WHSproject-public)
 
 ## 소개
 
@@ -447,7 +447,7 @@ Full E2E는 실제 패키지 설치를 수행하며, `ACCEPT` 판정이 확인�
 
 [Scorecard 워크플로](.github/workflows/scorecard.yml)는 `main`에 변경이 반영될 때와 매주 토요일 10:30 KST에 실행되도록 설정되어 있습니다. 평가 결과는 OpenSSF에 공개되며, 상단 배지는 최신 공개 결과로 연결됩니다. 첫 실행 및 결과 공개 반영 전에는 점수가 표시되지 않을 수 있습니다.
 
-- [저장소 공개 보고서](https://scorecard.dev/viewer/?uri=github.com/whsproject/whsproject-public)
+- [저장소 공개 보고서](https://scorecard.dev/viewer/?uri=github.com/WHSProject/WHSproject-public)
 - [검사 실행 내역](https://github.com/WHSProject/WHSproject-public/actions/workflows/scorecard.yml) · [GitHub Code scanning](https://github.com/WHSProject/WHSproject-public/security/code-scanning)
 - [검사 항목과 점수 해석](https://github.com/ossf/scorecard/blob/main/docs/checks.md)
 
