@@ -1,4 +1,4 @@
-FROM node:24-bookworm-slim AS build
+FROM node:26-bookworm-slim AS build
 
 WORKDIR /workspace
 
@@ -12,7 +12,7 @@ RUN pnpm install --filter policy --frozen-lockfile
 COPY apps/policy/src apps/policy/src
 RUN pnpm --filter policy build
 
-FROM node:24-bookworm-slim AS runtime
+FROM node:26-bookworm-slim AS runtime
 
 WORKDIR /app
 
