@@ -59,19 +59,12 @@ ARGUS의 특징은 분석 결과를 실제 패키지 다운로드 제어로 연�
 
 ## 목차
 
-- [아키텍처](#아키텍처)
-- [대시보드 미리보기](#대시보드-미리보기)
-- [지원 범위](#지원-범위)
-- [시작하기](#시작하기)
-- [사용 예시](#사용-예시)
-- [문제 해결](#문제-해결)
-- [탐지 규칙과 분석 근거](#탐지-규칙과-분석-근거)
-- [환경변수 설정](#환경변수-설정)
-- [개발 및 테스트](#개발-및-테스트)
-- [프로젝트 구조](#프로젝트-구조)
-- [팀원 및 Maintainers](#팀원-및-maintainers)
-- [OpenSSF Scorecard](#openssf-scorecard)
-- [라이선스](#라이선스)
+- **프로젝트 이해:** [아키텍처](#아키텍처) · [대시보드 미리보기](#대시보드-미리보기) · [지원 범위](#지원-범위)
+- **실행과 사용:** [시작하기](#시작하기) · [사용 예시](#사용-예시) · [문제 해결](#문제-해결)
+- **상세 참고:** [탐지 규칙과 분석 근거](#탐지-규칙과-분석-근거) · [환경변수 설정](#환경변수-설정) · [개발 및 테스트](#개발-및-테스트) · [프로젝트 구조](#프로젝트-구조)
+- **프로젝트 정보:** [팀원 및 Maintainers](#팀원-및-maintainers) · [OpenSSF Scorecard](#openssf-scorecard) · [라이선스](#라이선스)
+
+상세 설명과 명령어는 접힌 항목을 눌러 펼칠 수 있습니다.
 
 ## 아키텍처
 
@@ -125,6 +118,9 @@ Gateway의 분석 캐시는 의존성 트리 재구성을 줄이기 위한 것�
 
 ### Scanner: 수집부터 Tier 3까지
 
+<details>
+<summary>단계별 처리·Evidence 정규화·선택적 LLM 분석 자세히 보기</summary>
+
 | 단계 | 처리 내용 | 다음 단계로 전달하는 정보 |
 |---|---|---|
 | 수집·검증 | Registry 조회, tarball 다운로드·무결성 검증, 압축 해제, 패키지 이름·버전 검증 | 검증한 Artifact와 메타데이터 |
@@ -141,11 +137,9 @@ Tier 2의 원시 결과는 `shadowAnalyses`에 남지만, 검증된 후보는 `T
 
 구현: [Orchestrator](apps/scanner/src/application/orchestrator/orchestrator.ts), [Evidence 정규화](apps/scanner/src/evidence/normalizer/evidence-normalizer.ts), [Policy 요청 검증](apps/scanner/src/policy/policy-evaluation.request.ts), [Scan Service](apps/scanner/src/application/scan-service/scan.service.ts)
 
+</details>
+
 ### Policy: 분석 근거를 판정으로 변환
-
-Policy는 활성 정책을 가져와 Evidence·OSV·분석 상태로 평가 문맥을 구성합니다. 기본 구성에서는 LLM이 정책 조건에 대한 판단을 만들고, 서버가 그 응답과 근거 참조를 검증한 뒤 규칙 해석기로 최종 Decision을 결정합니다. Scanner의 Tier 3 Agent와 Policy의 LLM 평가는 별도 경로입니다.
-
-조건이 충족된 REJECT 규칙을 먼저 처리하고, 근거 충돌이나 판단 불가·분석 범위 부족 여부를 확인한 뒤 나머지 규칙의 우선순위와 기본 판정을 적용합니다. LLM 호출·응답 검증 실패 시에는 활성 정책의 `judgmentFailureDecision`을 사용합니다.
 
 | Decision | 의미 | Gateway 다운로드 처리 |
 |---|---|---|
@@ -154,11 +148,23 @@ Policy는 활성 정책을 가져와 Evidence·OSV·분석 상태로 평가 문�
 | `HOLD` | 판단 근거 부족 또는 평가 실패 등에 따른 보류 | 차단 |
 | `REVIEW` | 추가 검토 필요 | 차단 |
 
+<details>
+<summary>정책 평가 순서·실패 처리·구현 코드 자세히 보기</summary>
+
+Policy는 활성 정책을 가져와 Evidence·OSV·분석 상태로 평가 문맥을 구성합니다. 기본 구성에서는 LLM이 정책 조건에 대한 판단을 만들고, 서버가 그 응답과 근거 참조를 검증한 뒤 규칙 해석기로 최종 Decision을 결정합니다. Scanner의 Tier 3 Agent와 Policy의 LLM 평가는 별도 경로입니다.
+
+조건이 충족된 REJECT 규칙을 먼저 처리하고, 근거 충돌이나 판단 불가·분석 범위 부족 여부를 확인한 뒤 나머지 규칙의 우선순위와 기본 판정을 적용합니다. LLM 호출·응답 검증 실패 시에는 활성 정책의 `judgmentFailureDecision`을 사용합니다.
+
 설치 스크립트나 네트워크 API가 있다는 관찰만으로 악성 판정을 확정하지 않습니다. Finding, Evidence, 정책 조건 판단, 최종 Decision을 구분해 근거와 한계를 함께 확인합니다.
 
 구현: [Policy 평가](apps/policy/src/evaluation/policy-evaluation.service.ts), [Decision 결정](apps/policy/src/decision/decision.resolver.ts)
 
+</details>
+
 ### 데이터 저장과 Dashboard
+
+<details>
+<summary>논리 DB별 역할·접근 경로·판정 추적 정보 보기</summary>
 
 PostgreSQL은 목적별 논리 DB로 나뉩니다. Evidence·Policy·Decision은 각각의 API를 통해 읽고 쓰며, Gateway와 Dashboard의 사용자 인증·설치 기록은 `user_db`를 사용합니다.
 
@@ -172,6 +178,8 @@ PostgreSQL은 목적별 논리 DB로 나뉩니다. Evidence·Policy·Decision은
 `requestId`는 요청 흐름을, `scanId`는 개별 분석을 연결합니다. Artifact의 이름·버전·해시/무결성 값, Evidence ID, 정책 버전과 Decision ID는 판정의 대상과 근거를 추적하는 데 사용합니다.
 
 Dashboard는 판정·근거·로그를 조회하고 정책 버전과 사용자 권한을 관리하는 화면입니다. npm 패키지 다운로드를 집행하는 주체는 Gateway입니다. 공개 서비스 포트와 내부 연결은 [compose.yaml](compose.yaml), DB 초기화는 [00-bootstrap.sql](infra/postgres/init/00-bootstrap.sql), 공통 데이터 형식은 [packages/contracts](packages/contracts)에서 확인할 수 있습니다.
+
+</details>
 
 ## 대시보드 미리보기
 
@@ -203,6 +211,8 @@ Dashboard는 판정·근거·로그를 조회하고 정책 버전과 사용자 �
 
 ## 시작하기
 
+처음 실행할 때는 **환경 설정·서비스 실행 → 계정·토큰 설정 → [사용 예시](#사용-예시)** 순서로 진행합니다. 아래 두 설정 항목은 모두 완료해야 합니다.
+
 ### 실행 환경
 
 - Docker Desktop 또는 Docker Engine과 Docker Compose
@@ -222,6 +232,9 @@ git clone https://github.com/WHSProject/WHSproject-public.git
 cd WHSproject-public
 cp .env.example .env
 ```
+
+<details>
+<summary>1. 필수 환경변수 설정 및 서비스 실행</summary>
 
 `.env`에서 다음 값을 설정합니다. 꺾쇠로 표시한 값은 직접 채워야 합니다.
 
@@ -251,7 +264,12 @@ docker compose up -d --build
 docker compose ps
 ```
 
+</details>
+
 ### 최초 계정 설정
+
+<details>
+<summary>2. Verdaccio 서비스 계정 → Dashboard 관리자 → npm 토큰 설정</summary>
 
 **1. Verdaccio 서비스 계정**
 
@@ -292,6 +310,10 @@ fetch-timeout=360000
 
 기존 `npm login --auth-type=legacy` 경로는 `410 NPM_LOGIN_DISABLED`를 반환합니다. Verdaccio 관리 계정과 Dashboard 사용자·npm 토큰은 별도로 관리됩니다.
 
+</details>
+
+> 기본 Policy는 OpenAI API를 사용합니다. `fixture` 모드는 개발·테스트용이며 실제 보안 판정 검증과 구분해야 합니다. 비밀번호·API 키·실제 npm 토큰은 커밋하지 마세요.
+
 ## 사용 예시
 
 인증을 설정한 npm 프로젝트 폴더에서 실행합니다.
@@ -320,6 +342,9 @@ Scanner와 Verdaccio는 Compose 내부 네트워크에서 접근합니다. 기�
 
 ## 문제 해결
 
+<details>
+<summary>인증 오류(401/403/410), Registry 연결 실패, HOLD 판정 점검</summary>
+
 | 증상 | 확인할 내용 |
 |---|---|
 | npm 요청이 `401`로 거부됨 | `.npmrc`의 `/npm/:_authToken` 경로, `ARGUS_NPM_TOKEN` 환경변수, 토큰 만료 여부를 확인합니다. |
@@ -335,7 +360,14 @@ docker compose ps
 docker compose logs --tail=100 gateway scanner policy
 ```
 
+</details>
+
 ## 탐지 규칙과 분석 근거
+
+정적 분석 결과에는 오탐·미탐이 있을 수 있습니다. 관찰 신호, 분석 오류, 근거의 한계를 함께 확인해야 하며, 탐지 결과만으로 실행 시의 모든 동작을 보장하지 않습니다.
+
+<details>
+<summary>분석 영역별 탐지 내용·규칙·구현 링크 보기</summary>
 
 | 분석 영역 | 확인하는 내용 | 구현·설정 |
 |---|---|---|
@@ -346,13 +378,16 @@ docker compose logs --tail=100 gateway scanner policy
 | OSV Feed | 패키지·버전과 연결된 알려진 취약점 정보 | [OSV 연동 안내](apps/scanner/src/osv/README.md) |
 | Policy | Evidence를 바탕으로 정책 조건 평가 및 최종 Decision 결정 | [기본 정책](apps/policy/src/policy/default-policy.ts) |
 
-정적 분석 결과에는 오탐·미탐이 있을 수 있습니다. 관찰 신호, 분석 오류, 근거의 한계를 함께 확인해야 하며, 탐지 결과만으로 실행 시의 모든 동작을 보장하지 않습니다.
-
 Evidence와 Policy의 공통 형식은 [packages/contracts](packages/contracts)에서 관리합니다. 난독화·LLM의 상세 흐름은 [Agent 분석 요청 계약](docs/obfuscation-agent-analysis-request.md)과 [LLM 사용 및 프롬프트 설계](docs/obfuscation-llm-prompting.md)를 참고하세요.
+
+</details>
 
 ## 환경변수 설정
 
 전체 항목은 [.env.example](.env.example)에 있습니다. 아래 값은 해당 예제 파일을 사용하는 로컬 실행 기준입니다.
+
+<details>
+<summary>환경변수별 기본값과 역할 보기</summary>
 
 | 환경변수 | 기본값 | 역할 |
 |---|---|---|
@@ -370,11 +405,16 @@ Evidence와 Policy의 공통 형식은 [packages/contracts](packages/contracts)�
 | `OBFUSCATION_LLM_PROVIDER` | `gpt` | 난독화 보조 분석 제공자: `gpt` 또는 `gemini` |
 | `WHS_STORAGE_MODE` | `local` | Verdaccio 저장소. S3 설정 시 `s3` 사용 |
 
+</details>
+
 Tier 3 Agent, 난독화 LLM 보조 분석, Policy의 LLM 평가는 별도 경로입니다. Scanner의 LLM 옵션을 꺼도 기본 Policy의 외부 API 호출은 유지됩니다. LLM 기능을 사용하면 해당 경로의 분석 근거·코드 문맥이 설정된 제공자에게 전달됩니다.
 
 `SCANNER_ENABLED=false`는 개발용으로 분석·집행 경로를 비활성화하는 설정이므로, 패키지 보안 검사를 사용하는 환경에서는 `true`를 유지합니다.
 
 ## 개발 및 테스트
+
+<details>
+<summary>로컬 개발: 구성 요소별 설치·타입 검사·테스트·빌드 명령</summary>
 
 ### 로컬 검사
 
@@ -411,6 +451,11 @@ npm --prefix apps/dashboard run build
 
 외부 분석 도구를 호출하는 Scanner 검증은 Semgrep·GuardDog가 설치된 런타임도 필요합니다. Python API 검사와 CI 전체 절차는 [PR CI](.github/workflows/pr-ci.yml) 및 [로컬 PR CI 안내](docs/local-pr-ci.md)를 참고하세요.
 
+</details>
+
+<details>
+<summary>통합 검증: Integration / E2E 절차와 운영·데모 가이드</summary>
+
 ### Integration / E2E
 
 서비스 기동과 npm 인증을 마친 뒤, 저장소 루트에서 인증 설정 파일 경로를 지정합니다. 환경변수 참조 방식의 `.npmrc`를 사용한다면 테스트 셸에도 `ARGUS_NPM_TOKEN`이 설정되어 있어야 합니다.
@@ -432,11 +477,16 @@ Full E2E는 실제 패키지 설치를 수행하며, `ACCEPT` 판정이 확인�
 - [Verdaccio 설정 및 운영](infra/verdaccio/README.md)
 - [데모 실행 가이드](docs/demo-runbook.md)
 
+</details>
+
 ### 기여
 
 작업 브랜치·커밋·Pull Request 규칙은 [CONTRIBUTING.md](CONTRIBUTING.md)와 [GIT_WORKFLOW.md](GIT_WORKFLOW.md)를 따릅니다. `dev`에서 목적별 브랜치를 만들고, 관련 검사 후 `dev`를 대상으로 Pull Request를 제출합니다.
 
 ## 프로젝트 구조
+
+<details>
+<summary>디렉터리별 역할과 소스 코드 바로가기</summary>
 
 | 경로 | 내용 |
 |---|---|
@@ -450,9 +500,16 @@ Full E2E는 실제 패키지 설치를 수행하며, `ACCEPT` 판정이 확인�
 | [docs](docs) | 기술 문서 및 실행 가이드 |
 | [compose.yaml](compose.yaml) | 전체 서비스 통합 실행 설정 |
 
+</details>
+
 ## OpenSSF Scorecard
 
 [OpenSSF Scorecard](https://scorecard.dev/)는 브랜치 보호, 코드 리뷰, CI 테스트, 정적 분석, 워크플로 토큰 권한 등 저장소의 보안 관리 관행을 자동 점검하는 도구입니다. ARGUS의 패키지 악성 여부 분석과는 별개이며, Scorecard 점수는 취약점이 없다는 보증이나 보안 인증이 아닙니다.
+
+[공개 보고서 보기](https://scorecard.dev/viewer/?uri=github.com/WHSProject/WHSproject-public) · [검사 실행 내역](https://github.com/WHSProject/WHSproject-public/actions/workflows/scorecard.yml)
+
+<details>
+<summary>검사 주기·결과 조회·실행 환경 자세히 보기</summary>
 
 [Scorecard 워크플로](.github/workflows/scorecard.yml)는 `main`에 변경이 반영될 때와 매주 토요일 10:30 KST에 실행되도록 설정되어 있습니다. 평가 결과는 OpenSSF에 공개되며, 상단 배지는 최신 공개 결과로 연결됩니다. 첫 실행 및 결과 공개 반영 전에는 점수가 표시되지 않을 수 있습니다.
 
@@ -461,6 +518,8 @@ Full E2E는 실제 패키지 설치를 수행하며, `ACCEPT` 판정이 확인�
 - [검사 항목과 점수 해석](https://github.com/ossf/scorecard/blob/main/docs/checks.md)
 
 공개 저장소의 표준 GitHub-hosted 러너를 사용하며, 개인 PAT나 LLM API 키는 필요하지 않습니다. 별도 Actions artifact 및 캐시는 저장하지 않습니다. 공개 보고서와 GitHub Code scanning의 SARIF 결과를 활용하며, 점수가 낮은 항목도 숨기지 않습니다.
+
+</details>
 
 ## 라이선스
 
