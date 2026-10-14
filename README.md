@@ -38,8 +38,8 @@ Gateway를 통해 들어온 요청은 기존 판정 여부에 따라 처리되�
 
 ## 목차
 
+- [아키텍처](#아키텍처)
 - [대시보드 미리보기](#대시보드-미리보기)
-- [동작 방식](#동작-방식)
 - [지원 범위](#지원-범위)
 - [시작하기](#시작하기)
 - [사용 예시](#사용-예시)
@@ -51,99 +51,79 @@ Gateway를 통해 들어온 요청은 기존 판정 여부에 따라 처리되�
 - [팀원](#팀원)
 - [라이선스](#라이선스)
 
-## 대시보드 미리보기
+## 아키텍처
 
-아래 이미지는 2026-10-14에 현재 저장소의 Dashboard를 빌드하고, 별도의 로컬 DB에 연결해 브라우저에서 직접 촬영한 화면입니다. 화면의 패키지·판정·정책은 DB 초기화에 포함된 **QA 샘플 데이터**이며, 실제 패키지 분석 결과나 탐지 성능을 나타내지 않습니다.
+ARGUS는 **요청 진입·집행(Gateway)**, **보안 근거 수집(Scanner)**, **정책 판단(Policy Engine)**, **패키지 전달(Verdaccio)**을 분리한 구조입니다. Dashboard는 저장된 근거와 판정을 조회하고 정책·계정을 관리합니다. 아래 설명은 `SCANNER_ENABLED=true`인 실행 구성을 기준으로 합니다.
 
-### Overview
+### 전체 구성
 
-최근 판정, 판정 분포, 시간대별 현황과 적용 중인 정책을 한 화면에서 확인합니다.
+```mermaid
+flowchart TB
+    Client["npm Client"] -->|"Metadata / tarball 요청"| Gateway["Gateway"]
+    Gateway -->|"승인 등록 / 패키지 중계"| Verdaccio["Verdaccio"]
+    Verdaccio -->|"캐시에 없는 패키지 조회"| Registry["npm Registry"]
 
-![ARGUS Overview — 초기 QA 샘플 판정 4건과 정책 현황](docs/images/dashboard-overview.png)
+    subgraph Analysis["분석과 정책 평가"]
+        Scanner["Scanner · Tier 1 / 2 / 3"]
+        Policy["Policy Engine"]
+        Scanner -->|"Evidence + OSV + 분석 상태"| Policy
+    end
 
-<details>
-<summary>패키지 목록과 판정 상세 보기</summary>
+    Gateway -->|"기존 판정이 없는 대상 분석"| Scanner
+    Scanner -->|"메타데이터 / 분석용 tarball 수집"| Registry
 
-패키지별 판정을 검색·필터링하고 선택한 버전의 판정 사유, 정책, Evidence와 버전 이력을 조회합니다.
+    subgraph Storage["데이터 저장 계층"]
+        APIs["Evidence API / Policy DB API / Decision DB API"]
+        DB[("PostgreSQL")]
+        APIs --> DB
+    end
 
-![패키지 목록 — QA 샘플 4건](docs/images/dashboard-packages.png)
-
-초기 샘플 판정이 참조하는 정책 버전과 Evidence 일부는 DB에 없어, 아래 상세 화면에는 해당 데이터의 누락 안내가 표시됩니다.
-
-![QA 샘플 패키지 상세 — 판정 사유와 참조 데이터 누락 안내](docs/images/dashboard-package-detail.png)
-
-</details>
-
-<details>
-<summary>정책 규칙과 버전 관리 보기</summary>
-
-Rule 화면에서 판정 조건·우선순위·활성 상태를 관리합니다. 아래는 QA 정책에 REJECT 필터를 적용한 모습입니다.
-
-![정책 규칙 — REJECT 필터를 적용한 QA 정책](docs/images/dashboard-rules.png)
-
-Version 화면에서 적용 중인 버전과 해당 버전의 규칙 구성을 확인합니다.
-
-![정책 버전 — QA 정책 v0.1.0과 규칙 목록](docs/images/dashboard-versions.png)
-
-</details>
-
-<details>
-<summary>설치 요청과 로그 보기</summary>
-
-Request는 루트 패키지의 설치 요청을, Log는 설치 기록과 의존성 역추적을 제공합니다. 촬영용 환경에서는 실제 npm 설치를 수행하지 않아 두 화면에 설치 이력이 없습니다.
-
-![설치 요청 — 설치 이력이 없는 초기 상태](docs/images/dashboard-requests.png)
-
-![설치 로그 — 설치 기록이 없는 초기 상태](docs/images/dashboard-logs.png)
-
-</details>
-
-<details>
-<summary>로그인·개인 설정·사용자 관리 보기</summary>
-
-관리자가 생성한 계정으로 로그인합니다.
-
-![ARGUS 로그인 화면](docs/images/dashboard-login.png)
-
-Setting에서 계정 정보, npm 설치 토큰과 로그인된 기기를 관리합니다. 아래 화면은 npm 토큰을 발급하지 않은 촬영용 계정입니다.
-
-![개인 설정 — 촬영용 계정과 npm 토큰 미발급 상태](docs/images/dashboard-settings.png)
-
-Admin에서 사용자 계정을 생성하고 역할과 활성 상태를 관리합니다.
-
-![사용자 관리 — 촬영용 관리자 계정](docs/images/dashboard-admin.png)
-
-</details>
-
-## 동작 방식
-
-ARGUS는 npm Registry 앞에서 패키지 다운로드 요청을 검사합니다. 기존 판정을 조회하고, 분석이 필요한 패키지는 Scanner와 Policy Engine을 거쳐 처리합니다.
-
-```text
-npm Client → Gateway 인증 → 패키지·의존성의 기존 Decision 조회
-                              │
-                              ├─ 판정 있음 → 기존 Decision 확인
-                              └─ 판정 없음 → Scanner → Policy Engine → Decision 저장
-                                                                      │
-                       Gateway 판정 재확인 ←───────────────────────────┘
-                              │
-                              ├─ 모두 ACCEPT → Verdaccio 승인 등록 → 패키지 전달
-                              └─ 그 외       → 다운로드 차단
+    Gateway <-->|"Decision 조회"| APIs
+    Scanner -->|"Evidence 저장"| APIs
+    Policy <-->|"활성 정책 조회 / Decision 저장"| APIs
+    Gateway -->|"사용자 인증 / 다운로드 기록"| DB
+    Dashboard["Dashboard"] <-->|"판정·근거 조회 / 정책 관리"| APIs
+    Dashboard <-->|"계정·세션 관리 / 설치 기록 조회"| DB
 ```
 
-### 패키지 분석
+npm Client의 Registry 진입점은 Gateway의 `/npm/`입니다. Metadata는 인증 후 Verdaccio로 중계하고, tarball은 분석·판정 확인을 마친 뒤 전달합니다. Verdaccio는 패키지 프록시와 캐시를 담당하며, Scanner는 분석용 파일을 별도로 수집합니다.
 
-1. **수집·검증:** Registry 메타데이터와 tarball을 가져와 무결성을 검증하고, 압축 해제 후 패키지 이름과 버전을 확인합니다.
-2. **Tier 1 — 정적 분석:** Metadata, Custom Rule, GuardDog 분석으로 설치 스크립트, 민감 정보 접근, 네트워크 통신 등 위험 신호를 수집합니다. OSV Feed로 알려진 취약점 정보도 조회합니다.
-3. **Tier 2 — 난독화 복원·재분석:** 난독화 후보를 선별하고 webcrack·Babel 기반 복원과 재분석을 수행합니다. 상세 결과는 `shadowAnalyses`에 남기며, 검증을 통과한 후보는 `TIER2` 출처를 가진 Evidence로 정규화합니다.
-4. **Tier 3 — 선택적 LLM 분석:** 정적 분석이 불완전하거나 모호한 경우, 활성화된 Agent가 선별된 코드 문맥을 분석합니다. 검증된 `LLM_ASSESSMENT`만 Policy 입력에 포함합니다. 기본값은 비활성화입니다.
-5. **정책 평가·집행:** Policy Engine이 Evidence와 OSV 정보로 정책 조건을 평가하고 Decision을 저장합니다. Gateway는 저장된 판정을 다시 조회해 다운로드를 허용하거나 차단합니다.
+### 요청에서 다운로드까지
 
-Tier 2의 원시 Shadow 결과, 정규화된 Evidence, 최종 Decision은 서로 다른 데이터입니다. 설치 스크립트나 네트워크 API가 발견되었다는 사실만으로 악성 판정을 확정하지 않습니다. LLM 응답도 검증과 정책 평가를 거칩니다.
+1. **인증:** Gateway가 Dashboard에서 발급한 npm 토큰의 유효기간과 사용자 활성 상태·설치 권한을 확인합니다. Verdaccio에는 사용자 토큰 대신 별도의 읽기 전용 서비스 계정으로 접근합니다.
+2. **요청 구분:** Metadata 요청은 패키지 정보를 조회하는 경로입니다. 실제 검사는 버전이 확정된 tarball 요청에서 시작하므로, lockfile을 사용해 Metadata 조회를 생략해도 해당 tarball 요청을 검사합니다.
+3. **의존성 해석·기존 판정 조회:** Gateway가 요청 패키지와 의존성을 해석하고, 패키지 이름·버전·무결성 정보로 각 Artifact의 Decision을 조회합니다. 기존 판정이 없는 대상만 Scanner로 보냅니다.
+4. **분석·판정 저장:** Scanner가 패키지를 분석해 Evidence를 저장하고 Policy에 평가를 요청합니다. Policy는 활성 정책과 분석 근거를 바탕으로 판정한 뒤 Decision DB에 저장합니다.
+5. **판정 재조회·집행:** Gateway가 같은 분석 대상의 Decision을 다시 조회합니다. 검사 대상이 모두 `ACCEPT`이면 패키지 이름·버전·무결성 정보를 Verdaccio 승인 목록에 등록하고 tarball을 전달합니다. 그 외 판정이나 미판정 대상이 남으면 다운로드를 차단합니다.
+6. **기록·조회:** Gateway는 다운로드 결과와 사용자·판정 정보를 기록하고, Dashboard는 이 기록과 저장된 Decision·Evidence를 조회합니다.
 
-구현은 [Scanner Orchestrator](apps/scanner/src/application/orchestrator/orchestrator.ts), [Policy 평가](apps/policy/src/evaluation/policy-evaluation.service.ts), [Gateway 집행](apps/gateway/src/services/decision-handler.service.ts)에서 확인할 수 있습니다.
+Gateway의 분석 캐시는 의존성 트리 재구성을 줄이기 위한 것입니다. 캐시에 있는 Artifact도 현재 Decision을 다시 조회하고 집행합니다. 또한 Scanner 호출이 실패하더라도 이미 판정이 저장된 경우에는 DB를 재조회해 저장된 판정을 확인합니다. 판정이 없는 대상을 성공으로 추정하지 않습니다.
 
-### 판정 결과
+구현: [tarball 요청 처리](apps/gateway/src/controllers/tarball.controller.ts), [분석·재조회 흐름](apps/gateway/src/services/tarball-analysis.service.ts), [Decision 집행](apps/gateway/src/services/decision-handler.service.ts)
+
+### Scanner: 수집부터 Tier 3까지
+
+| 단계 | 처리 내용 | 다음 단계로 전달하는 정보 |
+|---|---|---|
+| 수집·검증 | Registry 조회, tarball 다운로드·무결성 검증, 압축 해제, 패키지 이름·버전 검증 | 검증한 Artifact와 메타데이터 |
+| Tier 1 | Metadata·Custom Rule·GuardDog로 설치 스크립트, 민감 정보 접근, 프로세스 실행, 네트워크 통신 등의 신호 수집 | 원본 코드의 Finding과 위치 정보 |
+| Tier 2 | 난독화 후보를 선별하고 webcrack·Babel 기반 복원 후 재분석 | 상세 Shadow 결과, 검증된 복원본 Evidence 후보와 출처 |
+| Evidence 정규화 | 원본 Finding과 검증된 Tier 2 후보를 공통 형식으로 변환 | 출처·위치·한계가 연결된 Evidence |
+| Tier 3 실행 판단 | 정적 분석 결과가 명확한지, 모호하거나 불완전한지 분류 | Agent 실행 여부와 선별된 코드 문맥 |
+| Tier 3 | 활성화된 경우 필요한 코드 문맥을 LLM Agent로 분석하고 응답 검증 | 검증된 `LLM_ASSESSMENT`와 분석 요약 |
+| Policy 전달 | Evidence 저장 후 분석 상태·OSV 정보와 함께 평가 요청 | Policy 평가 요청 |
+
+OSV Feed 조회는 패키지의 알려진 취약점 정보를 보완합니다. Tier 3는 정적 분석이 모호하거나 불완전하고 Agent 설정이 활성화된 경우 실행하며, 기본값은 비활성화입니다. 모든 패키지가 LLM Agent를 거치는 구조는 아닙니다.
+
+Tier 2의 원시 결과는 `shadowAnalyses`에 남지만, 검증된 후보는 `TIER2` 출처의 Evidence로 정규화되어 Policy에 전달됩니다. Tier 3 결과도 참조 ID와 응답 형식 등의 검증을 통과해야 Policy 입력에 포함됩니다. 분석이 끝나면 임시 다운로드·압축 해제·복원 파일은 정리합니다.
+
+구현: [Orchestrator](apps/scanner/src/application/orchestrator/orchestrator.ts), [Evidence 정규화](apps/scanner/src/evidence/normalizer/evidence-normalizer.ts), [Policy 요청 검증](apps/scanner/src/policy/policy-evaluation.request.ts), [Scan Service](apps/scanner/src/application/scan-service/scan.service.ts)
+
+### Policy: 분석 근거를 판정으로 변환
+
+Policy는 활성 정책을 가져와 Evidence·OSV·분석 상태로 평가 문맥을 구성합니다. 기본 구성에서는 LLM이 정책 조건에 대한 판단을 만들고, 서버가 그 응답과 근거 참조를 검증한 뒤 규칙 해석기로 최종 Decision을 결정합니다. Scanner의 Tier 3 Agent와 Policy의 LLM 평가는 별도 경로입니다.
+
+조건이 충족된 REJECT 규칙을 먼저 처리하고, 근거 충돌이나 판단 불가·분석 범위 부족 여부를 확인한 뒤 나머지 규칙의 우선순위와 기본 판정을 적용합니다. LLM 호출·응답 검증 실패 시에는 활성 정책의 `judgmentFailureDecision`을 사용합니다.
 
 | Decision | 의미 | Gateway 다운로드 처리 |
 |---|---|---|
@@ -152,7 +132,46 @@ Tier 2의 원시 Shadow 결과, 정규화된 Evidence, 최종 Decision은 서로
 | `HOLD` | 판단 근거 부족 또는 평가 실패 등에 따른 보류 | 차단 |
 | `REVIEW` | 추가 검토 필요 | 차단 |
 
-분석 후에도 판정이 없으면 다운로드를 허용하지 않습니다. 구체적인 판정 조건은 활성 정책에 따라 달라집니다.
+설치 스크립트나 네트워크 API가 있다는 관찰만으로 악성 판정을 확정하지 않습니다. Finding, Evidence, 정책 조건 판단, 최종 Decision을 구분해 근거와 한계를 함께 확인합니다.
+
+구현: [Policy 평가](apps/policy/src/evaluation/policy-evaluation.service.ts), [Decision 결정](apps/policy/src/decision/decision.resolver.ts)
+
+### 데이터 저장과 Dashboard
+
+PostgreSQL은 목적별 논리 DB로 나뉩니다. Evidence·Policy·Decision은 각각의 API를 통해 읽고 쓰며, Gateway와 Dashboard의 사용자 인증·설치 기록은 `user_db`를 사용합니다.
+
+| 논리 DB | 주요 데이터 | 접근 경로 |
+|---|---|---|
+| `evidence_db` | 분석 근거와 LLM Assessment | Evidence API |
+| `policy_db` | 정책·규칙·조건 정의·정책 버전 | Policy DB API |
+| `decision_db` | 최종 판정, 판단 감사 기록, Feed 관련 데이터 | Decision DB API |
+| `user_db` | 사용자·권한·세션·npm 토큰·다운로드 및 설치 의존성 기록 | Gateway·Dashboard 서버의 DB 연결 |
+
+`requestId`는 요청 흐름을, `scanId`는 개별 분석을 연결합니다. Artifact의 이름·버전·해시/무결성 값, Evidence ID, 정책 버전과 Decision ID는 판정의 대상과 근거를 추적하는 데 사용합니다.
+
+Dashboard는 판정·근거·로그를 조회하고 정책 버전과 사용자 권한을 관리하는 화면입니다. npm 패키지 다운로드를 집행하는 주체는 Gateway입니다. 공개 서비스 포트와 내부 연결은 [compose.yaml](compose.yaml), DB 초기화는 [00-bootstrap.sql](infra/postgres/init/00-bootstrap.sql), 공통 데이터 형식은 [packages/contracts](packages/contracts)에서 확인할 수 있습니다.
+
+## 대시보드 미리보기
+
+아래 3장은 2026-10-14에 현재 저장소의 Dashboard를 빌드하고 별도의 로컬 DB에 연결해 직접 촬영한 화면입니다. 표시된 패키지·판정·정책은 DB 초기화의 **QA 샘플 데이터**이며, 실제 패키지 분석 결과나 탐지 성능을 나타내지 않습니다.
+
+### 1. Overview — 전체 보안 현황
+
+최근 판정, 판정 분포, 시간대별 현황과 적용 중인 정책을 한 화면에서 확인합니다.
+
+![ARGUS Overview — 초기 QA 샘플 판정 4건과 정책 현황](docs/images/dashboard-overview.png)
+
+### 2. Package — 패키지 판정 상세
+
+선택한 패키지 버전의 판정 사유, 매칭 Rule, Evidence와 버전 이력을 확인합니다. 아래 초기 샘플은 참조하는 정책 버전과 Evidence 일부가 없어 데이터 누락 안내가 표시됩니다.
+
+![QA 샘플 패키지 상세 — 판정 사유와 참조 데이터 누락 안내](docs/images/dashboard-package-detail.png)
+
+### 3. Rule — 정책 규칙 관리
+
+판정 조건·우선순위·활성 상태를 관리합니다. 아래는 QA 정책에서 REJECT 규칙만 필터링한 모습입니다.
+
+![정책 규칙 — REJECT 필터를 적용한 QA 정책](docs/images/dashboard-rules.png)
 
 ## 지원 범위
 
