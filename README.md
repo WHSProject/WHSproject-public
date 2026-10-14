@@ -33,18 +33,18 @@ ARGUS의 특징은 분석 결과를 실제 패키지 다운로드 제어로 연�
 
 > 일부 고도화 기능과 최종 E2E 검증은 진행 중입니다. 개별 기능의 검증 상태는 테스트 문서와 릴리스 QA 결과를 참고해 주세요.
 
-## 팀원
+## 팀원 및 Maintainers
 
 | 이름 | 역할 |
 |---|---|
-| 호서빈 | PM | 
-| 정환희 | Gateway | 
-| 오지송 | Gateway/DevOps/QA | 
-| 백소정 | Verdaccio | 
-| 최희수 | Scanner |
-| 김혜진 | Scanner | 
-| 김한결 | Data/feeds | 
-| 조가현 | Data/feeds |
+| 호서빈 [@biniyapp](https://github.com/biniyapp) | PM / Scanner |
+| 정환희 [@jumptop](https://github.com/jumptop) | Gateway / Dashboard |
+| 오지송 [@Oh-Jisong](https://github.com/Oh-Jisong) | Gateway / DevOps/QA |
+| 백소정 [@werkk81](https://github.com/werkk81) | Verdaccio / Scanner |
+| 최희수 [@chlgmltn](https://github.com/chlgmltn) | Scanner |
+| 김혜진 [@magician-num1](https://github.com/magician-num1) | Scanner |
+| 김한결 [@kimhangyeol00](https://github.com/kimhangyeol00) | Data/feeds |
+| 조가현 [@gahyuncho](https://github.com/gahyuncho) | Data/feeds |
 
 ## 목차
 
@@ -58,7 +58,7 @@ ARGUS의 특징은 분석 결과를 실제 패키지 다운로드 제어로 연�
 - [환경변수 설정](#환경변수-설정)
 - [개발 및 테스트](#개발-및-테스트)
 - [프로젝트 구조](#프로젝트-구조)
-- [팀원](#팀원)
+- [팀원 및 Maintainers](#팀원-및-maintainers)
 - [라이선스](#라이선스)
 
 ## 아키텍처
