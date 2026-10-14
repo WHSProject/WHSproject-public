@@ -14,7 +14,7 @@
   "dependencies": {
     "@nestjs/common": "^11.2.1",
     "@nestjs/core": "^11.2.1",
-    "@nestjs/platform-fastify": "^11.2.1",
+    "@nestjs/platform-fastify": "^11.2.4",
     "@npmcli/arborist": "^9.9.1",
     "pg": "^8.23.1",
     "reflect-metadata": "^0.2.2",
