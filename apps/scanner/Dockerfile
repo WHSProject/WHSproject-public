@@ -1,4 +1,4 @@
-FROM node:24-bookworm-slim AS build
+FROM node:26-bookworm-slim AS build
 
 WORKDIR /workspace
 
@@ -13,7 +13,7 @@ COPY apps/scanner apps/scanner
 
 RUN pnpm --filter scanner build
 
-FROM node:24-bookworm-slim AS runtime
+FROM node:26-bookworm-slim AS runtime
 
 WORKDIR /app
 
